@@ -2,7 +2,7 @@
 
 このページでは,普段HTML+CSS+JavaScriptで十分こなせるため,他の言語の習得を必要と感じていない私が,他の色々な言語に触れてみる目的で用意した。同じようなことを,それぞれの言語で行なっている。
 ここでは,次の言語をテストしている。
-コンパイルなく実行できる言語: Swift, Perl, Ruby, Python, Lua, Shell (Bash,Ksh,Zsh,Tcshも含む)
+コンパイルなく実行できる言語: Swift, Perl, Ruby, Python, Lua, PHP, Shell (Bash,Ksh,Zsh,Tcshも含む)
 コンパイルの必要な言語: C++, Rust, Java
 App内で実行する言語: Tcl (Wishで開く)
 
@@ -54,6 +54,13 @@ g++ C++.cpp -o Cpp # コンパイル (“Cpp”という名前のファイルが
 ./Cpp # 実行
 ```
 
-## Shebang (シェバン)
+## Shebang
 
-Perl,Ruby,
+Perl,Ruby,Python,PHP,Shellには次のような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できます。
+```Shell
+#! /bin/bash
+```
+実行例
+```Shell
+./PHP.php
+```
