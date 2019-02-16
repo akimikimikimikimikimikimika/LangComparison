@@ -34,6 +34,10 @@ ruby Ruby.rb
 ```Shell
 python Python.py
 ```
+- PHP
+```Shell
+php PHP.php
+```
 - Lua
 ```Shell
 lua Lua.lua
@@ -56,11 +60,11 @@ g++ C++.cpp -o Cpp # コンパイル (“Cpp”という名前のファイルが
 
 ## Shebang
 
-Perl,Ruby,Python,PHP,Shellには次のような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できます。
+Swift,Perl,Ruby,Python,PHP,Shellには次のような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できます。
 ```Shell
 #! /bin/bash
 ```
-実行例
+実行例 (PHPの場合,ディレクトリ移動を実行済)
 ```Shell
 ./PHP.php
 ```
