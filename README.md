@@ -1,18 +1,18 @@
 ## LangComparison
 
-このページでは,普段HTML+CSS+JavaScriptで十分こなせるため,他の言語の習得を必要と感じていない私が,他の色々な言語に触れてみる目的で用意した。同じようなことを,それぞれの言語で行なっている。
-ここでは,次の言語をテストしている。
-コンパイルなく実行できる言語: Swift, Perl, Ruby, Python, Lua, PHP, Shell (Bash,Ksh,Zsh,Tcshも含む)
-コンパイルの必要な言語: C++, Rust, Java
+このページでは,普段HTML+CSS+JavaScriptで十分こなせるため,他の言語の習得を必要と感じていない私が,他の色々な言語に触れてみる目的で用意した。同じようなことを,それぞれの言語で行なっている。  
+ここでは,次の言語をテストしている。  
+コンパイルなく実行できる言語: Swift, Perl, Ruby, Python, Lua, PHP, Shell (Bash,Ksh,Zsh,Tcshも含む)  
+コンパイルの必要な言語: C++, Rust, Java  
 App内で実行する言語: Tcl (Wishで開く)
 
 ## macOSで利用する際の注意
 
-Lua,Rustは標準でインストールされていないため,[Homebrew](https://brew.sh "Homebrew")でインストールする必要がある。又,C++もおそらく[Xcode](https://developer.apple.com/xcode/ "Xcode")が必要であるし,JavaもOracleから最新バージョンをインストールする。
+Lua,Rustは標準でインストールされていないため,[Homebrew](https://brew.sh "Homebrew")でインストールする必要がある。又,C++もおそらく[Xcode](https://developer.apple.com/xcode/ "Xcode")が必要で,JavaもOracleから最新バージョンを入手してインストールする。
 
 ## macOSでの実行方法
 
-ここでは,macOSにおいて,それぞれの言語を実行する方法を説明する。いずれも,ターミナルを開き,次に示すコードを入力するのである。
+ここでは,macOSにおいて,それぞれの言語を実行する方法を説明する。いずれも,ターミナルを開き,次に示すコードを入力するのである。  
 まずは,次のコマンドでディレクトリに移動する。
 ```Shell
 cd LangComparison
@@ -60,11 +60,11 @@ g++ C++.cpp -o Cpp # コンパイル (“Cpp”という名前のファイルが
 
 ## Shebang
 
-Swift,Perl,Ruby,Python,PHP,Shellには次のような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できます。
+Swift,Perl,Ruby,Python,PHP,Shellには下に示すような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /bin/bash
 ```
 実行例 (PHPの場合,ディレクトリ移動を実行済)
 ```Shell
-./PHP.php
+./PHP.php # このように入力すればPHP.phpを実行してくれる
 ```
