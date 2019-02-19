@@ -1,4 +1,4 @@
-#! /usr/bin/ruby
+#! /usr/local/bin/ruby
 # -*- coding: utf-8 -*-
 
 # Ruby
@@ -8,50 +8,33 @@
     (ドキュメント)
 =end
 
-def welcome()
-    puts "こんにちは。私の名前はRuby,即ち紅玉です。"
-    puts "あなたのことを教えてください"
-    aboutYou = gets.chomp
-    puts "あなたは#{aboutYou}ですね。わかりました。"
-end
-
-def valDemo()
-    # スカラ
-    string = "STRING"
-    number = 6
-    boolean = true
-    # 配列,リスト
-    array = [1, "second", 3, 3.14, false]
-    # ハッシュ
-    hash = {
-        a: 1,
-        b: "second",
-        c: 3,
-        d: 3.14,
-        e: false
-    }
-    # 関数
-    def cube(val)
-        val ** 3
+print "こんにちは。私の名前はRuby。"
+while true
+    print "\n\n何がしたい?\n\n";
+    print "1. 標準入出力を試す\n";
+    print "2. 色々な値を試す\n";
+    print "3. 演算子を試す\n";
+    print "4. 条件分岐を試す\n";
+    print "5. 繰り返しを試す\n";
+    print "\n";
+    print "0. 終了\n";
+    print "\n";
+    action = gets.chomp;
+    print "\n\n\n";
+    if action=="1"
+        system("Ruby/Stdinout.rb");
+    elsif action=="2"
+        system("Ruby/Values.rb");
+    elsif action=="3"
+        system("Ruby/Operators.rb");
+    elsif action=="4"
+        system("Ruby/Condition.rb");
+    elsif action=="5"
+        system("Ruby/Loop.rb");
+    elsif action=="0"
+        break
+    else
+        print "指定したアクションは見つかりませんでした\n\n";
     end
-    # 無名関数
-    func = ->(val) {
-        val ** 2
-    }
-
-    puts "\n各種データを扱います\n"
-    puts "文字列:#{string}"
-    puts "数値:#{number},#{func.call(number)},#{cube(number)}"
-    puts "真偽値:#{boolean}"
-    puts "配列:"
-    puts array
-    puts "   2番目:#{array[2]}"
-    puts "ハッシュ:"
-    puts hash
-    puts "   b= #{hash[:b]}"
-    puts "無名関数:"
-    puts func
 end
-
-welcome()
-valDemo()
+!exit(0);

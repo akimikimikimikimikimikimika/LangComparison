@@ -8,51 +8,44 @@
     (ドキュメント)
 =cut
 
-sub welcome {
-    print "こんにちは。私の名前はPerl,即ち真珠です。\n";
-    print "あなたのことを教えてください\n";
-    $aboutYou = <STDIN>;
-    chomp($aboutYou);
-    print "\nあなたは $aboutYou ですね。わかりました。\n\n";
-}
+$dir=`dirname $0`;
+chomp($dir);
+print $dir;
 
-sub valDemo {
-    # スカラ
-    my $string = "STRING";
-    my $number = 6;
-    # 配列,リスト
-    my @array = (1, "second", 3, 3.14);
-    # ハッシュ
-    my %hash = (
-        a => 1,
-        b => "second",
-        c => 3,
-        d => 3.14
-    );
-    # 関数
-    sub cube {
-        my $val = $_[0];
-        return $val ** 2;
-    };
-    # 無名関数
-    my $func = sub {
-        my $val = $_[0];
-        return $val ** 3;
-    };
-
-    print "\n各種データを扱います\n";
-    print "\n文字列:".$string;
-    print "\n数値:".$number.",".&cube($number).$func->($number);
-    print "\n配列:\n";
-    print @array;
-    print "\n   2番目:".@array[2];
-    print "\nハッシュ:\n";
-    print %hash;
-    print "\n   b= ".%hash{b};
-    print "\n無名関数:\n";
-    print $func;
+print "こんにちは。私の名前はPerl。";
+while (1) {
+    print "\n\n何がしたい?\n\n";
+    print "1. 標準入出力を試す\n";
+    print "2. 色々な値を試す\n";
+    print "3. 演算子を試す\n";
+    print "4. 条件分岐を試す\n";
+    print "5. 繰り返しを試す\n";
     print "\n";
+    print "0. 終了\n";
+    print "\n";
+    $action = <STDIN>;
+    chomp($action);
+    print "\n\n\n";
+    if ($action eq "1") {
+        system("$dir/Perl/Stdinout.pl");
+    }
+    elsif ($action eq "2") {
+        system("$dir/Perl/Values.pl");
+    }
+    elsif ($action eq "3") {
+        system("$dir/Perl/Operators.pl");
+    }
+    elsif ($action eq "4") {
+        system("$dir/Perl/Condition.pl");
+    }
+    elsif ($action eq "5") {
+        system("$dir/Perl/Loop.pl");
+    }
+    elsif ($action eq "0") {
+        last;
+    }
+    else {
+        print "指定したアクションは見つかりませんでした\n\n";
+    }
 }
-
-&welcome();
-&valDemo();
+exit(0);

@@ -40,7 +40,8 @@ php PHP.php
 ```
 - Lua
 ```Shell
-lua Lua.lua
+lua Lua.lua # 実行
+luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Lua”という名前のファイルが生成する)
 ```
 - Rust
 ```Shell
@@ -60,10 +61,11 @@ g++ C++.cpp -o Cpp # コンパイル (“Cpp”という名前のファイルが
 
 ## Shebang
 
-Swift,Perl,Ruby,Python,PHP,Shellには下に示すような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+Swift,Perl,Ruby,Python,Lua,PHP,Shellには下に示すような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /bin/bash
 ```
+但し,Perl,Ruby,Python,LuaはHomebrewでインストールした場合のディレクトリでShebangを設定したため,Homebrewから該当のformulaをインストールしないとShebangは使えない  
 実行例 (PHPの場合,ディレクトリ移動を実行済)
 ```Shell
 ./PHP.php # このように入力すればPHP.phpを実行してくれる

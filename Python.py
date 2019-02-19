@@ -9,50 +9,41 @@
 '''
 
 import sys
+import os
+import os.path
 
-def welcome():
-    print("こんにちは。私の名前はPython,即ち蛇です。")
-    print("あなたのことを教えてください")
-    aboutYou = input()
-    print("あなたは"+aboutYou+"ですね。わかりました。")
+from Python import Stdinout
+from Python import Values
+from Python import Operators
+from Python import Condition
+from Python import Loop
 
-def valDemo():
-    # 文字列
-    string = "STRING"
-    # 数値
-    number = 6
-    # 真偽値
-    boolean = True
-    # 配列
-    array = [1, "second", 3, 3.14, False]
-    # 辞書
-    dictionary = {
-        "a": 1,
-        "b": "second",
-        "c": 3,
-        "d": 3.14,
-        "e": False
-    }
-    # 関数
-    def cube(val):
-        return val ** 3
-    # 無名関数
-    func = lambda val: val ** 2
+print("こんにちは。私の名前はPython。")
+while True:
+    print("\n\n何がしたい?\n")
+    print("1. 標準入出力を試す")
+    print("2. 色々な値を試す")
+    print("3. 演算子を試す")
+    print("4. 条件分岐を試す")
+    print("5. 繰り返しを試す")
+    print("\n")
+    print("0. 終了")
+    print("\n")
+    action = input()
+    print("\n\n\n")
+    if action=="1":
+        Stdinout.main()
+    elif action=="2":
+        Values.main()
+    elif action=="3":
+        Operators.main()
+    elif action=="4":
+        Condition.main()
+    elif action=="5":
+        Loop.main()
+    elif action=="0":
+        break
+    else:
+        print("指定したアクションは見つかりませんでした")
 
-    print("\n各種データを扱います")
-    print("文字列:"+string)
-    print("数値:"+str(number)+","+str(func(number))+","+str(cube(number)))
-    print("真偽値:"+str(boolean))
-    print("配列:")
-    print((array))
-    print("   2番目:"+str(array[2]))
-    print("辞書:")
-    print(dictionary)
-    print("   b= "+str(dictionary["b"]))
-    print("関数:")
-    print(cube)
-    print("無名関数:")
-    print(func)
-
-welcome()
-valDemo()
+sys.exit(0)
