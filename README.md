@@ -41,7 +41,7 @@ php PHP.php
 - Lua
 ```Shell
 lua Lua.lua # 実行
-luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Lua”という名前のファイルが生成する)
+luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Luac.lua”という名前のファイルが生成する)
 ```
 - Rust
 ```Shell
