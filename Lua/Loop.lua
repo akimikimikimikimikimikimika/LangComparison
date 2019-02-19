@@ -2,7 +2,7 @@
 
 (function()
 
-    print("\nこれからループ処理をテストします\n")
+    print("\nこれからループ処理を試します\n")
 
     print("\nfor n=0,2,1 do ... end\n")
     for n=0,2,1 do

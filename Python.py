@@ -9,14 +9,14 @@
 '''
 
 import sys
-import os
-import os.path
 
 from Python import Stdinout
 from Python import Values
 from Python import Operators
 from Python import Condition
 from Python import Loop
+
+# 外部のソースコード(モジュール)を実行するするには,(Pythonモジュールと認識してもらう為に)そのソースコードと同じディレクトリに __init__.py というファイルが存在する必要がある。但し,そのファイルの中身は問わない。
 
 print("こんにちは。私の名前はPython。")
 while True:

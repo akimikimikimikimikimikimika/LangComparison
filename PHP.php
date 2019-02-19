@@ -8,45 +8,45 @@
 */
 ?>
 
-こんにちは。私の名前はPHPです。
-直接入力するだけでエコー出力します。
-<?php echo "勿論,こんな書き方だってアリです。\n\n"; ?>
+こんにちは。私の名前はPHP。
 <?php
 
-function valDemo(){
+$dir = __DIR__;
 
-    // 文字列
-    $string = "STRING";
-    // 数値
-    $number = 6;
-    // 真偽値
-    $boolean = true;
-    // 配列
-    $array1 = array(1,"second",3,3.14,false);
-    // 連想配列
-    $array2 = array("a"=>1,"b"=>"second","c"=>3,"d"=>3.14,"e"=>false);
-    // 関数
-    function cube($val) {
-        return $val**3;
+while (true) {
+    print "\n\n何がしたい?\n\n";
+    print "1. 標準入出力を試す\n";
+    print "2. 色々な値を試す\n";
+    print "3. 演算子を試す\n";
+    print "4. 条件分岐を試す\n";
+    print "5. 繰り返しを試す\n";
+    print "\n";
+    print "0. 終了\n";
+    print "\n";
+    $action = trim(fgets(STDIN));
+    print "\n\n\n";
+    if ($action == "1") {
+        passthru($dir."/PHP/Stdinout.php");
     }
-    // 無名関数
-    $func = function($val) {
-        return $val**2;
-    };
-
-    echo "\n各種データを扱います";
-    echo "文字列:".$string."\n";
-    echo "数値:".$number.",".$func($number).",".cube($number)."\n";
-    echo "真偽値:".$boolean."\n";
-    echo "配列:\n";
-    echo $array1."\n";
-    echo "   2番目:".$array1[2]."\n";
-    echo "連想配列:\n";
-    echo $array2."\n";
-    echo "   b= ".$array2["b"]."\n";
-
+    elseif ($action == "2") {
+        passthru($dir."/PHP/Values.php");
+    }
+    elseif ($action == "3") {
+        passthru($dir."/PHP/Operators.php");
+    }
+    elseif ($action == "4") {
+        passthru($dir."/PHP/Condition.php");
+    }
+    elseif ($action == "5") {
+        passthru($dir."/PHP/Loop.php");
+    }
+    elseif ($action == "0") {
+        break;
+    }
+    else {
+        print "指定したアクションは見つかりませんでした\n";
+    }
 }
-
-valDemo();
+exit(0);
 
 ?>

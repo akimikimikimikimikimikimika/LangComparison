@@ -5,7 +5,7 @@
     test1 = true
     test2 = false
 
-    print("\nこれから条件分岐をテストします\n")
+    print("\nこれから条件分岐を試します\n")
 
     if test1 then
         print("どうやらtest1は真のようです")

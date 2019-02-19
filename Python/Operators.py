@@ -1,28 +1,26 @@
 #! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
-import sys
-
 def main():
 
     print("\nこれから演算子を試します\n")
 
     print("\n算術演算子")
-    print("24  + 5 = "+str(    24 +5   ))
-    print("24  - 5 = "+str(    24 -5   ))
-    print("24  * 5 = "+str(    24 *5   ))
-    print("24  / 5 = "+str(    24 /5   ))
-    print("24 // 5 = "+str(    24//5   )+" (商を整数にする除算)")
-    print("24  % 5 = "+str(    24 %5   ))
-    print("24 ** 5 = "+str(    24**5   ))
+    print("24  + 5 = "+str(   24 +5   ))
+    print("24  - 5 = "+str(   24 -5   ))
+    print("24  * 5 = "+str(   24 *5   ))
+    print("24  / 5 = "+str(   24 /5   ))
+    print("24 // 5 = "+str(   24//5   )+" (商を整数にする除算)")
+    print("24  % 5 = "+str(   24 %5   ))
+    print("24 ** 5 = "+str(   24**5   ))
 
     print("\n比較演算子")
-    print("24  > 5 = "+str(    24 >5   ))
-    print("24 >= 5 = "+str(    24>=5   ))
-    print("24  < 5 = "+str(    24 <5   ))
-    print("24 <= 5 = "+str(    24<=5   ))
-    print("24 == 5 = "+str(    24==5   ))
-    print("24 != 5 = "+str(    24!=5   ))
+    print("24  > 5 = "+str(   24 >5   ))
+    print("24 >= 5 = "+str(   24>=5   ))
+    print("24  < 5 = "+str(   24 <5   ))
+    print("24 <= 5 = "+str(   24<=5   ))
+    print("24 == 5 = "+str(   24==5   ))
+    print("24 != 5 = "+str(   24!=5   ))
 
     print("\n同一物か確認")
     a="Object"

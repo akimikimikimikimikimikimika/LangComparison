@@ -1,8 +1,6 @@
 #! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
-import sys
-
 def main():
 
     print("\nこれからループ処理を試します\n")

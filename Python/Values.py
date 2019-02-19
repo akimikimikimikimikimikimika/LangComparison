@@ -1,15 +1,6 @@
 #! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
-# Python
-
-'''
-    複数行のコメント
-    (ドキュメント)
-'''
-
-import sys
-
 def main():
 
     # 文字列

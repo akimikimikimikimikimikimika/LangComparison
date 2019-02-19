@@ -1,8 +1,6 @@
 #! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
-# Python
-
 import sys
 
 def main():
