@@ -5,40 +5,42 @@ print "\nこれからループ処理を試します\n\n";
 
 print "\nfor (\$n=0; \$n<3; \$n++) {...}\n\n";
 for ($n=0;$n<3;$n++) {
-    print "n=".$n."のループ\n";
+	print "n=".$n."のループ\n";
 }
 
-print "\nforeach \$n (0..2) {...}\n\n";
-foreach $n (0..2) {
-    print "n=".$n."のループ\n";
+print "\nforeach \$n (0,1,2) {...}\n\n";
+foreach $n (0,1,2) {
+	print "n=".$n."のループ\n";
 }
+# foreach (0..2) のような範囲指定も配列と同等に扱われる
+# foreach (0,1,2) とすれば,$nの代わりに$_で要素を取り出せる
 
 print "\nwhile (~) {...}\n\n";
 $str="";
 while (length($str)<6) {
-    $str.="*";
-    print "$str\n";
+	$str.="*";
+	print "$str\n";
 }
 
 print "\nuntil (~) {...}\n\n";
 $str="";
 until (length($str)==6) {
-    $str.="*";
-    print "$str\n";
+	$str.="*";
+	print "$str\n";
 }
 
 print "\ndo {...} while (~)\n\n";
 $str="";
 do {
-    $str.="+";
-    print "$str\n";
+	$str.="+";
+	print "$str\n";
 } while (length($str)<6);
 
 print "\ndo {...} until (~)\n\n";
 $str="";
 do {
-    $str.="+";
-    print "$str\n";
+	$str.="+";
+	print "$str\n";
 } until (length($str)==6);
 
 print "\n... while ~\n\n";
@@ -58,5 +60,5 @@ print "$str\n";
 
 print "\n⚠︎ C言語との違い\n";
 
-print "break    => last\n";
+print "break	=> last\n";
 print "continue => next\n";

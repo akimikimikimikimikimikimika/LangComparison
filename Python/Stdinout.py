@@ -3,9 +3,7 @@
 
 import sys
 
-def main():
-
-    print("こんにちは。私の名前はPython,即ち蛇です。")
-    print("あなたのことを教えてください")
-    aboutYou = input()
-    print("あなたは"+aboutYou+"ですね。わかりました。")
+print("こんにちは。私の名前はPython,即ち蛇です。")
+print("あなたのことを教えてください")
+aboutYou = input()
+print("あなたは"+aboutYou+"ですね。わかりました。")
