@@ -36,7 +36,7 @@ while true
 	elsif action=="6"
 		system("Ruby/RegExp.rb");
 	elsif action=="7"
-		system("Ruby/Arguments.rb このプログラムを直接実行してみよう。 \"ここにあるよ: Ruby/Arguments.rb\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Ruby/Arguments.rb 引数1 引数2 ...\" \"\"  すると,引数1,引数2...が順に出力されます");
+		system("Ruby/Arguments.rb このプログラムを直接実行してみよう。 \"ここにあるよ: Ruby/Arguments.rb\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Ruby/Arguments.rb 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	elsif action=="0"
 		break
 	else

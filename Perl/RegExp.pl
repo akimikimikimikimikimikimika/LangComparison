@@ -3,20 +3,23 @@
 
 print "\nこれから正規表現を試します\n\n";
 
-print "\n分割と結合\n";
-$test4="a-b-c";
-print "$test4 → ";
-@arr=split(/-/,$test4);
-$test4=join(".",@arr);
-print "$test4\n";
-
-
 print "\n置換\n";
 
-$text="テキスト";
-print "$text → "; # テキスト
-$text =~ s/キ/ク/;
-print "$text\n"; # テクスト
+$text="<a> <b> <c>";
+print "$text → ";
+$text =~ s/<([a-z])>/\{\1\}/;
+print "$text\n";
+$text="<a> <b> <c>";
+print "$text → ";
+$text =~ s/<([a-z])>/\{\1\}/g;
+print "$text\n";
+
+print "\n分割と結合\n";
+$text="a-b-c";
+print "$text → ";
+@arr=split(/-/,$text);
+$text=join(".",@arr);
+print "$text\n";
 
 # eフラグを付加すれば,演算可能
 print "演算: ";

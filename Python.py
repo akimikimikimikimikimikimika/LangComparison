@@ -48,7 +48,7 @@ while True:
 	elif action=="6":
 		rtn=subprocess.call(dir+"/Python/RegExp.py")
 	elif action=="7":
-		rtn=subprocess.call([dir+"/Python/Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2 ...","","すると,引数1,引数2...が順に出力されます"])
+		rtn=subprocess.call([dir+"/Python/Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"])
 	elif action=="0":
 		break
 	else:

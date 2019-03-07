@@ -30,8 +30,10 @@ print "\n真偽値:".$boolean.",".$null;
 print "\n配列:\n";
 print $array1;
 print "\n   2番目:".$array1[2]."\n";
+print "\n   大きさ:".count($array1)."\n";
 print "\n連想配列:\n";
 print $array2;
 print "\n   b= ".$array2["b"];
+print "\n   大きさ:".count($array2)."\n";
 print "\n";
 ?>

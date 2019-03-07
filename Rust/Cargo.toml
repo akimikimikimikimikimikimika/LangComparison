@@ -1,0 +1,7 @@
+[package]
+name = "Rust"
+version = "0.1.0"
+authors = ["akimi <40886798+akimikimikimikimikimikimika@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]

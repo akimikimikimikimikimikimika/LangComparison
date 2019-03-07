@@ -47,7 +47,7 @@ while (1) {
 		system("$dir/Perl/RegExp.pl");
 	}
 	elsif ($action eq "7") {
-		system("$dir/Perl/Arguments.pl このプログラムを直接実行してみよう。 \"ここにあるよ: Perl/Arguments.pl\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Perl/Arguments.pl 引数1 引数2 ...\" \"\"  すると,引数1,引数2...が順に出力されます");
+		system("$dir/Perl/Arguments.pl このプログラムを直接実行してみよう。 \"ここにあるよ: Perl/Arguments.pl\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Perl/Arguments.pl 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	elsif ($action eq "0") {
 		last;
