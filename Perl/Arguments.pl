@@ -1,10 +1,13 @@
 #! /usr/local/bin/perl
 # -*- coding: utf-8 -*-
 
-print "\nこのファイルを実行するにあたっての引数は以下の通りです:\n\n";
+# 引数は0番目から
+
+print "\r\nこのファイルを実行するにあたっての引数は以下の通りです:\r\n\r\n";
 $n=1;
 foreach $s (@ARGV) {
-	print " $n: $s\n";
+	print " $n: $s\r\n";
 	$n++;
 }
-print "\n";
+
+print "\r\n\r\n";

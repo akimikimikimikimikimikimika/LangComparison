@@ -11,7 +11,8 @@
 import sys
 import os
 import subprocess
-dir=os.path.dirname(os.getcwd()+"/"+__file__)
+
+os.chdir(os.path.normpath(os.path.dirname(os.path.join(os.getcwd(),__file__))+"/Python"))
 
 '''
 	Pythonファイルをモジュールとして利用するには, Python/module.py とすれば,
@@ -20,37 +21,45 @@ dir=os.path.dirname(os.getcwd()+"/"+__file__)
 	この時,module内のコードは即座に実行され,module.pyに関数mainがあれば,module.main()のようにこちらからmodule.py内の関数を実行できる。
 '''
 
+print("\r\n")
+
 print("こんにちは。私の名前はPython。")
 while True:
-	print("\n\n何がしたい?\n")
+	print("\r\n\r\n何がしたい?\r\n")
 	print("1. 標準入出力を試す")
 	print("2. 色々な値を試す")
 	print("3. 演算子を試す")
 	print("4. 条件分岐を試す")
 	print("5. 繰り返しを試す")
 	print("6. 正規表現を試す")
-	print("7. コマンドライン引数を試す")
-	print("\n")
+	print("7. ファイル操作を試す")
+	print("8. ファイルパスを試す")
+	print("9. コマンドライン引数を試す")
+	print("\r\n")
 	print("0. 終了")
-	print("\n")
+	print("\r\n")
 	action = input()
-	print("\n\n\n")
-	if action=="1":
-		rtn=subprocess.call(dir+"/Python/Stdinout.py")
-	elif action=="2":
-		rtn=subprocess.call(dir+"/Python/Values.py")
-	elif action=="3":
-		rtn=subprocess.call(dir+"/Python/Operators.py")
-	elif action=="4":
-		rtn=subprocess.call(dir+"/Python/Condition.py")
-	elif action=="5":
-		rtn=subprocess.call(dir+"/Python/Loop.py")
-	elif action=="6":
-		rtn=subprocess.call(dir+"/Python/RegExp.py")
-	elif action=="7":
-		rtn=subprocess.call([dir+"/Python/Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"])
-	elif action=="0":
+	print("\r\n\r\n\r\n")
+	if action=="0":
 		break
+	elif action=="1":
+		rtn=subprocess.call("./Stdinout.py")
+	elif action=="2":
+		rtn=subprocess.call("./Values.py")
+	elif action=="3":
+		rtn=subprocess.call("./Operators.py")
+	elif action=="4":
+		rtn=subprocess.call("./Condition.py")
+	elif action=="5":
+		rtn=subprocess.call("./Loop.py")
+	elif action=="6":
+		rtn=subprocess.call("./RegExp.py")
+	elif action=="7":
+		rtn=subprocess.call("./File.py")
+	elif action=="8":
+		rtn=subprocess.call("./Path.py")
+	elif action=="9":
+		rtn=subprocess.call(["./Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"])
 	else:
 		print("指定したアクションは見つかりませんでした")
 

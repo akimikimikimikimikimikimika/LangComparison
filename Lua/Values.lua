@@ -35,7 +35,7 @@ color = {
 	end
 }
 
-print("\n色々な値を試します")
+print("\r\n\r\n色々な値を試します")
 print("文字列:"..str)
 print("   長さ:"..string.format("%d",string.len(str)))
 print("文字列2:")
@@ -46,10 +46,8 @@ print("テーブル:")
 print(tab1)
 print("   2番目:"..tab1[2])
 print("   大きさ:"..#tab1)
-print("   大きさ:"..table.maxn(tab1))
 print(tab2)
 print("   b="..tab2["b"])
-print("   大きさ:"..table.maxn(tab2))
 print("関数:")
 print(cube)
 print("無名関数:")
@@ -58,3 +56,5 @@ print("オブジェクト:")
 print(color)
 print("   "..string.format("r=%d g=%d b=%d",color.r,color.g,color.b))
 print("   "..string.format("lightness=%d",color:lightness()))
+
+print("\r\n\r\n")

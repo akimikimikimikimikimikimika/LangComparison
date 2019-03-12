@@ -3,12 +3,17 @@
 
 # スカラ
 string = "ルビー";
-lines=<<"Lines";
+lines = <<"Lines";
 
 First line
 Second line
 Third line
 Lines
+char = ?赤; # ?で1文字の文字列型の値を表す
+=begin
+	変数展開/式展開の仕方
+	"The value is #{val*2}"
+=end
 number = 6;
 boolean = true;
 null = nil;
@@ -33,23 +38,21 @@ func = ->(val) {
 	val ** 2;
 };
 
-print "\n色々な値を試します\n";
-print "\n文字列:#{string}";
-print "\n   長さ:#{string.length}";
-print "\n文字列2:\n#{lines}";
-print "\n数値:#{number},#{func.call(number)},#{cube(number)}";
-print "\n真偽値:#{boolean}";
-print "\n値なし:#{null}";
-print "\n配列:\n";
-print array;
-print "\n   2番目:#{array[2]}";
-print "\n   大きさ:#{array.length}";
-print "\nハッシュ:\n";
-print hash;
-print "\n   b= #{hash[:b]}";
-print "\n   大きさ:#{hash.length}";
-print "\n範囲:\n";
-print ran;
-print "\n無名関数:\n";
-print func;
-print "\n";
+print "\r\n色々な値を試します\r\n";
+print "\r\n文字列:#{string}";
+print "\r\n   長さ:#{string.length}";
+print "\r\n文字列2:\r\n#{lines}";
+print "\r\n文字:#{char}";
+print "\r\n数値:#{number},#{func.call(number)},#{cube(number)}";
+print "\r\n真偽値:#{boolean}";
+print "\r\n値なし:#{null}";
+print "\r\n配列:\r\n#{array}";
+print "\r\n   2番目:#{array[2]}";
+print "\r\n   大きさ:#{array.length}";
+print "\r\nハッシュ:\r\n#{hash}";
+print "\r\n   b= #{hash[:b]}";
+print "\r\n   大きさ:#{hash.length}";
+print "\r\n範囲:\r\n#{ran}";
+print "\r\n無名関数:\r\n#{func}";
+
+print "\r\n\r\n";

@@ -30,42 +30,42 @@ public class Values {
 		LinkedList<Integer> arr3 = new LinkedList<>();
 		arr3.add(3);arr3.add(1);arr3.add(4);
 		HashMap<String,String> map = new HashMap<String,String>();
-		map.put("first","3");map.put("second","1");map.put("third","3");
+		map.put("first","3");map.put("second","1");map.put("third","4");
 
-		output.println("\n色々な値を試します\n");
-		output.print("\n\n文字列");
-		output.print("\n String: ");output.print(str);
-		output.print("\n\n真偽値");
-		output.print("\n boolean: ");output.print(bool);
-		output.print("\n\n文字");
-		output.print("\n char: ");output.print(cha1);
+		output.println("\r\n色々な値を試します\r\n");
+		output.print("\r\n\r\n文字列");
+		output.print("\r\n String: ");output.print(str);
+		output.print("\r\n\r\n真偽値");
+		output.print("\r\n boolean: ");output.print(bool);
+		output.print("\r\n\r\n文字");
+		output.print("\r\n char: ");output.print(cha1);
 		demoValue("Character", cha2);
-		output.print("\n\n整数");
-		output.print("\n byte: ");output.print(intB1);
+		output.print("\r\n\r\n整数");
+		output.print("\r\n byte: ");output.print(intB1);
 		demoValue("Byte", intB2);
-		output.print("\n short: ");output.print(intS1);
+		output.print("\r\n short: ");output.print(intS1);
 		demoValue("Short", intS2);
-		output.print("\n int: ");output.print(intI1);
+		output.print("\r\n int: ");output.print(intI1);
 		demoValue("Integer", intI2);
-		output.print("\n long: ");output.print(intL1);
+		output.print("\r\n long: ");output.print(intL1);
 		demoValue("Long", intL2);
-		output.print("\n\n浮動小数点数");
-		output.print("\n float: ");output.print(flt1);
+		output.print("\r\n\r\n浮動小数点数");
+		output.print("\r\n float: ");output.print(flt1);
 		demoValue("Float", flt2);
-		output.print("\n double: ");output.print(dbl1);
+		output.print("\r\n double: ");output.print(dbl1);
 		demoValue("Double", dbl2);
-		output.print("\n\n配列");
-		output.print("\n int[]: ");output.print(arr1);
+		output.print("\r\n\r\n配列");
+		output.print("\r\n int[]: ");output.print(arr1);
 		demoValue("ArrayList<Integer>", arr2);
 		demoValue("LinkedList<Integer>", arr3);
-		output.print("\n\nマップ");
+		output.print("\r\n\r\nマップ");
 		demoValue("HashMap<String,String>", map);
-		output.print("\n\n");
+		output.print("\r\n\r\n");
 
 	}
 
 	private static void demoValue(String key, Object value) {
-		output.print("\n "+key+": ");
+		output.print("\r\n "+key+": ");
 		output.print(value);
 	}
 

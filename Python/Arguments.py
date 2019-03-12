@@ -5,11 +5,14 @@ import sys
 
 args=sys.argv
 
-print("\nこのファイルを実行するにあたっての引数は以下の通りです:\n")
+# 引数は1番目から (0番目はこのファイルを呼ぶパス)
+
+print("\r\nこのファイルを実行するにあたっての引数は以下の通りです:\r\n")
 
 n=0
 for s in args:
 	if n>0:
-		print(" "+str(n)+": "+s)
+		print(f" {n}: {s}")
 	n+=1
-print("\n")
+
+print("\r\n")

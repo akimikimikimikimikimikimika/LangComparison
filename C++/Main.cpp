@@ -14,21 +14,21 @@ using namespace std;
 
 int main(){
 	string action;
-	cout << "こんにちは。私の名前はC++。\n";
+	cout << "こんにちは。私の名前はC++。\r\n";
 	while (true) {
-		cout << "\n\n何がしたい?\n\n";
-		cout << "1. 標準入出力を試す\n";
-		cout << "2. 色々な値を試す\n";
-		cout << "3. 演算子を試す\n";
-		cout << "4. 条件分岐を試す\n";
-		cout << "5. 繰り返しを試す\n";
-		cout << "6. 正規表現を試す\n";
-		cout << "\n";
-		cout << "0. 終了\n";
-		cout << "\n";
+		cout << "\r\n\r\n何がしたい?\r\n\r\n";
+		cout << "1. 標準入出力を試す\r\n";
+		cout << "2. 色々な値を試す\r\n";
+		cout << "3. 演算子を試す\r\n";
+		cout << "4. 条件分岐を試す\r\n";
+		cout << "5. 繰り返しを試す\r\n";
+		cout << "6. 正規表現を試す\r\n";
+		cout << "\r\n";
+		cout << "0. 終了\r\n";
+		cout << "\r\n";
 		cin >> action;
-		while(getchar()!='\n');
-		cout << "\n\n\n";
+		while(getchar()!='\r\n');
+		cout << "\r\n\r\n\r\n";
 		if (action=="1") Stdinout();
 		else if (action=="2") Values();
 		else if (action=="3") Operators();
@@ -36,7 +36,7 @@ int main(){
 		else if (action=="5") Loop();
 		else if (action=="6") RegExp();
 		else if (action=="0") break;
-		else printf("指定したアクションは見つかりませんでした\n\n");
+		else printf("指定したアクションは見つかりませんでした\r\n\r\n");
 	}
 	return 0;
 }

@@ -12,9 +12,9 @@ public class RegExp {
 
 	public static void main(String[] args) throws IOException{
 
-		output.println("\nこれから正規表現を試します\n");
+		output.println("\r\nこれから正規表現を試します\r\n");
 
-		output.print("\n検索\n");
+		output.print("\r\n検索\r\n");
 		Matcher m=Pattern.compile("l+").matcher("IllUsTrAtE");
 		output.print(text);
 		output.print(" → ");
@@ -24,39 +24,39 @@ public class RegExp {
 			output.print(m.start());
 			output.print("~");
 			output.print(m.end());
-			output.print(")\n");
+			output.print(")\r\n");
 		}
-		else output.print("マッチしていません\n");
+		else output.print("マッチしていません\r\n");
 
-		output.print("\n置換\n");
+		output.print("\r\n置換\r\n");
 		String text="IllUsTrAtE";
 		 // 正規表現が使えない置換
 		String newtext=text.replace("l","*");
-		output.print("string.replace: "+text+" → "+newtext+"\n");
+		output.print("string.replace: "+text+" → "+newtext+"\r\n");
 		 // 正規表現が使える置換
 		text="<a> <b> <c>";
 		newtext=text.replaceAll("(?i)<([a-z])>","{$1}");
-		output.print("string.replaceAll: "+text+" → "+newtext+"\n");
+		output.print("string.replaceAll: "+text+" → "+newtext+"\r\n");
 		newtext=text.replaceFirst("(?i)<([a-z])>","{$1}");
-		output.print("string.replaceFirst: "+text+" → "+newtext+"\n");
+		output.print("string.replaceFirst: "+text+" → "+newtext+"\r\n");
 
-		output.print("\n分割と結合\n");
+		output.print("\r\n分割と結合\r\n");
 		text="a-b-c";
 		String[] arr=text.split("-");
 		newtext=String.join("*",arr);
-		output.print(text+" → "+newtext+"\n");
+		output.print(text+" → "+newtext+"\r\n");
 
-		output.print("\nマッチの確認\n");
-		if (test1.matches("(?i)qu.*")) output.print(test1+" はquで始まります\n");
-		else output.print(test1+" はquで始まりません\n");
+		output.print("\r\nマッチの確認\r\n");
+		if (test1.matches("(?i)qu.*")) output.print(test1+" はquで始まります\r\n");
+		else output.print(test1+" はquで始まりません\r\n");
 		// string.matchesは完全一致であることに注意
 		// (?i)を正規表現中に埋め込むことで,ignoreCaseにできる
 
 		Pattern p=Pattern.compile("(?i)^qu");
-		if (p.matcher(test2).find()) output.print(test2+" はquで始まります\n");
-		else output.print(test2+" はquで始まりません\n");
+		if (p.matcher(test2).find()) output.print(test2+" はquで始まります\r\n");
+		else output.print(test2+" はquで始まりません\r\n");
 
-		output.print("\n\n");
+		output.print("\r\n\r\n");
 
 	}
 

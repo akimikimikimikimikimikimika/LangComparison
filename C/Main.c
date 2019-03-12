@@ -11,27 +11,27 @@
 
 int main(){
 	int *action;
-	printf("こんにちは。私の名前はC。\n");
+	printf("こんにちは。私の名前はC。\r\n");
 	while (1) {
-		printf("\n\n何がしたい?\n\n");
-		printf("1. 標準入出力を試す\n");
-		printf("2. 色々な値を試す\n");
-		printf("3. 演算子を試す\n");
-		printf("4. 条件分岐を試す\n");
-		printf("5. 繰り返しを試す\n");
-		printf("\n");
-		printf("0. 終了\n");
-		printf("\n");
+		printf("\r\n\r\n何がしたい?\r\n\r\n");
+		printf("1. 標準入出力を試す\r\n");
+		printf("2. 色々な値を試す\r\n");
+		printf("3. 演算子を試す\r\n");
+		printf("4. 条件分岐を試す\r\n");
+		printf("5. 繰り返しを試す\r\n");
+		printf("\r\n");
+		printf("0. 終了\r\n");
+		printf("\r\n");
 		scanf("%d",action);
-		while(getchar()!='\n');
-		printf("\n\n\n");
+		while(getchar()!='\r\n');
+		printf("\r\n\r\n\r\n");
 		if (*action==1) Stdinout();
 		else if (*action==2) Values();
 		else if (*action==3) Operators();
 		else if (*action==4) Condition();
 		else if (*action==5) Condition();
 		else if (*action==0) break;
-		else printf("指定したアクションは見つかりませんでした\n\n");
+		else printf("指定したアクションは見つかりませんでした\r\n\r\n");
 	}
 	return 0;
 }

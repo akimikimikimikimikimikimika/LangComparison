@@ -1,25 +1,27 @@
 #! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
-print("\nこれからループ処理を試します\n")
+print("\r\nこれからループ処理を試します\r\n")
 
-print("\nfor n in range(0,2):…else:…\n")
+print("\r\nfor n in range(0,2):…else:…\r\n")
 for n in range(0,2):
 	print("n="+str(n)+"のループ")
 else:
 	print("これでループは終わり")
 
-print("\nfor c in array:…else:…\n")
+print("\r\nfor c in array:…else:…\r\n")
 cs=("壱","弐","参")
 for c in cs:
 	print("c=\""+c+"\"のループ")
 else:
 	print("これでループは終わり")
 
-print("\nwhile ~:…else:…\n")
+print("\r\nwhile ~:…else:…\r\n")
 string=""
 while len(string)<6:
 	string+="*"
 	print(string)
 else:
 	print("++++++")
+
+print("\r\n")

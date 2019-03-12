@@ -1,8 +1,8 @@
 ## LangComparison
 
-このページでは,普段HTML+CSS+JavaScriptで十分こなせるため,他の言語の習得を必要と感じていない私が,他の色々な言語に触れてみる目的で用意した。これは,比較(プログラミング)言語学と言えるのだろうか。同じようなことを,それぞれの言語で行なっている。  
+このページでは,普段HTML+CSS+JavaScriptで十分こなせるため,他の言語の習得を必要と感じていない私が,他の色々な言語に触れてみる目的で用意した。これは,比較(プログラミング)言語学と言えるのだろうか。気の趣くままに進めている。同じようなことを,それぞれの言語で行なっている。  
 ここでは,次の言語をテストしている。  
-コンパイルなく実行できる言語: Swift, Perl, Ruby, Python, Lua, PHP, PowerShell, Go, Shell (Bash,Ksh,Zsh,Tcshも含む)  
+コンパイルなく実行できる言語: Swift, Perl, Ruby, PHP, Python, Lua, PowerShell, Go, Bash  
 コンパイルの必要な言語: C++, C, Rust, Java  
 App内で実行する言語: Tcl (Wishで開く)
 
@@ -12,8 +12,8 @@ App内で実行する言語: Tcl (Wishで開く)
 
 - [Perl](https://www.perl.org "Perl")
 - [Ruby](https://www.ruby-lang.org "Ruby")
-- [Python](https://www.python.org "Python")
 - [PHP](http://www.php.net "PHP")
+- [Python](https://www.python.org "Python")
 - [Lua](https://www.lua.org "Lua")
 - [Bash](https://www.gnu.org/software/bash/ "Bourne-Again SHell")
 - [PowerShell](https://github.com/PowerShell/PowerShell "PowerShell")
@@ -30,7 +30,7 @@ App内で実行する言語: Tcl (Wishで開く)
 それぞれのOSで標準付属していない言語は上記リンクよりインストールする必要がある。
 
 - macOS
-	Perl, Ruby, Python, PHP, Bash は標準でインストール済。  
+	Perl, Ruby, PHP, Python, Bash は標準でインストール済。  
 	Lua, Rust, Go はインストールされていない。[Homebrew](https://brew.sh "Homebrew")からインストールすることもできる。  
 	C++, C, Swift のコンパイルには [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。  
 	Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。  
@@ -38,12 +38,13 @@ App内で実行する言語: Tcl (Wishで開く)
 
 - Windows
 	PowerShell は標準でインストール済。  
-	Perl, Ruby, Python, PHP, Lua, Rust, Go はインストールされていない。  
+	Perl, Ruby, PHP, Python, Lua, Rust, Go はインストールされていない。  
 	C++ のコンパイルには Visual C++ が必要らしい。
 
 - Unix系OS (macOS除く)
 	大抵の場合, Bash は標準でインストール済。  
-	基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。
+	基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。  
+	Linuxの場合,Rubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)
 
 ## 実行方法
 
@@ -65,22 +66,27 @@ perl Perl.pl
 ```Shell
 ruby Ruby.rb
 ```
-- Python
-```Shell
-python Python.py
-```
 - PHP
 ```Shell
 php PHP.php
+```
+- Python
+```Shell
+python3.7 Python.py # 最新のPython
+python Python.py # システムに付属するPython (macOSなどでは古いバージョンがインストールされている)
+```
+- Bash
+```Shell
+bash Bash.sh
+```
+- PowerShell
+```Shell
+pwsh PowerShell.ps1
 ```
 - Lua
 ```Shell
 lua Lua.lua # 実行
 luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Luac.lua”という名前のファイルが生成する)
-```
-- Bash
-```Shell
-bash Shell.sh
 ```
 - Go
 ```Shell
@@ -96,11 +102,11 @@ rustc Rust.rs # コンパイル (“Rust”という名前のファイルが生�
 
 ## Shebang
 
-macOSの場合, Swift, Perl, Ruby, Python, PHP, Lua, Shell, PowerShell には下に示すような実行パス(言語)を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+macOSの場合, Swift, Perl, Ruby, PHP, Python, Bash, Lua, PowerShell には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
-#! /bin/bash
+#! /usr/local/bin/lua
 ```
-但し, Shell, Perl, Ruby, Python, Lua はHomebrewでインストールした場合のディレクトリでShebangを設定したため,Homebrewから該当のformulaをインストールしないとShebangは使えない  
+但し, Perl, Ruby, PHP, Python, Bash, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。  
 実行例 (Luaの場合,ディレクトリ移動を実行済)
 ```Shell
 ./Lua.lua # このように入力すればLua.luaを実行してくれる
@@ -109,32 +115,36 @@ macOSの場合, Swift, Perl, Ruby, Python, PHP, Lua, Shell, PowerShell には下
 
 |   | システム | Homebrew等 |
 |:---|:--:|:--:|
-| Swift | `/usr/bin/swift` | - |
-| Perl | `/usr/bin/perl` | `/usr/local/bin/perl` |
-| Ruby | `/usr/bin/ruby` | `/usr/local/bin/ruby` |
-| Python | `/usr/bin/python` | `/usr/local/bin/python3.7` |
-| PHP | `/usr/bin/php` | `/usr/local/bin/php` |
-| Lua | - | `/usr/local/bin/lua` |
-| PowerShell | - | `/usr/local/bin/pwsh` |
-| Bash | `/bin/bash` | `/usr/local/bin/bash` |
+| Swift | **`/usr/bin/swift`** | - |
+| Perl | `/usr/bin/perl` | **`/usr/local/bin/perl`** |
+| Ruby | `/usr/bin/ruby` | **`/usr/local/bin/ruby`** |
+| PHP | `/usr/bin/php` | **`/usr/local/bin/php`** |
+| Python | `/usr/bin/python` | **`/usr/local/bin/python3.7`** |
+| Bash | `/bin/bash` | **`/usr/local/bin/bash`** |
+| PowerShell | - | **`/usr/local/bin/pwsh`** |
+| Lua | - | **`/usr/local/bin/lua`** |
 
-なお,コマンドラインに `type swift` などと入力すれば,コンピュータで該当するものが表示される。
+太字で指定したShebangが指定されている
+なお,コマンドラインに `type swift` などと入力すれば,コンピュータが標準で使用する実行パスが表示される。
 
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ,Perl/Ruby/Python/PHP/Luaで同時進行中
+今のところ, Perl / Ruby / PHP / Python / Bash / PowerShell / Lua で同時進行中
 - [x] 標準入出力
 - [x] 基本の値
 - [x] 演算子
 - [x] 条件分岐/ループ
-- [x] 外部ソースの読み込み
-- [ ] 文字列の長さ/文字取り出し
-- [ ] 配列の操作
 - [x] 正規表現での検索/置換
+- [x] ファイル/フォルダ操作
+- [x] 外部ソースの読み込み
 - [x] コマンドライン引数
+- [ ] 文字列の操作
+- [ ] 配列の操作
 - [ ] 数学関数
+- [ ] 型の変換
+- [ ] 各種定数
 - [ ] システム情報取得
 - [ ] 日付/時刻
-- [ ] ファイル/フォルダ操作
 - [ ] オブジェクト / クラス
-- [ ] Bash / Swift / C++ / Rust 等へ拡充
+- [ ] 例外の取り扱い
+- [ ] Swift / C++ / Rust 等へ拡充

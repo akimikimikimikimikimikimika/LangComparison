@@ -32,7 +32,7 @@ public class Java {
 	public static void main(String[] args) throws IOException{
 		output.println("こんにちは。私の名前はJava。");
 		while (true) {
-			output.println("\n\n何がしたい?\n");
+			output.println("\r\n\r\n何がしたい?\r\n");
 			output.println("1. 標準入出力を試す");
 			output.println("2. 色々な値を試す");
 			output.println("3. 演算子を試す");
@@ -40,10 +40,10 @@ public class Java {
 			output.println("5. 繰り返しを試す");
 			output.println("6. 正規表現を試す");
 			output.println("7. コマンドライン引数を試す");
-			output.println("\n0. 終了");
-			output.println("\n");
+			output.println("\r\n0. 終了");
+			output.println("\r\n");
 			action=input.next();
-			output.println("\n\n\n");
+			output.println("\r\n\r\n\r\n");
 			if (eq("1")) Stdinout.main(arg);
 			else if (eq("2")) Values.main(arg);
 			else if (eq("3")) Operators.main(arg);
@@ -52,7 +52,7 @@ public class Java {
 			else if (eq("6")) RegExp.main(arg);
 			else if (eq("7")) Arguments.main(argsArg);
 			else if (eq("0")) break;
-			else output.println("指定したアクションは見つかりませんでした\n");
+			else output.println("指定したアクションは見つかりませんでした\r\n");
 		}
 	}
 }

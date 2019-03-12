@@ -2,3 +2,6 @@
 .DS_Store
 Launcher
 __pycache__
+Java/*.class
+C/Build
+C++/Build

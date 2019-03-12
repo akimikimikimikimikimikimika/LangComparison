@@ -12,7 +12,7 @@ public class Condition {
 
 	public static void main(String[] args) throws IOException{
 
-		output.println("\nこれから条件分岐を試します\n");
+		output.println("\r\nこれから条件分岐を試します\r\n");
 
 		if (test1) {
 			output.println("どうやらtest1は真のようです");
@@ -35,7 +35,7 @@ public class Condition {
 				output.println("なぞ私には興味がない");break;
 		}
 
-		output.print("\n\n");
+		output.print("\r\n\r\n");
 
 	}
 

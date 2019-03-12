@@ -3,7 +3,7 @@
 test1 = true
 test2 = false
 
-print("\nこれから条件分岐を試します\n")
+print("\r\n\r\nこれから条件分岐を試します\r\n\r\n")
 
 if test1 then
 	print("どうやらtest1は真のようです")
@@ -18,3 +18,5 @@ elseif not test2 and test1 then
 else
 	print("どれでもないようです")
 end
+
+print("\r\n\r\n")
