@@ -4,59 +4,58 @@ import java.util.regex.*;
 
 public class RegExp {
 
+	private static void print(String data) throws IOException{
+		System.out.print(data);
+	}
+	private static void println(String data) throws IOException{
+		System.out.println(data);
+	}
+
 	private static String text="IllUsTrAtE";
 	private static String test1="qUiVeR";
 	private static String test2="ShIvEr";
 
-	private static PrintStream output = System.out;
-
 	public static void main(String[] args) throws IOException{
 
-		output.println("\r\nこれから正規表現を試します\r\n");
+		println("\r\nこれから正規表現を試します\r\n");
 
-		output.print("\r\n検索\r\n");
+		println("\r\n検索");
 		Matcher m=Pattern.compile("l+").matcher("IllUsTrAtE");
-		output.print(text);
-		output.print(" → ");
+		print(text+" → ");
 		if (m.find()) {
-			output.print(m.group());
-			output.print(" (");
-			output.print(m.start());
-			output.print("~");
-			output.print(m.end());
-			output.print(")\r\n");
+			println(m.group()+" ("+m.start()+"~"+m.end()+")");
 		}
-		else output.print("マッチしていません\r\n");
+		else println("マッチしていません");
 
-		output.print("\r\n置換\r\n");
+		println("\r\n置換");
 		String text="IllUsTrAtE";
 		 // 正規表現が使えない置換
 		String newtext=text.replace("l","*");
-		output.print("string.replace: "+text+" → "+newtext+"\r\n");
+		println("string.replace: "+text+" → "+newtext);
 		 // 正規表現が使える置換
 		text="<a> <b> <c>";
 		newtext=text.replaceAll("(?i)<([a-z])>","{$1}");
-		output.print("string.replaceAll: "+text+" → "+newtext+"\r\n");
+		println("string.replaceAll: "+text+" → "+newtext);
 		newtext=text.replaceFirst("(?i)<([a-z])>","{$1}");
-		output.print("string.replaceFirst: "+text+" → "+newtext+"\r\n");
+		println("string.replaceFirst: "+text+" → "+newtext);
 
-		output.print("\r\n分割と結合\r\n");
+		println("\r\n分割と結合");
 		text="a-b-c";
 		String[] arr=text.split("-");
 		newtext=String.join("*",arr);
-		output.print(text+" → "+newtext+"\r\n");
+		println(text+" → "+newtext);
 
-		output.print("\r\nマッチの確認\r\n");
-		if (test1.matches("(?i)qu.*")) output.print(test1+" はquで始まります\r\n");
-		else output.print(test1+" はquで始まりません\r\n");
+		println("\r\nマッチの確認");
+		if (test1.matches("(?i)qu.*")) println(test1+" はquで始まります");
+		else println(test1+" はquで始まりません");
 		// string.matchesは完全一致であることに注意
 		// (?i)を正規表現中に埋め込むことで,ignoreCaseにできる
 
 		Pattern p=Pattern.compile("(?i)^qu");
-		if (p.matcher(test2).find()) output.print(test2+" はquで始まります\r\n");
-		else output.print(test2+" はquで始まりません\r\n");
+		if (p.matcher(test2).find()) println(test2+" はquで始まります");
+		else println(test2+" はquで始まりません");
 
-		output.print("\r\n\r\n");
+		println("\r\n");
 
 	}
 

@@ -10,24 +10,33 @@
 
 chdir(__DIR__."/PHP");
 
-print "\r\n\r\n";
+print <<<"Welcome"
 
-print "こんにちは。私の名前はPHP。\r\n";
+こんにちは。私の名前はPHP。
+Welcome;
 
 while (true) {
-	print "\r\n\r\n何がしたい?\r\n\r\n";
-	print "1. 標準入出力を試す\r\n";
-	print "2. 色々な値を試す\r\n";
-	print "3. 演算子を試す\r\n";
-	print "4. 条件分岐を試す\r\n";
-	print "5. 繰り返しを試す\r\n";
-	print "6. 正規表現を試す\r\n";
-	print "7. ファイル操作を試す\r\n";
-	print "8. ファイルパスを試す\r\n";
-	print "9. コマンドライン引数を試す\r\n";
-	print "\r\n";
-	print "0. 終了\r\n";
-	print "\r\n";
+	print <<< Menu
+
+何がしたい?
+
+1. 標準入出力を試す
+2. 色々な値を試す
+3. 演算子を試す
+4. 条件分岐を試す
+5. 繰り返しを試す
+6. 正規表現を試す
+7. ファイル操作を試す
+8. ファイルパスを試す
+9. 数学的演算を試す
+a. 日付と時刻を試す
+b. プロセス系を試す
+c. コマンドライン引数を試す
+
+0. 終了
+
+
+Menu;
 	$action = trim(fgets(STDIN));
 	print "\r\n\r\n\r\n";
 	if ($action == "0") {
@@ -58,10 +67,22 @@ while (true) {
 		passthru("./Path.php");
 	}
 	elseif ($action == "9") {
+		passthru("./Math.php");
+	}
+	elseif ($action == "a") {
+		passthru("./DateTime.php");
+	}
+	elseif ($action == "b") {
+		passthru("./Process.php");
+	}
+	elseif ($action == "c") {
 		passthru("./Arguments.php このプログラムを直接実行してみよう。 \"ここにあるよ: PHP/Arguments.php\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"PHP/Arguments.php 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	else {
-		print "指定したアクションは見つかりませんでした\r\n";
+		print <<<"Error"
+指定したアクションは見つかりませんでした
+
+Error;
 	}
 }
 

@@ -22,15 +22,17 @@ Third line
 		%s : String
 		%% : %
 '''
+# バイト
+byte = b"Python byte type" # ASCII文字しか扱えない
 # 数値
-number = 6
-# 数値 (複素数)
-com = 3+1j
+integer = 6
+floating = .0375e-6
+comp = 3+1j
 # 真偽値
 boolean = True
-# リスト
+# リスト (mutable,主に同種の値の集合)
 lis = [1, "second", 3, 3.14, False]
-# タプル
+# タプル (immutable,主に異種の値の集合)
 tup = (1, "second", 3, 3.14, False)
 # 辞書
 dictionary = {
@@ -40,28 +42,46 @@ dictionary = {
 	"d": 3.14,
 	"e": False
 }
+# 範囲
+ranE = range(5,8) # 5≤x<8
+	# だけど, random.randint(5,8) は, 5≤x≤8
 # 関数
 def cube(val):
 	return val ** 3
 # ラムダ (無名関数)
 func = lambda val: val ** 2
 
-print("\r\n色々な値を試します")
-print(f"文字列:{string}")
-print(f"   長さ:{len(string)}")
-print(f"文字列2:\r\n{lines}")
-print(f"数値:{number},{func(number)},{cube(number)},{com}")
-print(f"真偽値:{boolean}")
-print(f"リスト:\r\n{lis}")
-print(f"   2番目:{lis[2]}")
-print(f"   大きさ:{len(lis)}")
-print(f"タプル:\r\n{tup}")
-print(f"   2番目:{tup[2]}")
-print(f"   大きさ:{len(tup)}")
-print(f"辞書:\r\n{dictionary}")
-print(f"   b= {dictionary['b']}")
-print(f"   大きさ:{len(dictionary)}")
-print(f"関数:\r\n{cube}")
-print(f"ラムダ (無名関数):\r\n{func}")
+print(f"""
 
-print("\r\n")
+色々な値を試します
+
+文字列: {string}
+   長さ: {len(string)}
+文字列2:
+{lines}
+数値:
+   整数: {integer},{func(integer)},{cube(integer)}
+   浮動小数: {floating}
+   複素数: {comp}
+真偽値: {boolean}
+リスト:
+   {lis}
+   2番目: {lis[2]}
+   大きさ: {len(lis)}
+タプル:
+   {tup}
+   2番目: {tup[2]}
+   大きさ: {len(dictionary)}
+辞書:
+   {dictionary}
+   b= {dictionary['b']}
+   大きさ:{len(dictionary)}
+範囲:
+   5≤x<8 = {ranE}
+関数:
+   {cube}
+ラムダ (無名関数):
+   {func}
+""")
+
+print("\r\n\r\n")

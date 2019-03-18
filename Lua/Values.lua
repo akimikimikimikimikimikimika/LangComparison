@@ -57,4 +57,4 @@ print(color)
 print("   "..string.format("r=%d g=%d b=%d",color.r,color.g,color.b))
 print("   "..string.format("lightness=%d",color:lightness()))
 
-print("\r\n\r\n")
+print("\r\n")

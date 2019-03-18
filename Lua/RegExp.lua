@@ -11,4 +11,4 @@ text="<a> <b> <c>"
 newtxt=string.gsub( text, "%<([a-z])%>", "{%1}" )
 print("string.gsub: "..text.." → "..newtxt)
 
-print("\r\n\r\n")
+print("\r\n")

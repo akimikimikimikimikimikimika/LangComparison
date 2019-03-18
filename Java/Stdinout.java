@@ -4,18 +4,25 @@ import java.util.Scanner;
 
 public class Stdinout {
 
+	private static void println(String data) throws IOException{
+		System.out.println(data);
+	}
 	private static Scanner input = new Scanner(System.in);
-	private static PrintStream output = System.out;
 
 	public static void main(String[] args) throws IOException{
 
-		output.println("こんにちは。私の名前はJavaです。");
-		output.println("私のロゴはコーヒーカップで有名です。");
-		output.println("私にはコンパイルが必要です。");
-		output.println("あなたのことを教えてください");
-		String str = new String(input.next());
-		output.println("あなたは"+str+"ですね。わかりました。");
-
+		println("こんにちは。私の名前はJavaです。");
+		println("私のロゴはコーヒーカップで有名です。");
+		println("私にはコンパイルが必要です。");
+		println("あなたのことを教えてください");
+		String str = input.next();
+		println("あなたは"+str+"ですね。わかりました。");
+		println("これから幾つかの出力の仕方を披露しますね。");
+		System.out.println("後ろに改行を付けます");
+		System.out.print("後ろに改行を付けません。");
+		println("入力してみて");
+		input.next();
+		println("以上です");
 	}
 
 }

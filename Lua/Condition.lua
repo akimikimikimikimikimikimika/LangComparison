@@ -19,4 +19,4 @@ else
 	print("どれでもないようです")
 end
 
-print("\r\n\r\n")
+print("\r\n")

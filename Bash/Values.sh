@@ -1,8 +1,8 @@
 #! /usr/local/bin/bash
 
 # 文字列
-str="シ"ェ"ル" # 空白を含む文字列などは必ず"や'で囲む。
-str2="""
+string="シ"ェ"ル" # 空白を含む文字列などは必ず"や'で囲む。
+lines="""
 
 First line
 Second line
@@ -29,22 +29,25 @@ cube(){
 # 	echo $((val*val))
 # }
 
-echo
-echo 色々な値を試します
-echo
-echo 文字列:"$str"
-echo "   長さ:"${#str}
-echo 文字列2:"$str2"
-echo 関数を実行:"6 → "`cube 6`
-echo 配列:"${array[@]}" # 全要素表示
-echo "   2番目:""${array[2]}"
-echo "   大きさ:""${#array[@]}"
-echo 配列2:"${array2[@]}" # 全要素表示
-echo "   2番目:""${array2[2]}"
-echo "   大きさ:""${#array2[@]}"
-echo 連想配列:"${hash[@]}" # 全要素表示
-echo "   b=""${hash[b]}"
-echo "   大きさ:""${#hash[@]}"
+echo """
+色々な値を試します
 
-echo
-echo
+文字列: $string
+   長さ: ${#string}
+文字列2:
+$lines
+配列:
+   ${array[@]}
+   2番目: ${array[2]}
+   大きさ: ${#array[@]}
+配列2:
+   ${array2[@]}
+   2番目: ${array2[2]}
+   大きさ: ${#array2[@]}
+連想配列:
+   ${hash[@]}
+   b= ${hash[b]}
+   大きさ: ${#hash[@]}
+"""
+
+printf "\r\n\r\n"

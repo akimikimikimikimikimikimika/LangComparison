@@ -4,7 +4,9 @@ import java.util.*;
 
 public class Values {
 
-	private static PrintStream output = System.out;
+	private static void println(String data) throws IOException{
+		System.out.println(data);
+	}
 	public static void main(String[] args) throws IOException{
 
 		String str=new String("ジャバ");
@@ -32,41 +34,42 @@ public class Values {
 		HashMap<String,String> map = new HashMap<String,String>();
 		map.put("first","3");map.put("second","1");map.put("third","4");
 
-		output.println("\r\n色々な値を試します\r\n");
-		output.print("\r\n\r\n文字列");
-		output.print("\r\n String: ");output.print(str);
-		output.print("\r\n\r\n真偽値");
-		output.print("\r\n boolean: ");output.print(bool);
-		output.print("\r\n\r\n文字");
-		output.print("\r\n char: ");output.print(cha1);
-		demoValue("Character", cha2);
-		output.print("\r\n\r\n整数");
-		output.print("\r\n byte: ");output.print(intB1);
-		demoValue("Byte", intB2);
-		output.print("\r\n short: ");output.print(intS1);
-		demoValue("Short", intS2);
-		output.print("\r\n int: ");output.print(intI1);
-		demoValue("Integer", intI2);
-		output.print("\r\n long: ");output.print(intL1);
-		demoValue("Long", intL2);
-		output.print("\r\n\r\n浮動小数点数");
-		output.print("\r\n float: ");output.print(flt1);
-		demoValue("Float", flt2);
-		output.print("\r\n double: ");output.print(dbl1);
-		demoValue("Double", dbl2);
-		output.print("\r\n\r\n配列");
-		output.print("\r\n int[]: ");output.print(arr1);
-		demoValue("ArrayList<Integer>", arr2);
-		demoValue("LinkedList<Integer>", arr3);
-		output.print("\r\n\r\nマップ");
-		demoValue("HashMap<String,String>", map);
-		output.print("\r\n\r\n");
+		println("\r\n色々な値を試します");
+		println("\r\n文字列");
+		println(" String: "+str+" (Primitive)");
+		println("\r\n真偽値");
+		println(" boolean: "+bool+" (Primitive)");
+		println("\r\n文字");
+		println(" char: "+cha1+" (Primitive)");
+		println(" Character: "+cha2);
+		println("\r\n整数");
+		println(" byte: "+intB1+" (Primitive)");
+		println(" Byte: "+intB2);
+		println(" short: "+intS1+" (Primitive)");
+		println(" Short: "+intS2);
+		println(" int: "+intI1+" (Primitive)");
+		println(" Integer: "+intI2);
+		println(" long: "+intL1+" (Primitive)");
+		println(" Long: "+intL2);
+		println("\r\n浮動小数点数");
+		println(" float: "+flt1+" (Primitive)");
+		println(" Float: "+flt2);
+		println(" double: "+dbl1+" (Primitive)");
+		println(" Double: "+dbl2);
+		println("\r\n配列");
+		println(" int[]: "+arr1);
+		println(" ArrayList<Integer>: "+arr2);
+		println(" LinkedList<Integer>: "+arr3);
+		println("\r\nマップ");
+		println(" HashMap<String,String>: "+map);
+
+		println("\r\n");
 
 	}
 
-	private static void demoValue(String key, Object value) {
-		output.print("\r\n "+key+": ");
-		output.print(value);
+	private static void demoValue(String key, Object value) throws IOException {
+		println(" "+key+": ");
+		System.out.println(value);
 	}
 
 }

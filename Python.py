@@ -21,25 +21,34 @@ os.chdir(os.path.normpath(os.path.dirname(os.path.join(os.getcwd(),__file__))+"/
 	この時,module内のコードは即座に実行され,module.pyに関数mainがあれば,module.main()のようにこちらからmodule.py内の関数を実行できる。
 '''
 
-print("\r\n")
+print("""
 
-print("こんにちは。私の名前はPython。")
+こんにちは。私の名前はPython。
+""",end="")
+
 while True:
-	print("\r\n\r\n何がしたい?\r\n")
-	print("1. 標準入出力を試す")
-	print("2. 色々な値を試す")
-	print("3. 演算子を試す")
-	print("4. 条件分岐を試す")
-	print("5. 繰り返しを試す")
-	print("6. 正規表現を試す")
-	print("7. ファイル操作を試す")
-	print("8. ファイルパスを試す")
-	print("9. コマンドライン引数を試す")
-	print("\r\n")
-	print("0. 終了")
-	print("\r\n")
+	print("""
+
+何がしたい?
+
+1. 標準入出力を試す
+2. 色々な値を試す
+3. 演算子を試す
+4. 条件分岐を試す
+5. 繰り返しを試す
+6. 正規表現を試す
+7. ファイル操作を試す
+8. ファイルパスを試す
+9. 数学的演算を試す
+a. 日付と時刻を試す
+b. プロセス系を試す
+c. コマンドライン引数を試す
+0. 終了
+
+
+""")
 	action = input()
-	print("\r\n\r\n\r\n")
+	print("\r\n\r\n")
 	if action=="0":
 		break
 	elif action=="1":
@@ -59,8 +68,17 @@ while True:
 	elif action=="8":
 		rtn=subprocess.call("./Path.py")
 	elif action=="9":
+		rtn=subprocess.call("./Math.py")
+	elif action=="a":
+		rtn=subprocess.call("./DateTime.py")
+	elif action=="b":
+		rtn=subprocess.call("./Process.py")
+	elif action=="c":
 		rtn=subprocess.call(["./Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"])
 	else:
-		print("指定したアクションは見つかりませんでした")
+		print("""
+指定したアクションは見つかりませんでした
+
+""")
 
 sys.exit(0)

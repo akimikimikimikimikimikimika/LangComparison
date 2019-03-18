@@ -1,5 +1,6 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
+
+use Math::Complex;
 
 # スカラ
 my $string = "パール";
@@ -17,8 +18,11 @@ Lines
 	⚠︎ 変数展開はスカラでのみ可。それ以外は式展開を使う。
 	⚠︎ シングルクオート不可。エスケープ文字も使えなくなる。
 =cut
-my $number = 6;
+my $integer = 6;
+my $float = .0375e-6;
+my $complex = 3+1*i;
 my $ud = undef;
+
 # 配列,リスト
 my @array = (1, "second", 3, 3.14);
 # ハッシュ
@@ -29,7 +33,7 @@ my %hash = (
 	d => 3.14
 );
 # 範囲
-$ran = 5..8;
+@ranI = 5..8; # 5≤x≤8
 # 関数 (サブルーチン)
 sub cube {
 	my $val = $_[0];
@@ -41,19 +45,31 @@ my $func = sub {
 	return $val ** 2;
 };
 
-print "\r\n色々な値を試します\r\n";
-print "\r\n文字列:${string}";
-print "\r\n   長さ:@{[length($string)]}";
-print "\r\n文字列2:\r\n${lines}";
-print "\r\n数値:@{[$number]},@{[$func->($number)]},@{[&cube($number)]}";
-print "\r\n未定義値:@{[$ud]}";
-print "\r\n配列:\r\n@{[@array]}";
-print "\r\n   2番目:@{[@array[2]]}";
-print "\r\n   大きさ:@{[scalar(@array)]}";
-print "\r\nハッシュ:\r\n@{[%hash]}";
-print "\r\n   b= @{[$hash{b}]}";
-print "\r\n   大きさ:@{[scalar(%hash)]}";
-print "\r\n範囲:\r\n$ran";
-print "\r\n無名関数:\r\n$func";
+print <<"Values";
+
+色々な値を試します
+
+文字列: $string
+   長さ: @{[length($string)]}
+文字列2:
+$lines
+数値:
+   整数: $integer,@{[$func->($integer)]},@{[&cube($integer)]}
+   浮動小数: $float
+   複素数: $complex
+未定義値: $ud
+配列:
+   @array
+   2番目: @{[@array[2]]}
+   大きさ: @{[scalar(@array)]}
+ハッシュ:
+   @{[%hash]}
+   b= @{[$hash{b}]}
+   大きさ: @{[scalar(%hash)]}
+範囲:
+   5≤x≤8 = @ranI
+無名関数:
+   $func
+Values
 
 print "\r\n\r\n";

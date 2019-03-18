@@ -3,40 +3,41 @@ import java.io.*;
 
 public class Loop {
 
-	private static PrintStream output = System.out;
+	private static void println(String data) throws IOException{
+		System.out.println(data);
+	}
 
 	public static void main(String[] args) throws IOException{
 
-		output.println("\r\nこれからループ処理を試します\r\n");
+		println("\r\nこれからループ処理を試します\r\n");
 
-		output.print("\r\nfor (int n=0;n<3;n++) {…}\r\n");
-		for (Integer n=0;n<3;n++) output.print("n="+n.toString()+"のループ\r\n");
+		println("\r\nfor (int n=0;n<3;n++) {…}");
+		for (int n=0;n<3;n++) println("n="+n+"のループ");
 
-		output.print("\r\nfor (int n=0,m=2;n<3;n++,m=m+3) {…}\r\n");
-		for (Integer n=0,m=2;n<3;n++,m=m+3) {
-			output.print("n="+n.toString()+"のループ");
-			output.print(" このとき, m="+m.toString()+"\r\n");
+		println("\r\nfor (int n=0,m=2;n<3;n++,m=m+3) {…}");
+		for (int n=0,m=2;n<3;n++,m=m+3) {
+			println("n="+n+"のループ このとき,m="+m);
 		}
 
-		output.print("\r\nfor (char c:array) {…}\r\n");
-		Character[] cs={'壱','弐','参'};
-		for (Character c:cs) output.print("c='"+c.toString()+"'のループ\r\n");
+		println("\r\nfor (char c:array) {…}");
+		char[] cs={'壱','弐','参'};
+		for (char c:cs) println("c='"+c+"'のループ");
 
-		output.print("\r\nwhile (~) {…}\r\n");
+		println("\r\nwhile (~) {…}");
 		String str="";
 		while (str.length()<6) {
 			str+="*";
-			output.print(str+"\r\n");
+			println(str);
 		}
 
-		output.print("\r\ndo {…} while (~)\r\n");
+		println("\r\ndo {…} while (~)");
 		str="";
 		do {
 			str+="*";
-			output.print(str+"\r\n");
+			println(str);
 		} while (str.length()<6);
 
-		output.print("\r\n\r\n");
+		println("\r\n");
 
 	}
 

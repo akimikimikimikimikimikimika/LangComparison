@@ -37,4 +37,4 @@ print("\r\n\r\n⚠︎ C言語との違い\r\n\r\n")
 print("break	: 健在")
 print("continue : ない!")
 
-print("\r\n\r\n")
+print("\r\n")

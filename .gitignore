@@ -5,3 +5,7 @@ __pycache__
 Java/*.class
 C/Build
 C++/Build
+Rust/target
+Rust/Rust
+Python/String.py
+Go/Go

@@ -9,25 +9,36 @@
 =cut
 
 use Cwd;
+use File::Basename;
+
 chdir "@{[Cwd::realpath(dirname($0))]}/Perl";
 
-print "\r\n\r\n";
+print <<"Welcome";
 
-print "こんにちは。私の名前はPerl。";
+こんにちは。私の名前はPerl。
+Welcome
 while (1) {
-	print "\r\n\r\n何がしたい?\r\n\r\n";
-	print "1. 標準入出力を試す\r\n";
-	print "2. 色々な値を試す\r\n";
-	print "3. 演算子を試す\r\n";
-	print "4. 条件分岐を試す\r\n";
-	print "5. 繰り返しを試す\r\n";
-	print "6. 正規表現を試す\r\n";
-	print "7. ファイル操作を試す\r\n";
-	print "8. ファイルパスを試す\r\n";
-	print "9. コマンドライン引数を試す\r\n";
-	print "\r\n";
-	print "0. 終了\r\n";
-	print "\r\n";
+	print <<"Menu";
+
+何がしたい?
+
+1. 標準入出力を試す
+2. 色々な値を試す
+3. 演算子を試す
+4. 条件分岐を試す
+5. 繰り返しを試す
+6. 正規表現を試す
+7. ファイル操作を試す
+8. ファイルパス表示を試す
+9. 数学的演算を試す
+a. 日付と時刻を試す
+b. プロセス系を試す
+c. コマンドライン引数を試す
+
+0. 終了
+
+
+Menu
 	$action = <STDIN>;
 	chomp($action);
 	print "\r\n\r\n\r\n";
@@ -59,10 +70,22 @@ while (1) {
 		system("./Path.pl");
 	}
 	elsif ($action eq "9") {
+		system("./Math.pl");
+	}
+	elsif ($action eq "a") {
+		system("./DateTime.pl");
+	}
+	elsif ($action eq "b") {
+		system("./Process.pl");
+	}
+	elsif ($action eq "c") {
 		system("./Arguments.pl このプログラムを直接実行してみよう。 \"ここにあるよ: Perl/Arguments.pl\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Perl/Arguments.pl 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	else {
-		print "指定したアクションは見つかりませんでした\r\n\r\n";
+		print <<"Error";
+指定したアクションは見つかりませんでした
+
+Error
 	}
 }
 

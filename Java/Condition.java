@@ -3,7 +3,9 @@ import java.io.*;
 
 public class Condition {
 
-	private static PrintStream output = System.out;
+	private static void println(String data) throws IOException{
+		System.out.println(data);
+	}
 
 	private static boolean test1 = true;
 	private static boolean test2 = false;
@@ -12,30 +14,29 @@ public class Condition {
 
 	public static void main(String[] args) throws IOException{
 
-		output.println("\r\nこれから条件分岐を試します\r\n");
+		println("\r\nこれから条件分岐を試します\r\n");
 
 		if (test1) {
-			output.println("どうやらtest1は真のようです");
+			println("どうやらtest1は真のようです");
 		}
 
-		if (!test1) output.println("どうやらtest1は偽のようです");
-		else if (test2) output.println("どうやらtest2は真のようです");
-		else if (!test2&&test1) output.println("真偽が混在しているようです");
-		else output.println("どれでもないようです");
+		if (!test1) println("どうやらtest1は偽のようです");
+		else if (test2) println("どうやらtest2は真のようです");
+		else if (!test2&&test1) println("真偽が混在しているようです");
+		else println("どれでもないようです");
 
-		output.print(val);
 		switch (val) {
 			case 0:case 1:
-				output.println("は特別な値である");break;
+				println(val+"は特別な値である");break;
 			case 2:case 4:case 6:
-				output.println("は素数ではない");break;
+				println(val+"は素数ではない");break;
 			case 3:case 5:case 7:
-				output.println("は素数である");break;
+				println(val+"は素数である");break;
 			default:
-				output.println("なぞ私には興味がない");break;
+				println(val+"なぞ私には興味がない");break;
 		}
 
-		output.print("\r\n\r\n");
+		println("\r\n");
 
 	}
 

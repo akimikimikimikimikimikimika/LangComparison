@@ -36,4 +36,4 @@ print(string.format("\"abc\"..\"def\" = \"%s\"","abc".."def"))
 	%E : 浮動小数 (255 = 2.55E+2)
 ]]
 
-print("\r\n\r\n")
+print("\r\n")

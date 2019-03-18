@@ -15,4 +15,4 @@ print("入力してみて")
 io.stdin:read()
 print("以上です")
 
-print("\r\n\r\n")
+print("\r\n")

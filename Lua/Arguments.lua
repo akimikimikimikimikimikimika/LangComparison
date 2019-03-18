@@ -8,4 +8,4 @@ for n=1,#arg,1 do
 	print(string.format(" %d: %s",n,arg[n]))
 end
 
-print("\r\n\r\n")
+print("\r\n")

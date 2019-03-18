@@ -10,23 +10,32 @@
 
 Dir.chdir("#{__dir__}/Ruby");
 
-print "\r\n\r\n";
+print """
 
-print "こんにちは。私の名前はRuby。";
+こんにちは。私の名前はRuby。
+""";
 while true
-	print "\r\n\r\n何がしたい?\r\n\r\n";
-	print "1. 標準入出力を試す\r\n";
-	print "2. 色々な値を試す\r\n";
-	print "3. 演算子を試す\r\n";
-	print "4. 条件分岐を試す\r\n";
-	print "5. 繰り返しを試す\r\n";
-	print "6. 正規表現を試す\r\n";
-	print "7. ファイル操作を試す\r\n";
-	print "8. ファイルパスを試す\r\n";
-	print "9. コマンドライン引数を試す\r\n";
-	print "\r\n";
-	print "0. 終了\r\n";
-	print "\r\n";
+	print """
+
+何がしたい?
+
+1. 標準入出力を試す
+2. 色々な値を試す
+3. 演算子を試す
+4. 条件分岐を試す
+5. 繰り返しを試す
+6. 正規表現を試す
+7. ファイル操作を試す
+8. ファイルパスを試す
+9. 数学的演算を試す
+a. 日付と時刻を試す
+b. プロセス系を試す
+c. コマンドライン引数を試す
+
+0. 終了
+
+
+""";
 	action = gets.chomp;
 	print "\r\n\r\n\r\n";
 	if action=="0"
@@ -48,9 +57,18 @@ while true
 	elsif action=="8"
 		system("./Path.rb");
 	elsif action=="9"
+		system("./Math.rb");
+	elsif action=="a"
+		system("./DateTime.rb");
+	elsif action=="b"
+		system("./Process.rb");
+	elsif action=="c"
 		system("./Arguments.rb このプログラムを直接実行してみよう。 \"ここにあるよ: Ruby/Arguments.rb\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Ruby/Arguments.rb 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	else
-		print "指定したアクションは見つかりませんでした\r\n\r\n";
+		print """
+指定したアクションは見つかりませんでした
+
+""";
 	end
 end
 

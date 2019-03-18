@@ -9,31 +9,35 @@ COMMENT
 
 cd "$(cd $(dirname $0); pwd)"/Bash
 
-echo
-echo
+printf """
 
-echo "こんにちは。私はシェルスクリプト。"
+こんにちは。私の名前はBash。
+"""
+
 while : ; do
-	echo
-	echo
-	echo "何がしたい?"
-	echo
-	echo "1. 標準入出力を試す"
-	echo "2. 色々な値を試す"
-	echo "3. 演算子を試す"
-	echo "4. 条件分岐を試す"
-	echo "5. 繰り返しを試す"
-	echo "6. 正規表現を試す"
-	echo "7. ファイル操作を試す"
-	echo "8. ファイルパスを試す"
-	echo "9. コマンドライン引数を試す"
-	echo
-	echo "0. 終了"
-	echo
+	printf """
+
+何がしたい?
+
+1. 標準入出力を試す
+2. 色々な値を試す
+3. 演算子を試す
+4. 条件分岐を試す
+5. 繰り返しを試す
+6. 正規表現を試す
+7. ファイル操作を試す
+8. ファイルパスを試す
+9. 数学的演算を試す
+a. 日付と時刻を試す
+b. プロセス系を試す
+c. コマンドライン引数を試す
+
+0. 終了
+
+
+"""
 	read action
-	echo
-	echo
-	echo
+	printf "\r\n\r\n\r\n"
 	if [ "$action" = 0 ]; then
 		break
 	elif [ "$action" = 1 ]; then
@@ -53,9 +57,18 @@ while : ; do
 	elif [ "$action" = 8 ]; then
 		./Path.sh
 	elif [ "$action" = 9 ]; then
+		./Math.sh
+	elif [ "$action" = a ]; then
+		./DateTime.sh
+	elif [ "$action" = b ]; then
+		./Process.sh
+	elif [ "$action" = c ]; then
 		./Arguments.sh "このプログラムを直接実行してみよう。" "ここにあるよ: Shell/Arguments.sh" "" "コマンドラインに以下のように入力して実行します" "" "Shell/Arguments.sh 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます"
 	else
-		echo "指定したアクションは見つかりませんでした"
+		printf """
+指定したアクションは見つかりませんでした
+
+"""
 	fi
 done
 
