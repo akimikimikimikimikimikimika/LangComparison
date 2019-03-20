@@ -90,7 +90,7 @@ pwsh PowerShell.ps1
 lua Lua.lua # 実行
 luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Luac.lua”という名前のファイルが生成する)
 ```
-- Java, C++, C, Go, Rust 
+- Java, C++, C, Go, Rust  
 コンパイルの仕方はコード内に掲載している
 
 ## Shebang
@@ -99,7 +99,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Bash, Lua, PowerShell には下�
 ```Shell
 #! /usr/local/bin/lua
 ```
-但し, Perl, Ruby, PHP, Python, Bash, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。  
+但し, Perl, Ruby, PHP, Python, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。  
 実行例 (Luaの場合,ディレクトリ移動を実行済)
 ```Shell
 ./Lua.lua # このように入力すればLua.luaを実行してくれる
@@ -122,7 +122,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Bash, Lua, PowerShell には下�
 
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ, Perl / Ruby / PHP / Python / Bash / PowerShell で同時進行中
+今のところ, Perl / Ruby / PHP / Python / Bash / PowerShell で同時進行中  
 Luaは意外にもサポートされていない機能が多いため,停滞気味。
 - [x] 標準入出力
 - [x] 基本の値

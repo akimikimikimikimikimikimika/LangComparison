@@ -6,7 +6,7 @@
 	複数行のコメント
 #>
 
-Set-Location -path PowerShell
+Set-Location -path "${PSScriptRoot}/PowerShell"
 
 <#
 	外部ファイルを実行する時は,そのパスを直接記載すれば良いだけ。
@@ -81,7 +81,7 @@ c. コマンドライン引数を試す
 		"./Process.ps1";
 	}
 	elseif ($action -eq "c") {
-		"./Arguments.ps1" "このプログラムを直接実行してみよう。" "ここにあるよ: PowerShell/Arguments.ps1" "" "コマンドラインに以下のように入力して実行します" "" "PowerShell/Arguments.ps1 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます";
+		./Arguments.ps1 "このプログラムを直接実行してみよう。" "ここにあるよ: PowerShell/Arguments.ps1" "" "コマンドラインに以下のように入力して実行します" "" "PowerShell/Arguments.ps1 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます";
 	}
 	else {
 		@'
