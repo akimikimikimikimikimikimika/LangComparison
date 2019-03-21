@@ -2,7 +2,7 @@
 
 use Math::Complex;
 
-# スカラ
+# スカラ (変数名は必ず $ で始まる)
 my $string = "パール";
 my $lines = <<"Lines";
 
@@ -23,9 +23,9 @@ my $float = .0375e-6;
 my $complex = 3+1*i;
 my $ud = undef;
 
-# 配列,リスト
+# 配列,リスト (変数名は必ず @ で始まる)
 my @array = (1, "second", 3, 3.14);
-# ハッシュ
+# ハッシュ (変数名は必ず % で始まる)
 my %hash = (
 	a => 1,
 	b => "second",

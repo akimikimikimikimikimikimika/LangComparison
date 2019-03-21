@@ -12,5 +12,4 @@ for s in "$@" ; do
 	n=$((n+1))
 done
 
-echo
-echo
+printf "\r\n\r\n"

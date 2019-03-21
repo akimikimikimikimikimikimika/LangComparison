@@ -9,5 +9,4 @@ echo "このファイルの実行パス:   ""$0"
 echo "このファイルの名前:	   ""`basename "$0"`"
 echo "このファイルのある場所:   ""$(cd $(dirname $0); pwd)"
 
-echo
-echo
+printf "\r\n\r\n"

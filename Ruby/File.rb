@@ -1,5 +1,4 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 require "FileUtils"; # FileUtils全般の使用に必要
 

@@ -1,5 +1,4 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
 
 use Cwd;
 use File::Basename; # dirname用

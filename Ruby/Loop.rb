@@ -1,5 +1,4 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 print "\r\nこれからループ処理を試します\r\n\r\n";
 

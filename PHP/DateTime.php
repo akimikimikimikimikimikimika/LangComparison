@@ -5,12 +5,13 @@ $i = function($v){return $v;};
 
 $st=gettimeofday();
 
-print "\r\nこれから日付と時刻を試します\r\n\r\n";
+print <<< "DateTime"
 
-print "現在時刻: {$i(date_format(new DateTime(),'Y-m-d H:i:s'))}\r\n";
-print "タイムゾーン: {$i(date_default_timezone_get())}\r\n\r\n";
+これから日付と時刻を試します
 
-print <<< Format
+現在時刻: {$i(date_format(new DateTime(),'Y-m-d H:i:s'))}
+タイムゾーン: {$i(date_default_timezone_get())}
+
 date(..) = "
 datetime    c : {$i(date("c"))}
             r : {$i(date("r"))}
@@ -48,20 +49,20 @@ timezone    e : {$i(date("e"))}
             Z : {$i(date("Z"))}
 isDST       I : {$i(date("I"))}
 "
-Format;
 
-print "\r\n\r\n様々な書式\r\n";
-print "Atom:     {$i(date(DateTime::ATOM))}\r\n";
-print "Cookie:   {$i(date(DateTime::COOKIE))}\r\n";
-print "ISO-8601: {$i(date(DateTime::ISO8601))}\r\n";
-print "RFC 822:  {$i(date(DateTime::RFC822))}\r\n";
-print "RFC 1036: {$i(date(DateTime::RFC1036))}\r\n";
-print "RFC 1123: {$i(date(DateTime::RFC1123))}\r\n";
-print "RFC 2822: {$i(date(DateTime::RFC2822))}\r\n";
-print "RSS:      {$i(date(DateTime::RSS))}\r\n";
-print "W3C:      {$i(date(DateTime::W3C))}\r\n";
+様々な書式
 
-print "\r\nstrftime(..) = \"{$i(strftime(
+Atom:     {$i(date(DateTime::ATOM))}
+Cookie:   {$i(date(DateTime::COOKIE))}
+ISO-8601: {$i(date(DateTime::ISO8601))}
+RFC 822:  {$i(date(DateTime::RFC822))}
+RFC 1036: {$i(date(DateTime::RFC1036))}
+RFC 1123: {$i(date(DateTime::RFC1123))}
+RFC 2822: {$i(date(DateTime::RFC2822))}
+RSS:      {$i(date(DateTime::RSS))}
+W3C:      {$i(date(DateTime::W3C))}
+
+strftime(..) = "{$i(strftime(
 <<< Format
 
 datetime    %%c : %c
@@ -101,11 +102,14 @@ timezone    %%Z : %Z
             %%z : %z
 
 Format
-))}\"\r\n";
+))}"
+
+
+DateTime;
 
 $en=gettimeofday();
 
-print "\r\nこの処理に要した時間: {$i(($en['sec']-$st['sec'])*100000+$en['usec']-$st['usec'])} マイクロ秒\r\n";
+print "この処理に要した時間: {$i(($en['sec']-$st['sec'])*100000+$en['usec']-$st['usec'])} マイクロ秒\r\n";
 
 print "\r\n\r\n";
 

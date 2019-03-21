@@ -1,5 +1,4 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 print "ホームディレクトリ:       #{Dir.home}\r\n";
 print "カレントディレクトリ:     #{Dir.pwd}\r\n\r\n";

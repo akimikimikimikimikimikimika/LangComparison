@@ -66,6 +66,7 @@ os.makedirs("Package/Module/Submodule/Item")
 print("> BlankとModuleを複製\r\n")
 shutil.copy("Blank","Package/Blank")
 shutil.copytree("Package/Module","Package/Module Copy")
+	# shutil.copytree を用いることで,フォルダ内の内容もまとめて複製できる
 
 # ファイル/フォルダの削除
 

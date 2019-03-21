@@ -1,5 +1,4 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
 
 print "\r\nこれから正規表現を試します\r\n\r\n";
 

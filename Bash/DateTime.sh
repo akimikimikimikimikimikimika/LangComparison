@@ -1,15 +1,14 @@
 #! /usr/local/bin/bash
 
-echo
-echo これから日付と時刻を試します
-echo
-echo
+echo """
 
-echo "現在ローカル時刻: "`date`
-echo "現在UTC時刻:      "`date -u`
-echo
-echo "フォーマット"
-echo "date +.. = \"""`date +"""
+これから日付と時刻を試します
+
+現在ローカル時刻: `date`
+現在UTC時刻:      `date -u`
+
+フォーマット
+date +.. = \"`date +"""
 datetime    %%c : %c
 date        %%D : %D
             %%x : %x
@@ -47,7 +46,8 @@ second      %%S : %S
 UNIX epoch  %%s : %s
 timezone    %%Z : %Z
             %%z : %z
-"""`""\""
 
-echo
-echo
+"""`\"
+"""
+
+printf "\r\n\r\n"

@@ -1,5 +1,4 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
 
 use File::Copy; # copy,moveに必要
 use File::Path; # mkpath,rmtreeに必要
@@ -114,6 +113,7 @@ print "> 実行ファイルを作成します\r\n";
 open(FH5,">>","Package/Perl.pl");
 print FH5 <<"Perl Script";
 #! /usr/local/bin/perl
+
 print "Hello world!";
 Perl Script
 close(FH5);

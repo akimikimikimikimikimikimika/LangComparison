@@ -1,5 +1,4 @@
 #! /usr/bin/perl
-# -*- coding: utf-8 -*-
 
 $test1 = 1;
 $test2 = 0;

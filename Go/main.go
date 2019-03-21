@@ -6,10 +6,11 @@
 */
 
 /*
-	Goのコンパイル
-	cd Go ← カレントディレクトリをGoにする必要がある
-	go build : コンパイル
-	./Go (Windowsは ./Go.exe)
+	Unix系でのGoの使い方
+	コンパイル
+		(cd Go ; go build ; mv Go Demo)
+	実行
+		Go/Demo
 */
 package main
 

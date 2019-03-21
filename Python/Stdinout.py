@@ -5,7 +5,9 @@ import sys
 
 print("こんにちは。私の名前はPython,即ち蛇です。")
 print("あなたのことを教えてください")
-aboutYou = input("あなたは")
+
+aboutYou = input("あなたは...")
+
 print(f"あなたは {aboutYou} ですね。わかりました。\r\n")
 print("\r\nこれから幾つかの出力の仕方を披露しますね。")
 print("後ろに改行を付けます")

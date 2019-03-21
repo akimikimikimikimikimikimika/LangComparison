@@ -1,12 +1,19 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
 
-print "こんにちは。私の名前はPerl,即ち真珠です。\r\n";
-print "あなたのことを教えてください\r\n";
+print <<"Stdinout";
+こんにちは。私の名前はPerl,即ち真珠です。
+あなたのことを教えてください
+Stdinout
+
+print "あなたは...";
 $aboutYou = <STDIN>;
 chomp($aboutYou);
-print "\r\nあなたは $aboutYou ですね。わかりました。\r\n\r\n";
-print "これから幾つかの出力の仕方を披露しますね。\r\n";
+
+print <<"Stdinout";
+あなたは $aboutYou ですね。わかりました。
+
+これから幾つかの出力の仕方を披露しますね。
+Stdinout
 print "後ろに改行を付けません。";
 printf "数値などを文字列形式にフォーマットできます: %f %f\r\n", 3.14, 2.71;
 	# printf = sprintf (フォーマット) + print (出力)

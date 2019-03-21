@@ -1,18 +1,25 @@
 #! /usr/local/bin/php
 <?php
 
-print "こんにちは。私の名前はPHPです。\r\n";
-print "あなたのことを教えてください\r\n";
+print <<<"Stdinout"
+こんにちは。私の名前はPHPです。
+あなたのことを教えてください
+Stdinout;
+
+print "あなたは...";
 $aboutYou = trim(fgets(STDIN));
-print "あなたは ".$aboutYou." ですね。わかりました。\r\n";
-print "これから幾つかの出力の仕方を披露しますね。\r\n";
+
+print <<<"Stdinout"
+あなたは $aboutYou ですね。わかりました。
+
+これから幾つかの出力の仕方を披露しますね。
+Stdinout;
 echo "後ろに改行を付けません。";
 print "後ろに改行を付けません。";
 
 ?>
 直接入力するだけで出力するので,非常に便利です。
 <?="こういう出力の仕方もあります。"; ?>
-
 <?php
 
 printf("数値などを文字列形式にフォーマットできます: %f %f\r\n", 3.14, 2.71);

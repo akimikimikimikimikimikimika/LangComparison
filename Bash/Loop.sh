@@ -50,5 +50,4 @@ do
 	echo "$str"
 done
 
-echo
-echo
+printf "\r\n\r\n"

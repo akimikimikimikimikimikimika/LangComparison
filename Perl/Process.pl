@@ -1,5 +1,4 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
 
 print "プロセスID: $$\r\n";
 print "Perl:       @{[$^X]}\r\n";

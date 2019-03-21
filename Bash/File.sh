@@ -160,5 +160,4 @@ echo
 echo "> 実行"
 Package/Bash.sh
 
-echo
-echo
+printf "\r\n\r\n"

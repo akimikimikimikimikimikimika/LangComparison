@@ -1,5 +1,4 @@
 #! /usr/local/bin/perl
-# -*- coding: utf-8 -*-
 
 # 引数は0番目から
 

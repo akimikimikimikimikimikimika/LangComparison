@@ -1,5 +1,4 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 # 引数は0番目から
 

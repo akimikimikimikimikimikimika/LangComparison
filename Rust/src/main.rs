@@ -6,10 +6,11 @@
 */
 
 /*
-	Rustのコンパイル
-	cd Rust ← カレントディレクトリをRustにする必要がある
-	cargo build : コンパイル (Cargoを使ってコンパイル)
-	target/debug/Rust (Windowsは target/debug/Rust.exe)
+	Unix系でのRustの使い方
+	コンパイル
+		cargo build --target-dir Rust --manifest-path Rust/Cargo.toml ; mv Rust/debug/rustdemo Rust/Demo ; rm -fr Rust/debug Rust/.rustc_info.json
+	実行
+		Rust/Demo
 */
 
 mod stdinout;

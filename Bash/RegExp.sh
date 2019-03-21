@@ -23,7 +23,7 @@ replace="`echo $text | sed -Ee "s/<([a-z])>/{\1}/g"`"
 echo "gフラグ付き: $text"" → ""$replace"
 
 << 置換の説明
-	• sed -i "s/before/after/g" filename の型で,ファイルを直接書き換えできる。標準出力されない
+	• GNU版sedの場合は, sed -i "s/before/after/g" filename の型で,ファイルを直接書き換えできる。標準出力されない
 	• 2つ以上連続で置換を行う場合は, sed -e s///g -e s///g ... とする
 	• s/before/after/g の型だけでなく,スラッシュ以外の記号でもよいみたいで,例えば, s@before@after@g の型でもよい
 	• 正規表現を使わないのであれば...
@@ -55,5 +55,4 @@ else
 fi
 shopt -u nocasematch # ignorecase をオフにする設定
 
-echo
-echo
+printf "\r\n\r\n"

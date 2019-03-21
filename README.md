@@ -9,7 +9,6 @@ App内で実行する言語: Tcl (Wishで開く)
 ## 各言語のページ
 
 - [Swift](https://www.swift.org "Swift")
-
 - [Perl](https://www.perl.org "Perl")
 - [Ruby](https://www.ruby-lang.org "Ruby")
 - [PHP](http://www.php.net "PHP")
@@ -60,6 +59,7 @@ cd LangComparison
 ```Shell
 swift Swift.swift
 ```
+尚, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない
 - Perl
 ```Shell
 perl Perl.pl
@@ -122,11 +122,12 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Bash, Lua, PowerShell には下�
 
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ, Perl / Ruby / PHP / Python / Bash / PowerShell で同時進行中  
+今のところ, Swift / Perl / Ruby / PHP / Python / Bash / PowerShell で同時進行中  
 Luaは意外にもサポートされていない機能が多いため,停滞気味。
 - [x] 標準入出力
 - [x] 基本の値
 - [x] 演算子
+- [ ] ビット演算子
 - [x] 条件分岐/ループ
 - [x] 正規表現での検索/置換
 - [x] ファイル/フォルダ操作
@@ -141,4 +142,4 @@ Luaは意外にもサポートされていない機能が多いため,停滞気�
 - [ ] システム情報取得
 - [ ] オブジェクト / クラス
 - [ ] 例外の取り扱い
-- [ ] Swift / C++ / Rust / Go 等へ拡充
+- [ ] C / C++ / Rust / Go 等へ拡充

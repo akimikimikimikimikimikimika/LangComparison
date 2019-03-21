@@ -1,30 +1,34 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 st=Time.now;
 
-print "\r\nこれから日付と時刻を試します\r\n\r\n";
+print """
 
-print "現在ローカル時刻: #{Time.now.getlocal}\r\n";
-print "現在UTC時刻:      #{Time.now.getutc}\r\n";
+これから日付と時刻を試します
+
+現在ローカル時刻: #{Time.now.getlocal}
+現在UTC時刻:      #{Time.now.getutc}
+""";
 
 now=Time.now;
-print "\r\nTime.now\r\n";
-print "      .asctime = #{now.asctime}\r\n";
-print "         .to_s = #{now.to_s}\r\n";
-print "         .year = #{now.year}\r\n";
-print "        .month = #{now.month}\r\n"; # .mon
-print "          .day = #{now.day}\r\n";
-print "         .wday = #{now.wday}\r\n";
-print "         .yday = #{now.yday}\r\n";
-print "         .hour = #{now.hour}\r\n";
-print "          .min = #{now.min}\r\n";
-print "          .sec = #{now.sec}\r\n";
-print "         .usec = #{now.usec}\r\n";
-print "         .nsec = #{now.nsec}\r\n";
-print "         .zone = #{now.zone}\r\n";
-print ".strftime(...) = \"#{now.strftime(<<"Format")}\"\r\n";
-\r\n
+print """
+Time.now
+.asctime = #{now.asctime}
+.to_s    = #{now.to_s}
+.year    = #{now.year}
+.month   = #{now.month} = .mon
+.day     = #{now.day}
+.wday    = #{now.wday}
+.yday    = #{now.yday}
+.hour    = #{now.hour}
+.min     = #{now.min}
+.sec     = #{now.sec}
+.usec    = #{now.usec}
+.nsec    = #{now.nsec}
+.zone    = #{now.zone}
+
+.strftime(...) = \"#{now.strftime("""
+
 datetime    %%c : %c
 date        %%D : %D = %%x
             %%F : %F
@@ -65,7 +69,15 @@ timezone    %%Z : %Z
             %%z : %z
            %%:z : %:z
           %%::z : %::z
-Format
+
+""")}\"
+
+""";
+=begin
+    strftime は本来
+        strftime("%H:%M") -> "9:41"
+    のように使う。ここでは対応しているトークンの一覧を表示している
+=end
 
 en=Time.now
 print "この処理に要した時間: #{(en-st)*1000000} マイクロ秒\r\n";

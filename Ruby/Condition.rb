@@ -1,5 +1,4 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 test1 = true;
 test2 = false;
@@ -29,16 +28,16 @@ end
 print "test1が真だからこんなことをしているんです\r\n" if test1;
 print "test2が偽でなければこんなことしないのに\r\n" unless test2;
 
-val = 1;
+val = 8;
 case val
 	when 0,1 then
 		print "#{val}は特別な値である\r\n";
+	when 8..10 then
+		print "#{val}は連続して素数ではない\r\n";
 	when 2,4,6 then
 		print "#{val}は素数ではない\r\n";
 	when 3,5,7 then
 		print "#{val}は素数である\r\n";
-	when 8..10 then
-		print "#{val}は連続して素数ではない\r\n";
 	else
 		print "#{val}なぞ私には興味がない\r\n";
 end

@@ -1,11 +1,13 @@
 
 .DS_Store
-Launcher
 __pycache__
 Java/*.class
 C/Build
 C++/Build
-Rust/target
-Rust/Rust
+Go/Demo
+Rust/Demo
+Rust/Cargo.lock
+Rust/.rustc_info.json
+Rust/src
+
 Python/String.py
-Go/Go

@@ -1,5 +1,5 @@
 [package]
-name = "Rust"
+name = "rustdemo"
 version = "0.1.0"
 authors = ["akimi <akimikimi@icloud.com>"]
 edition = "2018"

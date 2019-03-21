@@ -1,5 +1,4 @@
 #! /usr/local/bin/ruby
-# -*- coding: utf-8 -*-
 
 print "\r\nこれから正規表現を試します\r\n\r\n";
 
@@ -11,7 +10,7 @@ print "str.scan: #{text} → #{find}\r\n";
 
 print "\r\n置換\r\n";
 
-text="<a> <b> <c>"
+text="<a> <b> <c>";
 replace=text.sub(/\<([a-z])\>/i,'{\1}');
 print "str.sub: #{text} → #{replace}\r\n";
 replace=text.gsub(/\<([a-z])\>/i,'{\1}');
@@ -28,7 +27,7 @@ print "\r\nマッチの確認\r\n";
 test1="qUiVeR";
 test2="ShIvEr";
 if test1 =~ /^qu/i then
-	print v;
+	print "#{test1} はquで始まります\r\n";
 else
 	print "#{test1} はquで始まりません\r\n";
 end
