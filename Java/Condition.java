@@ -10,7 +10,7 @@ public class Condition {
 	private static boolean test1 = true;
 	private static boolean test2 = false;
 
-	private static int val = 1;
+	private static int val = 8;
 
 	public static void main(String[] args) throws IOException{
 
@@ -28,6 +28,9 @@ public class Condition {
 		switch (val) {
 			case 0:case 1:
 				println(val+"は特別な値である");break;
+			case 8:case 9:case 10:
+				println("これに隣接する数にも言えたりするが,");
+				// breakを省くと,case 8,9,10を実行すれば,直下のcase 2,4,6も実行する
 			case 2:case 4:case 6:
 				println(val+"は素数ではない");break;
 			case 3:case 5:case 7:

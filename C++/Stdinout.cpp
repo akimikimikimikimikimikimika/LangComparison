@@ -10,6 +10,6 @@ void Stdinout(){
 	cout << "Cを拡張した言語です。\r\n";
 	cout << "あなたのことを教えてください\r\n";
 	cin >> aboutYou;
-	while(getchar()!='\r\n');
+	while(getchar()!='\n');
 	cout << "あなたは " << aboutYou << " ですね。わかりました。\r\n";
 }

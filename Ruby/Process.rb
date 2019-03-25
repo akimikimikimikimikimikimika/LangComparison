@@ -1,6 +1,16 @@
 #! /usr/local/bin/ruby
 
-print "このプロセスのIDは: #{$$}\r\n";
+print """
+プロセスID:   #{$$}
+バージョン:   #{RUBY_VERSION}
+リリース:     #{RUBY_RELEASE_DATE}
+OS:           #{RUBY_PLATFORM}
+パッチレベル: #{RUBY_PATCHLEVEL}
 
-print "\r\nでは,3.14秒ほど居眠りします\r\n\r\n";
+このコードの行番号: #{__LINE__}
+
+では,3.14秒ほど居眠りします
+
+
+""";
 sleep(3.14);

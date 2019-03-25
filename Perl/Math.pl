@@ -1,8 +1,8 @@
 #! /usr/local/bin/perl
 
 use Math::Trig; # pi に必要
-use List::Util 'max';
-use List::Util 'min';
+use List::Util "max";
+use List::Util "min";
 use POSIX;      # log10 に必要
 use Math::Complex;
 
@@ -11,17 +11,17 @@ print <<"Math";
 これから数学演算を試します
 
 進数変換
-dec2bin 138: @{[   sprintf('%b',138)   ]}
-dec2oct 138: @{[   sprintf('%o',138)   ]}
-dec2hex 138: @{[   sprintf('%X',138)   ]}
+dec2bin 138: @{[   sprintf("%b",138)   ]}
+dec2oct 138: @{[   sprintf("%o",138)   ]}
+dec2hex 138: @{[   sprintf("%X",138)   ]}
 
-dec2bin 138: @{[   sprintf('%#b',138)   ]}
-dec2oct 138: @{[   sprintf('%#o',138)   ]}
-dec2hex 138: @{[   sprintf('%#X',138)   ]}
+dec2bin 138: @{[   sprintf("%#b",138)   ]}
+dec2oct 138: @{[   sprintf("%#o",138)   ]}
+dec2hex 138: @{[   sprintf("%#X",138)   ]}
 
-bin2dec 1101111101: @{[   oct('0b1101111101')   ]}
-oct2dec       1575: @{[   oct('1575')           ]}
-hex2dec        37d: @{[   hex('37d')            ]}
+bin2dec 1101111101: @{[   oct("0b1101111101")   ]}
+oct2dec       1575: @{[   oct("1575")           ]}
+hex2dec        37d: @{[   hex("37d")            ]}
 
 定数
 π = @{[pi]}     (use Math::Trig が必要)

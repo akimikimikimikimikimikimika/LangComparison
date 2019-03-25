@@ -9,6 +9,7 @@ public class DateTime {
 		System.out.println(data);
 	}
 	public static void main(String[] args) throws IOException{
+		long st = System.currentTimeMillis();
 
 		println("\r\nこれから日付と時刻を試します\r\n");
 
@@ -60,6 +61,9 @@ public class DateTime {
 		println(".getDisplayName(SHORT) = \""+t.getDisplayName(false,TimeZone.LONG)+"\"");
 		println("              .getID() = \""+t.getID()+"\"");
 		println("    .useDaylightTime() = "+t.useDaylightTime());
+
+		long en=System.currentTimeMillis();
+		println("\r\nこの処理に要した時間: "+(en-st)+" ミリ秒");
 
 		println("\r\n\r\n");
 

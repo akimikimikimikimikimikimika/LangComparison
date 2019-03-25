@@ -30,8 +30,9 @@ while (true) {
 8. ファイルパスを試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. プロセス系を試す
-c. コマンドライン引数を試す
+b. クラスを試す
+c. プロセス系を試す
+d. コマンドライン引数を試す
 
 0. 終了
 
@@ -73,9 +74,12 @@ Menu;
 		passthru("./DateTime.php");
 	}
 	elseif ($action == "b") {
-		passthru("./Process.php");
+		passthru("./Class.php");
 	}
 	elseif ($action == "c") {
+		passthru("./Process.php");
+	}
+	elseif ($action == "d") {
 		passthru("./Arguments.php このプログラムを直接実行してみよう。 \"ここにあるよ: PHP/Arguments.php\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"PHP/Arguments.php 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	else {

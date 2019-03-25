@@ -1,6 +1,9 @@
 #! /usr/local/bin/perl
 
 use Time::Piece;
+use Time::HiRes qw/gettimeofday/;
+
+my ($sts,$stm)=gettimeofday();
 
 print <<"DateTime";
 
@@ -9,7 +12,7 @@ print <<"DateTime";
 
 DateTime
 
-$t=localtime;
+my $t=localtime;
 
 print <<"DateTime";
 localtime
@@ -35,10 +38,9 @@ localtime
 ->isdst          = @{[$t->isdst]} (夏時間かどうか)
 ->is_leap_year   = @{[$t->is_leap_year]} (閏年かどうか)
 ->month_last_day = @{[$t->month_last_day]} (月末の日にち)
-DateTime
 
-print "->strftime(..) = \"@{[$t->strftime(<<\"Format\")]}\"";
-\r\n
+->strftime(..) = "@{[$t->strftime(<<"Format")
+
 datetime    %%c : %c
 date        %%D : %D
             %%x : %x
@@ -77,5 +79,12 @@ UNIX epoch  %%s : %s
 timezone    %%Z : %Z
             %%z : %z
 Format
+]}"
+
+DateTime
+
+my ($ens,$enm) = gettimeofday();
+
+print "この処理に要した時間: @{[($ens-$sts)*1000000+($enm-$stm)]} マイクロ秒\r\n";
 
 print "\r\n\r\n";

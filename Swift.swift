@@ -32,8 +32,9 @@ while true {
 	8. ファイルパスを試す
 	9. 数学的演算を試す
 	a. 日付と時刻を試す
-	b. プロセス系を試す
-	c. コマンドライン引数を試す
+	b. クラスを試す
+	c. プロセス系を試す
+	d. コマンドライン引数を試す
 
 	0. 終了
 
@@ -75,9 +76,12 @@ while true {
 		exec("DateTime.swift")
 	}
 	else if action=="b" {
-		exec("Process.swift")
+		exec("Class.swift")
 	}
 	else if action=="c" {
+		exec("Process.swift")
+	}
+	else if action=="d" {
 		exec("Arguments.swift","このプログラムを直接実行してみよう。","ここにあるよ: Swift/Arguments.swift","","コマンドラインに以下のように入力して実行します","","Swift/Arguments.swift 引数1 引数2…","","すると,引数1,引数2…が順に出力されます")
 	}
 	else {

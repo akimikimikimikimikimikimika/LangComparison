@@ -6,6 +6,20 @@ public class Operators {
 	private static void println(String data) throws IOException{
 		System.out.println(data);
 	}
+
+	private static int b2d(String bin) {
+		return Integer.parseInt(bin,2);
+	}
+
+	private static String d2b(int len,int dec) {
+		String bin=Integer.toString(dec,2);
+		int pad=Math.max(len, bin.length())-bin.length();
+		for (int n=0;n<pad;n++) bin="0"+bin;
+		return bin;
+	}
+
+	private static Object obj = new Object();
+
 	public static void main(String[] args) throws IOException{
 
 		println("これから演算子を試します");
@@ -18,9 +32,9 @@ public class Operators {
 		println(" 24   % 5 = "+(   24   % 5   ));
 
 		println("\r\n比較演算子");
-		println(" 24  > 5 = "+(   24  > 5   ));
+		println(" 24 >  5 = "+(   24 >  5   ));
 		println(" 24 >= 5 = "+(   24 >= 5   ));
-		println(" 24  < 5 = "+(   24  < 5   ));
+		println(" 24 <  5 = "+(   24 <  5   ));
 		println(" 24 <= 5 = "+(   24 <= 5   ));
 		println(" 24 == 5 = "+(   24 == 5   ));
 		println(" 24 != 5 = "+(   24 != 5   ));
@@ -30,12 +44,47 @@ public class Operators {
 		println(" true || false = "+(   true || false   ));
 		println("       ! false = "+(         ! false   ));
 
+		println("\r\nビット演算子");
+		println(" 1010 & 1001  = "+d2b(4,   b2d("1010") & b2d("1001")   )+" (AND)");
+		println(" 1010 | 1001  = "+d2b(4,   b2d("1010") | b2d("1001")   )+" (OR)");
+		println(" 1010 ^ 1001  = "+d2b(4,   b2d("1010") ^ b2d("1001")   )+" (XOR)");
+		println("      ~ 1001  = "+d2b(4,               ~ b2d("1001")   +16)+" (NOT)\r\n");
+
+		println(" 111111  << 2 = "+d2b(0,   b2d("111111")  << 2   )+" (2桁左シフト)");
+		println(" 111111  >> 2 = "+d2b(0,   b2d("111111")  >> 2   )+" (2桁右シフト)");
+		println(" 111111 >>> 2 = "+d2b(0,   b2d("111111") >>> 2   )+" (2桁論理的右シフト)");
+
+		println("\r\n同一物か確認する演算子");
+		println(" obj == obj = "+(   obj == obj   ));
+		println(" obj != obj = "+(   obj != obj   ));
+
+		println("\r\n文字列比較");
+		println(" \"abc\".equals(\"abc\") = "+(   "abc".equals("abc")   ));
+
 		println("\r\n三項演算子");
-		println(" true ? \"yes\" : \"no\" = \""+(   true ? "yes" : "no"   )+"\"");
+		println("  true ? \"yes\" : \"no\" = \""+(    true ? "yes" : "no"   )+"\"");
 		println(" false ? \"yes\" : \"no\" = \""+(   false ? "yes" : "no"   )+"\"");
 
 		println("\r\n");
 
 	}
 
+	/*
+		ビット演算において,演算の内容を分かりやすくするため,意図的に本来の値から改変させたところがある
+		• AND,OR,XOR,NOT においては,0埋めにより演算後も4桁が維持されるようにした (本来はない桁があったりする)
+		• NOT を通常通りに計算すると,これまでなかった桁も0と見做してビット反転するため,膨大な数になる。それを防止するため,5桁目以降を切り捨てる処理をした (右端の+16)
+	*/
+
+	/*
+		その他に...
+		複合代入演算子 : += -= *= /= %= **= &= |= ^= <<= >>= >>>=
+			a += b は a= a + b と同義。その他も同様
+		加算子/減算子: ++ --
+			e.g.
+				a=5
+				b=a++
+				a=5
+				c=++a
+				→ aは,1増加して 6 に変化し,bには加算前の 5 が代入され,cには加算後の 6 が代入される
+	*/
 }

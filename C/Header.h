@@ -18,3 +18,7 @@
 	#define LOOP
 		void Loop();
 #endif
+#ifndef REGEXP
+	#define REGEXP
+		void RegExp();
+#endif

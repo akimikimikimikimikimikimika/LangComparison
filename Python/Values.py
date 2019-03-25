@@ -43,8 +43,8 @@ dictionary = {
 	"e": False
 }
 # 範囲
-ranE = range(5,8) # 5≤x<8
-	# だけど, random.randint(5,8) は, 5≤x≤8
+ranE = range(5,8) # 5≦x<8
+	# だけど, random.randint(5,8) は, 5≦x≦8
 # 関数
 def cube(val):
 	return val ** 3
@@ -74,7 +74,7 @@ print(f"""
    大きさ: {len(dictionary)}
 辞書:
    {dictionary}
-   b= {dictionary['b']}
+   b= {dictionary["b"]}
    大きさ:{len(dictionary)}
 範囲:
    5≤x<8 = {ranE}

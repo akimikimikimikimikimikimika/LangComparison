@@ -3,14 +3,24 @@
 /*
 	複数行のコメント
 */
+/**
+	javadoc コマンドによりドキュメントとして抽出可能なコメント
+*/
 
 /*
 	Javaのコンパイル
-		javac Java.java Stdinout.java Values.java Operators.java Condition.java Loop.java RegExp.java FileHandle.java PathData.java Mathematics.java DateTime.java Arguments.java
-		これにより,それぞれの.classファイルが生成される。Java.classは他の.classファイルが存在しなければ実行できない。それ以外の.classファイルはスタンドアロンでも作動する。
+		cd Java // カレントディレクトリをJavaにすることを忘れずに
+		javac *.java
+		これにより,それぞれのJavaコードに対応する.classファイルが生成される。Java.classは他の.classファイルが存在しなければ実行できない。それ以外の.classファイルはスタンドアロンでも作動する。
 	Javaの実行
+		cd Java // カレントディレクトリをJavaにすることを忘れずに
 		java Java
-		.class拡張子を付けないで記載する
+			※ .class拡張子を付けないで記載する
+	Javaのパッケージング
+		cd Java // カレントディレクトリをJavaにすることを忘れずに
+		javac *.java ; zip -q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class
+		これにより,全てのclassが1つに纏まったjarアーカイブ (Java ARchive) を生成する
+		実行 : java -jar Java.jar
 
 */
 
@@ -24,7 +34,7 @@ public class Java {
 		System.out.println(data);
 	}
 	private static String[] arg = {};
-	private static String[] argsArg = {"このプログラムを直接実行してみよう。","ここにあるよ: Java/Arguments.class","","コマンドラインに以下のように入力して実行します","","java Arguments 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"};
+	private static String[] argsArg = {"このプログラムを直接実行してみよう。","ここにあるよ: Java/Arguments.java","","コマンドラインに以下のように入力して実行します","","javac Arguments.java","java Arguments 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"};
 	private static String action="";
 
 	private static boolean eq(String text) throws IOException {

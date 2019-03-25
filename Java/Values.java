@@ -29,10 +29,16 @@ public class Values {
 		int[] arr1={3,1,4};
 		ArrayList<Integer> arr2 = new ArrayList<Integer>();
 		arr2.add(3);arr2.add(1);arr2.add(4);
-		LinkedList<Integer> arr3 = new LinkedList<>();
+		LinkedList<Integer> arr3 = new LinkedList<Integer>();
 		arr3.add(3);arr3.add(1);arr3.add(4);
-		HashMap<String,String> map = new HashMap<String,String>();
-		map.put("first","3");map.put("second","1");map.put("third","4");
+		HashSet<Integer> set1 = new HashSet<Integer>();
+		set1.add(3);set1.add(1);set1.add(4);
+		TreeSet<Integer> set2 = new TreeSet<Integer>();
+		set2.add(3);set2.add(1);set2.add(4);
+		HashMap<String,String> map1 = new HashMap<String,String>();
+		map1.put("first","3");map1.put("second","1");map1.put("third","4");
+		TreeMap<String,String> map2 = new TreeMap<String,String>();
+		map2.put("first","3");map2.put("second","1");map2.put("third","4");
 
 		println("\r\n色々な値を試します");
 		println("\r\n文字列");
@@ -60,16 +66,15 @@ public class Values {
 		println(" int[]: "+arr1);
 		println(" ArrayList<Integer>: "+arr2);
 		println(" LinkedList<Integer>: "+arr3);
+		println("\r\n集合");
+		println(" HashSet<String>: "+set1);
+		println(" TreeSet<String>: "+set2);
 		println("\r\nマップ");
-		println(" HashMap<String,String>: "+map);
+		println(" HashMap<String,String>: "+map1);
+		println(" TreeMap<String,String>: "+map2);
 
 		println("\r\n");
 
-	}
-
-	private static void demoValue(String key, Object value) throws IOException {
-		println(" "+key+": ");
-		System.out.println(value);
 	}
 
 }

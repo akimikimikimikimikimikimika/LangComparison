@@ -11,6 +11,11 @@ public class Mathematics {
 
 		println("\r\nこれから数学演算を試します");
 
+		println("\r\n進数変換");
+		println("433045 = "+Integer.parseInt("433045",6)+" (6進数 → 10進数)");
+		println("35669  = "+Integer.toString(35669, 14)+"  (10進数 → 14進数)");
+			// 2~36進数に変換可能
+
 		println("\r\n定数");
 		println("π = "+(   Math.PI   ));
 		println("e = "+(   Math.E    ));

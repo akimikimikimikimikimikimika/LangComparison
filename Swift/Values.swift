@@ -142,8 +142,8 @@ let dict4:NSMutableDictionary = ["first":1, 2:"second", "third":3, 2.71:3.14, tr
 	*/
 
 // 範囲
-let ranI = 5...8; // 5≤x≤8
-let ranE = 5..<8; // 5≤x<8
+let ranI = 5...8; // 5≦x≦8
+let ranE = 5..<8; // 5≦x<8
 
 // 関数
 func cube(v val: Int) -> Int {

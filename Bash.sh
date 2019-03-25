@@ -29,8 +29,8 @@ while : ; do
 8. ファイルパスを試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. プロセス系を試す
-c. コマンドライン引数を試す
+c. プロセス系を試す
+d. コマンドライン引数を試す
 
 0. 終了
 
@@ -60,9 +60,9 @@ c. コマンドライン引数を試す
 		./Math.sh
 	elif [ "$action" = a ]; then
 		./DateTime.sh
-	elif [ "$action" = b ]; then
-		./Process.sh
 	elif [ "$action" = c ]; then
+		./Process.sh
+	elif [ "$action" = d ]; then
 		./Arguments.sh "このプログラムを直接実行してみよう。" "ここにあるよ: Shell/Arguments.sh" "" "コマンドラインに以下のように入力して実行します" "" "Shell/Arguments.sh 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます"
 	else
 		printf """

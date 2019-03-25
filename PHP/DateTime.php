@@ -3,7 +3,7 @@
 
 $i = function($v){return $v;};
 
-$st=gettimeofday();
+$st=microtime(true);
 
 print <<< "DateTime"
 
@@ -107,9 +107,9 @@ Format
 
 DateTime;
 
-$en=gettimeofday();
+$en=microtime();
 
-print "この処理に要した時間: {$i(($en['sec']-$st['sec'])*100000+$en['usec']-$st['usec'])} マイクロ秒\r\n";
+print "この処理に要した時間: {$i(($en-$st)*100000)} マイクロ秒\r\n";
 
 print "\r\n\r\n";
 

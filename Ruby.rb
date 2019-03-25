@@ -29,8 +29,9 @@ while true
 8. ファイルパスを試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. プロセス系を試す
-c. コマンドライン引数を試す
+b. クラスを試す
+c. プロセス系を試す
+d. コマンドライン引数を試す
 
 0. 終了
 
@@ -61,8 +62,10 @@ c. コマンドライン引数を試す
 	elsif action=="a"
 		system("./DateTime.rb");
 	elsif action=="b"
-		system("./Process.rb");
+		system("./Class.rb");
 	elsif action=="c"
+		system("./Process.rb");
+	elsif action=="d"
 		system("./Arguments.rb このプログラムを直接実行してみよう。 \"ここにあるよ: Ruby/Arguments.rb\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Ruby/Arguments.rb 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	else
 		print """

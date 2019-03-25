@@ -22,3 +22,15 @@
 	#define REGEXP
 		void RegExp();
 #endif
+#ifndef MATH
+	#define MATH
+		void Math();
+#endif
+#ifndef FILE
+	#define FILE
+		void File();
+#endif
+#ifndef DATETIME
+	#define DATETIME
+		void DateTime();
+#endif

@@ -2,9 +2,30 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
+import platform
 import time
 
-print(f"このプロセスのIDは: {os.getpid()}")
+print(f"""
+プロセスID:   {os.getpid()}
 
-print("\r\nでは,3.14秒ほど居眠りします\r\n")
+OS:           {platform.system()}
+バージョン:   {platform.version()}
+リリース:     {platform.release()}
+プロセッサ:   {platform.machine()}
+マシン名:     {platform.machine()}
+ノード名:     {platform.node()}
+
+実装:         {platform.python_implementation()}
+バージョン:   {platform.python_version()}
+Cバージョン:  {sys.api_version}
+コンパイル:   {platform.python_compiler()}
+コピーライト:
+{sys.copyright}
+
+
+では,3.14秒ほど居眠りします
+
+
+""")
 time.sleep(3.14)

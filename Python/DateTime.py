@@ -70,6 +70,7 @@ timezone    %%Z : %Z
 年の範囲: {dt.MINYEAR} ~ {dt.MAXYEAR}
 """)
 
-print(f"この処理に要した時間: {(dto.now()-st).microseconds} マイクロ秒")
+en=dto.now()
+print(f"この処理に要した時間: {(en-st).microseconds} マイクロ秒")
 
 print("\r\n")

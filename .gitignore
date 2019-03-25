@@ -1,7 +1,6 @@
 
 .DS_Store
 __pycache__
-Java/*.class
 C/Build
 C++/Build
 Go/Demo
@@ -10,4 +9,6 @@ Rust/Cargo.lock
 Rust/.rustc_info.json
 Rust/src
 
+Perl/Module.pl
 Python/String.py
+Modules

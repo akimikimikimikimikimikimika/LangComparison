@@ -6,6 +6,8 @@ using namespace std;
 
 void RegExp(){
 
+	cout << "\r\nこれから正規表現を試します\r\n";
+
 	cout << "\r\nマッチの確認\r\n";
 	string test1="qUiVeR";
 	regex re=regex("^qu",regex::icase);

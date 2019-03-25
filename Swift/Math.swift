@@ -49,16 +49,17 @@ sinh(1.862)    = \(   sinh(1.862) as Double      )
 cosh(1.811)    = \(   cosh(1.811) as Double      )
 tanh(0.325)    = \(   tanh(0.325) as Double      )
 tgamma(0.2865) = \(   tgamma(0.2865) as Double   ) = Γ(0.287)
-lgamma(0.0422) = \(   lgamma(0.0422) as Double   )
+lgamma(0.0422) = \(   lgamma(0.0422) as Double   ) = log(Γ(0.0422))
 
 乱数
 Double.random(in: 0..<1)   = \(   Double.random(in: 0..<1)     ) (0≦x<1)
 Double.random(in: 27...54) = \(   Double.random(in: 27...54)   ) (27≦x≦54)
 
 端数処理
-floor(-3.14) = \(   floor(-3.14) as Double   ) (小さい方の整数へ)
- ceil(-3.14) = \(    ceil(-3.14) as Double   ) (大きい方の整数へ)
-round(-3.14) = \(   round(-3.14) as Double   )
+floor(-3.14) = \(   floor(-3.14)   ) (小さい方の整数へ)
+ ceil(-3.14) = \(    ceil(-3.14)   ) (大きい方の整数へ)
+trunc(-3.14) = \(   trunc(-3.14)   ) (0に近い方の整数へ)
+round(-3.14) = \(   round(-3.14)   )
 """)
 /*
     多くの関数で as Double を付加するのは,同名の関数でFloat版とDouble版があるから。

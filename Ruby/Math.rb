@@ -5,8 +5,8 @@ print """
 これから数学演算を試します
 
 進数変換
-433045 = #{'433045'.to_i(6)} (6進数 → 14進数)
-35669  = #{35669.to_s(14)}  (6進数 → 14進数)
+433045 = #{"433045".to_i(6)} (6進数 → 10進数)
+35669  = #{35669.to_s(14)}  (10進数 → 14進数)
 """;
 =begin
     2~36進数に変換可能
@@ -17,17 +17,17 @@ print """
     to_s : 文字列に変換
 =end
 print """
-dec2bin 138: #{   sprintf('%b',138)   }
-dec2oct 138: #{   sprintf('%o',138)   }
-dec2hex 138: #{   sprintf('%X',138)   }
+dec2bin 138: #{   sprintf("%b",138)   }
+dec2oct 138: #{   sprintf("%o",138)   }
+dec2hex 138: #{   sprintf("%X",138)   }
 
-dec2bin 138: #{   sprintf('%#b',138)   }
-dec2oct 138: #{   sprintf('%#o',138)   }
-dec2hex 138: #{   sprintf('%#X',138)   }
+dec2bin 138: #{   sprintf("%#b",138)   }
+dec2oct 138: #{   sprintf("%#o",138)   }
+dec2hex 138: #{   sprintf("%#X",138)   }
 
-bin2dec 1101111101: #{   '0b1101111101'.oct   }
-oct2dec       1575: #{   '1575'.oct           }
-hex2dec        37d: #{   '37d'.hex            }
+bin2dec 1101111101: #{   "0b1101111101".oct   }
+oct2dec       1575: #{   "1575".oct           }
+hex2dec        37d: #{   "37d".hex            }
 
 定数
 π = #{Math::PI}
@@ -75,12 +75,12 @@ Complex(3,4) = #{   Complex(3,4)   }
 print """
 
 有理数
-Rational('32/29') = #{   Rational('32/29')    }
+Rational(\"32/29\") = #{   Rational("32/29")    }
 Rational(156,-84) = #{   Rational(156,-84)    }
 Rational(π)       = #{   Rational(Math::PI)   }
 
-Rational('32/29').numerator   = #{   Rational('32/29').numerator     }
-Rational('32/29').denominator = #{   Rational('32/29').denominator   }
+Rational(\"32/29\").numerator   = #{   Rational("32/29").numerator     }
+Rational(\"32/29\").denominator = #{   Rational("32/29").denominator   }
 
 乱数
 Random.rand            = #{   Random.rand              } (0≦x<1)
@@ -89,10 +89,11 @@ Random.rand(2.7..5.4)  = #{   Random.rand(2.7..5.4)    } (2.7≦x<5.4)
 Random.rand(2.7...5.4) = #{   Random.rand(2.7...5.4)   } (2.7≦x≦5.4)
 
 端数処理
--3.14.floor = #{   -3.14.floor   } (小さい方の整数へ)
--3.14.ceil  = #{   -3.14.ceil    } (大きい方の整数へ)
--3.14.round = #{   -3.14.round   }
--3.14.to_i  = #{   -3.14.to_i    } (キャストは0に近い方へ)
+-3.14.floor    = #{   -3.14.floor   } (小さい方の整数へ)
+-3.14.ceil     = #{   -3.14.ceil    } (大きい方の整数へ)
+-3.14.truncate = #{   -3.14.ceil    } (0に近い方の整数へ)
+-3.14.round    = #{   -3.14.round   }
+-3.14.to_i     = #{   -3.14.to_i    } (キャストはtruncateする)
 """;
 
 print "\r\n\r\n";

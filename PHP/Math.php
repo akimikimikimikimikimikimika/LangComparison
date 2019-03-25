@@ -8,20 +8,20 @@ print <<<"Math"
 これから数学演算を試します
 
 進数変換
-433045 = {$i(base_convert('433045',6,14))} (6進数 → 14進数)
+433045 = {$i(base_convert("433045",6,14))} (6進数 → 14進数)
 	(2~36進数に変換可能)
 
-dec2bin 138: {$i(   sprintf('%b',138)   )}
-dec2oct 138: {$i(   sprintf('%o',138)   )}
-dec2hex 138: {$i(   sprintf('%X',138)   )}
+dec2bin 138: {$i(   sprintf("%b",138)   )}
+dec2oct 138: {$i(   sprintf("%o",138)   )}
+dec2hex 138: {$i(   sprintf("%X",138)   )}
 
 dec2bin 138: {$i(   decbin(138)   )}
 dec2oct 138: {$i(   decoct(138)   )}
 dec2hex 138: {$i(   dechex(138)   )}
 
-bin2dec 1101111101: {$i(   bindec('1101111101')   )}
-oct2dec       1575: {$i(   octdec('1575')         )}
-hex2dec        37d: {$i(   hexdec('37d')          )}
+bin2dec 1101111101: {$i(   bindec("1101111101")   )}
+oct2dec       1575: {$i(   octdec("1575")         )}
+hex2dec        37d: {$i(   hexdec("37d")          )}
 
 定数
 π = {$i(M_PI)}
