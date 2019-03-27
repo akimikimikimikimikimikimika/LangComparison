@@ -17,8 +17,12 @@
 		java Java
 			※ .class拡張子を付けないで記載する
 	Javaのパッケージング
-		cd Java // カレントディレクトリをJavaにすることを忘れずに
-		javac *.java ; zip -q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class
+		cd Java ; javac *.java ; zip -9q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class ; cd ../
+			1. カレントディレクトリをJavaに変更
+			2. 全ての.javaファイルをコンパイルし,それぞれの.classを生成
+			3. ファイル名が Java.jar のzipアーカイブを生成し,クラスとメタ情報を入れる
+			4. 生成した.classを全て削除する
+			5. カレントディレクトリを上位フォルダに戻す
 		これにより,全てのclassが1つに纏まったjarアーカイブ (Java ARchive) を生成する
 		実行 : java -jar Java.jar
 
@@ -34,7 +38,7 @@ public class Java {
 		System.out.println(data);
 	}
 	private static String[] arg = {};
-	private static String[] argsArg = {"このプログラムを直接実行してみよう。","ここにあるよ: Java/Arguments.java","","コマンドラインに以下のように入力して実行します","","javac Arguments.java","java Arguments 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"};
+	private static String[] argsArg = {"このプログラムを直接実行してみよう。","ここにあるよ: Java/Arguments.java","","コマンドラインに以下のように入力して実行します","","cd Java","javac Arguments.java","java Arguments 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"};
 	private static String action="";
 
 	private static boolean eq(String text) throws IOException {
@@ -55,13 +59,15 @@ public class Java {
 			println("8. ファイルパスを試す");
 			println("9. 数学的演算を試す");
 			println("a. 日付と時刻を試す");
-			println("c. コマンドライン引数を試す");
+			println("b. クラスを試す");
+			println("d. コマンドライン引数を試す");
 			println("");
 			println("0. 終了");
 			println("");
 			action=input.next();
 			println("\r\n\r\n");
-			if (eq("1")) Stdinout.main(arg);
+			if (eq("0")) break;
+			else if (eq("1")) Stdinout.main(arg);
 			else if (eq("2")) Values.main(arg);
 			else if (eq("3")) Operators.main(arg);
 			else if (eq("4")) Condition.main(arg);
@@ -71,8 +77,8 @@ public class Java {
 			else if (eq("8")) PathData.main(arg);
 			else if (eq("9")) Mathematics.main(arg);
 			else if (eq("a")) DateTime.main(arg);
-			else if (eq("c")) Arguments.main(argsArg);
-			else if (eq("0")) break;
+			else if (eq("b")) Class.main(arg);
+			else if (eq("d")) Arguments.main(argsArg);
 			else println("指定したアクションは見つかりませんでした\r\n");
 		}
 	}

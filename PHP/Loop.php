@@ -21,7 +21,7 @@ while (strlen($str)<6) {
 	print "$str\r\n";
 }
 
-print "\r\ndo {...} while (~)\r\n";
+print "\r\ndo {…} while (~)\r\n";
 $str="";
 do {
 	$str.="+";

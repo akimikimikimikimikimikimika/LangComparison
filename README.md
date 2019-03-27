@@ -6,6 +6,7 @@
 ここでは,次の言語をテストしている。  
 コンパイルなく実行できる言語: Swift, Perl, Ruby, PHP, Python, Lua, PowerShell, Bash  
 コンパイルの必要な言語: C++, C, Go, Rust, Java  
+ブラウザ上で実行する言語: JavaScript  
 App内で実行する言語: Tcl (Wishで開く)  
   
 GitHubの当リポジトリページの上部に言語の割合を示す帯グラフがあるが,どの言語も同じくらいの量は書いているはずだから,拮抗しているはず。おそらく,ファイルサイズの和が大きい言語順に並んでいるので,同じことを書いていても,記述量が多くなってしまう言語ほど上位に来やすい。だから,あてにはならない。
@@ -26,7 +27,9 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [C](http://www.open-std.org/jtc1/sc22/wg14/ "C")
 - [C++](https://isocpp.org "C++")
 - [Go](https://golang.org "Go")
-- [Rust](https://www.rust-lang.org "Rust")
+- [Rust](https://www.rust-lang.org "Rust")  
+  
+- [Node.js](https://nodejs.org/ja/ "Node.js")
 
 ## 利用する際の注意
 
@@ -89,22 +92,35 @@ bash Bash.sh
 ```Shell
 pwsh PowerShell.ps1
 ```
+- Java
+Javaは基本的にコンパイルが必要。コンパイルの仕方はJavaコードに記載している。  
+コンパイル済のJARファイルは次のコードで実行できる:  
+```Shell
+java -jar Java.jar
+```
+- JavaScript
+JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
+又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。  
+```Shell
+node JavaScript/Stdinout.js
+```
+但し,Webブラウザ上でないと実行できないコードもあるので,注意する必要がある。
 - Lua
 ```Shell
 lua Lua.lua # 実行
 luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Luac.lua”という名前のファイルが生成する)
 ```
-- Java, C++, C, Go, Rust  
+- C++, C, Go, Rust  
 コンパイルの仕方はコード内に掲載している
 
 ## Shebang
 
-macOSの場合, Swift, Perl, Ruby, PHP, Python, Bash, Lua, PowerShell には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /usr/local/bin/lua
 ```
 但し, Perl, Ruby, PHP, Python, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。  
-実行例 (Luaの場合,ディレクトリ移動を実行済)
+実行例 (Luaの場合•ディレクトリ移動を実行済)
 ```Shell
 ./Lua.lua # このように入力すればLua.luaを実行してくれる
 ```
@@ -126,19 +142,20 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Bash, Lua, PowerShell には下�
 
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ, Swift / Perl / Ruby / PHP / Python / Bash / PowerShell で同時進行中
+今のところ, Swift / Perl / Ruby / PHP / Python / PowerShell / Bash で同時進行中  
+※ 但し,Bashはオブジェクト指向言語ではないため,クラスを用意していない
+※ 又,JavaScriptはファイル操作関連の機能があまりないため,用意していない
 - [x] 標準入出力
 - [x] 基本の値
 - [x] 演算子
-- [x] ビット演算子
 - [x] 条件分岐/ループ
 - [x] 正規表現での検索/置換
 - [x] ファイル/フォルダ操作
-- [x] 外部ソースの読み込み
-- [x] コマンドライン引数
 - [x] 数学関数
 - [x] 日付/時刻
 - [x] オブジェクト / クラス
+- [x] 外部ソースの読み込み
+- [x] コマンドライン引数
 - [ ] 文字列の操作
 - [ ] 配列の操作
 - [ ] 型の変換

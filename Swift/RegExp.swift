@@ -82,5 +82,14 @@ if (text as NSString).contains("<b>") {
         m: .anchorMatchesLine と同様
 */
 
+print("\r\n分割と結合")
+text="a-b-c"
+let arr=text.components(separatedBy: "-")
+let newtext=arr.joined("*")
+print("\(text) → \(newtext)")
+/*
+    (NSString).components(separatedBy: String) : NSStringをStringで分割
+    (String).components(Character) : StringをCharacterで分割
+*/
 
 print("\r\n")
