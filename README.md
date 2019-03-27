@@ -92,13 +92,13 @@ bash Bash.sh
 ```Shell
 pwsh PowerShell.ps1
 ```
-- Java
+- Java  
 Javaは基本的にコンパイルが必要。コンパイルの仕方はJavaコードに記載している。  
 コンパイル済のJARファイルは次のコードで実行できる:  
 ```Shell
 java -jar Java.jar
 ```
-- JavaScript
+- JavaScript  
 JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
 又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。  
 ```Shell
