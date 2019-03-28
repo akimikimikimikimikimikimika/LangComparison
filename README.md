@@ -143,8 +143,8 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下�
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
 今のところ, Swift / Perl / Ruby / PHP / Python / PowerShell / Bash で同時進行中  
-※ 但し,Bashはオブジェクト指向言語ではないため,クラスを用意していない
-※ 又,JavaScriptはファイル操作関連の機能があまりないため,用意していない
+※ 但し,Bashはオブジェクト指向言語ではないため,クラスを用意していない  
+※ 又,JavaScriptはファイル操作関連の機能があまりないため,用意していない  
 - [x] 標準入出力
 - [x] 基本の値
 - [x] 演算子

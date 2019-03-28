@@ -1,3 +1,8 @@
+#ifndef MAIN
+	#define MAIN
+		int main();
+		int cmp(char *s1,char *s2);
+#endif
 #ifndef STDINOUT
 	#define STDINOUT
 		void Stdinout();
@@ -21,4 +26,21 @@
 #ifndef REGEXP
 	#define REGEXP
 		void RegExp();
+#endif
+#ifndef FILEHANDLE
+	#define FILEHANDLE
+		void FileHandle();
+		void error();
+#endif
+#ifndef PATH
+	#define PATH
+		void Path();
+#endif
+#ifndef MATH
+	#define MATH
+		void Math();
+#endif
+#ifndef DATETIME
+	#define DATETIME
+		void DateTime();
 #endif

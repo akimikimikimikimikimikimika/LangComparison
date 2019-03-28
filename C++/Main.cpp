@@ -4,7 +4,11 @@
 
 /*
 	C++のコンパイル
-	clang++ -o Stdinout.o -c Stdinout.cpp ; clang++ -o Values.o -c Values.cpp ; clang++ -o Operators.o -c Operators.cpp ; clang++ -o Condition.o -c Condition.cpp ; clang++ -o Loop.o -c Loop.cpp ; clang++ -o RegExp.o -c RegExp.cpp ; clang++ -o Math.o -c Math.cpp ; clang++ -o DateTime.o -c DateTime.cpp ; clang++ -o Build Main.cpp Stdinout.o Values.o Operators.o Condition.o Loop.o RegExp.o Math.o DateTime.o ; rm Stdinout.o Values.o Operators.o Condition.o Loop.o RegExp.o Math.o DateTime.o
+	find C++ -name *.cpp -a -not -name Main.cpp -exec clang++ -o {}.o -c {} \; ; find C++ -name *.cpp.o -exec clang++ -o C++/Build C++/Main.cpp {} + ; find C++ -name *.cpp.o -exec rm {} +
+		1. フォルダ内のMain.cppを除く各々のソースファイルからオブジェクトファイルを生成する
+			∵ それぞれのファイルを単独でコンパイルするのだが,Main.cppのコンパイルには,他の全てのファイルが同時に必要なので,Main.cppのコンパイル時に,それ以外の先にコンパイルしておいたファイルをリンクさせる必要があるから。
+		2. Main.cppとオブジェクトファイルをリンクさせる
+		3. オブジェクトファイルを削除する
 
 	※ これはClangでコンパイルする例。GCCを用いる場合は,適宜 clang++ を g++ に置き換えて使用する。
 	これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。
