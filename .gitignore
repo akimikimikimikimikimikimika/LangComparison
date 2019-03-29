@@ -3,11 +3,12 @@
 __pycache__
 C/Build
 C++/Build
-Go/Demo
-Rust/Demo
+Go/Build
+Rust/Build
 Rust/Cargo.lock
 Rust/.rustc_info.json
 Rust/src
+Manage
 
 Perl/Module.pl
 Python/String.py

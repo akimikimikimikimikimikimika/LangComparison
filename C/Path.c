@@ -7,13 +7,13 @@
 
 void Path() {
 
-    char cd[CD_SIZE];
-    char *home = getenv("HOME");
+	char cd[CD_SIZE];
+	char *home = getenv("HOME");
 
-    memset(cd, '\0', CD_SIZE);
-    getcwd(cd, CD_SIZE);
+	memset(cd, '\0', CD_SIZE);
+	getcwd(cd, CD_SIZE);
 
-    printf("ホームディレクトリ:       %s\r\n",home);
-    printf("カレントディレクトリ:     %s\r\n",cd);
+	printf("ホームディレクトリ:       %s\r\n",home);
+	printf("カレントディレクトリ:     %s\r\n",cd);
 
 }

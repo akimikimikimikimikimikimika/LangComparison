@@ -29,10 +29,10 @@ switch val {
 	case 8...10:
 		print("これに隣接する数にも言えたりするが,")
 		fallthrough
-		// fallthrough により,case 8...10を実行すれば,直下のcase 2,4,6も実行する
-	case 2,4,6:
+		// fallthrough により,case 8...10を実行すれば,直下のcase 4,6も実行する
+	case 4,6:
 		print("\(val)は素数ではない")
-	case 3,5,7:
+	case 2,3,5,7:
 		print("\(val)は素数である")
 	default:
 		print("\(val)なぞ私には興味がない")

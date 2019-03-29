@@ -17,7 +17,7 @@
 		java Java
 			※ .class拡張子を付けないで記載する
 	Javaのパッケージング
-		cd Java ; javac *.java ; zip -9q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class ; cd ../
+		(cd Java ; javac *.java ; zip -q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class)
 			1. カレントディレクトリをJavaに変更
 			2. 全ての.javaファイルをコンパイルし,それぞれの.classを生成
 			3. ファイル名が Java.jar のzipアーカイブを生成し,クラスとメタ情報を入れる

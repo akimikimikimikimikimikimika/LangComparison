@@ -34,9 +34,9 @@ case val
 		print "#{val}は特別な値である\r\n";
 	when 8..10 then
 		print "#{val}は連続して素数ではない\r\n";
-	when 2,4,6 then
+	when 4,6 then
 		print "#{val}は素数ではない\r\n";
-	when 3,5,7 then
+	when 2,3,5,7 then
 		print "#{val}は素数である\r\n";
 	else
 		print "#{val}なぞ私には興味がない\r\n";

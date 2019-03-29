@@ -44,3 +44,11 @@
 	#define DATETIME
 		void DateTime();
 #endif
+#ifndef STRUCT
+	#define STRUCT
+		void Struct();
+#endif
+#ifndef ARGUMENTS
+	#define ARGUMENTS
+		void Arguments();
+#endif

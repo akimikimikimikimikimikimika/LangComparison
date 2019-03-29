@@ -1,6 +1,6 @@
 ## LangComparison
 
-このページでは,普段HTML+CSS+JavaScriptで十分こなせるため,他の言語の習得を必要と感じていない私が,他の色々な言語に触れてみる目的で用意した。これは,比較(プログラミング)言語学と言えるのだろうか。気の趣くままに進めている。同じようなことを,それぞれの言語で行なっている。  
+このページは,色々な言語に触れてみる目的で用意した。これは,比較(プログラミング)言語学と言えるのだろうか。気の趣くままに進めている。同じようなことを,それぞれの言語で行なっている。  
 ここに掲載されたコードをただ見ているだけでなく,条件を変えてみるなど,自分で書き直したりして,使ってみると分かってくるかもしれない。 或いは,それぞれの言語を使うにあたってのヒントとして参照しても良い。  
   
 ここでは,次の言語をテストしている。  
@@ -66,7 +66,7 @@ cd LangComparison
 ```Shell
 swift Swift.swift
 ```
-尚, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない
+Swiftは本来コンパイルして利用するもので, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない。
 - Perl
 ```Shell
 perl Perl.pl
@@ -92,26 +92,65 @@ bash Bash.sh
 ```Shell
 pwsh PowerShell.ps1
 ```
-- Java  
-Javaは基本的にコンパイルが必要。コンパイルの仕方はJavaコードに記載している。  
-コンパイル済のJARファイルは次のコードで実行できる:  
-```Shell
-java -jar Java.jar
-```
-- JavaScript  
-JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
-又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。  
-```Shell
-node JavaScript/Stdinout.js
-```
-但し,Webブラウザ上でないと実行できないコードもあるので,注意する必要がある。
 - Lua
 ```Shell
 lua Lua.lua # 実行
 luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Luac.lua”という名前のファイルが生成する)
 ```
-- C++, C, Go, Rust  
-コンパイルの仕方はコード内に掲載している
+- JavaScript  
+JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
+又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。  
+但し,Webブラウザ上でないと実行できないコードもあるので,注意する必要がある。
+```Shell
+# Stdinout.js を実行する例
+node JavaScript/Stdinout.js
+```
+
+- C  
+以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
+```Shell
+# コンパイル : フォルダ C 内にBuildという実行ファイルが生成される
+find C -name *.c -exec clang -std=c17 -o C/Build {} +
+
+# 実行
+C/Build
+```
+- C++  
+以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
+```Shell
+# コンパイル : フォルダ C++ 内にBuildという実行ファイルが生成される
+find C++ -name *.cpp -exec clang++ -std=c++17 -o C++/Build {} +
+
+# 実行
+C++/Build
+```
+- Go
+```Shell
+# コンパイル : フォルダ Go 内にBuildという実行ファイルが生成される
+(cd Go ; go build ; mv Go Build)
+
+# 実行
+Go/Build
+```
+- Rust
+```Shell
+# コンパイル : フォルダ Rust 内にBuildという実行ファイルが生成される
+(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo Build ; rm -r debug .rustc_info.json)
+
+# 実行
+Rust/Build
+```
+- Java
+```Shell
+# コンパイル : Java.jar が生成される
+(cd Java ; javac *.java ; zip -q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class)
+
+# 実行
+java -jar Java.jar
+
+# 個別のファイルを実行 (例: Stdinout.java を実行)
+(cd Java ; javac Stdinout.java ; java Stdinout)
+```
 
 ## Shebang
 
@@ -142,7 +181,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下�
 
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ, Swift / Perl / Ruby / PHP / Python / PowerShell / Bash で同時進行中  
+今のところ, Swift / Perl / Ruby / PHP / Python / PowerShell / Bash / Java で同時進行中  
 ※ 但し,Bashはオブジェクト指向言語ではないため,クラスを用意していない  
 ※ 又,JavaScriptはファイル操作関連の機能があまりないため,用意していない  
 - [x] 標準入出力

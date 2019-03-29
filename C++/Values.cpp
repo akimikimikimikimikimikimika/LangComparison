@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdarg.h>
 #include <codecvt>
 #include "Header.hpp"
 
@@ -11,6 +12,7 @@ using namespace std;
 void Values(){
 	wstring_convert<codecvt_utf8<wchar_t>,wchar_t> cv;
 
+	// プリミティブな値
 	bool boolean=false;
 	char character=67; // C
 	short shortInt=127; // 16 bit
@@ -19,25 +21,38 @@ void Values(){
 	long long longLongInt=127; // 64 bit
 	float fl=3.14;
 	double db=3.14;
+	char charArray[] = "シープラ";
 	string str="シープラ";
 	wstring wstr=L"シープラ";
 
-	cout << "\r\n色々な値を試します\r\n";
-	cout << "\r\nプリミティブ値\r\n";
-	cout << "bool:" << boolean << "\r\n";
-	cout << "char:" << character << "\r\n";
-	cout << "short int:" << shortInt << "\r\n";
-	cout << "int:" << integer << "\r\n";
-	cout << "long int:" << longInt << "\r\n";
-	cout << "long long int:" << longLongInt << "\r\n";
-	cout << "float:" << fl << "\r\n";
-	cout << "double:" << db << "\r\n";
-	cout << "\r\nオブジェクト\r\n";
-	cout << "string:" << str << " #include <string>\r\n";
-	cout << "   大きさ:" << str.length() << "\r\n";
-	cout << "wstring:" << cv.to_bytes(wstr) << " #include <string>\r\n";
-	cout << "   大きさ:" << wstr.length() << "\r\n";
-	cout << "\r\n#defineから\r\n";
-	cout << "定数:" << someConst << "\r\n";
-	cout << "マクロ関数:" << maximum(6,3) << "\r\n";
+	// 配列
+	double dblArr[] = {2.4,3.6,4.8};
+
+	cout << "\
+色々な値を試します" << "\n\
+プリミティブ値" << "\n\
+bool:" << boolean << "\n\
+char:" << character << "\n\
+short int:" << shortInt << "\n\
+int:" << integer << "\n\
+long int:" << longInt << "\n\
+long long int:" << longLongInt << "\n\
+float:" << fl << "\n\
+double:" << db << "\n\
+char *:" << charArray << "\n\
+" << "\n\
+配列" << "\n\
+double [] = " << dblArr << "\n\
+" << "\n\
+オブジェクト" << "\n\
+string:" << str << " #include <string>" << "\n\
+   大きさ:" << str.length() << "\n\
+wstring:" << cv.to_bytes(wstr) << " #include <string>" << "\n\
+   大きさ:" << wstr.length() << "\n\
+" << "\n\
+#defineから" << "\n\
+定数:" << someConst << "\n\
+マクロ関数:" << maximum(6,3) << "\n\
+";
+
 }

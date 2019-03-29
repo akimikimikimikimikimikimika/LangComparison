@@ -4,7 +4,7 @@ import "fmt"
 import "os"
 import "bufio"
 
-func stdinout(){
+func Stdinout(){
 	var stdin = bufio.NewScanner(os.Stdin)
 	fmt.Println(`
 こんにちは。私の名前はGo。

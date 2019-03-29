@@ -32,11 +32,11 @@ switch ($val) {
 	case 9:
 	case 10:
 		print "これに隣接する数にも言えたりするが,\r\n";
-		# breakを省くと,case 8,9,10を実行すれば,直下のcase 2,4,6も実行する
-	case 2:
+		# breakを省くと,case 8,9,10を実行すれば,直下のcase 4,6も実行する
 	case 4:
 	case 6:
 		print "${val}は素数ではない\r\n";break;
+	case 2:
 	case 3:
 	case 5:
 	case 7:
