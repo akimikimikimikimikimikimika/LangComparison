@@ -46,7 +46,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - Windows  
 	PowerShell は標準でインストール済。  
 	Perl, Ruby, PHP, Python, Lua, Rust, Go はインストールされていない。  
-	C++ のコンパイルには Visual C++ が必要らしい。
+	C++ のコンパイルには Visual C++ が必要らしい。  
 	Windowsでも,Windows 10のLinux Subsystemを使えば,Linuxbrewが使える。
 
 - Unix系OS (macOS除く)  
@@ -62,11 +62,11 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 cd LangComparison
 ```
 そして,言語ごとに次のコードを実行する。
-- Swift
+- Swift  
+Swiftは本来コンパイルして利用するもので, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない。
 ```Shell
 swift Swift.swift
 ```
-Swiftは本来コンパイルして利用するもので, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない。
 - Perl
 ```Shell
 perl Perl.pl
