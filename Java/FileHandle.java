@@ -11,9 +11,14 @@ public class FileHandle {
 
 	private static String home = System.getProperty("user.home");
 
+	// 相対パスからパスを取得する関数
+	private static Path path(String relpath) {
+		return Paths.get(System.getProperty("user.dir"),relpath);
+	}
+
 	// 状態を確認する関数
 	private static void check(String path) throws IOException {
-		Path pt = Paths.get(path);
+		Path pt = path(path);
 		println("   "+(Files.exists(pt)?"存在しています":"存在していません"));
 		if (Files.isSymbolicLink(pt)) {
 			println("   シンボリックリンクです");
@@ -63,52 +68,52 @@ public class FileHandle {
 		// ファイル/フォルダ/シンボリックリンクの作成
 
 		println("> Emptyという空フォルダを作成");
-		Files.createDirectory(Paths.get("Empty"));
+		Files.createDirectory(path("Empty"));
 			// 既にEmptyという名前のファイル/フォルダが存在していれば,エラーを投げる
 
 		println("> Blankという空ファイルを作成");
-		Files.createFile(Paths.get("Blank"));
+		Files.createFile(path("Blank"));
 			// 既にBlankという名前のファイル/フォルダが存在していれば,エラーを投げる
 
 		println("> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成\r\n");
-		Files.createSymbolicLink(Paths.get("Empty/Symlink"),Paths.get("Blank"));
+		Files.createSymbolicLink(path("Empty/Symlink"),path("Blank"));
 			// 既にSymlinkという名前のファイル/フォルダが存在していれば,エラーを投げる
 			// ハードリンクは File.createLink で生成する
 
 		// 書込み
 
 		println("> Untitled.mdというMarkdownファイルを作成して書込み\r\n");
-		Files.write(Paths.get("Untitled.md"), Arrays.asList("# Header 1"), StandardOpenOption.CREATE);
+		Files.write(path("Untitled.md"), Arrays.asList("# Header 1"), StandardOpenOption.CREATE);
 			// オプションをCREATEからCREATE_NEWにすると,既にファイルが存在している場合はエラーになる
 			// CREATEの場合は,既に存在している場合は上書きされる
 
 		// 移動/名称変更
 
 		println("> フォルダEmptyをPackageに名称変更");
-		Files.move(Paths.get("Empty"), Paths.get("Package"), StandardCopyOption.REPLACE_EXISTING);
+		Files.move(path("Empty"), path("Package"), StandardCopyOption.REPLACE_EXISTING);
 		println("> Packageフォルダ内のSymlinkファイルをAliasに名称変更");
-		Files.move(Paths.get("Package/Symlink"), Paths.get("Package/Alias"), StandardCopyOption.REPLACE_EXISTING);
+		Files.move(path("Package/Symlink"), path("Package/Alias"), StandardCopyOption.REPLACE_EXISTING);
 		println("> Untitled.mdを移動して,名称変更\r\n");
-		Files.move(Paths.get("Untitled.md"), Paths.get("Package/Headers.md"), StandardCopyOption.REPLACE_EXISTING);
+		Files.move(path("Untitled.md"), path("Package/Headers.md"), StandardCopyOption.REPLACE_EXISTING);
 
 		// 追記
 
 		println("> Markdownファイルに追記\r\n");
-		Files.write(Paths.get("Package/Headers.md"), Arrays.asList("## Header 2\r\n### Header 3"), StandardOpenOption.APPEND);
+		Files.write(path("Package/Headers.md"), Arrays.asList("## Header 2\r\n### Header 3"), StandardOpenOption.APPEND);
 
 		// 読込み
 
 		println("> Markdownファイルを読込み\r\n");
-		System.out.println(String.join("\r\n",Files.readAllLines(Paths.get("Package/Headers.md"))));
+		System.out.println(String.join("\r\n",Files.readAllLines(path("Package/Headers.md"))));
 
 		// 再帰的にフォルダ作成
 		println("> フォルダを一気に作成\r\n");
-		Files.createDirectories(Paths.get("Package/Module/Submodule/Item"));
+		Files.createDirectories(path("Package/Module/Submodule/Item"));
 
 		// ファイル/フォルダの複製
 
 		println("> Blankを複製\r\n");
-		Files.copy(Paths.get("Blank"), Paths.get("Package/Blank"), StandardCopyOption.REPLACE_EXISTING);
+		Files.copy(Paths.get("Blank"), path("Package/Blank"), StandardCopyOption.REPLACE_EXISTING);
 		/*
 			JDK標準ライブラリでディレクトリを再帰的にコピーする方法は存在しない
 			外部のライブラリを用意するか,再帰的にコピーするコードを自分で書かねばならない
@@ -117,11 +122,11 @@ public class FileHandle {
 		// ファイルの削除
 
 		println("> ファイルBlankを削除");
-		Files.deleteIfExists(Paths.get("Blank"));
+		Files.deleteIfExists(path("Blank"));
 			// Files.deleteにすれば,既に存在しない場合はエラーになる
 
 		println("> シンボリックリンクAliasを削除");
-		Files.deleteIfExists(Paths.get("Package/Alias"));
+		Files.deleteIfExists(path("Package/Alias"));
 		/*
 			File.deleteやFile.deleteIfExistsは空のディレクトリも削除できるが,空でないディレクトリを削除しようとするとエラーになる。
 			JDK標準ライブラリでディレクトリを再帰的に削除する方法は存在しない
@@ -132,7 +137,7 @@ public class FileHandle {
 		System.setProperty("user.dir", home+"/Package");
 
 		println("> Javaソースファイルを生成します");
-		Files.write(Paths.get("Java.java"), Arrays.asList(
+		Files.write(path("Java.java"), Arrays.asList(
 			"import java.io.IOException;"+"\n"+
 			"public class Java {"+"\n"+
 			"public static void main(String[] args) throws IOException {"+"\n"+
@@ -140,7 +145,7 @@ public class FileHandle {
 			"}"+"\n"+
 			"}"
 		), StandardOpenOption.CREATE);
-		File fo = new File("Java.java");
+		File fo = new File(home+"/Package/Java.java");
 
 		println("> このファイルに対する現在の状態を確認");
 		check("Java.java");
@@ -160,8 +165,11 @@ public class FileHandle {
 		check("Java.java");
 
 		println("> コンパイルして実行");
-		exec("javac","Java.java");
-		exec("java","Java");
+		// Java単独では外部Javaを実行するのがキツイので,シェルの力を借りる
+		Files.write(path("Launcher"), Arrays.asList(
+			"cd \"`dirname \"$0\"`\" ; javac Java.java ; java Java ; code=$? ; rm Launcher ; exit $code"
+		), StandardOpenOption.CREATE);
+		exec("sh",home+"/Package/Launcher");
 
 	}
 

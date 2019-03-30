@@ -8,16 +8,16 @@ log+=`String.match: ${text} → ${found}\r\n`;
 
 log+="\r\n置換\r\n";
 text="<a> <b> <c>";
-var replace=text.replace(/<([a-z])>/,"{$1}");
-log+=`String.replace: ${text} → ${replace}\r\n`;
-var replace=text.replace(/<([a-z])>/g,"{$1}");
-log+=`String.replace: ${text} → ${replace}\r\n`;
+var replaced=text.replace(/<([a-z])>/,"{$1}");
+log+=`gフラグなし: ${text} → ${replaced}\r\n`;
+var replaced=text.replace(/<([a-z])>/g,"{$1}");
+log+=`gフラグあり: ${text} → ${replaced}\r\n`;
 
 log+="\r\n分割と結合\r\n";
 text="a-b-c";
-let arr=text.split(/-/);
-newtext=arr.join("*");
-log+=`${text} → ${newtext}\r\n`;
+let split=text.split(/-/);
+arranged=split.join(".");
+log+=`${text} → ${arranged}\r\n`;
 
 log+="\r\nマッチの確認\r\n";
 let test1="qUiVeR";

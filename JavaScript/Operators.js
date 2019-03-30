@@ -5,6 +5,7 @@ let d2b = (len,dec)=>{
 	var bin = dec.toString(2);
 	let p = Math.max(len,bin.length)-bin.length;
 	for (var n=0;n<p;n++) bin="0"+bin;
+	bin="0b"+bin;
 	return bin;
 };
 let d2x = (len,dec)=>{
@@ -12,6 +13,7 @@ let d2x = (len,dec)=>{
 	var hex = dec.toString(16);
 	let p = Math.max(len,hex.length)-hex.length;
 	for (var n=0;n<p;n++) hex="0"+hex;
+	hex="0x"+hex;
 	return hex;
 };
 
@@ -114,7 +116,7 @@ typeof {}       = ${   typeof {}         }
 /*
 	その他に...
 	複合代入演算子 : += -= *= /= %= **= &= |= ^= <<= >>= >>>= &&= ||=
-		a += b は a= a + b と同義。その他も同様
+		a += b は a = a + b と同義。その他も同様
 	加算子/減算子: ++ --
 		e.g.
 			a=5

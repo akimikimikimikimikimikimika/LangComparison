@@ -11,7 +11,6 @@ public class RegExp {
 		System.out.println(data);
 	}
 
-	private static String text="IllUsTrAtE";
 	private static String test1="qUiVeR";
 	private static String test2="ShIvEr";
 
@@ -21,6 +20,7 @@ public class RegExp {
 
 		println("\r\n検索");
 		Matcher m=Pattern.compile("l+").matcher("IllUsTrAtE");
+		String text="IllUsTrAtE";
 		print(text+" → ");
 		if (m.find()) {
 			println(m.group()+" ("+m.start()+"~"+m.end()+")");
@@ -28,22 +28,22 @@ public class RegExp {
 		else println("マッチしていません");
 
 		println("\r\n置換");
-		String text="IllUsTrAtE";
-		 // 正規表現が使えない置換
-		String newtext=text.replace("l","*");
-		println("string.replace: "+text+" → "+newtext);
-		 // 正規表現が使える置換
+		// 正規表現が使えない置換
+		String replaced=text.replace("l","*");
+		println("string.replace: "+text+" → "+replaced);
+
+		// 正規表現が使える置換
 		text="<a> <b> <c>";
-		newtext=text.replaceAll("(?i)<([a-z])>","{$1}");
-		println("string.replaceAll: "+text+" → "+newtext);
-		newtext=text.replaceFirst("(?i)<([a-z])>","{$1}");
-		println("string.replaceFirst: "+text+" → "+newtext);
+		replaced=text.replaceAll("(?i)<([a-z])>","{$1}");
+		println("string.replaceAll: "+text+" → "+replaced);
+		replaced=text.replaceFirst("(?i)<([a-z])>","{$1}");
+		println("string.replaceFirst: "+text+" → "+replaced);
 
 		println("\r\n分割と結合");
 		text="a-b-c";
-		String[] arr=text.split("-");
-		newtext=String.join("*",arr);
-		println(text+" → "+newtext);
+		String[] split=text.split("-");
+		String arranged=String.join("*",split);
+		println(text+" → "+arranged);
 
 		println("\r\nマッチの確認");
 		if (test1.matches("(?i)qu.*")) println(test1+" はquで始まります");

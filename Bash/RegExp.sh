@@ -8,19 +8,19 @@ echo
 echo "検索"
 echo
 text="IllUsTrAtE"
-find="`echo "$text" | grep -oE l+`"
-echo "$text → $find"
+found="`echo "$text" | grep -oE l+`"
+echo "$text → $found"
 echo
 
 echo
 echo "置換"
 echo
 text="<a> <b> <c>"
-replace="`echo $text | sed -Ee "s/<([a-z])>/{\1}/"`"
-echo "gフラグなし: $text"" → ""$replace"
+replaced="`echo $text | sed -Ee "s/<([a-z])>/{\1}/"`"
+echo "gフラグなし: $text"" → ""$replaced"
 text="<a> <b> <c>"
-replace="`echo $text | sed -Ee "s/<([a-z])>/{\1}/g"`"
-echo "gフラグ付き: $text"" → ""$replace"
+replaced="`echo $text | sed -Ee "s/<([a-z])>/{\1}/g"`"
+echo "gフラグ付き: $text"" → ""$replaced"
 
 << 置換の説明
 	• GNU版sedの場合は, sed -i "s/before/after/g" filename の型で,ファイルを直接書き換えできる。標準出力されない
@@ -36,11 +36,10 @@ echo
 echo 分割と結合
 echo
 text="a-b-c"
-printf "$text"" → "
-IFS="-"
-arr=($text)
-text="$(IFS=".";echo "${arr[*]}")"
-echo "$text"
+IFS="-" # 区切りを定めるグローバル変数
+split=($text)
+arranged="$(IFS=".";echo "${split[*]}")"
+echo "$text"" → ""$arranged"
 
 echo
 echo マッチの確認

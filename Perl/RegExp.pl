@@ -5,55 +5,54 @@ print "\r\nこれから正規表現を試します\r\n\r\n";
 print "\r\n置換\r\n";
 
 $text="<a> <b> <c>";
-print "gフラグなし: $text → ";
-$text =~ s/<([a-z])>/\{\1\}/;
-print "$text\r\n";
+$replaced = $text; # 変数が書き換えられてしまうため,コピー
+$replaced =~ s/<([a-z])>/\{\1\}/;
+print "gフラグなし: $text → $replaced\r\n";
 $text="<a> <b> <c>";
-print "gフラグ付き: $text → ";
-$text =~ s/<([a-z])>/\{\1\}/g;
-print "$text\r\n";
+$replaced=$text;
+$replaced =~ s/<([a-z])>/\{\1\}/g;
+print "gフラグ付き: $text → $replaced\r\n";
 
 print "\r\n分割と結合\r\n";
 $text="a-b-c";
-print "$text → ";
-@arr=split(/-/,$text);
-$text=join(".",@arr);
-print "$text\r\n";
+@split=split(/-/,$text);
+$arranged=join(".",@split);
+print "$text → $arranged\r\n";
 
 # eフラグを付加すれば,演算可能
 print "演算: ";
-$bh = "HEX2BIN";
-print "$bh → "; # HEX2BIN
-$bh =~ s/([0-9])/$1*2/e;
-print "$bh\r\n"; # HEX4BIN
+$hb = "HEX2BIN";
+print "$hb → "; # HEX2BIN
+$hb =~ s/([0-9])/$1*2/e;
+print "$hb\r\n"; # HEX4BIN
 
 print "\r\n変換\r\n";
 
-$test3="IllUsTrAtE";
-print "$test3 → "; # IllUsTrAtE
-$test3 =~ tr/a-z/A-Z/;
-print "$test3\r\n"; # ILLUSTRATE
+$text="IllUsTrAtE";
+print "$text → "; # IllUsTrAtE
+$text =~ tr/a-z/A-Z/;
+print "$text\r\n"; # ILLUSTRATE
 
 # c: 検索条件以外の文字を置換
-$test3="IllUsTrAtE";
+$text="IllUsTrAtE";
 print "cフラグ: ";
-print "$test3 → "; # IllUsTrAtE
-$test3 =~ tr/a-z/*/c;
-print "$test3\r\n"; # *ll*s*r*t*
+print "$text → "; # IllUsTrAtE
+$text =~ tr/a-z/*/c;
+print "$text\r\n"; # *ll*s*r*t*
 
 # d: 検索条件以外の文字を削除
-$test3="IllUsTrAtE";
+$text="IllUsTrAtE";
 print "dフラグ: ";
-print "$test3 → "; # IllUsTrAtE
-$test3 =~ tr/A-Z//d;
-print "$test3\r\n"; # llsrt
+print "$text → "; # IllUsTrAtE
+$text =~ tr/A-Z//d;
+print "$text\r\n"; # llsrt
 
-# 連続した文字を縮約
-$test3="IllUsTrAtE";
+# s: 連続した文字を縮約
+$text="IllUsTrAtE";
 print "sフラグ: ";
-print "$test3 → "; # IllUsTrAtE
-$test3 =~ tr/a-z/A-Z/s;
-print "$test3\r\n"; # ILUsTrAtE
+print "$text → "; # IllUsTrAtE
+$text =~ tr/a-z/A-Z/s;
+print "$text\r\n"; # ILUsTrAtE
 
 print "\r\nマッチの確認\r\n";
 $test1="qUiVeR";

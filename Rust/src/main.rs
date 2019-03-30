@@ -16,6 +16,9 @@
 mod stdinout;
 mod values;
 mod operators;
+mod condition;
+mod repeat;
+mod regexp;
 
 fn main() {
 	println!(r"
@@ -30,6 +33,9 @@ fn main() {
 1. 標準入出力を試す
 2. 色々な値を試す
 3. 演算子を試す
+4. 条件分岐を試す
+5. 繰り返しを試す
+6. 正規表現を試す
 
 0. 終了
 
@@ -48,6 +54,15 @@ fn main() {
 		}
 		else if action == "3" {
 			operators::main();
+		}
+		else if action == "4" {
+			condition::main();
+		}
+		else if action == "5" {
+			repeat::main();
+		}
+		else if action == "6" {
+			regexp::main();
 		}
 		else {
 			println!(r"

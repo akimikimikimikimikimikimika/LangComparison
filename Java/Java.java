@@ -60,6 +60,7 @@ public class Java {
 			println("9. 数学的演算を試す");
 			println("a. 日付と時刻を試す");
 			println("b. クラスを試す");
+			println("c. プロセス系を試す");
 			println("d. コマンドライン引数を試す");
 			println("");
 			println("0. 終了");
@@ -78,6 +79,7 @@ public class Java {
 			else if (eq("9")) Mathematics.main(arg);
 			else if (eq("a")) DateTime.main(arg);
 			else if (eq("b")) Class.main(arg);
+			else if (eq("c")) ProcessHandle.main(arg);
 			else if (eq("d")) Arguments.main(argsArg);
 			else println("指定したアクションは見つかりませんでした\r\n");
 		}

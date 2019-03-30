@@ -5,21 +5,20 @@
 "`r`n置換`r`n";
 
 $text="<r> <r> <r>";
-$replace=$text.Replace("<r>","{r}"); # Exactによる置換
-"string.Replace: $text → $replace";
+$replaced=$text.Replace("<r>","{r}"); # Exactによる置換
+"string.Replace: $text → $replaced";
 $text="<a> <b> <c>";
-$replace=$text -replace "<([a-z])>","{`$1}";
-"string -replace: $text → $replace"; # RegExによる置換 & 加工はできない
+$replaced=$text -replace "<([a-z])>","{`$1}";
+"string -replace: $text → $replaced"; # RegExによる置換 & 加工はできない
 $text="<a> <b> <c>";
-$replace=[regex]::Replace($text,"<([a-z])>",{ "{"+$args.groups[1].value.toUpper()+"}" });
-"[regex]::Replace: $text → $replace"; # RegExによる置換 & 加工できる
+$replaced=[regex]::Replace($text,"<([a-z])>",{ "{"+$args.groups[1].value.toUpper()+"}" });
+"[regex]::Replace: $text → $replaced"; # RegExによる置換 & 加工できる
 
 "`r`n分割と結合`r`n";
 $text="a-b-c";
-Write-Host -NoNewline "$text → ";
-$arr=$text -split "-";
-$text=$arr -join ".";
-"$text";
+$split=$text -split "-";
+$arranged=$split -join ".";
+"$text → $arranged";
 
 "`r`nマッチの確認`r`n";
 $test1="qUiVeR";

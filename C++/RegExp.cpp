@@ -30,22 +30,22 @@ void RegExp(){
 
 	cout << "\r\n" << "検索" << "\r\n";
 	string text="IllUsTrAtE";
-	smatch results;
+	smatch found;
 	/*
 		stringに対する検索: smatch
 		char*に対する検索: cmatch
 	*/
-	if (regex_search(text,results,regex("l+",regex_constants::icase))) {
-		cout << "マッチ:" << results.str() << " (" << results.position() << "から" << results.length() << "文字)" << "\r\n";
+	if (regex_search(text,found,regex("l+",regex_constants::icase))) {
+		cout << "マッチ:" << found.str() << " (" << found.position() << "から" << found.length() << "文字)" << "\r\n";
 	}
 	else {cout << "マッチしていません";}
 
 	cout << "\r\n" << "置換" << "\r\n";
 	text="<a> <b> <c>";
-	string replace=regex_replace(text,regex("<([a-z])>"),"{$1}");
-	cout << "regex_replace: " << text << " → " << replace << "\r\n";
+	string replaced=regex_replace(text,regex("<([a-z])>"),"{$1}");
+	cout << "regex_replace: " << text << " → " << replaced << "\r\n";
 	text="<a> <b> <c>";
-	replace=regex_replace(text,regex("<([a-z])>"),"{$1}",regex_constants::format_first_only);
-	cout << "regex_replace: " << text << " → " << replace << "\r\n";
+	replaced=regex_replace(text,regex("<([a-z])>"),"{$1}",regex_constants::format_first_only);
+	cout << "regex_replace: " << text << " → " << replaced << "\r\n";
 
 }

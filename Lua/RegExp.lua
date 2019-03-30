@@ -6,9 +6,10 @@ print("\r\n\r\n検索")
 text="IllUsTrAtE"
 found=string.match( text, "[a-z]+" )
 print("string.match: "..text.." → "..found)
+
 print("\r\n\r\n置換")
 text="<a> <b> <c>"
-newtxt=string.gsub( text, "%<([a-z])%>", "{%1}" )
-print("string.gsub: "..text.." → "..newtxt)
+replaced=string.gsub( text, "%<([a-z])%>", "{%1}" )
+print("string.gsub: "..text.." → "..replaced)
 
 print("\r\n")

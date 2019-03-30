@@ -8,26 +8,26 @@ print("\r\n検索")
 var text="IllUsTrAtE"
 var regexp=try NSRegularExpression(pattern:"t", options:[.caseInsensitive])
     // 正規表現のコンパイル
-var findResults=regexp.matches(in: text, range: NSMakeRange(0, text.count))
+var results=regexp.matches(in: text, range: NSMakeRange(0, text.count))
     /*
         マッチする箇所を全て発見 → [NSTextCheckingResult]
         ※ 最初の1箇所だけでよいなら regexp.firstMatch(in:,range:) -> NSTextCheckingResult
     */
-var find=findResults.map({ (v:NSTextCheckingResult) -> String in
+var found=results.map({ (v:NSTextCheckingResult) -> String in
     (text as NSString).substring(with: v.range)
 })
     // map により [NSTextCheckingResult] を対応する箇所を切り抜いた [String] に変換
-print("\(text) → \(find.joined(separator: ", "))")
+print("\(text) → \(found.joined(separator: ", "))")
     // [String] を連結してコンマ区切りの文字列に
 
 print("\r\n置換")
 text="<a> <b> <c>"
-var replace=text.replacingOccurrences(of: "(?i)<([a-z])>", with: "{$1}", options: .regularExpression, range: text.range(of: text))
-print("\(text) → \(replace)")
+var replaced=text.replacingOccurrences(of: "(?i)<([a-z])>", with: "{$1}", options: .regularExpression, range: text.range(of: text))
+print("\(text) → \(replaced)")
 /*
     或いは,RegExpを使った次の方法もある
     regexp=try NSRegularExpression(pattern:"<([a-z])>", options:[.caseInsensitive])
-    replace=regexp.stringByReplacingMatches(in: text, range: text.range(of: text), withTemplate: "{$1}")
+    replaced=regexp.stringByReplacingMatches(in: text, range: text.range(of: text), withTemplate: "{$1}")
 */
 
 print("\r\nマッチの確認")
@@ -84,9 +84,9 @@ if (text as NSString).contains("<b>") {
 
 print("\r\n分割と結合")
 text="a-b-c"
-let arr=text.components(separatedBy: "-")
-let newtext=arr.joined("*")
-print("\(text) → \(newtext)")
+let split=text.components(separatedBy: "-")
+let arranged=split.joined(".")
+print("\(text) → \(arranged)")
 /*
     (NSString).components(separatedBy: String) : NSStringをStringで分割
     (String).components(Character) : StringをCharacterで分割

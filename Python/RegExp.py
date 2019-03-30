@@ -12,16 +12,16 @@ print("re.search: "+text+" → "+found)
 
 print("\r\n置換")
 text="IllUsTrAtE"
-newtext=text.replace("l","*")
-print("str.replace: "+text+" → "+newtext)
+replaced=text.replace("l","*")
+print("str.replace: "+text+" → "+replaced)
 text="<a> <b> <c>"
-newtext=re.sub(r"<([a-z])>",r"{\1}",text)
-print("re.sub: "+text+" → "+newtext)
+replaced=re.sub(r"<([a-z])>",r"{\1}",text)
+print("re.sub: "+text+" → "+replaced)
 
 print("\r\n分割と結合")
 text="a-b-c"
-arr=text.split("-")
-newtext="*".join(arr)
-print(text+" → "+newtext)
+split=text.split("-")
+arranged=".".join(split)
+print(text+" → "+arranged)
 
 print("\r\n")

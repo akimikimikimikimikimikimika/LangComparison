@@ -5,23 +5,22 @@ print "\r\nこれから正規表現を試します\r\n\r\n";
 print "\r\n検索\r\n";
 
 text="IllUsTrAtE";
-find=text.scan(/t/i);
-print "str.scan: #{text} → #{find}\r\n";
+found=text.scan(/t/i);
+print "str.scan: #{text} → #{found}\r\n";
 
 print "\r\n置換\r\n";
 
 text="<a> <b> <c>";
-replace=text.sub(/\<([a-z])\>/i,'{\1}');
-print "str.sub: #{text} → #{replace}\r\n";
-replace=text.gsub(/\<([a-z])\>/i,'{\1}');
-print "str.gsub: #{text} → #{replace}\r\n";
+replaced=text.sub(/\<([a-z])\>/i,'{\1}');
+print "str.sub: #{text} → #{replaced}\r\n";
+replaced=text.gsub(/\<([a-z])\>/i,'{\1}');
+print "str.gsub: #{text} → #{replaced}\r\n";
 
 print "\r\n分割と結合\r\n";
 text="a-b-c";
-print "#{text} → ";
-arr=text.split(/-/);
-text=arr.join(".");
-print "#{text}\r\n";
+split=text.split(/-/);
+arranged=split.join(".");
+print "#{text} → #{arranged}\r\n";
 
 print "\r\nマッチの確認\r\n";
 test1="qUiVeR";

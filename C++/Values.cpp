@@ -56,3 +56,8 @@ wstring:" << cv.to_bytes(wstr) << " #include <string>" << "\n\
 ";
 
 }
+/*
+	変数: int x
+	定数: const int x
+		※ 一般的に安全性のため,書き換えることがなければ const を付加した方が良いと言われている。
+*/

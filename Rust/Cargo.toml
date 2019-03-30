@@ -5,3 +5,4 @@ authors = ["akimi <akimikimi@icloud.com>"]
 edition = "2018"
 
 [dependencies]
+regex = "1"

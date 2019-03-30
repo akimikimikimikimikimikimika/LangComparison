@@ -6,10 +6,10 @@ pub fn main() {
 	let st:&str = "ラスト"; // &str = &[u8]
 	let st2:String = "ラスト".to_string(); // String = Vec[u8]
 	let raw_str:&str = r"
-		First line
-		Second line
-		Third line
-	";
+First line
+Second line
+Third line
+";
 	// rを付加すると,Raw文字列となり,文字列内で改行ができる
 	let import_quote:&str = r#"Rust is the most "loved" language"#;
 	// 更に##で囲むと,""をエスケープせずとも使えるようになる
@@ -18,10 +18,10 @@ pub fn main() {
 	let byte:u8 = b'R';
 	let _bytes:&[u8] = b"Rust";
 	let _raw_bytes:&[u8] = br"
-		First line
-		Second line
-		Third line
-	";
+First line
+Second line
+Third line
+";
 	// u8型の数値として認識される
 
 	// 文字
@@ -70,7 +70,9 @@ pub fn main() {
 	println!("\r\n色々な値を試します");
 	println!("文字列");
 	println!(" &str:   {}",st);
+	println!("   大きさ: {}",st.len());
 	println!(" String: {}",st2);
+	println!("   大きさ: {}",st2.len());
 	println!("Raw文字列");
 	println!("{}",raw_str);
 	println!("{}",import_quote);
@@ -110,3 +112,8 @@ pub fn main() {
 	println!(" 6 → {}",cube(6));
 
 }
+/*
+	変数: let mut x
+	定数: let x
+		※ Rustでは安全性のため,なるだけ定数として宣言することを推奨している。可変な値が必要な場合に限って, mut を付加して可変にすることができる
+*/

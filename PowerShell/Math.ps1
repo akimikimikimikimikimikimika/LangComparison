@@ -21,8 +21,8 @@ hex2dec        37d: $(   [Convert]::ToInt32('37d',16)         )
 e = $(   [Math]::E    )
 
 最大/最小
-[Math]::Max(3,4,6) = $(   [Math]::Max(3,4,6)   )
-[Math]::Min(3,4,6) = $(   [Math]::Min(3,4,6)   )
+[Math]::Max(3,6) = $(   [Math]::Max(3,6) <# 引数は2つまで #>   )
+[Math]::Min(3,6) = $(   [Math]::Min(3,6) <# 引数は2つまで #>   )
 
 符号
 [Math]::Abs(+18) = $(   [Math]::Abs(+18)   )
