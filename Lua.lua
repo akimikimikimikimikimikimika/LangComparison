@@ -56,6 +56,8 @@ d. コマンドライン引数を試す
 			dofile(dirname().."Lua/Math.lua")
 		elseif action == "a" then
 			dofile(dirname().."Lua/DateTime.lua")
+		elseif action == "b" then
+			dofile(dirname().."Lua/Class.lua")
 		elseif action == "d" then
 			rtn=os.execute(dirname().."Lua/Arguments.lua このプログラムを直接実行してみよう。 \"ここにあるよ: Lua/Arguments.lua\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Lua/Arguments.lua 引数1 引数2 ...\" \"\"  すると,引数1,引数2...が順に出力されます")
 		else

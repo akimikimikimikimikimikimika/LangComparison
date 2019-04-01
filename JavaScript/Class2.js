@@ -49,7 +49,6 @@ Vector.prototype = {
         this.z *= k;
         return this;
     },
-
     // 自分自身の実数倍のVectorを生成
     coefMultiplied:function(k){
         return new Vector(this.x*k,this.y*k,this.z*k);

@@ -1,6 +1,6 @@
 #! /usr/local/bin/lua
 
-print("\r\n\r\nこれから正規表現を試します\r\n\r\n")
+print("\r\nこれから正規表現を試します\r\n")
 
 print("\r\n\r\n検索")
 text="IllUsTrAtE"

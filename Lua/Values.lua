@@ -35,7 +35,7 @@ color = {
 	end
 }
 
-print("\r\n\r\n色々な値を試します")
+print("\r\n色々な値を試します")
 print("文字列:"..str)
 print("   長さ:"..string.format("%d",string.len(str)))
 print("文字列2:")
