@@ -59,9 +59,11 @@ public class Java {
 			println("8. ファイルパスを試す");
 			println("9. 数学的演算を試す");
 			println("a. 日付と時刻を試す");
-			println("b. クラスを試す");
-			println("c. プロセス系を試す");
-			println("d. コマンドライン引数を試す");
+			println("b. 文字列を試す");
+			println("c. 文字列フォーマットを試す");
+			println("d. クラスを試す");
+			println("e. プロセス系を試す");
+			println("f. コマンドライン引数を試す");
 			println("");
 			println("0. 終了");
 			println("");
@@ -78,9 +80,11 @@ public class Java {
 			else if (eq("8")) PathData.main(arg);
 			else if (eq("9")) Mathematics.main(arg);
 			else if (eq("a")) DateTime.main(arg);
-			else if (eq("b")) Class.main(arg);
-			else if (eq("c")) ProcessHandle.main(arg);
-			else if (eq("d")) Arguments.main(argsArg);
+			else if (eq("b")) StringType.main(arg);
+			else if (eq("c")) Sprintf.main(arg);
+			else if (eq("d")) Class.main(arg);
+			else if (eq("e")) ProcessHandle.main(arg);
+			else if (eq("f")) Arguments.main(argsArg);
 			else println("指定したアクションは見つかりませんでした\r\n");
 		}
 	}

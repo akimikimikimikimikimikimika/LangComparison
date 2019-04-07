@@ -62,6 +62,42 @@ public class DateTime {
 		println("              .getID() = \""+t.getID()+"\"");
 		println("    .useDaylightTime() = "+t.useDaylightTime());
 
+		println("\r\nフォーマット");
+		Date d = new Date();
+		println("String.format() = \"");
+		println(
+			String.format("datetime    %%tc : %tc %n",d)+
+			String.format("date        %%tD : %tD = %%tx %n",d)+
+			String.format("            %%tF : %tF %n",d)+
+			String.format("time        %%tT : %tT = %%tX %n",d)+
+			String.format("            %%tR : %tR %n",d)+
+			String.format("            %%tr : %tr %n",d)+
+			String.format("century     %%tC : %tC %n",d)+
+			String.format("year        %%tY : %tY %n",d)+
+			String.format("            %%ty : %ty %n",d)+
+			String.format("month       %%tb : %tb = %%th %n",d)+
+			String.format("            %%tB : %tB %n",d)+
+			String.format("            %%tm : %tm %n",d)+
+			String.format("day         %%td : %td %n",d)+
+			String.format("            %%te : %te %n",d)+
+			String.format("day/year    %%tj : %tj %n",d)+
+			String.format("weekday     %%ta : %ta %n",d)+
+			String.format("            %%tA : %tA %n",d)+
+			String.format("hour        %%tH : %tH %n",d)+
+			String.format("            %%tk : %tk %n",d)+
+			String.format("            %%tI : %tI %n",d)+
+			String.format("            %%tl : %tl %n",d)+
+			String.format("AM/PM       %%tp : %tp %n",d)+
+			String.format("minute      %%tM : %tM %n",d)+
+			String.format("second      %%tS : %tS %n",d)+
+			String.format("UNIX epoch  %%ts : %ts %n",d)+
+			String.format("milli+micro %%tN : %tN %n",d)+
+			String.format("millisecond %%tL : %tL %n",d)+
+			String.format("timezone    %%tZ : %tZ %n",d)+
+			String.format("            %%tz : %tz",d)
+		);
+		println("\"");
+
 		long en=System.currentTimeMillis();
 		println("\r\nこの処理に要した時間: "+(en-st)+" ミリ秒");
 

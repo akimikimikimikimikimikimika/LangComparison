@@ -32,9 +32,11 @@ while (1) {
 8. ファイルパスを試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. クラスを試す
-c. プロセス系を試す
-d. コマンドライン引数を試す
+b. 文字列を試す
+c. 文字列フォーマットを試す
+d. クラスを試す
+e. プロセス系を試す
+f. コマンドライン引数を試す
 
 0. 終了
 
@@ -77,12 +79,18 @@ Menu
 		system("./DateTime.pl");
 	}
 	elsif ($action eq "b") {
-		system("./Class.pl");
+		system("./String.pl");
 	}
 	elsif ($action eq "c") {
-		system("./Process.pl");
+		system("./Sprintf.pl");
 	}
 	elsif ($action eq "d") {
+		system("./Class.pl");
+	}
+	elsif ($action eq "e") {
+		system("./Process.pl");
+	}
+	elsif ($action eq "f") {
 		system("./Arguments.pl このプログラムを直接実行してみよう。 \"ここにあるよ: Perl/Arguments.pl\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Perl/Arguments.pl 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	else {

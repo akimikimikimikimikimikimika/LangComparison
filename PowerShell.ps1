@@ -35,9 +35,11 @@ while ($True) {
 8. ファイルパスを試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. クラスを試す
-c. プロセス系を試す
-d. コマンドライン引数を試す
+b. 文字列を試す
+c. 文字列フォーマットを試す
+d. クラスを試す
+e. プロセス系を試す
+f. コマンドライン引数を試す
 
 0. 終了
 
@@ -79,12 +81,18 @@ d. コマンドライン引数を試す
 		./DateTime.ps1;
 	}
 	elseif ($action -eq "b") {
-		./Class.ps1;
+		./String.ps1;
 	}
 	elseif ($action -eq "c") {
-		./Process.ps1;
+		./Sprintf.ps1;
 	}
 	elseif ($action -eq "d") {
+		./Class.ps1;
+	}
+	elseif ($action -eq "e") {
+		./Process.ps1;
+	}
+	elseif ($action -eq "f") {
 		./Arguments.ps1 "このプログラムを直接実行してみよう。" "ここにあるよ: PowerShell/Arguments.ps1" "" "コマンドラインに以下のように入力して実行します" "" "PowerShell/Arguments.ps1 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます";
 	}
 	else {

@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 			printf("8. ファイルパスを試す\r\n");
 			printf("9. 数学的演算を試す\r\n");
 			printf("a. 日付と時刻を試す\r\n");
-			printf("d. コマンドライン引数を試す\r\n");
+			printf("f. コマンドライン引数を試す\r\n");
 			printf("\r\n");
 			printf("0. 終了\r\n");
 			printf("\r\n");
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
 			else if (cmp(action,"8")) Path();
 			else if (cmp(action,"9")) Math();
 			else if (cmp(action,"a")) DateTime();
-			else if (cmp(action,"d")) Arguments(9,demo);
+			else if (cmp(action,"f")) Arguments(9,demo);
 			else printf("指定したアクションは見つかりませんでした\r\n\r\n");
 		}
 	}

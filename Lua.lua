@@ -29,8 +29,10 @@
 6. 正規表現を試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. クラスを試す
-d. コマンドライン引数を試す
+b. 文字列を試す
+c. 文字列フォーマットを試す
+d. クラスを試す
+f. コマンドライン引数を試す
 
 0. 終了
 
@@ -57,8 +59,12 @@ d. コマンドライン引数を試す
 		elseif action == "a" then
 			dofile(dirname().."Lua/DateTime.lua")
 		elseif action == "b" then
-			dofile(dirname().."Lua/Class.lua")
+			dofile(dirname().."Lua/String.lua")
+		elseif action == "c" then
+			dofile(dirname().."Lua/Sprintf.lua")
 		elseif action == "d" then
+			dofile(dirname().."Lua/Class.lua")
+		elseif action == "f" then
 			rtn=os.execute(dirname().."Lua/Arguments.lua このプログラムを直接実行してみよう。 \"ここにあるよ: Lua/Arguments.lua\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Lua/Arguments.lua 引数1 引数2 ...\" \"\"  すると,引数1,引数2...が順に出力されます")
 		else
 			io.write([[

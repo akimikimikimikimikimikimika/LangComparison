@@ -37,7 +37,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 - macOS  
 	Perl, Ruby, PHP, Python, Bash は標準でインストール済。  
-	但し,Pythonなどのインタプリタは,最新版ではないため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。  
+	但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。  
 	Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。  
 	C++, C, Swift のコンパイルには [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。  
 	Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。  
@@ -45,8 +45,8 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 - Windows  
 	PowerShell は標準でインストール済。  
-	Perl, Ruby, PHP, Python, Lua, Rust, Go はインストールされていない。  
-	C++ のコンパイルには Visual C++ が必要らしい。  
+	Perl, Ruby, PHP, Python, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードするか,Linuxbrewを使う。  
+	C++ のコンパイルには Visual C++ が必要らしい。詳しくはよく知らない。  
 	Windowsでも,Windows 10のLinux Subsystemを使えば,Linuxbrewが使える。
 
 - Unix系OS (macOS除く)  
@@ -182,25 +182,33 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下�
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
 今のところ, Swift / Perl / Ruby / PHP / Python / PowerShell / Bash / Java で同時進行中  
-※ 但し,Bashはオブジェクト指向言語ではないため,クラスを用意していない  
-※ 又,JavaScriptはファイル操作関連の機能があまりないため,用意していない  
-- [x] 標準入出力
-- [x] 基本の値
-- [x] 演算子
-- [x] 条件分岐/ループ
-- [x] 正規表現での検索/置換
-- [x] ファイル/フォルダ操作
-- [x] 数学関数
-- [x] 日付/時刻
-- [x] オブジェクト / クラス
-- [x] 外部ソースの読み込み
-- [x] コマンドライン引数
-- [ ] 文字列の操作
+- [x] 標準入出力 (Stdinout)
+- [x] 基本の値 (Values)
+- [x] 演算子 (Operators)
+- [x] 条件分岐 (Condition)
+- [x] ループ (Loop/Repeat)
+- [x] 正規表現での検索/置換 (RegExp)
+- [x] ファイル/フォルダ操作 (File/FileHandle)
+- [x] ファイルパス (FilePath)
+- [x] 数学関数 (Math/Mathematics)
+- [x] 日付/時刻 (DateTime)
+- [x] 文字列の操作 (String/StringType)
+- [x] 文字列にフォーマット (Sprintf)
+- [x] オブジェクト / クラス (Class)
+- [x] コマンドライン引数 (Arguments)
 - [ ] 配列の操作
 - [ ] 型の変換
 - [ ] 各種定数
-- [ ] システム情報取得
+- [ ] Webコンテンツの取得
+- [ ] JSON (JavaScript Object Notation)
 - [ ] モジュール
 - [ ] 並列処理
 - [ ] 例外の取り扱い
 - [ ] C / C++ / Rust / Go 等へ拡充
+
+但し,以下のものは用意されていない
+- Bash : Class (Bashはオブジェクト指向言語ではない)
+- JavaScript : File
+- JavaScript : Sprintf (JavaScriptにフォーマット用の関数が存在しない)
+- Lua : FilePath (Luaでファイルパスを取得するには外部パッケージが必要)
+- PowerShell : Sprintf (準備中)

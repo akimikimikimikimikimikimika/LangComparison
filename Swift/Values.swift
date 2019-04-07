@@ -144,6 +144,9 @@ let dict4:NSMutableDictionary = ["first":1, 2:"second", "third":3, 2.71:3.14, tr
 // 範囲
 let ranI = 5...8; // 5≦x≦8
 let ranE = 5..<8; // 5≦x<8
+let ranF = 5... ; // 5≦x
+let ranT =  ...8; //   x≦8
+let ranU =  ..<8; //   x<8
 
 // 関数
 func cube(v val: Int) -> Int {
@@ -219,12 +222,16 @@ print("""
 \(dict3)
 \(dict4)
 範囲:
-   5≤x≤8 = \(ranI)
-   5≤x<8 = \(ranE)
+   5≦x≦8 = \(ranI)
+   5≦x<8 = \(ranE)
+   5≦x   = \(ranF)
+     x≦8 = \(ranT)
+     x<8 = \(ranU)
 関数:
-\(cube)
+\(String(describe: cube))
 クロージャ (無名関数):
-\(function)
+\(String(describing: function))
 """)
+// String(describing:) を挟んで表記することで,そのまま表記した際に表示されるエラーを回避することができる
 
 print("\r\n")

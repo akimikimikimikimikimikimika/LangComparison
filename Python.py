@@ -41,9 +41,11 @@ while True:
 8. ファイルパスを試す
 9. 数学的演算を試す
 a. 日付と時刻を試す
-b. クラスを試す
-c. プロセス系を試す
-d. コマンドライン引数を試す
+b. 文字列を試す
+c. 文字列フォーマットを試す
+d. クラスを試す
+e. プロセス系を試す
+f. コマンドライン引数を試す
 
 0. 終了
 
@@ -74,10 +76,14 @@ d. コマンドライン引数を試す
 	elif action=="a":
 		rtn=subprocess.call("./DateTime.py")
 	elif action=="b":
-		rtn=subprocess.call("./Class.py")
+		rtn=subprocess.call("./String.py")
 	elif action=="c":
-		rtn=subprocess.call("./Process.py")
+		rtn=subprocess.call("./Sprintf.py")
 	elif action=="d":
+		rtn=subprocess.call("./Class.py")
+	elif action=="e":
+		rtn=subprocess.call("./Process.py")
+	elif action=="f":
 		rtn=subprocess.call(["./Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"])
 	else:
 		print("""

@@ -30,8 +30,8 @@ int main(int argc, char *argv[]){
 			cout << "6. 正規表現を試す" << "\r\n";
 			cout << "9. 数学的演算を試す" << "\r\n";
 			cout << "a. 日付と時刻を試す" << "\r\n";
-			cout << "b. クラスを試す" << "\r\n";
-			cout << "d. コマンドライン引数を試す" << "\r\n";
+			cout << "d. クラスを試す" << "\r\n";
+			cout << "f. コマンドライン引数を試す" << "\r\n";
 			cout << "\r\n";
 			cout << "0. 終了" << "\r\n";
 			cout << "\r\n";
@@ -46,8 +46,8 @@ int main(int argc, char *argv[]){
 			else if (action=="6") RegExp();
 			else if (action=="9") Math();
 			else if (action=="a") DateTime();
-			else if (action=="b") Class();
-			else if (action=="d") Arguments(9,demo);
+			else if (action=="d") Class();
+			else if (action=="f") Arguments(9,demo);
 			else if (action=="0") break;
 			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";
 		}

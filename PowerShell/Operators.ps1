@@ -53,6 +53,7 @@ True  -or False = $(   $True  -or $False   )
 
 文字列演算子
 "abc" + "def"  = "$(   "abc" + "def"   )"
+"abc" * 3      = "$(   "abc" * 3       )"
 
 文字列比較演算子
 "abc" -gt "def" = $(   "abc" -gt "def"   )
