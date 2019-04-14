@@ -30,6 +30,12 @@ print("""
 
 これから文字列を試します
 
+長さ
+"スウィフト" →
+.count  = \("スウィフト".count)
+.length = \(("スウィフト" as NSString).count)
+
+大文字/小文字の切替
 "Swift STRING demo" →
 .uppercased   = "\(   ("Swift STRING demo" as NSString).uppercased    )"
 .lowercased   = "\(   ("Swift STRING demo" as NSString).lowercased    )"
@@ -37,24 +43,34 @@ print("""
 .uppercased() = "\(   "Swift STRING demo".uppercased()   )"
 .lowercased() = "\(   "Swift STRING demo".lowercased()   )"
 
+文字列の削除
 "ええ すごいわ ええ" →
 .removeFirst(3)        = "\(rmF)"
 .removeLast(3)         = "\(rmL)"
 .removeSubrange(3...6) = "\(rmS)"
 
+文字列の置換
 .replacingCharacters(in: 3...5, with: "おもしろい") = "\(   ("ええ すごいわ ええ" as NSString).replacingCharacters(in: NSMakeRange(3,3), with: "おもしろい")   )"
 .replaceSubrange(3..<6, with:"おもしろい") = "\(rsr)"
 
+検索
 "abracadabra" →
 .contains("a")  = \(   "abracadabra".contains("a")    )
 .hasPrefix("a") = \(   "abracadabra".hasPrefix("a")    )
 .hasSuffix("a") = \(   "abracadabra".hasSuffix("a")    )
 
+部分文字列の取り出し
 "string".substring(from: 2)     = "\(   ("string" as NSString).substring(from: 2)   )"
 "string".substring(to: 3)       = "\(   ("string" as NSString).substring(to: 3)   )"
 "string".substring(with: 1..<3) = "\(   ("string" as NSString).substring(with: NSMakeRange(1,2))   )"
 
 """)
+/*
+	文字列の長さを取得するプロパティは Swift のオブジェクトと Objective-C のオブジェクトで異なる
+	String.count
+	NSString.length
+	NSMutableString.length
+*/
 /*
 	⚠︎ 注意
 	1...2 ≠ NSMakeRange(1,2) - 前者の型は ClosedRange<Int> で,後者の型は NSRange である

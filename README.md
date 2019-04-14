@@ -181,7 +181,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下�
 
 ### 比較達成状況
 すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ, Swift / Perl / Ruby / PHP / Python / PowerShell / Bash / Java で同時進行中  
+今のところ, Swift / Perl / Ruby / PHP / Python / Java / PowerShell / Bash / JavaScript で同時進行中  
 - [x] 標準入出力 (Stdinout)
 - [x] 基本の値 (Values)
 - [x] 演算子 (Operators)

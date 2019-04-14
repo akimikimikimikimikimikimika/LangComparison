@@ -22,10 +22,14 @@ import "os"
 import "bufio"
 
 func main() {
-	fmt.Println("こんにちは。私の名前はGo。")
-	var stdin = bufio.NewScanner(os.Stdin)
-	for true {
-		fmt.Println(`
+	stdin := bufio.NewScanner(os.Stdin)
+	args := os.Args[1:]
+	if (len(args)>0) {
+		Arguments()
+	} else {
+		fmt.Println("こんにちは。私の名前はGo。")
+		for true {
+			fmt.Println(`
 
 何がしたい?
 
@@ -34,29 +38,33 @@ func main() {
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
+f. コマンドライン引数を試す
 
 0. 終了
-		`)
-		stdin.Scan()
-		fmt.Println(`
+			`)
+			stdin.Scan()
+			fmt.Println(`
 
 
-		`)
-		var action = stdin.Text()
-		if action == "0" {
-			break
-		} else if action == "1" {
-			Stdinout()
-		} else if action == "2" {
-			Values()
-		} else if action == "3" {
-			Operators()
-		} else if action == "4" {
-			Condition()
-		} else if action == "5" {
-			Loop()
-		} else {
-			fmt.Println("指定したアクションは見つかりませんでした")
+			`)
+			var action = stdin.Text()
+			if action == "0" {
+				break
+			} else if action == "1" {
+				Stdinout()
+			} else if action == "2" {
+				Values()
+			} else if action == "3" {
+				Operators()
+			} else if action == "4" {
+				Condition()
+			} else if action == "5" {
+				Loop()
+			} else if action == "f" {
+				Arguments()
+			} else {
+				fmt.Println("指定したアクションは見つかりませんでした")
+			}
 		}
 	}
 }

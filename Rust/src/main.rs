@@ -19,14 +19,22 @@ mod operators;
 mod condition;
 mod repeat;
 mod regexp;
+mod arguments;
+
+use std::env;
 
 fn main() {
-	println!(r"
+	let args:Vec<String> = env::args().collect();
+	if args.len()>1 {
+		arguments::main();
+	}
+	else {
+		println!(r"
 
 こんにちは。私の名前はRust。
 ");
-	loop {
-		println!(r"
+		loop {
+			println!(r"
 
 何がしたい?
 
@@ -36,39 +44,44 @@ fn main() {
 4. 条件分岐を試す
 5. 繰り返しを試す
 6. 正規表現を試す
+f. コマンドライン引数を試す
 
 0. 終了
 
 
 ");
-		let action = read();
-		println!("\r\n\r\n");
-		if action == "0" {
-			break;
-		}
-		else if action == "1" {
-			stdinout::main();
-		}
-		else if action == "2" {
-			values::main();
-		}
-		else if action == "3" {
-			operators::main();
-		}
-		else if action == "4" {
-			condition::main();
-		}
-		else if action == "5" {
-			repeat::main();
-		}
-		else if action == "6" {
-			regexp::main();
-		}
-		else {
-			println!(r"
+			let action = read();
+			println!("\r\n\r\n");
+			if action == "0" {
+				break;
+			}
+			else if action == "1" {
+				stdinout::main();
+			}
+			else if action == "2" {
+				values::main();
+			}
+			else if action == "3" {
+				operators::main();
+			}
+			else if action == "4" {
+				condition::main();
+			}
+			else if action == "5" {
+				repeat::main();
+			}
+			else if action == "6" {
+				regexp::main();
+			}
+			else if action == "f" {
+				arguments::main();
+			}
+			else {
+				println!(r"
 指定したアクションは見つかりませんでした
 
 ");
+			}
 		}
 	}
 }

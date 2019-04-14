@@ -37,7 +37,6 @@ color = {
 
 print("\r\n色々な値を試します")
 print("文字列:"..str)
-print("   長さ:"..string.format("%d",string.len(str)))
 print("文字列2:")
 print(lines)
 print("数値:"..string.format("%d,%d,%d",num,func(num),cube(num)))

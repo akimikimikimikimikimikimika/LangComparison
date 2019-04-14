@@ -22,6 +22,12 @@ char = ?赤; # ?で1文字の文字列型の値を表す
 integer = 6;
 float = 0.0375e-6;
 complex = 3+1i;
+=begin
+   String.to_c でも複素数が生成できるが,ここでは,以下の表記法がとれる
+   • "3+6i".to_c # 実部+虚部i
+   • "3+6j".to_c # 実部+虚部j
+   • "3@6".to_c  # 絶対値@偏角
+=end
 boolean = true;
 null = nil;
 # 配列,リスト

@@ -7,9 +7,7 @@ Go/Build
 Rust/Build
 Rust/Cargo.lock
 Rust/.rustc_info.json
-Rust/src
 Manage
 
 Perl/Module.pl
-Ruby/Sprintf.rb
 Modules

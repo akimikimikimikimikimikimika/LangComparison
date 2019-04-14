@@ -62,7 +62,6 @@ $func={
 色々な値を試します
 
 文字列: $string
-   長さ: $($string.Length)
 文字列2:
 $lines
 文字列3:

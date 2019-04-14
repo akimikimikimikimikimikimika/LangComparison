@@ -45,7 +45,6 @@ print <<<"Values"
 色々な値を試します
 
 文字列: $string
-   長さ: {$i(strlen($string))}
 文字列2:
 $lines
 数値:

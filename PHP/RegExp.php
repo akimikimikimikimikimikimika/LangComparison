@@ -22,7 +22,8 @@ print "preg_replace: ".$text." → ".$replaced."\r\n";
 print "\r\n分割と結合\r\n";
 
 $text="a-b-c";
-$split=preg_split("/-/",$text);
+$split=explode("-",$text); # 文字列で分割
+$split=preg_split("/-/",$text); # 正規表現で分割
 $arranged=implode(".",$split);
 print "$text → $arranged\r\n";
 
