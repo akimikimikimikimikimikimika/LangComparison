@@ -1,7 +1,6 @@
 #! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
-import sys
 import os
 
 pt=os.path.normpath(os.path.join(os.getcwd(),__file__))

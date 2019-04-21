@@ -209,7 +209,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, PowerShell, Bash, Lua に
 - [x] ループ (Loop/Repeat)
 - [x] 正規表現での検索/置換 (RegExp)
 - [x] ファイル/フォルダ操作 (File/FileHandle)
-- [x] ファイルパス (FilePath)
+- [x] ファイルパス (Path/FilePath)
 - [x] 数学関数 (Math/Mathematics)
 - [x] 日付/時刻 (DateTime)
 - [x] 文字列の操作 (String/StringType)
