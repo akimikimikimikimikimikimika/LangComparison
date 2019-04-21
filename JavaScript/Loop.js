@@ -2,15 +2,15 @@
 var log = "\r\nこれからループ処理を試します\r\n";
 
 log+="\r\nfor (n=0; n<3; n++) {…}\r\n";
-for (n=0;n<3;n++) log+=`n=${n}のループ\r\n`;
+for (n=0;n<3;n++) log+=`n=${n} のループ\r\n`;
 
 log+="\r\nfor (n in array) {…}\r\n";
 let cs=["壱","弐","参"];
-for (n in cs) log+=`${n}番目の c="${cs[n]}"のループ\r\n`;
+for (n in cs) log+=`c="${cs[n]}" のループ (${n}番目の要素)\r\n`;
 
 log+="\r\narray.forEach((c,n)=>{…});\r\n";
 cs.forEach((c,n)=>{
-	log+=`${n}番目の c="${c}"のループ\r\n`
+	log+=`c="${c}" のループ (${n}番目の要素)\r\n`
 });
 
 log+="\r\nwhile (~) {…}\r\n";

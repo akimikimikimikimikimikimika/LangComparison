@@ -16,8 +16,8 @@ print("> Emptyという空フォルダを作成")
 os.mkdir("Empty")
 
 print("> Blankという空ファイルを作成")
-FH1=open("Blank","w")
-FH1.close()
+io=open("Blank","w")
+io.close()
 
 print("> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成\r\n")
 os.symlink("Blank","Empty/Symlink")
@@ -26,9 +26,9 @@ os.symlink("Blank","Empty/Symlink")
 # 書込み
 
 print("> Untitled.mdというMarkdownファイルを作成して書込み\r\n")
-FH2=open("Untitled.md","w")
-FH2.write("# Header 1")
-FH2.close()
+io=open("Untitled.md","w")
+io.write("# Header 1")
+io.close()
 
 # 移動/名称変更
 
@@ -43,16 +43,16 @@ shutil.move("Untitled.md","Package/Headers.md") # 或いはos.rename
 # 追記
 
 print("> Markdownファイルに追記\r\n")
-FH3=open("Package/Headers.md","a")
-FH3.write("\r\n## Header 2\r\n### Header 3")
-FH3.close()
+io=open("Package/Headers.md","a")
+io.write("\r\n## Header 2\r\n### Header 3")
+io.close()
 
 # 読込み
 
 print("> Markdownファイルを読込み\r\n")
-FH4=open("Package/Headers.md","r")
-print(FH4.read())
-FH4.close()
+io=open("Package/Headers.md","r")
+print(io.read())
+io.close()
 print("\r\n")
 
 # 再帰的にフォルダ作成
@@ -114,13 +114,13 @@ def check(pt):
 # 権限を確認/変更
 
 print("> 実行ファイルを作成します")
-FH5=open("Package/Python.py","a")
-FH5.write("""#! /usr/local/bin/python3.7
+io=open("Package/Python.py","w")
+io.write("""#! /usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 
 print("Hello world!")
 """)
-FH5.close()
+io.close()
 
 print("> このファイルに対する現在の状態を確認")
 check("Package/Python.py")
@@ -152,5 +152,6 @@ check("Package/Python.py")
 
 print("> 実行")
 rtn=subprocess.call("Package/Python.py")
+	# callの戻り値はコマンドのステータスコードであり,それを受け取らないと標準出力としてステータスコードが表示されてしまう
 
 print("\r\n")

@@ -12,10 +12,10 @@ print "> Emptyという空フォルダを作成\r\n";
 mkdir("Empty");
 
 print "> Blankという空ファイルを作成\r\n";
-$FH1=fopen("Blank","w");
+$io=fopen("Blank","w");
 	# 既にBlankが存在していたら内容が削除される
 	# 削除したくない場合は,"w"を"r"や"a"にする
-fclose($FH1);
+fclose($io);
 
 print "> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成\r\n\r\n";
 symlink("Blank","Empty/Symlink");
@@ -25,9 +25,9 @@ symlink("Blank","Empty/Symlink");
 
 print "> Untitled.mdというMarkdownファイルを作成して書込み\r\n\r\n";
 	# 既にUntitled.mdが存在すれば上書きされる
-$FH2=fopen("Untitled.md","w");
-fwrite($FH2,"# Header 1");
-fclose($FH2);
+$io=fopen("Untitled.md","w");
+fwrite($io,"# Header 1");
+fclose($io);
 
 # 移動/名称変更
 
@@ -41,16 +41,16 @@ rename("Untitled.md","Package/Headers.md");
 # 追記
 
 print "> Markdownファイルに追記\r\n\r\n";
-$FH3=fopen("Package/Headers.md","a");
-fwrite($FH3,"\r\n## Header 2\r\n### Header 3");
-fclose($FH3);
+$io=fopen("Package/Headers.md","a");
+fwrite($io,"\r\n## Header 2\r\n### Header 3");
+fclose($io);
 
 # 読込み
 
 print "> Markdownファイルを読込み\r\n\r\n";
-$FH4=fopen("Package/Headers.md","a");
-print fread($FH4,filesize("Package/Headers.md"));
-fclose($FH4);
+$io=fopen("Package/Headers.md","r");
+print fread($io,filesize("Package/Headers.md"));
+fclose($io);
 print "\r\n\r\n";
 
 # 再帰的にフォルダ作成
@@ -123,15 +123,15 @@ function check($pt) {
 # 権限を確認/変更
 
 print "> 実行ファイルを作成します\r\n";
-$FH5=fopen("Package/PHP.php","a");
-fwrite($FH5,<<< PHPScript
+$io=fopen("Package/PHP.php","a");
+fwrite($io,<<< PHPScript
 #! /usr/local/bin/php
 <?php
 print "Hello world!";
 ?>
 PHPScript
 );
-fclose($FH5);
+fclose($io);
 
 print "> このファイルに対する現在の状態を確認\r\n";
 check("Package/PHP.php");

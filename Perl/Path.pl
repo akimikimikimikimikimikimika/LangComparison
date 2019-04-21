@@ -3,12 +3,14 @@
 use Cwd;
 use File::Basename; # dirname用
 
-print "ホームディレクトリ:       ".$ENV{"HOME"}."\r\n";
-print "カレントディレクトリ:     @{[Cwd::getcwd()]}\r\n\r\n";
+print <<"Path";
+ホームディレクトリ:       @{[$ENV{"HOME"}]}
+カレントディレクトリ:     @{[Cwd::getcwd()]}
 
-print "このファイルのフルパス:   ".Cwd::realpath($0)."\r\n";
-print "このファイルの実行パス:   $0\r\n";
-print "このファイルの名前:       @{[basename($0)]}\r\n";
-print "このファイルのある場所:   @{[Cwd::realpath(dirname($0))]}\r\n";
+このファイルのフルパス:   @{[Cwd::realpath($0)]}
+このファイルの実行パス:   $0
+このファイルの名前:       @{[basename($0)]}
+このファイルのある場所:   @{[Cwd::realpath(dirname($0))]}
+Path
 
 print "\r\n\r\n";

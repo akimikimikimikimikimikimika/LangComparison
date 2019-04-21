@@ -4,18 +4,18 @@ print("\r\nこれからループ処理を試します\r\n")
 
 print("\r\n\r\nfor n=0,2,1 do … end")
 for n=0,2,1 do
-	print("n="..n.."のループ")
+	print("n="..n.." のループ")
 end
 
-print("\r\n\r\nfor n=0,5,2 do … end (偶数回のみ実行)")
-for n=0,5,2 do
-	print("n="..n.."のループ")
+print("\r\n\r\nfor n=3.5,5,0.7 do … end")
+for n=3.5,5,0.7 do
+	print("n="..n.." のループ")
 end
 
 print("\r\n\r\nfor n,c in pairs(table) do … end")
 cs={"壱","弐","参"}
 for n,c in pairs(cs) do
-	print("c=\""..c.."\"のループ ("..n.."番目の要素)")
+	print("c=\""..c.."\" のループ ("..n.."番目の要素)")
 end
 
 print("\r\n\r\nwhile ~ do … end")

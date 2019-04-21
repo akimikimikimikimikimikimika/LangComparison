@@ -58,6 +58,7 @@ print(f"""
 文字列: {string}
 文字列2:
 {lines}
+バイト: {byte}
 数値:
    整数: {integer},{func(integer)},{cube(integer)}
    浮動小数: {floating}

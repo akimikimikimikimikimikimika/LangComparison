@@ -6,17 +6,17 @@ print("\r\nこれからループ処理を試します\r\n")
 
 print("\r\nfor n in 0...2 {…}\r\n")
 for n in 0...2 {
-	print("n=\(n)のループ")
+	print("n=\(n) のループ")
 }
 
 print("\r\nfor n in 0..<3 {…}\r\n")
 for n in 0..<3 {
-	print("n=\(n)のループ")
+	print("n=\(n) のループ")
 }
 print("\r\nfor c in array {…}\r\n")
 let cs=["壱","弐","参"]
 for c in cs {
-	print("c=\"\(c)\"のループ")
+	print("c=\"\(c)\" のループ")
 }
 
 print("\r\nwhile ~ {…}\r\n")

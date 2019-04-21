@@ -14,6 +14,10 @@ Second line
 Third line
 
 """;
+/*
+	変数展開/式展開の仕方
+	"The values is \(val*2)"
+*/
 // こんな変わった変数名が使えるのもSwiftの醍醐味
 let 😆：喜びの表現 = "すうぃふと"
 	/*
@@ -194,10 +198,10 @@ print("""
    Int32:  \(int32)
    Int64:  \(int64)
    UInt:   \(unsignedInteger)
-   UInt8:  \(int8)
-   UInt16: \(int16)
-   UInt32: \(int32)
-   UInt64: \(int64)
+   UInt8:  \(uint8)
+   UInt16: \(uint16)
+   UInt32: \(uint32)
+   UInt64: \(uint64)
 浮動小数:
    Float:   \(float)
    Double:  \(double)

@@ -12,16 +12,16 @@ public class Loop {
 		println("\r\nこれからループ処理を試します\r\n");
 
 		println("\r\nfor (int n=0;n<3;n++) {…}");
-		for (int n=0;n<3;n++) println("n="+n+"のループ");
+		for (int n=0;n<3;n++) println("n="+n+" のループ");
 
 		println("\r\nfor (int n=0,m=2;n<3;n++,m=m+3) {…}");
 		for (int n=0,m=2;n<3;n++,m=m+3) {
-			println("n="+n+"のループ このとき,m="+m);
+			println("n="+n+" のループ このとき,m="+m);
 		}
 
 		println("\r\nfor (char c:array) {…}");
 		char[] cs={'壱','弐','参'};
-		for (char c:cs) println("c='"+c+"'のループ");
+		for (char c:cs) println("c='"+c+"' のループ");
 
 		println("\r\nwhile (~) {…}");
 		String str="";

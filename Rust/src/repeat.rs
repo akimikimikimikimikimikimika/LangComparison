@@ -4,13 +4,13 @@ pub fn main() {
 
 	println!("\r\nfor n in 0..3 {{…}}");
 	for n in 0..3 {
-		println!("n={}のループ",n);
+		println!("n={} のループ",n);
 	}
 
 	println!("\r\nfor c in array.iter() {{…}}");
 	let cs = ["壱","弐","参"];
 	for c in cs.iter() {
-		println!("c=\"{}\"のループ",c);
+		println!("c=\"{}\" のループ",c);
 	}
 
 	println!("\r\nwhile ~ {{…}}");

@@ -1,13 +1,17 @@
 #! /usr/local/bin/php
 <?php
 
-print "ホームディレクトリ:       ".posix_getpwuid(posix_geteuid())["dir"]."\r\n";
-print "カレントディレクトリ:     ".getcwd()."\r\n\r\n";
+$i = function($v){return $v;};
 
-print "このファイルのフルパス:   ".__FILE__."\r\n";
-print "このファイルの実行パス:   ".$argv[0]."\r\n";
-print "このファイルの名前:       ".basename(__FILE__)."\r\n";
-print "このファイルのある場所:   ".__DIR__."\r\n";
+print <<<"Path"
+ホームディレクトリ:       {$i(posix_getpwuid(posix_geteuid())["dir"])}
+カレントディレクトリ:     {$i(getcwd())}
+
+このファイルのフルパス:   {$i(__FILE__)}
+このファイルの実行パス:   {$argv[0]}
+このファイルの名前:       {$i(basename(__FILE__))}
+このファイルのある場所:   {$i(__DIR__)}
+Path;
 
 print "\r\n\r\n";
 

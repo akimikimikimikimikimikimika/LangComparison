@@ -4,8 +4,8 @@
 ここに掲載されたコードをただ見ているだけでなく,条件を変えてみるなど,自分で書き直したりして,使ってみると分かってくるかもしれない。 或いは,それぞれの言語を使うにあたってのヒントとして参照しても良い。  
   
 ここでは,次の言語をテストしている。  
-コンパイルなく実行できる言語: Swift, Perl, Ruby, PHP, Python, Lua, PowerShell, Bash  
-コンパイルの必要な言語: C++, C, Go, Rust, Java  
+コンパイルなく実行できる言語: Swift, Perl, Ruby, PHP, Python, Julia, Lua, PowerShell, Bash  
+コンパイルの必要な言語: Fortran, C++, C, Go, Rust, Java  
 ブラウザ上で実行する言語: JavaScript  
 App内で実行する言語: Tcl (Wishで開く)  
   
@@ -18,18 +18,19 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [Ruby](https://www.ruby-lang.org "Ruby")
 - [PHP](http://www.php.net "PHP")
 - [Python](https://www.python.org "Python")
+- [Julia](https://www.julialang.org "Julia")
 - [Lua](https://www.lua.org "Lua")
-- [Bash](https://www.gnu.org/software/bash/ "Bourne-Again SHell")
+- [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell")
 - [PowerShell](https://github.com/PowerShell/PowerShell "PowerShell")
 
 - [Java](https://www.java.com "Java")
 
-- [C](http://www.open-std.org/jtc1/sc22/wg14/ "C")
+- [C](http://www.open-std.org/jtc1/sc22/wg14 "C")
 - [C++](https://isocpp.org "C++")
 - [Go](https://golang.org "Go")
-- [Rust](https://www.rust-lang.org "Rust")  
-  
-- [Node.js](https://nodejs.org/ja/ "Node.js")
+- [Rust](https://www.rust-lang.org "Rust")
+
+- [Node.js](https://nodejs.org/ja "Node.js")
 
 ## 利用する際の注意
 
@@ -38,21 +39,26 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - macOS  
 	Perl, Ruby, PHP, Python, Bash は標準でインストール済。  
 	但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。  
-	Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。  
-	C++, C, Swift のコンパイルには [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。  
+	Julia, Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。  
+	C, C++ のコンパイラ Clang は標準でインストール済。コンパイラとしてGCCやIntel C++ Compilerなどが必要な場合は別途入手する。  
+	Fortran のコンパイラ GFortran や上述のGCCはHomebrewからインストールすることもできる。  
+	Swift のコンパイルには [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。  
 	Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。  
 	PowerShellは[GitHub](https://github.com/PowerShell/PowerShell "PowerShell")から入手可能。  
 
 - Windows  
 	PowerShell は標準でインストール済。  
-	Perl, Ruby, PHP, Python, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードするか,Linuxbrewを使う。  
-	C++ のコンパイルには Visual C++ が必要らしい。詳しくはよく知らない。  
-	Windowsでも,Windows 10のLinux Subsystemを使えば,Linuxbrewが使える。
+	Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードする。  
+	C++ のコンパイルには Visual C++ が必要らしい。Visual Studioから使うと思われる。  
+	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries) は公式サイトからインストールすることもできる。  
+	Intel C++ Compilerなどが必要な場合は別途入手する。  
 
 - Unix系OS (macOS除く)  
 	大抵の場合, Bash は標準でインストール済。  
+	C, C++ のコンパイラ GCC は標準でインストール済。コンパイラとしてClangやIntel C++ Compilerなどが必要な場合は別途入手する。  
+	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries) は公式サイトからインストールすることもできる。  
 	基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。  
-	Linuxの場合,Rubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)
+	Linuxの場合,Rubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)  
 
 ## 実行方法
 
@@ -84,6 +90,10 @@ php PHP.php
 python3.7 Python.py # 最新のPython
 python Python.py    # システムに付属するPython (macOSなどでは古いバージョンが標準でインストールされている)
 ```
+- Julia
+```Shell
+julia Julia.jl
+```
 - Bash
 ```Shell
 bash Bash.sh
@@ -106,6 +116,15 @@ JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。
 node JavaScript/Stdinout.js
 ```
 
+- Fortran  
+以下の例は,GFortranコンパイラを使う例
+```Shell
+# コンパイル : フォルダ Fortran 内にBuildという実行ファイルが生成される
+find Fortran -name *.f90 -exec gfortran -o Fortran/Build {} +
+
+# 実行
+Fortran/Build
+```
 - C  
 以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
 ```Shell
@@ -154,11 +173,11 @@ java -jar Java.jar
 
 ## Shebang
 
-macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /usr/local/bin/lua
 ```
-但し, Perl, Ruby, PHP, Python, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。  
+但し, Perl, Ruby, PHP, Python, Julia, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
 実行例 (Luaの場合•ディレクトリ移動を実行済)
 ```Shell
 ./Lua.lua # このように入力すればLua.luaを実行してくれる
@@ -172,6 +191,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下�
 | Ruby | `/usr/bin/ruby` | **`/usr/local/bin/ruby`** |
 | PHP | `/usr/bin/php` | **`/usr/local/bin/php`** |
 | Python | `/usr/bin/python` | **`/usr/local/bin/python3.7`** |
+| Julia | - | **`/usr/local/bin/julia`** |
 | Bash | `/bin/bash` | **`/usr/local/bin/bash`** |
 | PowerShell | - | **`/usr/local/bin/pwsh`** |
 | Lua | - | **`/usr/local/bin/lua`** |
@@ -204,7 +224,7 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, PowerShell, Bash, Lua には下�
 - [ ] モジュール
 - [ ] 並列処理
 - [ ] 例外の取り扱い
-- [ ] C / C++ / Rust / Go 等へ拡充
+- [ ] Fortran / C / C++ / Rust / Go 等へ拡充
 
 但し,以下のものは用意されていない
 - Bash : Class (Bashはオブジェクト指向言語ではない)

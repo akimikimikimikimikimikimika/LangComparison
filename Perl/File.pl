@@ -14,11 +14,11 @@ print "> Emptyという空フォルダを作成\r\n";
 mkdir Empty;
 
 print "> Blankという空ファイルを作成\r\n";
-open(FH1,">","Blank");
+open(io,">","Blank");
 	# 既にBlankが存在していたら内容が削除される
 	# 削除したくない場合は,">"を"<"や">>"にする
-close(FH1);
-	# FHはファイルハンドルオブジェクト。慣例的に大文字の変数名にするみたい
+close(io);
+	# ioはファイルハンドルオブジェクト。慣例的に大文字の変数名にするみたいだが,大文字にしなくても大丈夫
 
 print "> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成\r\n\r\n";
 symlink "Blank","Empty/Symlink";
@@ -28,9 +28,9 @@ symlink "Blank","Empty/Symlink";
 
 print "> Untitled.mdというMarkdownファイルを作成して書込み\r\n\r\n";
 	# 既にUntitled.mdが存在すれば上書きされる
-open(FH2,">","Untitled.md");
-print FH2 "# Header 1";
-close(FH2);
+open(io,">","Untitled.md");
+print io "# Header 1";
+close(io);
 
 # 移動/名称変更
 
@@ -45,16 +45,16 @@ move "Untitled.md","Package/Headers.md"; # 或いはrename
 # 追記
 
 print "> Markdownファイルに追記\r\n\r\n";
-open(FH3,">>","Package/Headers.md");
-print FH3 "\r\n## Header 2\r\n### Header 3";
-close(FH3);
+open(io,">>","Package/Headers.md");
+print io "\r\n## Header 2\r\n### Header 3";
+close(io);
 
 # 読込み
 
 print "> Markdownファイルを読込み\r\n\r\n";
-open(FH4,"<","Package/Headers.md");
-print join("",<FH4>);
-close(FH4);
+open(io,"<","Package/Headers.md");
+print join("",<io>);
+close(io);
 print "\r\n\r\n";
 
 # 再帰的にフォルダ作成
@@ -110,13 +110,13 @@ sub check{
 # 権限を確認/変更
 
 print "> 実行ファイルを作成します\r\n";
-open(FH5,">>","Package/Perl.pl");
-print FH5 <<"Perl Script";
+open(io,">>","Package/Perl.pl");
+print io <<"Perl Script";
 #! /usr/local/bin/perl
 
 print "Hello world!";
 Perl Script
-close(FH5);
+close(io5);
 
 print "> このファイルに対する現在の状態を確認\r\n";
 &check("Package/Perl.pl");

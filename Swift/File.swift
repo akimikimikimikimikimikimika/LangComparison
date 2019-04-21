@@ -45,20 +45,20 @@ try fm.moveItem(atPath: "Untitled.md", toPath: "Package/Headers.md")
 // 追記
 
 print("> Markdownファイルに追記\r\n")
-let FH = FileHandle(forWritingAtPath: "Package/Headers.md")!
+let io = FileHandle(forWritingAtPath: "Package/Headers.md")!
     /*
         所定の位置にファイルが存在しなければ, FileHandle(forWritingAtPath:) はnilを返す
         FileHandle(forWritingAtPath:)  : 書込専用
         FileHandle(forReadingAtPath:)  : 読込専用
         FileHandle(forUpdatingAtPath:) : 読込/書込
     */
-FH.seekToEndOfFile()
-FH.write("\r\n## Header 2\r\n### Header 3".data(using: .utf8)!)
+io.seekToEndOfFile()
+io.write("\r\n## Header 2\r\n### Header 3".data(using: .utf8)!)
     /*
-        FH.write は書込開始位置から書き込み,書込開始位置を書込データの末尾に移動させる
-        Swiftには,追記用のファイルハンドラは用意されていないが, FH.seekToEndOfFile() により書込開始位置をファイル末尾に移動させることで,これと同様の機能を実現できる
+        io.write は書込開始位置から書き込み,書込開始位置を書込データの末尾に移動させる
+        Swiftには,追記用のファイルハンドラは用意されていないが, io.seekToEndOfFile() により書込開始位置をファイル末尾に移動させることで,これと同様の機能を実現できる
     */
-FH.closeFile()
+io.closeFile()
 
 // 読込み
 
@@ -71,9 +71,9 @@ let readText = String(data: fm.contents(atPath: "Package/Headers.md")!, encoding
 
         let readText = NSString(contentsOfFile: "Package/Header.md", encoding: NSUTF8StringEncoding)
 
-        let FH = FileHandle(forReadingAtPath: "Package/Headers.md")!
-        let readText = String(data: FH.readDataToEndOfFile()!, encoding: .utf8)
-        FH.closeFile()
+        let io = FileHandle(forReadingAtPath: "Package/Headers.md")!
+        let readText = String(data: io.readDataToEndOfFile()!, encoding: .utf8)
+        io.closeFile()
             ※ 所定の位置にファイルが存在しなければ, FileHandle(forReadingAtPath:) はnilを返す
 
         let readData = try Data(contentsOf: URL(fileURLWithPath: "Package/Headers.md"))

@@ -1,11 +1,13 @@
 #! /usr/local/bin/ruby
 
-print "ホームディレクトリ:       #{Dir.home}\r\n";
-print "カレントディレクトリ:     #{Dir.pwd}\r\n\r\n";
+print """
+ホームディレクトリ:       #{Dir.home}
+カレントディレクトリ:     #{Dir.pwd}
 
-print "このファイルのフルパス:   #{File.realpath(__FILE__)}\r\n";
-print "このファイルの実行パス:   #{__FILE__}\r\n"; # $0も使える
-print "このファイルの名前:       #{File.basename(__FILE__)}\r\n";
-print "このファイルのある場所:   #{__dir__}\r\n";
+このファイルのフルパス:   #{File.realpath(__FILE__)}
+このファイルの実行パス:   #{__FILE__} = $0
+このファイルの名前:       #{File.basename(__FILE__)}
+このファイルのある場所:   #{__dir__}
+""";
 
 print "\r\n\r\n";

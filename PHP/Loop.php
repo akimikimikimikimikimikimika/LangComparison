@@ -5,13 +5,13 @@ print "\r\nこれからループ処理を試します\r\n";
 
 print "\r\nfor (\$n=0; \$n<3; \$n++) {…}\r\n";
 for ($n=0;$n<3;$n++) {
-	print "n=${n}のループ\r\n";
+	print "n=${n} のループ\r\n";
 }
 
 print "\r\nforeach (array as \$c) {…}\r\n";
 $cs=array("壱","弐","参");
 foreach ($cs as $c) {
-	print "c=\"${c}\"のループ\r\n";
+	print "c=\"${c}\" のループ\r\n";
 }
 
 print "\r\nwhile (~) {…}\r\n";
