@@ -12,6 +12,7 @@ print(f"""
 
 現在ローカル時刻: {dto.now()}
 現在UTC時刻:      {dto.utcnow()}
+カスタム:         {dt.datetime(1994,1,1,9,41,12,345678)}
 """)
 
 now=dto.now()

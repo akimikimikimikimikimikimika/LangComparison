@@ -9,7 +9,9 @@ print <<< "DateTime"
 
 これから日付と時刻を試します
 
-現在時刻: {$i(date_format(new DateTime(),'Y-m-d H:i:s'))}
+現在ローカル時刻: {$i(date_format(new DateTime(),'Y-m-d H:i:s'))}
+現在UTC時刻:      {$i(date_format(new DateTime("now",new DateTimeZone("UTC")),"Y-m-d H:i:s"))}
+カスタム:         {$i(date_format(DateTime::createFromFormat("Y-m-d H:i:s:u","1995-6-8 9:41:12:345678"),"Y-m-d H:i:s"))}
 タイムゾーン: {$i(date_default_timezone_get())}
 
 date(..) = "
@@ -107,7 +109,7 @@ Format
 
 DateTime;
 
-$en=microtime();
+$en=microtime(true);
 
 print "この処理に要した時間: {$i(($en-$st)*100000)} マイクロ秒\r\n";
 

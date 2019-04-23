@@ -8,6 +8,7 @@ print """
 
 現在ローカル時刻: #{Time.now.getlocal}
 現在UTC時刻:      #{Time.now.getutc}
+カスタム:         #{Time.local(1996,12,25,9,41,12,345678)}
 """;
 
 now=Time.now;

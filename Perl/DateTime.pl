@@ -5,16 +5,17 @@ use Time::HiRes qw/gettimeofday/;
 
 my ($sts,$stm)=gettimeofday();
 
+my $t=localtime;
+my $gt=gmtime;
+
 print <<"DateTime";
 
 これから日付と時刻を試します
 
+現在ローカル時刻: $t
+現在UTC時刻:      $gt
+カスタム:         @{[Time::Piece->strptime("1987-12-18 9:41:12", "%Y-%m-%d %H:%M:%S")]}
 
-DateTime
-
-my $t=localtime;
-
-print <<"DateTime";
 localtime
 ->year      = @{[$t->year]}
 ->_year     = @{[$t->_year]}

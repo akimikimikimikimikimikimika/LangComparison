@@ -13,9 +13,15 @@ public class DateTime {
 
 		println("\r\nこれから日付と時刻を試します\r\n");
 
+		/*
+			カスタムの日付/時刻を得るには次のようにする
+			Calendar c = Calendar.getInstance();
+			c.set(1996,1,23,9,41,12);
+		*/
+
 		Calendar c = Calendar.getInstance();
 		println("\r\n日付と時刻");
-		println("Calendar.getInstance().get");
+		println("Calendar.getInstance().get(...)");
 		println(" ERA : "+c.get(Calendar.ERA));
 		println(" YEAR : "+c.get(Calendar.YEAR));
 		println(" MONTH : "+c.get(Calendar.MONTH));

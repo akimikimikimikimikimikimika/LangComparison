@@ -1,6 +1,7 @@
 #! /usr/local/bin/julia
 
 using Dates # 又は, import Dates
+st=now()
 
 dt=now()
 println("""
@@ -114,5 +115,8 @@ Dates
 
 """))"
 """)
+
+en=now()
+println("この処理に要した時間: $(en-st)")
 
 println("\r\n")

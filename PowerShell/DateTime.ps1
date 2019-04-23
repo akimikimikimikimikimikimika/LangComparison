@@ -6,7 +6,8 @@ $st=Get-Date;
 
 これから日付と時刻を試します
 
-現在時刻: $(Get-Date)
+現在ローカル時刻: $(Get-Date)
+カスタム:         $([DateTime]"2006/11/14 9:41:12.345")
 
 Get-Date
 .DateTime    = $((Get-Date).DateTime)
