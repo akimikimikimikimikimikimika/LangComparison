@@ -27,8 +27,8 @@ else occursin(r"dog jumps"i,text)
 end
 
 println("\r\n置換")
-replaced=replace(text,r"([a-z])u([a-z]+)"i => s"« \g<0>ü\g<1> »")
-replaced=replace(text,r"(?<former>[a-z])u(?<latter>[a-z]+)"i => s"« \g<former>ü\g<latter> »")
+replaced=replace(text,r"([a-z]+)o([a-z]+)"i => s"« \g<0>ö\g<1> »")
+replaced=replace(text,r"(?<former>[a-z]+)o(?<latter>[a-z]+)"i => s"« \g<former>ö\g<latter> »")
 println(replaced)
 
 println("\r\n分割と結合")

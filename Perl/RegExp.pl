@@ -2,22 +2,46 @@
 
 print "\r\nこれから正規表現を試します\r\n\r\n";
 
+$text="The Quick Brown Fox Jumps Over The Lazy Dog";
+print "$text → \r\n";
+
+print "\r\nマッチの確認\r\n";
+if ($test1 =~ /fox jumps/i) {
+	print "狐が飛んでいます\r\n";
+}
+else {
+	print "狐は飛んでいません\r\n";
+}
+# パターンを記号で囲んで,mを前に付加するなら,様々な記号で正規表現は表せる。スラッシュをエスケープする必要がなくなるので,便利か。
+if ($test2 =~ m{dog jumps}i) {
+	print "犬が飛んでいます\r\n";
+}
+else {
+	print "犬は飛んでいません\r\n";
+}
+$color="brown";
+# 変数展開
+if ($test1 !~ /${color}/i) {
+	print "茶色の生物なんてここにいない\r\n";
+}
+else {
+	print "茶色い生物がいる\r\n";
+}
+
 print "\r\n置換\r\n";
 
-$text="<a> <b> <c>";
 $replaced = $text; # 変数が書き換えられてしまうため,コピー
-$replaced =~ s/<([a-z])>/\{\1\}/;
-print "gフラグなし: $text → $replaced\r\n";
-$text="<a> <b> <c>";
+$replaced =~ s/([a-z]+)o([a-z]+)/« \1ö\2 »/;
+print "gフラグなし:\r\n$replaced\r\n";
 $replaced=$text;
-$replaced =~ s/<([a-z])>/\{\1\}/g;
-print "gフラグ付き: $text → $replaced\r\n";
+$replaced =~ s/([a-z]+)o([a-z]+)/« \1ö\2 »/g;
+print "gフラグあり:\r\n$replaced\r\n";
 
 print "\r\n分割と結合\r\n";
-$text="a-b-c";
-@split=split(/-/,$text);
-$arranged=join(".",@split);
-print "$text → $arranged\r\n";
+@array=split(/(the|s)? /i,$text);
+$arranged=join("_",@array);
+print "@array\r\n";
+print "$arranged\r\n";
 
 # eフラグを付加すれば,演算可能
 print "演算: ";
@@ -54,30 +78,6 @@ print "$text → "; # IllUsTrAtE
 $text =~ tr/a-z/A-Z/s;
 print "$text\r\n"; # ILUsTrAtE
 
-print "\r\nマッチの確認\r\n";
-$test1="qUiVeR";
-$test2="ShIvEr";
-if ($test1 =~ /^qu/i) {
-	print "$test1 はquで始まります\r\n";
-}
-else {
-	print "$test1 はquで始まりません\r\n";
-}
-# パターンを記号で囲んで,mを前に付加するなら,様々な記号で正規表現は表せる
-if ($test2 =~ m{^qu}i) {
-	print "$test2 はquで始まります\r\n";
-}
-else {
-	print "$test2 はquで始まりません\r\n";
-}
-$re="ver";
-# 変数展開
-if ($test1 !~ /${re}$/i) {
-	print "$test1 はverで終わりません\r\n";
-}
-else {
-	print "$test1 はverで終わります\r\n";
-}
 =pod
 	gim以外のフラグ:
 	x: 正規表現中の空白/改行を無視

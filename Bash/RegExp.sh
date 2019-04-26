@@ -4,23 +4,38 @@ echo
 echo これから正規表現を試します
 echo
 
-echo
-echo "検索"
-echo
-text="IllUsTrAtE"
-found="`echo "$text" | grep -oE l+`"
-echo "$text → $found"
-echo
+text="The Quick Brown Fox Jumps Over The Lazy Dog"
+echo "$text → "
 
 echo
-echo "置換"
+echo 検索
+found="`echo "$text" | grep -oE l+`"
+echo "$found"
+
+
 echo
-text="<a> <b> <c>"
+echo マッチの確認
+shopt -s nocasematch # ignorecase をオンにする設定
+if [[ $text =~ "fox jumps" ]]; then
+	echo "狐が飛んでいます"
+else
+	echo "狐は飛んでいません"
+fi
+if [[ $text =~ "dog jumps" ]]; then
+	echo "犬が飛んでいます"
+else
+	echo "犬は飛んでいません"
+fi
+shopt -u nocasematch # ignorecase をオフにする設定
+
+echo
+echo 置換
 replaced="`echo $text | sed -Ee "s/<([a-z])>/{\1}/"`"
-echo "gフラグなし: $text"" → ""$replaced"
-text="<a> <b> <c>"
+echo "gフラグなし:"
+echo "$replaced"
 replaced="`echo $text | sed -Ee "s/<([a-z])>/{\1}/g"`"
-echo "gフラグ付き: $text"" → ""$replaced"
+echo "gフラグあり:"
+echo "$replaced"
 
 << 置換の説明
 	• GNU版sedの場合は, sed -i "s/before/after/g" filename の型で,ファイルを直接書き換えできる。標準出力されない
@@ -34,24 +49,9 @@ echo "gフラグ付き: $text"" → ""$replaced"
 
 echo
 echo 分割と結合
-echo
-text="a-b-c"
-IFS="-" # 区切りを定めるグローバル変数
-split=($text)
-arranged="$(IFS=".";echo "${split[*]}")"
-echo "$text"" → ""$arranged"
-
-echo
-echo マッチの確認
-echo
-test1="qUiVeR"
-test2="ShIvEr"
-shopt -s nocasematch # ignorecase をオンにする設定
-if [[ $test1 =~ ^qu ]]; then
-	echo "$test1"" はquで始まります"
-else
-	echo "$test1"" はquで始まりません"
-fi
-shopt -u nocasematch # ignorecase をオフにする設定
+IFS=" " # 区切りを定めるグローバル変数
+array=($text)
+arranged="$(IFS="_";echo "${array[*]}")"
+echo "$arranged"
 
 printf "\r\n\r\n"
