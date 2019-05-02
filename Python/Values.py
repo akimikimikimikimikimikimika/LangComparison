@@ -33,7 +33,7 @@ boolean = True
 # リスト (mutable,主に同種の値の集合)
 lis = [1, "second", 3, 3.14, False]
 # タプル (immutable,主に異種の値の集合)
-tup = (1, "second", 3, 3.14, False)
+tup = (1, "second", 3, 3.14, False) # 要素が1つのタプルは (1,) のように表記する
 # 辞書
 dictionary = {
 	"a": 1,

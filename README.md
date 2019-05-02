@@ -2,17 +2,12 @@
 
 このページは,色々な言語に触れてみる目的で用意した。これは,比較(プログラミング)言語学と言えるのだろうか。気の趣くままに進めている。同じようなことを,それぞれの言語で行なっている。  
 ここに掲載されたコードをただ見ているだけでなく,条件を変えてみるなど,自分で書き直したりして,使ってみると分かってくるかもしれない。 或いは,それぞれの言語を使うにあたってのヒントとして参照しても良い。  
-  
-ここでは,次の言語をテストしている。  
-コンパイルなく実行できる言語: Swift, Perl, Ruby, PHP, Python, Julia, Lua, PowerShell, Bash  
-コンパイルの必要な言語: Fortran, C++, C, Go, Rust, Java  
-ブラウザ上で実行する言語: JavaScript  
-App内で実行する言語: Tcl (Wishで開く)  
-  
+
 GitHubの当リポジトリページの上部に言語の割合を示す帯グラフがあるが,どの言語も同じくらいの量は書いているはずだから,拮抗しているはず。おそらく,ファイルサイズの和が大きい言語順に並んでいるので,同じことを書いていても,記述量が多くなってしまう言語ほど上位に来やすい。だから,あてにはならない。
 
-## 各言語のホームページ
+## 言語
 
+### コンパイルなく実行できる言語
 - [Swift](https://www.swift.org "Swift")
 - [Perl](https://www.perl.org "Perl")
 - [Ruby](https://www.ruby-lang.org "Ruby")
@@ -23,14 +18,21 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell")
 - [PowerShell](https://github.com/PowerShell/PowerShell "PowerShell")
 
+### ブラウザ上で実行する言語
+- JavaScript
+	[Node.js](https://nodejs.org/ja "Node.js")
+
+### コンパイルの必要な言語
 - [Java](https://www.java.com "Java")
 
+- Fortran
 - [C](http://www.open-std.org/jtc1/sc22/wg14 "C")
 - [C++](https://isocpp.org "C++")
 - [Go](https://golang.org "Go")
 - [Rust](https://www.rust-lang.org "Rust")
 
-- [Node.js](https://nodejs.org/ja "Node.js")
+## 比較達成状況
+比較達成状況は, [Contents.md](https://github.com/akimikimikimikimikimikimika/LangComparison/blob/master/Contents.md "比較達成状況") に記載している。
 
 ## 利用する際の注意
 
@@ -198,37 +200,3 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, PowerShell, Bash, Lua に
 
 太字で指定したShebangが指定されている  
 なお,Unix系OSの場合は,コマンドラインに `type swift` などと入力すれば,コンピュータが標準で使用する実行パスが表示される。
-
-### 比較達成状況
-すでに比較に取り掛かっている内容と,取り掛かる予定の内容を表示している  
-今のところ, Swift / Perl / Ruby / PHP / Python / Java / PowerShell / Bash / JavaScript で同時進行中  
-- [x] 標準入出力 (Stdinout)
-- [x] 基本の値 (Values)
-- [x] 演算子 (Operators)
-- [x] 条件分岐 (Condition)
-- [x] ループ (Loop/Repeat)
-- [x] 正規表現での検索/置換 (RegExp)
-- [x] ファイル/フォルダ操作 (File/FileHandle)
-- [x] ファイルパス (Path/FilePath)
-- [x] 数学関数 (Math/Mathematics)
-- [x] 日付/時刻 (DateTime)
-- [x] 文字列の操作 (String/StringType)
-- [x] 文字列にフォーマット (Sprintf)
-- [x] オブジェクト / クラス (Class)
-- [x] コマンドライン引数 (Arguments)
-- [ ] 配列の操作
-- [ ] 型の変換
-- [ ] 各種定数
-- [ ] Webコンテンツの取得
-- [ ] JSON (JavaScript Object Notation)
-- [ ] モジュール
-- [ ] 並列処理
-- [ ] 例外の取り扱い
-- [ ] Fortran / C / C++ / Rust / Go 等へ拡充
-
-但し,以下のものは用意されていない
-- Bash : Class (Bashはオブジェクト指向言語ではない)
-- JavaScript : File
-- JavaScript : Sprintf (JavaScriptにフォーマット用の関数が存在しない)
-- Lua : FilePath (Luaでファイルパスを取得するには外部パッケージが必要)
-- PowerShell : Sprintf (準備中)
