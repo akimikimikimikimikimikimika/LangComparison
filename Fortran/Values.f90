@@ -22,7 +22,7 @@ subroutine values
  int = 6
  float = 0.0375e-6
  double = 0.0375e-6
- comfl = (3.0,1.0)
+ comfl = (3.0,1.0) ! (実部,虚部)
  comdb = (3.0,1.0)
  bool = .true.
  ! Fortranは大文字/小文字を区別しないので, .true. = .TRUE. で .false. = .FALSE. である。

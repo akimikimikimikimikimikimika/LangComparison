@@ -1,6 +1,9 @@
 
 ! Fortran
 
+! コメントは半角感嘆符の後に記載する
+! Fortranではソースコードの大文字と小文字を区別しない。programもProgramもPROGRAMも同じ。
+
 program fortran
  character*10 action
  print *
@@ -8,16 +11,18 @@ program fortran
  do
   print *
   print *
-  print *,"何がしたい?"
+  print '("何がしたい?")'
   print *
   print *
-  print *,"1. 標準入出力を試す"
-  print *,"2. 色々な値を試す"
-  print *,"3. 演算子を試す"
-  print *,"4. 条件分岐を試す"
-  print *,"5. 繰り返しを試す"
+  print '("1. 標準入出力を試す")'
+  print '("2. 色々な値を試す")'
+  print '("3. 演算子を試す")'
+  print '("4. 条件分岐を試す")'
+  print '("5. 繰り返しを試す")'
+  print '("7. ファイル操作を試す")'
+  print '("8. ファイルパスを試す")'
   print *
-  print *,"0. 終了"
+  print '("0. 終了")'
   print *
   read *,action
   print *
@@ -35,9 +40,13 @@ program fortran
    call condition()
   else if (action=="5") then
    call loop()
+  else if (action=="7") then
+   call file()
+  else if (action=="8") then
+   call path()
   else
-   print *,"指定したアクションは見つかりませんでした"
-   print *,""
+   print '("指定したアクションは見つかりませんでした")'
+   print *
   end if
  end do
 end program fortran

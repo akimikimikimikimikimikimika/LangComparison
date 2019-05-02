@@ -73,6 +73,7 @@ void FileHandle() {
 	else error();
 
 	// ファイルの複製
+	// ...と言っても,ファイルを読み込んで,そのまま別のファイルに書き込んでいるだけ。
 
 	printf("\r\n> Markdownファイルを複製\r\n");
 	if ((fh = fopen("Package/Headers.md","r")) != NULL) {
