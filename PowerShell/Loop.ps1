@@ -7,6 +7,11 @@ for ($n=0; $n -lt 3; $n++) {
 	"n=${n} のループ";
 }
 
+"`r`nforeach (`$n in 0..2) {…}`r`n";
+foreach ($n in 0..2) {
+	"n=${n} のループ";
+}
+
 "`r`nforeach (`$n in @(0,1,2)) {…}`r`n";
 foreach ($n in @(0,1,2)) {
 	"n=${n} のループ";

@@ -20,7 +20,6 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 ### ブラウザ上で実行する言語
 - JavaScript
-	[Node.js](https://nodejs.org/ja "Node.js")
 
 ### コンパイルの必要な言語
 - [Java](https://www.java.com "Java")
