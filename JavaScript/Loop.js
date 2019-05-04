@@ -1,5 +1,5 @@
 
-var log = "\r\nこれからループ処理を試します\r\n";
+var log = "\r\nこれからループ処理を試します\r\n\r\n";
 
 log+="\r\nfor (n=0; n<3; n++) {…}\r\n";
 for (n=0;n<3;n++) log+=`n=${n} のループ\r\n`;

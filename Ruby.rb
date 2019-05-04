@@ -24,16 +24,18 @@ while true
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
-6. 正規表現を試す
-7. ファイル操作を試す
-8. ファイルパスを試す
-9. 数学的演算を試す
+6. 数学的演算を試す
+7. 文字列を試す
+8. 文字列フォーマットを試す
+9. 正規表現を試す
 a. 日付と時刻を試す
-b. 文字列を試す
-c. 文字列フォーマットを試す
-d. クラスを試す
-e. プロセス系を試す
-f. コマンドライン引数を試す
+b. クラスを試す
+c. 例外処理を試す
+d. ファイル操作を試す
+e. ファイルパスを試す
+f. プロセス系を試す
+g. 並列処理を試す
+h. コマンドライン引数を試す
 
 0. 終了
 
@@ -54,24 +56,28 @@ f. コマンドライン引数を試す
 	elsif action=="5"
 		system("./Loop.rb");
 	elsif action=="6"
-		system("./RegExp.rb");
-	elsif action=="7"
-		system("./File.rb");
-	elsif action=="8"
-		system("./Path.rb");
-	elsif action=="9"
 		system("./Math.rb");
+	elsif action=="7"
+		system("./String.rb");
+	elsif action=="8"
+		system("./Sprintf.rb");
+	elsif action=="9"
+		system("./RegExp.rb");
 	elsif action=="a"
 		system("./DateTime.rb");
 	elsif action=="b"
-		system("./String.rb");
-	elsif action=="c"
-		system("./Sprintf.rb");
-	elsif action=="d"
 		system("./Class.rb");
+	elsif action=="c"
+		system("./Error.rb");
+	elsif action=="d"
+		system("./File.rb");
 	elsif action=="e"
-		system("./Process.rb");
+		system("./Path.rb");
 	elsif action=="f"
+		system("./Process.rb");
+	elsif action=="g"
+		system("./Thread.rb");
+	elsif action=="h"
 		system("./Arguments.rb このプログラムを直接実行してみよう。 \"ここにあるよ: Ruby/Arguments.rb\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Ruby/Arguments.rb 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	else
 		print """

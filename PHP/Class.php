@@ -6,118 +6,118 @@ $i = function($v){return $v;};
 # クラス定義1 (Vector)
 class Vector {
 
-    const version = "1.0"; # クラス定数
+	const version = "1.0"; # クラス定数
 
-    private static $description = "PHP simple vector class"; # クラス変数
-        # クラス内で共有される値
-        # メソッド内から Vector::description でアクセス可能 (継承クラスからは不可)
-        # private を public にすれば,外部から Vector::description でアクセス可能
+	private static $description = "PHP simple vector class"; # クラス変数
+		# クラス内で共有される値
+		# メソッド内から Vector::description でアクセス可能 (継承クラスからは不可)
+		# private を public にすれば,外部から Vector::description でアクセス可能
 
-    public $x=0;public $y=0;public $z=0; # インスタンス変数
-        # 各インスタンス毎に異なる値
-        # インスタンスメソッド内のみから $this->x でアクセス可能
-        # 外部から $v->x でアクセス可能
-        # public を private にすれば,外部からのアクセスは遮断される
+	public $x=0;public $y=0;public $z=0; # インスタンス変数
+		# 各インスタンス毎に異なる値
+		# インスタンスメソッド内のみから $this->x でアクセス可能
+		# 外部から $v->x でアクセス可能
+		# public を private にすれば,外部からのアクセスは遮断される
 
-    # イニシャライザ/コンストラクタ
-    public function __construct($x,$y,$z) {
-        $this->x = $x;
-        $this->y = $y;
-        $this->z = $z;
-        # 戻り値を用意せずとも,インスタンスが返される
-    }
+	# イニシャライザ/コンストラクタ
+	public function __construct($x,$y,$z) {
+		$this->x = $x;
+		$this->y = $y;
+		$this->z = $z;
+		# 戻り値を用意せずとも,インスタンスが返される
+	}
 
-    # インスタンスの説明 (インスタンスメソッド)
-    public function desc(){
-        return "($this->x,$this->y,$this->z)";
-    }
+	# インスタンスの説明 (インスタンスメソッド)
+	public function desc(){
+		return "($this->x,$this->y,$this->z)";
+	}
 
 	# 足し算を定義
-    # インスタンスメソッド版 (自分自身に足し合わせていく)
-    public function add(...$args) {
-        foreach ($args as $v) {
-            $this->x += $v->x;
-            $this->y += $v->y;
-            $this->z += $v->z;
-        }
-        return $this;
-    }
-    # クラスメソッド版 (引数のVectorを足し合わせた結果を返す)
-        # クラスメソッドでは function の前に static を付加する
-    public static function added(...$args) {
-        $a=new Vector(0,0,0);
-        foreach ($args as $v) {
-            $a->x += $v->x;
-            $a->y += $v->y;
-            $a->z += $v->z;
-        }
-        return $a;
-    }
+	# インスタンスメソッド版 (自分自身に足し合わせていく)
+	public function add(...$args) {
+		foreach ($args as $v) {
+			$this->x += $v->x;
+			$this->y += $v->y;
+			$this->z += $v->z;
+		}
+		return $this;
+	}
+	# クラスメソッド版 (引数のVectorを足し合わせた結果を返す)
+		# クラスメソッドでは function の前に static を付加する
+	public static function added(...$args) {
+		$a=new Vector(0,0,0);
+		foreach ($args as $v) {
+			$a->x += $v->x;
+			$a->y += $v->y;
+			$a->z += $v->z;
+		}
+		return $a;
+	}
 
 	# スカラ倍を定義 (共にインスタンスメソッド)
-    # 自分自身を実数倍
-    public function coefMultiply($k) {
-        $this->x *= $k;
-        $this->y *= $k;
-        $this->z *= $k;
-        return $this;
-    }
-    # 自分自身の実数倍のVectorを生成
-    public function coefMultiplied($k) {
-        return new Vector($this->x*$k,$this->y*$k,$this->z*$k);
-    }
+	# 自分自身を実数倍
+	public function coefMultiply($k) {
+		$this->x *= $k;
+		$this->y *= $k;
+		$this->z *= $k;
+		return $this;
+	}
+	# 自分自身の実数倍のVectorを生成
+	public function coefMultiplied($k) {
+		return new Vector($this->x*$k,$this->y*$k,$this->z*$k);
+	}
 
-    # メソッド内で $description を呼ぶ
-    public static function describe() {
-        return Vector::$description;
-    }
+	# メソッド内で $description を呼ぶ
+	public static function describe() {
+		return Vector::$description;
+	}
 
-    # メソッド内で,インスタンス自身/クラス自身は, $this から呼び出す
+	# メソッド内で,インスタンス自身/クラス自身は, $this から呼び出す
 
 }
 
 # クラス定義2 (ExtendedVector inherits from Vector)
 class ExtendedVector extends Vector { # 継承宣言
 
-    public function __construct($x,$y,$z) {
-        $this->x = $x;
-        $this->y = $y;
-        $this->z = $z;
-    }
+	public function __construct($x,$y,$z) {
+		$this->x = $x;
+		$this->y = $y;
+		$this->z = $z;
+	}
 
-    # 内積を定義
-    public function inner($v) {
-        $p=0;
-        $p += $this->x*$v->x;
-        $p += $this->y*$v->y;
-        $p += $this->z*$v->z;
-        return $p;
-    }
+	# 内積を定義
+	public function dot($v) {
+		$p=0;
+		$p += $this->x*$v->x;
+		$p += $this->y*$v->y;
+		$p += $this->z*$v->z;
+		return $p;
+	}
 
-    # 外積を定義
-    public function outer($v) {
-        return new Vector(
-            $this->y*$v->z-$this->z*$v->y,
-            $this->z*$v->x-$this->x*$v->z,
-            $this->x*$v->y-$this->y*$v->x
-        );
-    }
+	# 外積を定義
+	public function cross($v) {
+		return new Vector(
+			$this->y*$v->z-$this->z*$v->y,
+			$this->z*$v->x-$this->x*$v->z,
+			$this->x*$v->y-$this->y*$v->x
+		);
+	}
 
-    # ノルムを定義
-    public function norm() {
-        return sqrt($this->inner($this));
-    }
+	# ノルムを定義
+	public function norm() {
+		return sqrt($this->dot($this));
+	}
 
 	# 説明できないはず
-    public static function describeFromSub() {
-        return ExtendedVector::$description;
-    }
+	public static function describeFromSub() {
+		return ExtendedVector::$description;
+	}
 
-    # プライベートメソッド
-        # 外部からアクセスできない
-    private function normalize() {
-        return $this->coefMultiply(1/$this->norm());
-    }
+	# プライベートメソッド
+		# 外部からアクセスできない
+	private function normalize() {
+		return $this->coefMultiply(1/$this->norm());
+	}
 
 }
 
@@ -149,8 +149,8 @@ vec1+vec2+vec3: {$i(   Vector::added($vec1,$vec2,$vec3)->desc()   )}
 vec4+vec2: {$i(   $vec4->add($vec2)->desc()   )}
 vec2×12: {$i(   $vec2->coefMultiplied(12)->desc()   )}
 
-vec2∙vec3: {$i(   $vec2->inner($vec3)   )}
-vec3×vec2: {$i(   $vec3->outer($vec2)->desc()   )}
+vec2∙vec3: {$i(   $vec2->dot($vec3)   )}
+vec3×vec2: {$i(   $vec3->cross($vec2)->desc()   )}
 |vec3|:    {$i(   $vec3->norm()   )}
 
 説明してもらう1: {$i(   Vector::describe()   )}

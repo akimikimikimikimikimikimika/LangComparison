@@ -5,8 +5,8 @@
 		void Operators();
 		void Condition();
 		void Loop();
-		void RegExp();
 		void Math();
+		void RegExp();
 		void DateTime();
 		void Class();
 		void Arguments(int argc, char *argv[]);

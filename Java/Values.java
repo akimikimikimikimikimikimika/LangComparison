@@ -9,11 +9,12 @@ public class Values {
 	}
 	public static void main(String[] args) throws IOException{
 
+		// 文字列
 		String str=new String("ジャバ");
-
-		boolean bool=false;
+		// 文字
 		char cha1='ﬁ';
 		Character cha2=new Character(cha1);
+		// 整数
 		byte intB1=6;  // -128~127
 		Byte intB2=new Byte(intB1);
 		short intS1=6; // -32768~32767
@@ -22,19 +23,25 @@ public class Values {
 		Integer intI2=new Integer(intI1);
 		long intL1=6;  // -9223372036854775808~9223372036854775807
 		Long intL2=new Long(intL1);
+		// 浮動小数
 		float flt1=(float)3.14;
 		Float flt2=new Float(flt1);
 		double dbl1=(double)3.14;
 		Double dbl2=new Double(dbl1);
+		// 真偽値
+		boolean bool=false;
+		// 配列
 		int[] arr1={3,1,4};
 		ArrayList<Integer> arr2 = new ArrayList<Integer>();
 		arr2.add(3);arr2.add(1);arr2.add(4);
 		LinkedList<Integer> arr3 = new LinkedList<Integer>();
 		arr3.add(3);arr3.add(1);arr3.add(4);
+		// 集合
 		HashSet<Integer> set1 = new HashSet<Integer>();
 		set1.add(3);set1.add(1);set1.add(4);
 		TreeSet<Integer> set2 = new TreeSet<Integer>();
 		set2.add(3);set2.add(1);set2.add(4);
+		// マップ
 		HashMap<String,String> map1 = new HashMap<String,String>();
 		map1.put("first","3");map1.put("second","1");map1.put("third","4");
 		TreeMap<String,String> map2 = new TreeMap<String,String>();
@@ -43,8 +50,6 @@ public class Values {
 		println("\r\n色々な値を試します");
 		println("\r\n文字列");
 		println(" String: "+str+" (Primitive)");
-		println("\r\n真偽値");
-		println(" boolean: "+bool+" (Primitive)");
 		println("\r\n文字");
 		println(" char: "+cha1+" (Primitive)");
 		println(" Character: "+cha2);
@@ -62,6 +67,8 @@ public class Values {
 		println(" Float: "+flt2);
 		println(" double: "+dbl1+" (Primitive)");
 		println(" Double: "+dbl2);
+		println("\r\n真偽値");
+		println(" boolean: "+bool+" (Primitive)");
 		println("\r\n配列");
 		println(" int[]: "+arr1);
 		println(" ArrayList<Integer>: "+arr2);

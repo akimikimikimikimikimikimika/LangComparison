@@ -86,7 +86,7 @@ public class Class {
 		}
 
 		// 内積を定義
-		public double inner(Vector v) {
+		public double dot(Vector v) {
 			double p=0;
 			p += this.x*v.x;
 			p += this.y*v.y;
@@ -95,7 +95,7 @@ public class Class {
 		}
 
 		// 外積を定義
-		public Vector outer(Vector v) {
+		public Vector cross(Vector v) {
 			return new Vector(
 				this.y*v.z-this.z*v.y,
 				this.z*v.x-this.x*v.z,
@@ -105,7 +105,7 @@ public class Class {
 
 		// ノルムを定義
 		public double norm() {
-			return Math.sqrt(this.inner(this));
+			return Math.sqrt(this.dot(this));
 		}
 
 		// プライベートメソッド
@@ -142,8 +142,8 @@ public class Class {
 		println("vec4+vec2: "+(   vec4.add(vec2).desc()   ));
 		println("vec2×12: "+(   vec2.coefMultiplied(12).desc()   ));
 		println(" ");
-		println("vec2∙vec3: "+(   vec2.inner(vec3)   ));
-		println("vec3×vec2: "+(   vec3.outer(vec2).desc()   ));
+		println("vec2∙vec3: "+(   vec2.dot(vec3)   ));
+		println("vec3×vec2: "+(   vec3.cross(vec2).desc()   ));
 		println("|vec3|:    "+(   vec3.norm()   ));
 
 		println("\r\n");

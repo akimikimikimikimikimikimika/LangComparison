@@ -5,12 +5,12 @@ import Foundation
 let st=Date()
 
 func desc(_ rawObject:Any?) -> String {
-    if let o = rawObject {
-        return String(describing: o)
-    }
-    else {
-        return "nil"
-    }
+	if let o = rawObject {
+		return String(describing: o)
+	}
+	else {
+		return "nil"
+	}
 }
 
 print("""
@@ -156,11 +156,11 @@ DateFormatter.string(..) = "\(ft)\(ft2)"
 
 """)
 /*
-    DateFormatter.string(from:) は本来
-        df.dateFormat = "H:m"
-        df.string(from:Date()) -> "9:41"
-    のように使う。ここでは対応しているトークンの一覧を表示している
-    DateFormatter.string(from:) はコンピュータの日付の書式設定に準拠してフォーマットされる。つまり異なる地域の書式を適用すると,異なる表示になる。
+	DateFormatter.string(from:) は本来
+		df.dateFormat = "H:m"
+		df.string(from:Date()) -> "9:41"
+	のように使う。ここでは対応しているトークンの一覧を表示している
+	DateFormatter.string(from:) はコンピュータの日付の書式設定に準拠してフォーマットされる。つまり異なる地域の書式を適用すると,異なる表示になる。
 */
 
 print("この処理に要した時間: \(DateInterval(start: st, end: Date()).duration*1000000) マイクロ秒")

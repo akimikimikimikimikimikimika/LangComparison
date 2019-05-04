@@ -87,7 +87,7 @@ class ExtendedVector: Vector { // 継承宣言
 	// 親クラスにも存在するタイプのイニシャライザを定義するのであれば, override キーワードが要る
 
 	// 内積を定義
-	func inner(_ v:Vector) -> Double {
+	func dot(_ v:Vector) -> Double {
 		var p:Double=0
 		p += self.x*v.x
 		p += self.y*v.y
@@ -96,7 +96,7 @@ class ExtendedVector: Vector { // 継承宣言
 	}
 
 	// 外積を定義
-	func outer(_ v:Vector) -> Vector {
+	func cross(_ v:Vector) -> Vector {
 		return Vector(
 			self.y*v.z-self.z*v.y,
 			self.z*v.x-self.x*v.z,
@@ -106,7 +106,7 @@ class ExtendedVector: Vector { // 継承宣言
 
 	// ノルムを定義
 	func norm() -> Double {
-		return sqrt(self.inner(self))
+		return sqrt(self.dot(self))
 	}
 
 	// 説明できないからコメントアウトで抹消
@@ -150,8 +150,8 @@ vec1+vec2+vec3: \(   Vector.added(vec1,vec2,vec3).desc()   )
 vec4+vec2: \(   vec4.add(vec2).desc()   )
 vec2×12: \(   vec2.coefMultiplied(12).desc()   )
 
-vec2∙vec3: \(   vec2.inner(vec3)   )
-vec3×vec2: \(   vec3.outer(vec2).desc()   )
+vec2∙vec3: \(   vec2.dot(vec3)   )
+vec3×vec2: \(   vec3.cross(vec2).desc()   )
 |vec3|:    \(   vec3.norm()   )
 
 説明してもらう1: \(   Vector.describe()   )

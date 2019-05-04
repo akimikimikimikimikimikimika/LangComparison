@@ -38,7 +38,8 @@ func main() {
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
-f. コマンドライン引数を試す
+6. 数学的演算を試す
+h. コマンドライン引数を試す
 
 0. 終了
 			`)
@@ -60,7 +61,9 @@ f. コマンドライン引数を試す
 				Condition()
 			} else if action == "5" {
 				Loop()
-			} else if action == "f" {
+			} else if action == "6" {
+				Math()
+			} else if action == "h" {
 				Arguments()
 			} else {
 				fmt.Println("指定したアクションは見つかりませんでした")

@@ -3,7 +3,7 @@
 
 $i = function($v){return $v;};
 
-echo "\r\nこれから正規表現を試します\r\n";
+echo "\r\nこれから正規表現を試します\r\n\r\n";
 
 $text="The Quick Brown Fox Jumps Over The Lazy Dog";
 print "$text → \r\n";

@@ -25,16 +25,17 @@ while (true) {
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
-6. 正規表現を試す
-7. ファイル操作を試す
-8. ファイルパスを試す
-9. 数学的演算を試す
+6. 数学的演算を試す
+7. 文字列を試す
+8. 文字列フォーマットを試す
+9. 正規表現を試す
 a. 日付と時刻を試す
-b. 文字列を試す
-c. 文字列フォーマットを試す
-d. クラスを試す
-e. プロセス系を試す
-f. コマンドライン引数を試す
+b. クラスを試す
+c. 例外処理を試す
+d. ファイル操作を試す
+e. ファイルパスを試す
+f. プロセス系を試す
+h. コマンドライン引数を試す
 
 0. 終了
 
@@ -61,33 +62,36 @@ Menu;
 		passthru("./Loop.php");
 	}
 	elseif ($action == "6") {
-		passthru("./RegExp.php");
+		passthru("./Math.php");
 	}
 	elseif ($action == "7") {
-		passthru("./File.php");
+		passthru("./String.php");
 	}
 	elseif ($action == "8") {
-		passthru("./Path.php");
+		passthru("./Sprintf.php");
 	}
 	elseif ($action == "9") {
-		passthru("./Math.php");
+		passthru("./RegExp.php");
 	}
 	elseif ($action == "a") {
 		passthru("./DateTime.php");
 	}
 	elseif ($action == "b") {
-		passthru("./String.php");
-	}
-	elseif ($action == "c") {
-		passthru("./Sprintf.php");
-	}
-	elseif ($action == "d") {
 		passthru("./Class.php");
 	}
+	elseif ($action == "c") {
+		passthru("./Error.php");
+	}
+	elseif ($action == "d") {
+		passthru("./File.php");
+	}
 	elseif ($action == "e") {
-		passthru("./Process.php");
+		passthru("./Path.php");
 	}
 	elseif ($action == "f") {
+		passthru("./Process.php");
+	}
+	elseif ($action == "h") {
 		passthru("./Arguments.php このプログラムを直接実行してみよう。 \"ここにあるよ: PHP/Arguments.php\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"PHP/Arguments.php 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	else {

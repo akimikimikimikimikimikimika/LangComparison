@@ -16,14 +16,14 @@ match: $(found.match)
 
 println("\r\nマッチの確認")
 if occursin(r"fox jumps"i,text)
-    println("狐が飛んでいます")
+	println("狐が飛んでいます")
 else occursin(r"fox jumps"i,text)
-    println("狐は飛んでいません")
+	println("狐は飛んでいません")
 end
 if occursin(r"dog jumps"i,text)
-    println("犬が飛んでいます")
+	println("犬が飛んでいます")
 else occursin(r"dog jumps"i,text)
-    println("犬は飛んでいません")
+	println("犬は飛んでいません")
 end
 
 println("\r\n置換")
@@ -38,9 +38,9 @@ println(array)
 println(arranged)
 
 #=
-    正規表現の生成には, r"[a-z]+" のようなものだけではなく, Regex("[a-z]+") もある
+	正規表現の生成には, r"[a-z]+" のようなものだけではなく, Regex("[a-z]+") もある
 
-    im以外のフラグ:
+	im以外のフラグ:
 	x: 正規表現中の空白/改行を無視
 =#
 

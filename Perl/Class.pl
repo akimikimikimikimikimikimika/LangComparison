@@ -117,7 +117,7 @@
 	}
 
 	# 内積を定義
-	sub inner {
+	sub dot {
 		my $self = shift;
 		if ($#_ >= 0) {
 			my $v = shift;
@@ -130,7 +130,7 @@
 	}
 
 	# 外積を定義
-	sub outer {
+	sub cross {
 		my $self = shift;
 		if ($#_ >= 0) {
 			my $v = shift;
@@ -145,7 +145,7 @@
 	# ノルムを定義
 	sub norm {
 		my $self = shift;
-		return sqrt($self->inner($self));
+		return sqrt($self->dot($self));
 	}
 
 	# 説明できないはず
@@ -190,8 +190,8 @@ vec1+vec2+vec3: @{[   Vector->added($vec1,$vec2,$vec3)->desc   ]}
 vec4+vec2: @{[   $vec4->add($vec2)->desc   ]}
 vec2×12: @{[   $vec2->coefMultiplied(12)->desc   ]}
 
-vec2∙vec3: @{[   $vec2->inner($vec3)   ]}
-vec3×vec2: @{[   $vec3->outer($vec2)->desc   ]}
+vec2∙vec3: @{[   $vec2->dot($vec3)   ]}
+vec3×vec2: @{[   $vec3->cross($vec2)->desc   ]}
 |vec3|:    @{[   $vec3->norm   ]}
 
 説明してもらう1: @{[   Vector->describe   ]}

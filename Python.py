@@ -36,16 +36,18 @@ while True:
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
-6. 正規表現を試す
-7. ファイル操作を試す
-8. ファイルパスを試す
-9. 数学的演算を試す
+6. 数学的演算を試す
+7. 文字列を試す
+8. 文字列フォーマットを試す
+9. 正規表現を試す
 a. 日付と時刻を試す
-b. 文字列を試す
-c. 文字列フォーマットを試す
-d. クラスを試す
-e. プロセス系を試す
-f. コマンドライン引数を試す
+b. クラスを試す
+c. 例外処理を試す
+d. ファイル操作を試す
+e. ファイルパスを試す
+f. プロセス系を試す
+g. 並列処理を試す
+h. コマンドライン引数を試す
 
 0. 終了
 
@@ -66,24 +68,28 @@ f. コマンドライン引数を試す
 	elif action=="5":
 		rtn=subprocess.call("./Loop.py")
 	elif action=="6":
-		rtn=subprocess.call("./RegExp.py")
-	elif action=="7":
-		rtn=subprocess.call("./File.py")
-	elif action=="8":
-		rtn=subprocess.call("./Path.py")
-	elif action=="9":
 		rtn=subprocess.call("./Math.py")
+	elif action=="7":
+		rtn=subprocess.call("./String.py")
+	elif action=="8":
+		rtn=subprocess.call("./Sprintf.py")
+	elif action=="9":
+		rtn=subprocess.call("./RegExp.py")
 	elif action=="a":
 		rtn=subprocess.call("./DateTime.py")
 	elif action=="b":
-		rtn=subprocess.call("./String.py")
-	elif action=="c":
-		rtn=subprocess.call("./Sprintf.py")
-	elif action=="d":
 		rtn=subprocess.call("./Class.py")
+	elif action=="c":
+		rtn=subprocess.call("./Error.py")
+	elif action=="d":
+		rtn=subprocess.call("./File.py")
 	elif action=="e":
-		rtn=subprocess.call("./Process.py")
+		rtn=subprocess.call("./Path.py")
 	elif action=="f":
+		rtn=subprocess.call("./Process.py")
+	elif action=="g":
+		rtn=subprocess.call("./Thread.py")
+	elif action=="h":
 		rtn=subprocess.call(["./Arguments.py","このプログラムを直接実行してみよう。","ここにあるよ: Python/Arguments.py","","コマンドラインに以下のように入力して実行します","","Python/Arguments.py 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"])
 	else:
 		print("""

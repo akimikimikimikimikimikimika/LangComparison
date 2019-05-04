@@ -50,9 +50,9 @@ void Class() {
 	vector.desc(text);
 	cout << "vec2×12: " << text << "\r\n\r\n";
 
-	vec2.inner(&scalar,vec3);
+	vec2.dot(&scalar,vec3);
 	cout << "vec2∙vec3: " << scalar << "\r\n";
-	vec3.outer(&vector,vec2);
+	vec3.cross(&vector,vec2);
 	vector.desc(text);
 	cout << "vec3×vec2: " << text << "\r\n";
 	vec3.norm(&scalar);

@@ -4,7 +4,7 @@
 $test1 = 1;
 $test2 = 0;
 
-print "\r\nこれから条件分岐を試します\r\n";
+print "\r\nこれから条件分岐を試します\r\n\r\n";
 
 if (test1) {
 	print "どうやらtest1は真のようです\r\n";

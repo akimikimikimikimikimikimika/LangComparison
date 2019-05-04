@@ -73,7 +73,7 @@ class ExtendedVector : Vector { # 継承宣言
 		# base($x,$y,$z) を付加して,親クラスのイニシャライザに初期化を代行させる
 
 	# 内積を定義
-	[double] inner([Vector]$v) {
+	[double] dot([Vector]$v) {
 		[double]$p=0;
 		$p += $this.x*$v.x;
 		$p += $this.y*$v.y;
@@ -82,7 +82,7 @@ class ExtendedVector : Vector { # 継承宣言
 	}
 
 	# 外積を定義
-	[Vector] outer([Vector]$v) {
+	[Vector] cross([Vector]$v) {
 		return [Vector]::new(
 			$this.y*$v.z-$this.z*$v.y,
 			$this.z*$v.x-$this.x*$v.z,
@@ -92,7 +92,7 @@ class ExtendedVector : Vector { # 継承宣言
 
 	# ノルムを定義
 	[double] norm() {
-		return [Math]::Sqrt($this.inner($this));
+		return [Math]::Sqrt($this.dot($this));
 	}
 
 	# 説明できないはず
@@ -135,8 +135,8 @@ vec1+vec2+vec3: $(   [Vector]::added([Vector]::added($vec1,$vec2),$vec3).desc() 
 vec4+vec2: $(   $vec4.add($vec2).desc()   )
 vec2×12: $(   $vec2.coefMultiplied(12).desc()   )
 
-vec2∙vec3: $(   $vec2.inner($vec3)   )
-vec3×vec2: $(   $vec3.outer($vec2).desc()   )
+vec2∙vec3: $(   $vec2.dot($vec3)   )
+vec3×vec2: $(   $vec3.cross($vec2).desc()   )
 |vec3|:    $(   $vec3.norm()   )
 
 説明してもらう1: $(   [Vector]::describe()   )

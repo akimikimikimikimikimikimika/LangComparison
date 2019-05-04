@@ -84,4 +84,34 @@ print(f"""
    {func}
 """)
 
+'''
+	pass
+	Pythonでは関数,制御構文,繰り返しなどで,インデントによりその守備範囲を定めることがある
+	インデント内の内容がない場合は, pass と明記しなければならない
+	例えば,何もしない関数であれば...
+
+		def doNothing():
+			pass
+
+	インデント内の内容を pass にしなければならない
+	同じように,制御構文でも...
+
+		if statement:
+			pass
+
+	とする。
+'''
+'''
+	関数で可変個引数を取り扱う方法
+
+		def funcName(arg1,arg2,*args):
+			...
+			# args = (arg3,arg4...) : タプル
+
+	又,関数を実行する際,配列,タプルの各要素をそのまま関数の引数とすることもできる
+
+		args = [arg1,arg2,arg3] : 配列argsを用意
+		funcName(*args) <- これは funcName(arg1,arg2,arg3) と同義
+'''
+
 print("\r\n\r\n")

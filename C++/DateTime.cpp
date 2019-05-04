@@ -8,7 +8,7 @@ using namespace std;
 
 void DateTime(){
 
-    std::cout.imbue(std::locale("ja_JP")); // ロケールを変更すると,また違う表記の仕方になる
+	std::cout.imbue(std::locale("ja_JP")); // ロケールを変更すると,また違う表記の仕方になる
 
 	std::time_t tm = std::time(nullptr);
 	std::tm* time = localtime(&tm);

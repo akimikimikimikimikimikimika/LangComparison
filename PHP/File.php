@@ -1,7 +1,7 @@
 #! /usr/local/bin/php
 <?php
 
-print "\r\nこれからファイル操作を試します\r\n";
+print "\r\nこれからファイル操作を試します\r\n\r\n";
 
 print "> カレントディレクトリをホームに変更\r\n\r\n";
 chdir(posix_getpwuid(posix_geteuid())["dir"]);

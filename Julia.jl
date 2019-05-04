@@ -23,13 +23,15 @@ while true
 	3. 演算子を試す
 	4. 条件分岐を試す
 	5. 繰り返しを試す
-	6. 正規表現を試す
-	7. ファイル操作を試す
-	8. ファイルパスを試す
-	9. 数学的演算を試す
+	6. 数学的演算を試す
+	9. 正規表現を試す
 	a. 日付と時刻を試す
-	e. プロセス系を試す
-	f. コマンドライン引数を試す
+	c. 例外処理を試す
+	d. ファイル操作を試す
+	e. ファイルパスを試す
+	f. プロセス系を試す
+	g. 並列処理を試す
+	h. コマンドライン引数を試す
 
 	0. 終了
 
@@ -49,18 +51,26 @@ while true
 	elseif action=="5"
 		run(`./Loop.jl`)
 	elseif action=="6"
-		run(`./RegExp.jl`)
-	elseif action=="7"
-		run(`./File.jl`)
-	elseif action=="8"
-		run(`./Path.jl`)
-	elseif action=="9"
 		run(`./Math.jl`)
+	elseif action=="7"
+		run(`./String.jl`)
+	elseif action=="8"
+		run(`./Sprintf.jl`)
+	elseif action=="9"
+		run(`./RegExp.jl`)
 	elseif action=="a"
 		run(`./DateTime.jl`)
+	elseif action=="c"
+		run(`./Error.jl`)
+	elseif action=="d"
+		run(`./File.jl`)
 	elseif action=="e"
-		run(`./Process.jl`)
+		run(`./Path.jl`)
 	elseif action=="f"
+		run(`./Process.jl`)
+	elseif action=="g"
+		run(`./Thread.jl`)
+	elseif action=="h"
 		run(`./Arguments.jl "このプログラムを直接実行してみよう。" "ここにあるよ: Julia/Arguments.jl" "" "コマンドラインに以下のように入力して実行します" "" "Julia/Arguments.jl 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます"`)
 	else
 		println("""

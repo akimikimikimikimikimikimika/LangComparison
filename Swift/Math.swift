@@ -62,16 +62,16 @@ trunc(-3.14) = \(   trunc(-3.14)   ) (0に近い方の整数へ)
 round(-3.14) = \(   round(-3.14)   )
 """)
 /*
-    多くの関数で as Double を付加するのは,同名の関数でFloat版とDouble版があるから。
-    具体的な浮動小数を宣言しても,それがFloatなのか,Doubleなのか,はっきりしないから,返値の型を制限して,関数を特定する。
-    e.g. sqrt の場合...
-        func sqrt(_ x:Double) -> Double
-        func sqrt(_ x:Float) -> Float
-    の2種類の同名な関数が存在する。sqrt(3)と宣言しただけでは,3をDoubleと解釈すべきか,Floatと解釈すべきか,はっきりしないので,どちらの関数を使うべきか,わからない。
-    そこで, sqrt(3) as Double とすることで,返値がDoubleでなければならないから,該当する関数が1つに絞れる。
-    尚,absに関しては,
-        func abs<T>(_ x: T) -> T where T : Comparable, T : SignedNumeric
-    と定義しているから,比較が可能な値であれば絶対値演算ができる
+	多くの関数で as Double を付加するのは,同名の関数でFloat版とDouble版があるから。
+	具体的な浮動小数を宣言しても,それがFloatなのか,Doubleなのか,はっきりしないから,返値の型を制限して,関数を特定する。
+	e.g. sqrt の場合...
+		func sqrt(_ x:Double) -> Double
+		func sqrt(_ x:Float) -> Float
+	の2種類の同名な関数が存在する。sqrt(3)と宣言しただけでは,3をDoubleと解釈すべきか,Floatと解釈すべきか,はっきりしないので,どちらの関数を使うべきか,わからない。
+	そこで, sqrt(3) as Double とすることで,返値がDoubleでなければならないから,該当する関数が1つに絞れる。
+	尚,absに関しては,
+		func abs<T>(_ x: T) -> T where T : Comparable, T : SignedNumeric
+	と定義しているから,比較が可能な値であれば絶対値演算ができる
 */
 
 print("\r\n")

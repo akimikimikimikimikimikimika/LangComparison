@@ -31,7 +31,7 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class Java {
+public class Main {
 
 	private static Scanner input = new Scanner(System.in);
 	private static void println(String data) throws IOException{
@@ -54,16 +54,18 @@ public class Java {
 			println("3. 演算子を試す");
 			println("4. 条件分岐を試す");
 			println("5. 繰り返しを試す");
-			println("6. 正規表現を試す");
-			println("7. ファイル操作を試す");
-			println("8. ファイルパスを試す");
-			println("9. 数学的演算を試す");
+			println("6. 数学的演算を試す");
+			println("7. 文字列を試す");
+			println("8. 文字列フォーマットを試す");
+			println("9. 正規表現を試す");
 			println("a. 日付と時刻を試す");
-			println("b. 文字列を試す");
-			println("c. 文字列フォーマットを試す");
-			println("d. クラスを試す");
-			println("e. プロセス系を試す");
-			println("f. コマンドライン引数を試す");
+			println("b. クラスを試す");
+			println("c. 例外処理を試す");
+			println("d. ファイル操作を試す");
+			println("e. ファイルパスを試す");
+			println("f. プロセス系を試す");
+			println("g. 並列処理を試す");
+			println("h. コマンドライン引数を試す");
 			println("");
 			println("0. 終了");
 			println("");
@@ -75,16 +77,18 @@ public class Java {
 			else if (eq("3")) Operators.main(arg);
 			else if (eq("4")) Condition.main(arg);
 			else if (eq("5")) Loop.main(arg);
-			else if (eq("6")) RegExp.main(arg);
-			else if (eq("7")) FileHandle.main(arg);
-			else if (eq("8")) PathData.main(arg);
-			else if (eq("9")) Mathematics.main(arg);
+			else if (eq("6")) Mathematics.main(arg);
+			else if (eq("7")) StringType.main(arg);
+			else if (eq("8")) Sprintf.main(arg);
+			else if (eq("9")) RegExp.main(arg);
 			else if (eq("a")) DateTime.main(arg);
-			else if (eq("b")) StringType.main(arg);
-			else if (eq("c")) Sprintf.main(arg);
-			else if (eq("d")) Class.main(arg);
-			else if (eq("e")) ProcessHandle.main(arg);
-			else if (eq("f")) Arguments.main(argsArg);
+			else if (eq("b")) Class.main(arg);
+			else if (eq("c")) Error.main(arg);
+			else if (eq("d")) FileHandle.main(arg);
+			else if (eq("e")) PathData.main(arg);
+			else if (eq("f")) ProcessHandle.main(arg);
+			else if (eq("g")) Threading.main(arg);
+			else if (eq("h")) Arguments.main(argsArg);
 			else println("指定したアクションは見つかりませんでした\r\n");
 		}
 	}

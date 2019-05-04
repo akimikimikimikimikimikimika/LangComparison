@@ -13,6 +13,11 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
+	/*
+		コマンドライン引数のデータ
+		argc : 引数の数
+		argv : 引数配列
+	*/
 	if (argc>1) Arguments(argc,argv);
 	else {
 		string action;
@@ -27,11 +32,11 @@ int main(int argc, char *argv[]){
 			cout << "3. 演算子を試す" << "\r\n";
 			cout << "4. 条件分岐を試す" << "\r\n";
 			cout << "5. 繰り返しを試す" << "\r\n";
-			cout << "6. 正規表現を試す" << "\r\n";
-			cout << "9. 数学的演算を試す" << "\r\n";
+			cout << "6. 数学的演算を試す" << "\r\n";
+			cout << "9. 正規表現を試す" << "\r\n";
 			cout << "a. 日付と時刻を試す" << "\r\n";
-			cout << "d. クラスを試す" << "\r\n";
-			cout << "f. コマンドライン引数を試す" << "\r\n";
+			cout << "b. クラスを試す" << "\r\n";
+			cout << "h. コマンドライン引数を試す" << "\r\n";
 			cout << "\r\n";
 			cout << "0. 終了" << "\r\n";
 			cout << "\r\n";
@@ -43,11 +48,11 @@ int main(int argc, char *argv[]){
 			else if (action=="3") Operators();
 			else if (action=="4") Condition();
 			else if (action=="5") Loop();
-			else if (action=="6") RegExp();
-			else if (action=="9") Math();
+			else if (action=="6") Math();
+			else if (action=="9") RegExp();
 			else if (action=="a") DateTime();
-			else if (action=="d") Class();
-			else if (action=="f") Arguments(9,demo);
+			else if (action=="b") Class();
+			else if (action=="h") Arguments(9,demo);
 			else if (action=="0") break;
 			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";
 		}

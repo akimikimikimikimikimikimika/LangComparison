@@ -58,14 +58,14 @@ ExtendedVector::ExtendedVector() : Vector() {};
 ExtendedVector::ExtendedVector(double X, double Y, double Z) : Vector(X,Y,Z) {};
 	// 親クラスのイニシャライザに初期化を代行させる
 
-void ExtendedVector::inner(double *to, Vector v) {
+void ExtendedVector::dot(double *to, Vector v) {
 	double p=0;
 	p+=x*v.x;
 	p+=y*v.y;
 	p+=z*v.z;
 	*to = p;
 };
-void ExtendedVector::outer(Vector *to, Vector v) {
+void ExtendedVector::cross(Vector *to, Vector v) {
 	Vector p(
 		y*v.z-z*v.y,
 		z*v.x-x*v.z,
@@ -76,7 +76,7 @@ void ExtendedVector::outer(Vector *to, Vector v) {
 void ExtendedVector::norm(double *to) {
 	double in;
 	Vector *self = this;
-	inner(&in,*self);
+	dot(&in,*self);
 	double sq = std::sqrt(in);
 	*to = sq;
 };

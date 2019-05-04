@@ -27,16 +27,17 @@ while (1) {
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
-6. 正規表現を試す
-7. ファイル操作を試す
-8. ファイルパスを試す
-9. 数学的演算を試す
+6. 数学的演算を試す
+7. 文字列を試す
+8. 文字列フォーマットを試す
+9. 正規表現を試す
 a. 日付と時刻を試す
-b. 文字列を試す
-c. 文字列フォーマットを試す
-d. クラスを試す
-e. プロセス系を試す
-f. コマンドライン引数を試す
+b. クラスを試す
+c. 例外処理を試す
+d. ファイル操作を試す
+e. ファイルパスを試す
+f. プロセス系を試す
+h. コマンドライン引数を試す
 
 0. 終了
 
@@ -64,33 +65,36 @@ Menu
 		system("./Loop.pl");
 	}
 	elsif ($action eq "6") {
-		system("./RegExp.pl");
+		system("./Math.pl");
 	}
 	elsif ($action eq "7") {
-		system("./File.pl");
+		system("./String.pl");
 	}
 	elsif ($action eq "8") {
-		system("./Path.pl");
+		system("./Sprintf.pl");
 	}
 	elsif ($action eq "9") {
-		system("./Math.pl");
+		system("./RegExp.pl");
 	}
 	elsif ($action eq "a") {
 		system("./DateTime.pl");
 	}
 	elsif ($action eq "b") {
-		system("./String.pl");
-	}
-	elsif ($action eq "c") {
-		system("./Sprintf.pl");
-	}
-	elsif ($action eq "d") {
 		system("./Class.pl");
 	}
+	elsif ($action eq "c") {
+		system("./Error.pl");
+	}
+	elsif ($action eq "d") {
+		system("./File.pl");
+	}
 	elsif ($action eq "e") {
-		system("./Process.pl");
+		system("./Path.pl");
 	}
 	elsif ($action eq "f") {
+		system("./Process.pl");
+	}
+	elsif ($action eq "h") {
 		system("./Arguments.pl このプログラムを直接実行してみよう。 \"ここにあるよ: Perl/Arguments.pl\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Perl/Arguments.pl 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
 	}
 	else {

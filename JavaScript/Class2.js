@@ -9,52 +9,52 @@
 
 // イニシャライザ/コンストラクタ
 function Vector(x,y,z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+	this.x = x;
+	this.y = y;
+	this.z = z;
 };
 
 // プロトタイプオブジェクトを定義
 // new Vector(...) により,このプロトタイプをコピーして新たなオブジェクトを生成し,イニシャライザで初期化処理をして渡される。
 Vector.prototype = {
 
-    x:0,
-    y:0,
-    z:0,
-    // インスタンス変数
-        // 各インスタンス毎に異なる値
-        // インスタンスメソッド内のみから this.x でアクセス可能
-        // 外部からは v.x でアクセス可能
+	x:0,
+	y:0,
+	z:0,
+	// インスタンス変数
+		// 各インスタンス毎に異なる値
+		// インスタンスメソッド内のみから this.x でアクセス可能
+		// 外部からは v.x でアクセス可能
 
-    desc:function(){
-        return `(${this.x},${this.y},${this.z})`;
-    },
+	desc:function(){
+		return `(${this.x},${this.y},${this.z})`;
+	},
 
-    // 足し算を定義
-    // インスタンスメソッド版 (自分自身に足し合わせていく)
-    add:function(...args){
-        args.forEach(v=>{
-            this.x += v.x;
-            this.y += v.y;
-            this.z += v.z;
-        });
-        return this;
-    },
+	// 足し算を定義
+	// インスタンスメソッド版 (自分自身に足し合わせていく)
+	add:function(...args){
+		args.forEach(v=>{
+			this.x += v.x;
+			this.y += v.y;
+			this.z += v.z;
+		});
+		return this;
+	},
 
-    // スカラ倍を定義
-    // 自分自身を実数倍
-    coefMultiply:function(k){
-        this.x *= k;
-        this.y *= k;
-        this.z *= k;
-        return this;
-    },
-    // 自分自身の実数倍のVectorを生成
-    coefMultiplied:function(k){
-        return new Vector(this.x*k,this.y*k,this.z*k);
-    },
+	// スカラ倍を定義
+	// 自分自身を実数倍
+	coefMultiply:function(k){
+		this.x *= k;
+		this.y *= k;
+		this.z *= k;
+		return this;
+	},
+	// 自分自身の実数倍のVectorを生成
+	coefMultiplied:function(k){
+		return new Vector(this.x*k,this.y*k,this.z*k);
+	},
 
-    // メソッド内で,インスタンス自身/クラス自身は, self から呼び出す
+	// メソッド内で,インスタンス自身/クラス自身は, self から呼び出す
 
 };
 
@@ -64,57 +64,57 @@ Vector.description = "JavaScript simple vector class";
 // クラスメソッド (イニシャライザ関数に直接埋め込む)
 // 引数のVectorを足し合わせた結果を返す
 Vector.added = function(...args){
-    let a = new Vector(0,0,0);
-    args.forEach(v=>{
-        a.x += v.x;
-        a.y += v.y;
-        a.z += v.z;
-    });
-    return a;
+	let a = new Vector(0,0,0);
+	args.forEach(v=>{
+		a.x += v.x;
+		a.y += v.y;
+		a.z += v.z;
+	});
+	return a;
 };
 
 // クラス定義2 (ExtendedVector inherits from Vector)
 
 function ExtendedVector(x,y,z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+	this.x = x;
+	this.y = y;
+	this.z = z;
 };
 
 (()=>{
 
-    // ExtendedVectorの構築を,ブロック内でして,プロトタイプpが流出しないようにする
+	// ExtendedVectorの構築を,ブロック内でして,プロトタイプpが流出しないようにする
 
-    // 継承として,継承元クラスのコピーをプロトタイプにする
-    let p = new Vector(0,0,0);
-    ExtendedVector.prototype = p;
+	// 継承として,継承元クラスのコピーをプロトタイプにする
+	let p = new Vector(0,0,0);
+	ExtendedVector.prototype = p;
 
-    // 以下で,プロトタイプを拡張する
+	// 以下で,プロトタイプを拡張する
 
-    // 内積を定義
-    p.inner = function(v){
-        var p=0; // 関数外のpとは干渉しない
-        p += this.x*v.x;
-        p += this.y*v.y;
-        p += this.z*v.z;
-        return p;
-    };
+	// 内積を定義
+	p.dot = function(v){
+		var p=0; // 関数外のpとは干渉しない
+		p += this.x*v.x;
+		p += this.y*v.y;
+		p += this.z*v.z;
+		return p;
+	};
 
-    // 外積を定義
-    p.outer = function(v){
-        return new Vector(
-            this.y*v.z-this.z*v.y,
-            this.z*v.x-this.x*v.z,
-            this.x*v.y-this.y*v.x
-        );
-    };
+	// 外積を定義
+	p.cross = function(v){
+		return new Vector(
+			this.y*v.z-this.z*v.y,
+			this.z*v.x-this.x*v.z,
+			this.x*v.y-this.y*v.x
+		);
+	};
 
-    // ノルムを定義
-    p.norm = function(){
-        return Math.sqrt(this.inner(this));
-    };
+	// ノルムを定義
+	p.norm = function(){
+		return Math.sqrt(this.dot(this));
+	};
 
-    // プライベートメソッドはないみたい
+	// プライベートメソッドはないみたい
 
 })();
 
@@ -146,8 +146,8 @@ vec1+vec2+vec3: ${   Vector.added(vec1,vec2,vec3).desc()   }
 vec4+vec2: ${   vec4.add(vec2).desc()   }
 vec2×12: ${   vec2.coefMultiplied(12).desc()   }
 
-vec2∙vec3: ${   vec2.inner(vec3)   }
-vec3×vec2: ${   vec3.outer(vec2).desc()   }
+vec2∙vec3: ${   vec2.dot(vec3)   }
+vec3×vec2: ${   vec3.cross(vec2).desc()   }
 |vec3|:    ${   vec3.norm()   }
 
 `);

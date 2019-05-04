@@ -24,15 +24,15 @@ while : ; do
 3. 演算子を試す
 4. 条件分岐を試す
 5. 繰り返しを試す
-6. 正規表現を試す
-7. ファイル操作を試す
-8. ファイルパスを試す
-9. 数学的演算を試す
+6. 数学的演算を試す
+7. 文字列を試す
+8. 文字列フォーマットを試す
+9. 正規表現を試す
 a. 日付と時刻を試す
-b. 文字列を試す
-c. 文字列フォーマットを試す
-e. プロセス系を試す
-f. コマンドライン引数を試す
+d. ファイル操作を試す
+e. ファイルパスを試す
+f. プロセス系を試す
+h. コマンドライン引数を試す
 
 0. 終了
 
@@ -53,22 +53,22 @@ f. コマンドライン引数を試す
 	elif [ "$action" = 5 ]; then
 		./Loop.sh
 	elif [ "$action" = 6 ]; then
-		./RegExp.sh
-	elif [ "$action" = 7 ]; then
-		./File.sh
-	elif [ "$action" = 8 ]; then
-		./Path.sh
-	elif [ "$action" = 9 ]; then
 		./Math.sh
+	elif [ "$action" = 7 ]; then
+		./String.sh
+	elif [ "$action" = 8 ]; then
+		./Sprintf.sh
+	elif [ "$action" = 9 ]; then
+		./RegExp.sh
 	elif [ "$action" = a ]; then
 		./DateTime.sh
-	elif [ "$action" = b ]; then
-		./String.sh
-	elif [ "$action" = c ]; then
-		./Sprintf.sh
+	elif [ "$action" = d ]; then
+		./File.sh
 	elif [ "$action" = e ]; then
-		./Process.sh
+		./Path.sh
 	elif [ "$action" = f ]; then
+		./Process.sh
+	elif [ "$action" = h ]; then
 		./Arguments.sh "このプログラムを直接実行してみよう。" "ここにあるよ: Shell/Arguments.sh" "" "コマンドラインに以下のように入力して実行します" "" "Shell/Arguments.sh 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます"
 	else
 		printf """

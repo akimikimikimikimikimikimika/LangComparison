@@ -8,19 +8,19 @@ func Condition() {
 
 	fmt.Println("\r\nこれから条件分岐を試します")
 
-    if (test1) {
-        fmt.Println("どうやらtest1は真のようです")
-    }
+	if (test1) {
+		fmt.Println("どうやらtest1は真のようです")
+	}
 
-    if (!test1) {
-        fmt.Println("どうやらtest1は偽のようです")
-    } else if (test2) {
-        fmt.Println("どうやらtest2は真のようです")
-    } else if (!test2 && test1) {
-        fmt.Println("真偽が混在しているようです")
-    } else {
-        fmt.Println("どれでもないようです")
-    }
+	if (!test1) {
+		fmt.Println("どうやらtest1は偽のようです")
+	} else if (test2) {
+		fmt.Println("どうやらtest2は真のようです")
+	} else if (!test2 && test1) {
+		fmt.Println("真偽が混在しているようです")
+	} else {
+		fmt.Println("どれでもないようです")
+	}
 
 	var val int = 8
 

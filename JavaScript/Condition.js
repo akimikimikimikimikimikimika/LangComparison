@@ -2,7 +2,7 @@
 let test1 = true;
 let test2 = false;
 
-var log = "\r\nこれから条件分岐を試します\r\n";
+var log = "\r\nこれから条件分岐を試します\r\n\r\n";
 
 if (test1) {
 	log+="どうやらtest1は真のようです\r\n";

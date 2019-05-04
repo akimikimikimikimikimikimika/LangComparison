@@ -1,7 +1,7 @@
 #! /usr/local/bin/php
 <?php
 
-print "\r\nこれからループ処理を試します\r\n";
+print "\r\nこれからループ処理を試します\r\n\r\n";
 
 print "\r\nfor (\$n=0; \$n<3; \$n++) {…}\r\n";
 for ($n=0;$n<3;$n++) {

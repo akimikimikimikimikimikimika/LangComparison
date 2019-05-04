@@ -27,16 +27,18 @@ while true {
 	3. 演算子を試す
 	4. 条件分岐を試す
 	5. 繰り返しを試す
-	6. 正規表現を試す
-	7. ファイル操作を試す
-	8. ファイルパスを試す
-	9. 数学的演算を試す
+	6. 数学的演算を試す
+	7. 文字列を試す
+	8. 文字列フォーマットを試す
+	9. 正規表現を試す
 	a. 日付と時刻を試す
-	b. 文字列を試す
-	c. 文字列フォーマットを試す
-	d. クラスを試す
-	e. プロセス系を試す
-	f. コマンドライン引数を試す
+	b. クラスを試す
+	c. 例外処理を試す
+	d. ファイル操作を試す
+	e. ファイルパスを試す
+	f. プロセス系を試す
+	g. 並列処理を試す
+	h. コマンドライン引数を試す
 
 	0. 終了
 
@@ -63,33 +65,39 @@ while true {
 		exec("Loop.swift")
 	}
 	else if action=="6" {
-		exec("RegExp.swift")
+		exec("Math.swift")
 	}
 	else if action=="7" {
-		exec("File.swift")
+		exec("String.swift")
 	}
 	else if action=="8" {
-		exec("Path.swift")
+		exec("Sprintf.swift")
 	}
 	else if action=="9" {
-		exec("Math.swift")
+		exec("RegExp.swift")
 	}
 	else if action=="a" {
 		exec("DateTime.swift")
 	}
 	else if action=="b" {
-		exec("String.swift")
-	}
-	else if action=="c" {
-		exec("Sprintf.swift")
-	}
-	else if action=="d" {
 		exec("Class.swift")
 	}
+	else if action=="c" {
+		exec("Error.swift")
+	}
+	else if action=="d" {
+		exec("File.swift")
+	}
 	else if action=="e" {
-		exec("Process.swift")
+		exec("Path.swift")
 	}
 	else if action=="f" {
+		exec("Process.swift")
+	}
+	else if action=="g" {
+		exec("Thread.swift")
+	}
+	else if action=="h" {
 		exec("Arguments.swift","このプログラムを直接実行してみよう。","ここにあるよ: Swift/Arguments.swift","","コマンドラインに以下のように入力して実行します","","Swift/Arguments.swift 引数1 引数2…","","すると,引数1,引数2…が順に出力されます")
 	}
 	else {
