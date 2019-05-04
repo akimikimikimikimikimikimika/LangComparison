@@ -6,24 +6,24 @@
 - [x] 演算子 (Operators)
 - [x] 条件分岐 (Condition)
 - [x] ループ (Loop/Repeat)
-- [x] 正規表現での検索/置換 (RegExp)
-- [x] ファイル/フォルダ操作 (File/FileHandle)
-- [x] ファイルパス (Path/FilePath)
 - [x] 数学関数 (Math/Mathematics)
-- [x] 日付/時刻 (DateTime)
 - [x] 文字列の操作 (String/StringType)
 - [x] 文字列にフォーマット (Sprintf)
+- [x] 正規表現での検索/置換 (RegExp)
+- [x] 日付/時刻 (DateTime)
 - [x] オブジェクト / クラス (Class)
+- [x] 例外処理 (Error)
+- [x] ファイル/フォルダ操作 (File/FileHandle)
+- [x] ファイルパス (Path/FilePath)
 - [x] プロセス情報 (Process/ProcessHandle)
+- [x] スレッド (Thread/Threading)
 - [x] コマンドライン引数 (Arguments)
-- [ ] スレッド (Thread/Threading)
 - [ ] 配列の操作
 - [ ] 型の変換
 - [ ] 各種定数
 - [ ] Webコンテンツの取得
 - [ ] JSON (JavaScript Object Notation)
 - [ ] モジュール
-- [ ] 例外の取り扱い
 - [ ] Fortran / C / C++ / Rust / Go 等へ拡充
 
 ### 言語別の準備状況

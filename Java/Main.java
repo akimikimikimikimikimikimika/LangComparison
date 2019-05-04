@@ -64,7 +64,7 @@ public class Main {
 			println("d. ファイル操作を試す");
 			println("e. ファイルパスを試す");
 			println("f. プロセス系を試す");
-			println("g. 並列処理を試す");
+			println("g. スレッドを試す");
 			println("h. コマンドライン引数を試す");
 			println("");
 			println("0. 終了");
