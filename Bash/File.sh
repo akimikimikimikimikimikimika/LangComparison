@@ -88,7 +88,7 @@ check(){
 
 	if [ -L "$1" ]; then
 		echo "   シンボリックリンクです"
-		echo "   リンク先: "`readlink -f "$1"`
+		echo "   リンク先: "`readlink -n "$1"`
 		if [ -f "$1" ]; then
 			echo "   リンク先はファイルです"
 		fi
