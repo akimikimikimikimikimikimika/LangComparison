@@ -55,6 +55,14 @@ subroutine file
  close(14)
  print '(a,a,a)',md1,md2,md3
 
+ ! ファイル/フォルダの削除
+
+ print '("> ファイルBlankを削除")'
+ call unlink("Blank")
+
+ print '("> シンボリックリンクAliasを削除")'
+ call unlink("Package/Alias")
+
 end subroutine file
 
 ! Fortranでは,ファイルハンドラとして装置番号を指定する

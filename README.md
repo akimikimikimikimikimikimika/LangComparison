@@ -13,6 +13,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [Ruby](https://www.ruby-lang.org "Ruby")
 - [PHP](http://www.php.net "PHP")
 - [Python](https://www.python.org "Python")
+- R
 - [Julia](https://www.julialang.org "Julia")
 - [Lua](https://www.lua.org "Lua")
 - [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell")
@@ -20,6 +21,11 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 ### ブラウザ上で実行する言語
 - JavaScript
+
+### Java関連の言語
+- Groovy
+- Scala
+- Kotlin
 
 ### コンパイルの必要な言語
 - [Java](https://www.java.com "Java")
@@ -90,6 +96,10 @@ php PHP.php
 ```Shell
 python3.7 Python.py # 最新のPython
 python Python.py    # システムに付属するPython (macOSなどでは古いバージョンが標準でインストールされている)
+```
+- R
+```Shell
+Rscript R.r
 ```
 - Julia
 ```Shell
@@ -172,13 +182,65 @@ java -jar Java.jar
 (cd Java ; javac Stdinout.java ; java Stdinout)
 ```
 
+## REPL
+
+スクリプト言語などの場合,コマンドライン上でコードを入力して,その場で実行するREPLに対応していたりする。  
+以下では,REPLの起動方法を説明する。  
+尚,何れの場合も Control+D でREPLを終了させることができる。
+
+- Swift  
+```Shell
+swift
+```
+- Perl
+```Shell
+perl
+```
+- Ruby
+```Shell
+ruby
+```
+- PHP
+```Shell
+php
+```
+- Python
+```Shell
+python3.7 # 最新のPython
+python    # システムに付属するPython
+```
+- R
+```Shell
+R
+```
+- Julia
+```Shell
+julia
+```
+- Bash
+```Shell
+bash
+```
+- PowerShell
+```Shell
+pwsh
+```
+- Lua
+```Shell
+lua
+```
+- JavaScript (Node.js)  
+```Shell
+node
+```
+
 ## Shebang
 
 macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /usr/local/bin/lua
 ```
-但し, Perl, Ruby, PHP, Python, Julia, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
+但し, Perl, Ruby, PHP, Python, R, Julia, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
 実行例 (Luaの場合•ディレクトリ移動を実行済)
 ```Shell
 ./Lua.lua # このように入力すればLua.luaを実行してくれる
@@ -192,10 +254,11 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, PowerShell, Bash, Lua に
 | Ruby | `/usr/bin/ruby` | **`/usr/local/bin/ruby`** |
 | PHP | `/usr/bin/php` | **`/usr/local/bin/php`** |
 | Python | `/usr/bin/python` | **`/usr/local/bin/python3.7`** |
+| R | - | **`/usr/local/bin/Rscript`** |
 | Julia | - | **`/usr/local/bin/julia`** |
 | Bash | `/bin/bash` | **`/usr/local/bin/bash`** |
 | PowerShell | - | **`/usr/local/bin/pwsh`** |
 | Lua | - | **`/usr/local/bin/lua`** |
 
 太字で指定したShebangが指定されている  
-なお,Unix系OSの場合は,コマンドラインに `type swift` などと入力すれば,コンピュータが標準で使用する実行パスが表示される。
+なお,Unix系OSの場合は,コマンドラインに `type swift` 又は `which swift` と入力すれば,コンピュータが標準で使用する実行パスが表示される。

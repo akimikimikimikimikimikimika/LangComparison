@@ -22,18 +22,24 @@ Third line
 		%s : String
 		%% : %
 '''
+
 # バイト
 byte = b"Python byte type" # ASCII文字しか扱えない
+
 # 数値
 integer = 6
 floating = .0375e-6
 comp = 3+1j
+
 # 真偽値
 boolean = True
+
 # リスト (mutable,主に同種の値の集合)
 lis = [1, "second", 3, 3.14, False]
+
 # タプル (immutable,主に異種の値の集合)
 tup = (1, "second", 3, 3.14, False) # 要素が1つのタプルは (1,) のように表記する
+
 # 辞書
 dictionary = {
 	"a": 1,
@@ -42,12 +48,15 @@ dictionary = {
 	"d": 3.14,
 	"e": False
 }
+
 # 範囲
 ranE = range(5,8) # 5≦x<8
 	# だけど, random.randint(5,8) は, 5≦x≦8
+
 # 関数
 def cube(val):
 	return val ** 3
+
 # ラムダ (無名関数)
 func = lambda val: val ** 2
 
@@ -100,6 +109,13 @@ print(f"""
 			pass
 
 	とする。
+'''
+'''
+	関数でデフォルト引数を取り扱う方法
+
+		def funcName(arg="defaultValue"):
+			...
+
 '''
 '''
 	関数で可変個引数を取り扱う方法
