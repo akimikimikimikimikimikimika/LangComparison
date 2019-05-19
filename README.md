@@ -149,7 +149,8 @@ C/Build
 以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
 ```Shell
 # コンパイル : フォルダ C++ 内にBuildという実行ファイルが生成される
-find C++ -name *.cpp -exec clang++ -std=c++17 -o C++/Build {} +
+find C++ -name *.cpp -exec clang++ -std=c++17 -pthread -o C++/Build {} +
+	# スレッド処理に関して取り扱うため -pthread オプションが必要みたい
 
 # 実行
 C++/Build

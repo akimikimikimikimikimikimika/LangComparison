@@ -4,6 +4,7 @@ __pycache__
 Fortran/Build
 C/Build
 C++/Build
+Objective-C/Build
 Go/Build
 Rust/Build
 Rust/Cargo.lock

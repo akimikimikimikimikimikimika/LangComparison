@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <cmath>
+#include <ctgmath>
 #include <random>
 #include "Header.hpp"
 
@@ -9,6 +9,22 @@ using namespace std;
 void Math(){
 
 	cout << "\r\nこれから数学演算を試します\r\n";
+	/*
+		多くの関数は std:: を介してアクセスするようになっている。
+		だが,本来は using namespace std; を記している(インクルードの後)ため,わざわざ std:: を記す必要はない。
+	*/
+	/*
+		C++では,Cの標準数学ライブラリをそのまま利用できるのだが,以下のように書き換えて使うこともできる
+		<math.h> → <cmath>
+		<tgmath.h> → <ctgmath>
+	*/
+	/*
+		ctgmath
+		数学関数を定義するヘッダーファイルとして,本来は cmath と complex の2つが存在する。
+		cmath は通常の実数範囲内で取り扱う際に利用する関数群で, complex は複素数を取り扱う際の関数である。
+		ctgmath では,引数が実数か複素数かによって cmath の関数か complex の関数かを自動選別した上で実行できる。
+		ctgmath をインクルードした時点で, cmath と complex も自動的にインクルードされる。
+	*/
 
 	cout << "\r\n符号\r\n"; // <cstdlib>
 	cout << "abs(+18) = " << std::abs(+18) << "\r\n";
@@ -21,11 +37,11 @@ void Math(){
 
 	double pi = std::acos(-1);
 	double e  = std::exp(1);
-	cout << "\r\n定数\r\n"; // <cmath>
+	cout << "\r\n定数\r\n"; // <ctgmath>
 	cout << "π = " << pi << "\r\n";
 	cout << "e = " << e  << "\r\n";
 
-	cout << "\r\n数学関数\r\n"; // <cmath>
+	cout << "\r\n数学関数\r\n"; // <ctgmath>
 	cout << "pow(2,10)      = " << std::pow(2,10)      << "\r\n";
 	cout << "sqrt(3)        = " << std::sqrt(3)        << "\r\n";
 	cout << "cbrt(27)       = " << std::cbrt(27)       << "\r\n";
@@ -50,7 +66,7 @@ void Math(){
 	cout << "tgamma(0.2865) = " << std::tgamma(0.2865) << "\r\n"; // Γ(0.287)
 	cout << "lgamma(0.0422) = " << std::lgamma(0.0422) << "\r\n"; // log(Γ(0.0422))
 
-	cout << "\r\n端数処理\r\n"; // <cmath>
+	cout << "\r\n端数処理\r\n"; // <ctgmath>
 	cout << "floor(-3.14) = " << std::floor(-3.14) << "\r\n"; // 小さい方の整数へ
 	cout << " ceil(-3.14) = " << std::ceil(-3.14)  << "\r\n"; // 大きい方の整数へ
 	cout << "trunc(-3.14) = " << std::trunc(-3.14) << "\r\n"; // 0に近い方の整数へ

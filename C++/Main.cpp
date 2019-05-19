@@ -18,11 +18,35 @@ int main(int argc, char *argv[]){
 		argc : 引数の数
 		argv : 引数配列
 	*/
-	if (argc>1) Arguments(argc,argv);
+
+	/*
+		コマンドライン引数によってアクションを変化させる
+		引数なし → メニューを表示
+		各項目名 → 指定した項目を実行
+		それ以外 → Argumentsで表示
+	*/
+	if (argc>1) {
+		if (argc>2) Arguments(argc,argv);
+		else {
+			string param(argv[1]);
+			if (param=="Stdinout") Stdinout();
+			else if (param=="Values") Values();
+			else if (param=="Operators") Operators();
+			else if (param=="Condition") Condition();
+			else if (param=="Loop") Loop();
+			else if (param=="Math") Math();
+			else if (param=="RegExp") RegExp();
+			else if (param=="DateTime") DateTime();
+			else if (param=="Class") Class();
+			else if (param=="FileHandle") FileHandle();
+			else if (param=="Path") Path();
+			// else if (param=="Thread") Thread();
+			else if (param=="Arguments") ArgumentsDemo();
+			else Arguments(argc,argv);
+		}
+	}
 	else {
 		string action;
-
-		char *demo[] = {"","このデモは,引数を付してコマンドを実行することで体験できます","","コマンドラインに以下のように入力して実行します","","C++/Build 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"};
 
 		cout << "こんにちは。私の名前はC++。" << "\r\n";
 		while (true) {
@@ -36,6 +60,9 @@ int main(int argc, char *argv[]){
 			cout << "9. 正規表現を試す" << "\r\n";
 			cout << "a. 日付と時刻を試す" << "\r\n";
 			cout << "b. クラスを試す" << "\r\n";
+			cout << "d. ファイル操作を試す" << "\r\n";
+			cout << "e. ファイルパスを試す" << "\r\n";
+			// cout << "g. スレッドを試す" << "\r\n";
 			cout << "h. コマンドライン引数を試す" << "\r\n";
 			cout << "\r\n";
 			cout << "0. 終了" << "\r\n";
@@ -52,7 +79,10 @@ int main(int argc, char *argv[]){
 			else if (action=="9") RegExp();
 			else if (action=="a") DateTime();
 			else if (action=="b") Class();
-			else if (action=="h") Arguments(9,demo);
+			else if (action=="d") FileHandle();
+			else if (action=="e") Path();
+			// else if (action=="g") Thread();
+			else if (action=="h") ArgumentsDemo();
 			else if (action=="0") break;
 			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";
 		}

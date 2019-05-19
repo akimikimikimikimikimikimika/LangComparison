@@ -1,8 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <complex.h>
+#include <tgmath.h>
 #include "Header.h"
+
+/*
+	tgmath.h
+	数学関数を定義するヘッダーファイルとして,本来は math.h と complex.h の2つが存在する。
+	math.h は通常の実数範囲内で取り扱う際に利用する関数群で, complex.h は複素数を取り扱う際の関数である。
+	tgmath.h では,引数が実数か複素数かによって math.h の関数か complex.h の関数かを自動選別した上で実行できる。
+	tgmath.h をインクルードした時点で, math.h と complex.h も自動的にインクルードされる。
+*/
 
 void Math(){
 
@@ -18,7 +25,7 @@ void Math(){
 	printf("  .quot = %d\r\n",div(24,5).quot);
 	printf("  .rem  = %d\r\n",div(24,5).rem);
 
-	printf("\r\n定数\r\n"); // <math.h>
+	printf("\r\n定数\r\n"); // <tgmath.h>
 	printf("π = %f\r\n",M_PI);
 	printf("e = %f\r\n",M_E);
 	/*
@@ -36,7 +43,7 @@ void Math(){
 		M_SQRT1_2 : 1/√2
 	*/
 
-	printf("\r\n数学関数\r\n"); // <math.h>
+	printf("\r\n数学関数\r\n"); // <tgmath.h>
 	printf("pow(2,10)      = %f\r\n",pow(2,10)     );
 	printf("sqrt(3)        = %f\r\n",sqrt(3)       );
 	printf("cbrt(27)       = %f\r\n",cbrt(27)      );
@@ -62,7 +69,7 @@ void Math(){
 	printf("lgamma(0.0422) = %f\r\n",lgamma(0.0422)); // log(Γ(0.0422))
 
 	double complex c = 3+4i;
-	printf("\r\n複素数\r\n"); // <complex.h>
+	printf("\r\n複素数\r\n"); // <tgmath.h>
 	printf(" cabs(3+4i) = %f\r\n", cabs(c));
 	printf(" carg(3+4i) = %f\r\n", carg(c));
 	printf("creal(3+4i) = %f\r\n",creal(c));
@@ -76,7 +83,7 @@ void Math(){
 	printf("\r\n端数処理\r\n"); // <stdlib.h>
 	printf("rand() = %d\r\n", rand());
 
-	printf("\r\n端数処理\r\n"); // <math.h>
+	printf("\r\n端数処理\r\n"); // <tgmath.h>
 	printf("floor(-3.14) = %f\r\n",floor(-3.14)); // 小さい方の整数へ
 	printf(" ceil(-3.14) = %f\r\n", ceil(-3.14)); // 大きい方の整数へ
 	printf("trunc(-3.14) = %f\r\n",trunc(-3.14)); // 0に近い方の整数へ

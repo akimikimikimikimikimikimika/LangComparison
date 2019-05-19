@@ -38,14 +38,6 @@ void Operators(){
 	printf("1 ? \"yes\" : \"no\" = \"%s\"\r\n",1?"yes":"no");
 	printf("0 ? \"yes\" : \"no\" = \"%s\"\r\n",0?"yes":"no");
 
-	printf("\r\n文字列関係\r\n");
-	printf("文字列には基本的に演算子は存在しない。\r\n");
-	printf("str1 = \"%s\", str2 = \"%s\"のとき\r\n",str1,str2);
-	strcat(str1,str2);
-	printf("strcat(str1,str2) → str1 = \"%s\"\r\n",str1);
-	printf("strcmp(str1,str2) = %d\r\n",strcmp(str1,str2));
-	printf("strlen(str1) = %lu\r\n",strlen(str1));
-
 	printf("\r\n型演算子\r\n");
 	printf("(double)1 = %lf\r\n",(double)1);
 

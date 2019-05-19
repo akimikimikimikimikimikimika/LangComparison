@@ -16,9 +16,33 @@ int main(int argc, char *argv[]){
 		argc : 引数の数
 		argv : 引数配列
 	*/
+
 	char action[10];
-	char *demo[] = {"","このデモは,引数を付してコマンドを実行することで体験できます","","コマンドラインに以下のように入力して実行します","","C/Build 引数1 引数2…","","すると,引数1,引数2…が順に出力されます"};
-	if (argc>1) Arguments(argc,argv);
+
+	/*
+		コマンドライン引数によってアクションを変化させる
+		引数なし → メニューを表示
+		各項目名 → 指定した項目を実行
+		それ以外 → Argumentsで表示
+	*/
+	if (argc>1) {
+		if (argc>2) Arguments(argc,argv);
+		else {
+			if (cmp(argv[1],"Stdinout")) Stdinout();
+			else if (cmp(argv[1],"Values")) Values();
+			else if (cmp(argv[1],"Operators")) Operators();
+			else if (cmp(argv[1],"Condition")) Condition();
+			else if (cmp(argv[1],"Loop")) Loop();
+			else if (cmp(argv[1],"Math")) Math();
+			else if (cmp(argv[1],"String")) String();
+			else if (cmp(argv[1],"RegExp")) RegExp();
+			else if (cmp(argv[1],"DateTime")) DateTime();
+			else if (cmp(argv[1],"FileHandle")) FileHandle();
+			else if (cmp(argv[1],"Path")) Path();
+			else if (cmp(argv[1],"Arguments")) ArgumentsDemo();
+			else Arguments(argc,argv);
+		}
+	}
 	else {
 		printf("こんにちは。私の名前はC。\r\n");
 		while (1) {
@@ -29,6 +53,7 @@ int main(int argc, char *argv[]){
 			printf("4. 条件分岐を試す\r\n");
 			printf("5. 繰り返しを試す\r\n");
 			printf("6. 数学的演算を試す\r\n");
+			printf("7. 文字列操作を試す\r\n");
 			printf("9. 正規表現を試す\r\n");
 			printf("a. 日付と時刻を試す\r\n");
 			printf("d. ファイル操作を試す\r\n");
@@ -47,11 +72,12 @@ int main(int argc, char *argv[]){
 			else if (cmp(action,"4")) Condition();
 			else if (cmp(action,"5")) Loop();
 			else if (cmp(action,"6")) Math();
+			else if (cmp(action,"7")) String();
 			else if (cmp(action,"9")) RegExp();
 			else if (cmp(action,"a")) DateTime();
 			else if (cmp(action,"d")) FileHandle();
 			else if (cmp(action,"e")) Path();
-			else if (cmp(action,"h")) Arguments(9,demo);
+			else if (cmp(action,"h")) ArgumentsDemo();
 			else printf("指定したアクションは見つかりませんでした\r\n\r\n");
 		}
 	}

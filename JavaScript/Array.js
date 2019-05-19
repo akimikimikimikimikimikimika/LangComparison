@@ -1,5 +1,8 @@
 
-// 配列の中身の書き換えるメソッド類
+// 配列の中身を書き換えるメソッド類
+/*
+	中身を書き換えるメソッドであるが,中身が変わるだけで配列そのものは変わらないので, let のままでも良い
+*/
 
 let sorted=[2,5,4,1,3]
 sorted.sort(); // [1,2,3,4,5]
@@ -52,7 +55,7 @@ let concatenated=[1,2].concat(3,[4,5]);   // concatの引数には追加する�
 
 let sliced=[2,5,4,1,3].slice(3,5);   // 3≤x<5 の範囲の要素を抽出
 
-// 反復処理用メソッド類
+// 反復処理系メソッド類
 // メソッドを実行する際に関数を渡して,配列内の要素毎に関数を実行して処理するメソッド
 
 let feSample=["A","B","C"];
@@ -174,7 +177,6 @@ let reducedFromRight=results.reduceRight(function(acc,val){
 	value=c として関数を実行する。戻り値は新たな accumulator になる。
 	最後に accumulator を reduce() の戻り値として返す。
 	reduceRight() は c→b→a の順にこれが実行される。
-
 */
 
 console.log(`
