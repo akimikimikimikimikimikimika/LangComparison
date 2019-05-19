@@ -21,7 +21,7 @@ if test2 =~ %r{dog jumps}i then
 else
 	print "犬は飛んでいません\r\n";
 end
-color="ver";
+color="brown";
 # 変数展開
 if test1 !~ /#{color}/i then
 	print "茶色の生物なんてここにいない\r\n";

@@ -25,10 +25,38 @@ func main() {
 	stdin := bufio.NewScanner(os.Stdin)
 	args := os.Args[1:]
 	if (len(args)>0) {
-		Arguments()
+		if (len(args)>1) {
+			Arguments()
+		} else {
+			if args[0] == "Stdinout" {
+				Stdinout()
+			} else if args[0] == "Values" {
+				Values()
+			} else if args[0] == "Operators" {
+				Operators()
+			} else if args[0] == "Condition" {
+				Condition()
+			} else if args[0] == "Loop" {
+				Loop()
+			} else if args[0] == "Math" {
+				Math()
+			} else if args[0] == "RegExp" {
+				RegExp()
+			} else if args[0] == "File" {
+				File()
+			} else if args[0] == "Path" {
+				Path()
+			} else if args[0] == "Thread" {
+				Thread()
+			} else if args[0] == "Arguments" {
+				Arguments()
+			} else {
+				Arguments()
+			}
+		}
 	} else {
 		fmt.Println("こんにちは。私の名前はGo。")
-		for true {
+		for {
 			fmt.Println(`
 
 何がしたい?
@@ -39,6 +67,10 @@ func main() {
 4. 条件分岐を試す
 5. 繰り返しを試す
 6. 数学的演算を試す
+9. 正規表現を試す
+d. ファイル操作を試す
+e. ファイルパスを試す
+g. スレッドを試す
 h. コマンドライン引数を試す
 
 0. 終了
@@ -63,6 +95,14 @@ h. コマンドライン引数を試す
 				Loop()
 			} else if action == "6" {
 				Math()
+			} else if action == "9" {
+				RegExp()
+			} else if action == "d" {
+				File()
+			} else if action == "e" {
+				Path()
+			} else if action == "g" {
+				Thread()
 			} else if action == "h" {
 				Arguments()
 			} else {

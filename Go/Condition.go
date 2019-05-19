@@ -6,7 +6,7 @@ func Condition() {
 
 	test1, test2 := true, false
 
-	fmt.Println("\r\nこれから条件分岐を試します")
+	fmt.Println("\r\nこれから条件分岐を試します\r\n")
 
 	if (test1) {
 		fmt.Println("どうやらtest1は真のようです")
@@ -46,5 +46,7 @@ func Condition() {
 					fmt.Println("なにせ,",val,"は中途半端なのだ")
 			}
 	}
+
+	fmt.Println("\r\n\r\n")
 
 }

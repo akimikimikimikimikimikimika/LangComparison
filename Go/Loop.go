@@ -4,7 +4,7 @@ import "fmt"
 
 func Loop() {
 
-	fmt.Println("\r\nこれからループ処理を試します")
+	fmt.Println("\r\nこれからループ処理を試します\r\n")
 
 	fmt.Println("\r\nfor n:=0;n<3;n++ {…}")
 	for n:=0;n<3;n++ {
@@ -28,5 +28,7 @@ func Loop() {
 	/*
 		無限ループは for {…} により作れる。break でループから抜ける。
 	*/
+
+	fmt.Println("\r\n\r\n")
 
 }

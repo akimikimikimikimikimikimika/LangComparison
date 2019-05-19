@@ -68,6 +68,8 @@ func Values() {
 	fmt.Println("   大きさ: ",len(dict))
 	fmt.Println("クロージャ:\r\n",square)
 
+	fmt.Println("\r\n\r\n")
+
 }
 
 // func ***() {} の型の関数は,関数外でのみ宣言可能

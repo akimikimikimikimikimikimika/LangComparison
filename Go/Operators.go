@@ -40,4 +40,6 @@ true || false = `,true || false,`
 
 `);
 
+fmt.Println("\r\n\r\n")
+
 }

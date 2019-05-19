@@ -1,9 +1,9 @@
 ## LangComparison
 
 このページは,色々な言語に触れてみる目的で用意した。これは,比較(プログラミング)言語学と言えるのだろうか。気の趣くままに進めている。同じようなことを,それぞれの言語で行なっている。  
+ここで取り上げる言語にのうち,既にどれかの言語を知っているのであれば,取り掛かり易い。同じ内容をそれぞれの言語で書いているから,自分の知る言語とまだ触れたことのない言語を比較してみることで,より理解しやすいかもしれない。  
 ここに掲載されたコードをただ見ているだけでなく,条件を変えてみるなど,自分で書き直したりして,使ってみると分かってくるかもしれない。 或いは,それぞれの言語を使うにあたってのヒントとして参照しても良い。  
-
-GitHubの当リポジトリページの上部に言語の割合を示す帯グラフがあるが,どの言語も同じくらいの量は書いているはずだから,拮抗しているはず。おそらく,ファイルサイズの和が大きい言語順に並んでいるので,同じことを書いていても,記述量が多くなってしまう言語ほど上位に来やすい。だから,あてにはならない。
+GitHubの当リポジトリページの上部に言語の割合を示す帯グラフがあるが,ファイルサイズの和が大きい言語順に並んでいるので,同じことを書いていても,記述量が多くなってしまう言語ほど上位に来やすい。だから,あてにはならない。
 
 ## 言語
 
@@ -13,7 +13,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [Ruby](https://www.ruby-lang.org "Ruby")
 - [PHP](http://www.php.net "PHP")
 - [Python](https://www.python.org "Python")
-- R
+- [R](https://www.r-project.org "R")
 - [Julia](https://www.julialang.org "Julia")
 - [Lua](https://www.lua.org "Lua")
 - [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell")
@@ -23,13 +23,12 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - JavaScript
 
 ### Java関連の言語
-- Groovy
-- Scala
-- Kotlin
+- [Java](https://www.java.com "Java")
+- [Groovy](http://groovy-lang.org "Groovy")
+- [Scala](https://www.scala-lang.org "Scala")
+- [Kotlin](https://kotlinlang.org "Kotlin")
 
 ### コンパイルの必要な言語
-- [Java](https://www.java.com "Java")
-
 - Fortran
 - [C](http://www.open-std.org/jtc1/sc22/wg14 "C")
 - [C++](https://isocpp.org "C++")
@@ -57,13 +56,13 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 	PowerShell は標準でインストール済。  
 	Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードする。  
 	C++ のコンパイルには Visual C++ が必要らしい。Visual Studioから使うと思われる。  
-	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries) は公式サイトからインストールすることもできる。  
+	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。  
 	Intel C++ Compilerなどが必要な場合は別途入手する。  
 
 - Unix系OS (macOS除く)  
 	大抵の場合, Bash は標準でインストール済。  
 	C, C++ のコンパイラ GCC は標準でインストール済。コンパイラとしてClangやIntel C++ Compilerなどが必要な場合は別途入手する。  
-	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries) は公式サイトからインストールすることもできる。  
+	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。  
 	基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。  
 	Linuxの場合,Rubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)  
 
@@ -234,10 +233,11 @@ lua
 ```Shell
 node
 ```
+Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在する。
 
 ## Shebang
 
-macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+macOSの場合, Swift, Perl, Ruby, PHP, Python, R, Julia, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /usr/local/bin/lua
 ```

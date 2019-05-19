@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 import "math"
+import "time"
+import "math/big"
+import "math/rand"
+import crand "crypto/rand"
 
 func Math() {
 	fmt.Println(`
@@ -55,5 +59,40 @@ math.Round(-3.14) = `,   math.Round(-3.14)   ,`
 
 `);
 // s,c = math.Sincos(π/3) により正弦と余弦をまとめて得ることができる
+
+	// 時刻よりシード作成
+	rand.Seed(time.Now().UnixNano())
+
+	fmt.Println(`
+乱数 (時刻シード)
+rand.Int()         = `,   rand.Int()           ,`
+rand.Float64()     = `,   rand.Float64()       ,`
+rand.NormFloat64() = `,   rand.NormFloat64()   ,`
+
+`)
+
+	// cryptoシード
+	seed,_ := crand.Int(crand.Reader, big.NewInt(math.MaxInt64))
+	rand.Seed(seed.Int64())
+
+	fmt.Println(`
+乱数 (cryptoシード)
+rand.Int()         = `,   rand.Int()           ,`
+rand.Float64()     = `,   rand.Float64()       ,`
+rand.NormFloat64() = `,   rand.NormFloat64()   ,`
+
+`)
+
+/*
+	rand.NormFloat64()
+	全実数を取りうるが,生成する実数は標準正規分布に従って分散する。
+	標準正規分布は,平均値 μ ,分散 σ の正規分布のうち, μ=0 σ=1 のもののことである。
+	生じる乱数を特定の μ,σ の正規分布に調整するには,以下の式を用いる
+
+		rand.NormFloat64()*σ+μ
+
+*/
+
+fmt.Println("\r\n\r\n")
 
 }

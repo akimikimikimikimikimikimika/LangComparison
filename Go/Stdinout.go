@@ -14,4 +14,7 @@ func Stdinout(){
 	stdin.Scan()
 	var aboutYou = stdin.Text()
 	fmt.Println("あなたは ",aboutYou," ですね。わかりました")
+
+	fmt.Println("\r\n\r\n")
+
 }
