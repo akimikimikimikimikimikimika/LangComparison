@@ -25,25 +25,7 @@ int main(int argc, char *argv[]){
 		各項目名 → 指定した項目を実行
 		それ以外 → Argumentsで表示
 	*/
-	if (argc>1) {
-		if (argc>2) Arguments(argc,argv);
-		else {
-			if (cmp(argv[1],"Stdinout")) Stdinout();
-			else if (cmp(argv[1],"Values")) Values();
-			else if (cmp(argv[1],"Operators")) Operators();
-			else if (cmp(argv[1],"Condition")) Condition();
-			else if (cmp(argv[1],"Loop")) Loop();
-			else if (cmp(argv[1],"Math")) Math();
-			else if (cmp(argv[1],"String")) String();
-			else if (cmp(argv[1],"RegExp")) RegExp();
-			else if (cmp(argv[1],"DateTime")) DateTime();
-			else if (cmp(argv[1],"FileHandle")) FileHandle();
-			else if (cmp(argv[1],"Path")) Path();
-			else if (cmp(argv[1],"Arguments")) ArgumentsDemo();
-			else Arguments(argc,argv);
-		}
-	}
-	else {
+	if (argc==1) {
 		printf("こんにちは。私の名前はC。\r\n");
 		while (1) {
 			printf("\r\n\r\n何がしたい?\r\n\r\n");
@@ -79,6 +61,24 @@ int main(int argc, char *argv[]){
 			else if (cmp(action,"e")) Path();
 			else if (cmp(action,"h")) ArgumentsDemo();
 			else printf("指定したアクションは見つかりませんでした\r\n\r\n");
+		}
+	}
+	else {
+		if (argc>2) Arguments(argc,argv);
+		else {
+			if (cmp(argv[1],"Stdinout")) Stdinout();
+			else if (cmp(argv[1],"Values")) Values();
+			else if (cmp(argv[1],"Operators")) Operators();
+			else if (cmp(argv[1],"Condition")) Condition();
+			else if (cmp(argv[1],"Loop")) Loop();
+			else if (cmp(argv[1],"Math")) Math();
+			else if (cmp(argv[1],"String")) String();
+			else if (cmp(argv[1],"RegExp")) RegExp();
+			else if (cmp(argv[1],"DateTime")) DateTime();
+			else if (cmp(argv[1],"FileHandle")) FileHandle();
+			else if (cmp(argv[1],"Path")) Path();
+			else if (cmp(argv[1],"Arguments")) ArgumentsDemo();
+			else Arguments(argc,argv);
 		}
 	}
 	return 0;

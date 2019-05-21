@@ -1,4 +1,4 @@
-subroutine condition
+subroutine Condition
 
  logical::test1 = .true.
  logical::test2 = .false.
@@ -38,4 +38,4 @@ subroutine condition
    print '("整数以外は受け付けない")'
  end select
 
-end subroutine condition
+end subroutine Condition

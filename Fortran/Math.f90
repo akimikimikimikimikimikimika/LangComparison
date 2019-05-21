@@ -1,4 +1,4 @@
-subroutine math
+subroutine Math
 
  double precision pi
  double precision e
@@ -35,4 +35,4 @@ subroutine math
 
  print *
 
-end subroutine math
+end subroutine Math

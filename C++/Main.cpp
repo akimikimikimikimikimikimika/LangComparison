@@ -25,27 +25,7 @@ int main(int argc, char *argv[]){
 		各項目名 → 指定した項目を実行
 		それ以外 → Argumentsで表示
 	*/
-	if (argc>1) {
-		if (argc>2) Arguments(argc,argv);
-		else {
-			string param(argv[1]);
-			if (param=="Stdinout") Stdinout();
-			else if (param=="Values") Values();
-			else if (param=="Operators") Operators();
-			else if (param=="Condition") Condition();
-			else if (param=="Loop") Loop();
-			else if (param=="Math") Math();
-			else if (param=="RegExp") RegExp();
-			else if (param=="DateTime") DateTime();
-			else if (param=="Class") Class();
-			else if (param=="FileHandle") FileHandle();
-			else if (param=="Path") Path();
-			// else if (param=="Thread") Thread();
-			else if (param=="Arguments") ArgumentsDemo();
-			else Arguments(argc,argv);
-		}
-	}
-	else {
+	if (argc==1) {
 		string action;
 
 		cout << "こんにちは。私の名前はC++。" << "\r\n";
@@ -85,6 +65,26 @@ int main(int argc, char *argv[]){
 			else if (action=="h") ArgumentsDemo();
 			else if (action=="0") break;
 			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";
+		}
+	}
+	else {
+		if (argc>2) Arguments(argc,argv);
+		else {
+			string param(argv[1]);
+			if (param=="Stdinout") Stdinout();
+			else if (param=="Values") Values();
+			else if (param=="Operators") Operators();
+			else if (param=="Condition") Condition();
+			else if (param=="Loop") Loop();
+			else if (param=="Math") Math();
+			else if (param=="RegExp") RegExp();
+			else if (param=="DateTime") DateTime();
+			else if (param=="Class") Class();
+			else if (param=="FileHandle") FileHandle();
+			else if (param=="Path") Path();
+			// else if (param=="Thread") Thread();
+			else if (param=="Arguments") ArgumentsDemo();
+			else Arguments(argc,argv);
 		}
 	}
 	return 0;

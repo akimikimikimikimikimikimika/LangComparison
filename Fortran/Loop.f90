@@ -1,4 +1,4 @@
-subroutine loop
+subroutine Loop
 
  print *
  print '("これからループ処理を試します")'
@@ -15,4 +15,4 @@ subroutine loop
   print '("n=",i2,"のループ")',n
  end do
 
-end subroutine loop
+end subroutine Loop

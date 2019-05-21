@@ -1,4 +1,4 @@
-subroutine file
+subroutine File
 
  character home*128
  character md1*128
@@ -63,7 +63,7 @@ subroutine file
  print '("> シンボリックリンクAliasを削除")'
  call unlink("Package/Alias")
 
-end subroutine file
+end subroutine File
 
 ! Fortranでは,ファイルハンドラとして装置番号を指定する
 ! 装置番号: 1~99 の任意の整数

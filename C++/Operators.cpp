@@ -7,7 +7,7 @@ using namespace std;
 void Operators(){
 
 	double r = .0375e-6;
-	double *p;
+    double *p = nullptr;
 	*p = r;
 
 

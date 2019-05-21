@@ -1,7 +1,7 @@
-subroutine process
+subroutine Process
 
  print *
  print '("プロセスID: ",a)',getpid()
  print *
 
-end subroutine process
+end subroutine Process

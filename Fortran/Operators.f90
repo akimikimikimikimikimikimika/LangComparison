@@ -1,4 +1,4 @@
-subroutine operators
+subroutine Operators
 
  print *
  print '("これから演算子を試します")'
@@ -35,4 +35,4 @@ subroutine operators
  print *
  print *
 
-end subroutine operators
+end subroutine Operators

@@ -1,4 +1,4 @@
-subroutine path
+subroutine Path
 
  character home*128
  character current*128
@@ -9,4 +9,4 @@ subroutine path
  print '("ホームディレクトリ:       ",a)',home
  print '("カレントディレクトリ:     ",a)',current
 
-end subroutine path
+end subroutine Path

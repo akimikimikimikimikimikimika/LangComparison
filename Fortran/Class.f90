@@ -1,4 +1,4 @@
-subroutine class
+subroutine Class
  use Classdef ! クラス定義読み込み
  ! クラス定義は Classdef.f90 で取り扱う。
 
@@ -66,4 +66,4 @@ contains ! 関数やサブルーチンは最後のcontains節内に含め,プロ
   val = val**3 ! 関数やサブルーチンは基本的に参照渡しなので,これにより変数に上書きしたことになる
  end subroutine
 
-end subroutine class
+end subroutine Class

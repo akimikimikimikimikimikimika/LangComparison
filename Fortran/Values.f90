@@ -1,4 +1,4 @@
-subroutine values
+subroutine Values
 
  ! 宣言部 : 予めコード前半で変数を定義しなければならない
  ! 文字列
@@ -56,4 +56,4 @@ contains ! 関数やサブルーチンは最後のcontains節内に含め,プロ
   val = val**3 ! 関数やサブルーチンは基本的に参照渡しなので,これにより変数に上書きしたことになる
  end subroutine
 
-end subroutine values
+end subroutine Values

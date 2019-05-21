@@ -1,16 +1,16 @@
-subroutine stdinout
+subroutine Stdinout
 
  character*100 aboutYou
  print *
  print '("こんにちは,私の名前はFortran。")'
- print '("古い言語ですが,処理が高速である点などから今もなお科学計算で重宝されます。")'
+ print '("古い言語ですが,計算が素早く,今もなお科学計算で重宝されます。")'
  print '("あなたのことを教えてください")'
  read *,aboutYou
  print '("あなたは ",a," ですね。わかりました。")',trim(aboutYou)
  print *
  print *
 
-end subroutine stdinout
+end subroutine Stdinout
 
 ! print での出力の仕方は独特
 !
