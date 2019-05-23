@@ -11,14 +11,14 @@ mtAction() {
     local m
     local n
     m=$1
-    for n in {0..5} ; do
+    for n in {1..6} ; do
         echo "($m,$n) = "`echo "scale=8;sqrt($m*$m+$n*$n)" | bc -l`
     done
 }
 
 echo "スレッドを起動します"
 array=() # スレッドのプロセスIDを格納する配列
-for m in {0..8} ; do
+for m in {1..9} ; do
     mtAction $m & # スレッドを起動
     array=("${array[@]}" "$!") # スレッドのプロセスIDを配列に格納する
 done
