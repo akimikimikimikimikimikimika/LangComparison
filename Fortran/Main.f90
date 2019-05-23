@@ -1,5 +1,10 @@
 
-! Fortran
+! Fortranのコンパイル
+! find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/Build {} +
+!
+! ※ これはGFortranでコンパイルする例。
+! これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。
+! -fopenmp を付加してOpenMPを利用できるようにする
 
 ! コメントは半角感嘆符の後に記載する
 ! Fortranではソースコードの大文字と小文字を区別しない。つまり,programもProgramもPROGRAMも同じ。

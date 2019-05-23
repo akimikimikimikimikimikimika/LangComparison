@@ -133,7 +133,7 @@ chmod 0544,"Package/Perl.pl";
 print "> 状態を確認\r\n";
 &check("Package/Perl.pl");
 
-=pod
+=comment
 	chmodは数値により権限を指定する
 		4: 読込可能 (Readable)
 		2: 書込可能 (Writable)

@@ -32,6 +32,7 @@ a. 日付と時刻を試す
 d. ファイル操作を試す
 e. ファイルパスを試す
 f. プロセス系を試す
+g. スレッドを試す
 h. コマンドライン引数を試す
 
 0. 終了
@@ -68,6 +69,8 @@ h. コマンドライン引数を試す
 		./Path.sh
 	elif [ "$action" = f ]; then
 		./Process.sh
+	elif [ "$action" = g ]; then
+		./Thread.sh
 	elif [ "$action" = h ]; then
 		./Arguments.sh "このプログラムを直接実行してみよう。" "ここにあるよ: Shell/Arguments.sh" "" "コマンドラインに以下のように入力して実行します" "" "Shell/Arguments.sh 引数1 引数2…" "" "すると,引数1,引数2…が順に出力されます"
 	else

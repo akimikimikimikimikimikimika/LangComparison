@@ -78,7 +78,7 @@ print "$text → "; # IllUsTrAtE
 $text =~ tr/a-z/A-Z/s;
 print "$text\r\n"; # ILUsTrAtE
 
-=pod
+=comment
 	gim以外のフラグ:
 	x: 正規表現中の空白/改行を無視
 	s: . が改行にもマッチする

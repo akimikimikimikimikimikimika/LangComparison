@@ -10,7 +10,7 @@ First line
 Second line
 Third line
 Lines
-=pod
+=comment
 	変数展開/式展開の仕方
 	"The value is $val"
 	"The value is ${val}"
@@ -73,7 +73,7 @@ $lines
    $func
 Values
 
-=pod
+=comment
 	Perlのブロック : { }
 	Perlはパッケージが大きな単位となる言語。1つのPerlファイルが1つのパッケージをなす。
 	Perlでは,変数宣言の際に my $var としなければ,ブロック外から $var が参照できてしまう。

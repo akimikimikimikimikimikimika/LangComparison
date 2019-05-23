@@ -3,7 +3,7 @@
 
 # Perl
 
-=pod
+=comment
 	複数行のコメント
 	(ドキュメント)
 =cut

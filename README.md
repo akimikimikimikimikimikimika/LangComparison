@@ -130,7 +130,8 @@ node JavaScript/Stdinout.js
 以下の例は,GFortranコンパイラを使う例
 ```Shell
 # コンパイル : フォルダ Fortran 内にBuildという実行ファイルが生成される
-find Fortran -name *.f90 -exec gfortran -o Fortran/Build {} +
+find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/Build {} +
+	# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
 
 # 実行
 Fortran/Build
