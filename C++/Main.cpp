@@ -4,7 +4,7 @@
 
 /*
 	C++のコンパイル
-		find C++ -name *.cpp -exec clang++ -std=c++17 -o C++/Build {} +
+		find C++ -name *.cpp -exec clang++ -std=c++17 -pthread -o C++/Build {} +
 
 	※ これはClangでコンパイルする例。GCCを用いる場合は,適宜 clang++ を g++ に置き換えて使用する。
 	これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。

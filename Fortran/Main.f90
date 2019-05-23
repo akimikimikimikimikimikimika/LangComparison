@@ -37,6 +37,7 @@ program myfortran
    print '("d. ファイル操作を試す")'
    print '("e. ファイルパスを試す")'
    print '("f. プロセス系を試す")'
+   print '("g. スレッドを試す")'
    print '("h. コマンドライン引数を試す")'
    print *
    print '("0. 終了")'
@@ -67,6 +68,8 @@ program myfortran
     call Path()
    else if (action=="f") then
     call Process()
+   else if (action=="g") then
+    call Thread()
    else if (action=="h") then
     call ArgumentsDemo()
    else
@@ -101,6 +104,8 @@ program myfortran
       call Path()
      else if (arg=="Process") then
       call Process()
+     else if (arg=="Thread") then
+      call Thread()
      else if (action=="Arguments") then
       call ArgumentsDemo()
      else
