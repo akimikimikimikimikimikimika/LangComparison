@@ -5,7 +5,9 @@ print "\r\nこれからスレッドを試します\r\n\r\n";
 print "\r\nマルチスレッド\r\n\r\n";
 
 # 9個のスレッドそれぞれで6回のループ
-threads = [];
+
+threads = []; # スレッドオブジェクトを格納する配列
+
 print "スレッドを起動します\r\n";
 for m in 1..9 do
 	threads.append(Thread.new(m) { |m|
@@ -15,11 +17,13 @@ for m in 1..9 do
 	}).join;
 	# スレッドの実行内容を Thread.new do…end で表記すると引数が受け取れない
 end
+
 print "スレッドの終了を待ちます\r\n";
 threads.each do |t|
-	t.join;
+	t.join; # スレッドtの終了を待つ
 end
 print "スレッドは終了しました\r\n";
+
 # 各々のスレッド内でのループの順番は守られるが,全54回のプロセスの順番はバラバラ
 # このコードを実行する毎に,順番は変化する
 

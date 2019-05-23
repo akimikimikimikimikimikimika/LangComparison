@@ -58,8 +58,8 @@ public class Threading {
 
 		println("\r\nThread\r\n");
 
-		CustomThread[] ct = new CustomThread[9];
-		for (int m=1;m<10;m++) ct[m-1] = new CustomThread(m);
+		CustomThread[] ct = new CustomThread[9]; // スレッドオブジェクトを格納する配列
+		for (int m=1;m<10;m++) ct[m-1] = new CustomThread(m); // スレッドを構築
 
 		println("開始します");
 		for (CustomThread t:ct) t.start();
@@ -80,8 +80,8 @@ public class Threading {
 
 		println("\r\nRunnable\r\n");
 
-		Thread[] crt = new Thread[9];
-		for (int m=1;m<10;m++) {
+		Thread[] crt = new Thread[9]; // スレッドオブジェクトを格納する配列
+		for (int m=1;m<10;m++) { // スレッドを構築
 			CustomRunnable cr = new CustomRunnable(m);
 			crt[m-1] = new Thread(cr);
 		}

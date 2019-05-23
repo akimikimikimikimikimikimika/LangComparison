@@ -10,10 +10,15 @@ print("\r\nこれからスレッドを試します\r\n")
 print("\r\nマルチスレッド\r\n")
 
 # 9個のスレッドそれぞれで6回のループ
-def mt_action(m):
+
+# スレッドの実行内容を定義
+def mtAction(m):
 	for n in range(1,7):
 		print(f"|({m},{n})| = {math.hypot(m,n)}")
-threads = []
+
+threads = [] # スレッドオブジェクトを格納する配列
+
+# スレッドを構築
 for m in range(1,10):
 	threads.append(threading.Thread(target=mt_action,args=(m,)))
 
@@ -22,8 +27,9 @@ for t in threads:
 	t.start()
 print("スレッドの終了を待ちます")
 for t in threads:
-	t.join()
+	t.join() # スレッドtの終了を待つ
 print("スレッドは終了しました")
+
 # 各々のスレッド内でのループの順番は守られるが,全54回のプロセスの順番はバラバラ
 # このコードを実行する毎に,順番は変化する
 
@@ -33,6 +39,7 @@ def st_action():
 	print("スレッドが終了します")
 
 t=threading.Thread(target=st_action)
+
 # スレッドの状態を確認する関数
 def info():
 	if t.is_alive():
