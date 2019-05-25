@@ -1,6 +1,8 @@
 
+! Fortran
+
 ! Fortranのコンパイル
-! find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/Build {} +
+! find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/bin {} +
 !
 ! ※ これはGFortranでコンパイルする例。
 ! これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。

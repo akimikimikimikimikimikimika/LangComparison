@@ -12,7 +12,7 @@ import sys
 import os
 import subprocess
 
-os.chdir(os.path.normpath(os.path.dirname(os.path.join(os.getcwd(),__file__))+"/Python"))
+os.chdir(os.path.dirname(os.path.join(os.getcwd(),__file__)))
 
 '''
 	Pythonファイルをモジュールとして利用するには, Python/module.py とすれば,

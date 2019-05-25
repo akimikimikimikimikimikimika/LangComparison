@@ -2,9 +2,11 @@
 #include <string.h>
 #include "Header.h"
 
+// C
+
 /*
 	Cのコンパイル
-		find C -name *.c -exec clang -std=c17 -o C/Build {} +
+		(cd C ; clang -std=c17 -o bin *.c)
 
 	※ これはClangでコンパイルする例。GCCを用いる場合は,適宜 clang を gcc に置き換えて使用する。
 	これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。

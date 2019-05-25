@@ -8,9 +8,9 @@
 /*
 	Unix系でのRustの使い方
 	コンパイル
-		(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo Build ; rm -r debug .rustc_info.json)
+		(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo bin ; rm -r debug .rustc_info.json)
 	実行
-		Rust/Build
+		Rust/bin
 */
 
 mod stdinout;

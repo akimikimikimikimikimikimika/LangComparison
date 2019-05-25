@@ -229,7 +229,7 @@ print("""
      x≦8 = \(ranT)
      x<8 = \(ranU)
 関数:
-\(String(describe: cube))
+\(String(describing: cube))
 クロージャ (無名関数):
 \(String(describing: function))
 """)

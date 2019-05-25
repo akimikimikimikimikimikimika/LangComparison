@@ -23,8 +23,6 @@ print("\r\nこれからスレッドを試します\r\n")
 		BlockOperationでは直列実行はできない
 */
 
-var counter:Int = 0
-
 print("\r\nDispatch\r\n")
 /*
 	Dispatchを使う場合,単純にキューに処理内容を追加することで簡単に並列処理を実現できる
@@ -60,8 +58,7 @@ for m in 1...9 {
 let sdq = DispatchQueue(label: "直列処理", qos: .userInitiated) // 直列処理用キューを用意
 for m in 1...3 {
 	sdq.async(group: dg) {
-		counter+=1
-		print("直列処理\(m) (\(counter)番目の処理)")
+		print("直列処理\(m)")
 	}
 }
 
@@ -69,8 +66,6 @@ for m in 1...3 {
 print("終了を待ちます")
 dg.wait()
 print("終了しました")
-
-counter=0
 
 print("\r\nBlockOperation (NSBlockOperation)\r\n")
 /*
@@ -179,8 +174,7 @@ class SerialOperation:Operation {
 	var order:Int
 
 	override func main() {
-		counter+=1
-		print("直列処理\(self.order) (\(counter)番目の処理)")
+		print("直列処理\(self.order)")
 	}
 
 }

@@ -1,15 +1,17 @@
 
 .DS_Store
 __pycache__
-Fortran/Build
+Fortran/bin
 classdef.mod
-C/Build
-C++/Build
-Objective-C/Build
-Go/Build
-Rust/Build
+C/bin
+C++/bin
+Objective-C/bin
+Go/bin
+Rust/bin
 Rust/Cargo.lock
 Rust/.rustc_info.json
+Kotlin-compiling/META-INF/main.kotlin_module
+Swift-compiling/bin
 Manage
 
 Perl/Module.pl

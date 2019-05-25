@@ -5,7 +5,7 @@ let args = CommandLine.arguments
 print("\r\nこのファイルを実行するにあたっての引数は以下の通りです:\r\n")
 
 var n:Int = 0
-for s in CommandLine.arguments {
+for s in args {
 	if n>0 {
 		print(" \(n): \(s)")
 	}

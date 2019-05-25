@@ -5,7 +5,7 @@
 import Foundation
 
 let fm=FileManager.default;
-fm.changeCurrentDirectoryPath(URL(fileURLWithPath: CommandLine.arguments[0]).deletingLastPathComponent().path+"/Swift")
+fm.changeCurrentDirectoryPath(URL(fileURLWithPath: CommandLine.arguments[0]).deletingLastPathComponent().path)
 
 func exec(_ s:String,_ args:String...) {
 	do{

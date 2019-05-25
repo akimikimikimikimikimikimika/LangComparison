@@ -7,7 +7,7 @@
 	"<< コメント名" ~ "コメント名" で挟まれた領域は全てコメント
 COMMENT
 
-cd "$(cd $(dirname $0); pwd)"/Bash
+cd "$(cd $(dirname $0); pwd)"
 
 printf """
 

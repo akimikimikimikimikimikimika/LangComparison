@@ -10,7 +10,7 @@ if ask {
 	print("あなたのことを教えてください")
 	let aboutYou = readLine() ?? ""
 	if aboutYou != "" {
-		print("あなたは\(aboutYou)ですね。わかりました。")
+		print("あなたは \(aboutYou) ですね。わかりました。")
 	}
 	else {
 		print("あなたのことがよくわかりませんでした。")

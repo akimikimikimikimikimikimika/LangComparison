@@ -8,9 +8,9 @@ subroutine mtAction(m)
 
  md=dble(m)
 
- do n=1,9
+ do n=1,6
   nd=dble(n)
-  print '("|(",i1,",",i1,")| = ",f10.7)',m,n,sqrt(md*md+nd*nd)
+  print '("|(",i1,",",i1,")| = ",f18.15)',m,n,sqrt(md*md+nd*nd)
  end do
 
 end subroutine mtAction
@@ -25,7 +25,7 @@ subroutine Thread
  print '("これからスレッドを試します")'
 
  ! 以下,OpenMPを用いたパラレル処理
- ! コンパイルコマンドに -fopenmp が入っていることを確認する
+ ! コンパイルする際に -fopenmp が指定されていることを確認する
 
  print *
 

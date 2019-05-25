@@ -45,33 +45,33 @@ h. コマンドライン引数を試す
 		if action == "0" then
 			break
 		elseif action == "1" then
-			dofile(dirname().."Lua/Stdinout.lua")
+			dofile(dirname().."Stdinout.lua")
 		elseif action == "2" then
-			dofile(dirname().."Lua/Values.lua")
+			dofile(dirname().."Values.lua")
 		elseif action == "3" then
-			dofile(dirname().."Lua/Operators.lua")
+			dofile(dirname().."Operators.lua")
 		elseif action == "4" then
-			dofile(dirname().."Lua/Condition.lua")
+			dofile(dirname().."Condition.lua")
 		elseif action == "5" then
-			dofile(dirname().."Lua/Loop.lua")
+			dofile(dirname().."Loop.lua")
 		elseif action == "6" then
-			dofile(dirname().."Lua/Math.lua")
+			dofile(dirname().."Math.lua")
 		elseif action == "7" then
-			dofile(dirname().."Lua/String.lua")
+			dofile(dirname().."String.lua")
 		elseif action == "8" then
-			dofile(dirname().."Lua/Sprintf.lua")
+			dofile(dirname().."Sprintf.lua")
 		elseif action == "9" then
-			dofile(dirname().."Lua/RegExp.lua")
+			dofile(dirname().."RegExp.lua")
 		elseif action == "a" then
-			dofile(dirname().."Lua/DateTime.lua")
+			dofile(dirname().."DateTime.lua")
 		elseif action == "b" then
-			dofile(dirname().."Lua/Class.lua")
+			dofile(dirname().."Class.lua")
 		elseif action == "c" then
-			dofile(dirname().."Lua/Error.lua")
+			dofile(dirname().."Error.lua")
 		elseif action == "d" then
-			dofile(dirname().."Lua/File.lua")
+			dofile(dirname().."File.lua")
 		elseif action == "h" then
-			rtn=os.execute(dirname().."Lua/Arguments.lua このプログラムを直接実行してみよう。 \"ここにあるよ: Lua/Arguments.lua\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Lua/Arguments.lua 引数1 引数2 ...\" \"\"  すると,引数1,引数2...が順に出力されます")
+			rtn=os.execute(dirname().."Arguments.lua このプログラムを直接実行してみよう。 \"ここにあるよ: Lua/Arguments.lua\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Lua/Arguments.lua 引数1 引数2 ...\" \"\"  すると,引数1,引数2...が順に出力されます")
 		else
 			io.write([[
 指定したアクションは見つかりませんでした

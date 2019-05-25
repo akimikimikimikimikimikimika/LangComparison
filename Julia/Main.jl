@@ -7,7 +7,7 @@
 =#
 
 thisdir=@__DIR__
-cd(thisdir * "/Julia")
+cd(thisdir)
 
 println("""
 

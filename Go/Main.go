@@ -8,7 +8,7 @@
 /*
 	Unix系でのGoの使い方
 	コンパイル
-		(cd Go ; go build ; mv Go Build)
+		(cd Go ; go build ; mv Go bin)
 			1. カレントディレクトリをGoに変更
 			2. コンパイル
 			3. 実行ファイル名を変更

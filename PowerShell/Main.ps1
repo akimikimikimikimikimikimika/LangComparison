@@ -6,7 +6,7 @@
 	複数行のコメント
 #>
 
-Set-Location -path "${PSScriptRoot}/PowerShell"
+Set-Location -path PSScriptRoot
 
 <#
 	外部ファイルを実行する時は,そのパスを直接記載すれば良いだけ。

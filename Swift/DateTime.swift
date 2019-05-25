@@ -129,7 +129,7 @@ df.dateFormat = """
     'A' : A
 
 """
-let ft = desc(df.string(from: Date()))
+let ft = desc(df.string(from: dt))
 
 df.dateFormat = """
 
@@ -149,7 +149,7 @@ df.dateFormat = """
  'VVVV' : VVVV
 
 """
-let ft2 = desc(df.string(from: Date()))
+let ft2 = desc(df.string(from: dt))
 
 print("""
 DateFormatter.string(..) = "\(ft)\(ft2)"

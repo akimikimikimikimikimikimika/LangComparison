@@ -11,7 +11,7 @@
 use Cwd;
 use File::Basename;
 
-chdir "@{[Cwd::realpath(dirname($0))]}/Perl";
+chdir Cwd::realpath(dirname($0));
 
 print <<"Welcome";
 

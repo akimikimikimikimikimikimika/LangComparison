@@ -8,7 +8,7 @@
 ?>
 <?php
 
-chdir(__DIR__."/PHP");
+chdir(__DIR__);
 
 print <<<"Welcome"
 

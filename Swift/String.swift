@@ -33,7 +33,7 @@ print("""
 長さ
 "スウィフト" →
 .count  = \("スウィフト".count)
-.length = \(("スウィフト" as NSString).count)
+.length = \(("スウィフト" as NSString).length)
 
 大文字/小文字の切替
 "Swift STRING demo" →

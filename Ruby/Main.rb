@@ -8,7 +8,7 @@
 	(ドキュメント)
 =end
 
-Dir.chdir("#{__dir__}/Ruby");
+Dir.chdir(__dir__);
 
 print """
 

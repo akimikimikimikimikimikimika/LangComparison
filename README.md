@@ -7,8 +7,11 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 ## 言語
 
-### コンパイルが不要な言語
+### スクリプト言語+コンパイル言語
 - [Swift](https://www.swift.org "Swift")
+- [Kotlin](https://kotlinlang.org "Kotlin")
+
+### スクリプト言語
 - [Perl](https://www.perl.org "Perl")
 - [Ruby](https://www.ruby-lang.org "Ruby")
 - [PHP](http://www.php.net "PHP")
@@ -26,9 +29,8 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [Java](https://www.java.com "Java")
 - [Groovy](http://groovy-lang.org "Groovy")
 - [Scala](https://www.scala-lang.org "Scala")
-- [Kotlin](https://kotlinlang.org "Kotlin")
 
-### コンパイルの必要な言語
+### コンパイル言語
 - Fortran
 - [C](http://www.open-std.org/jtc1/sc22/wg14 "C")
 - [C++](https://isocpp.org "C++")
@@ -69,7 +71,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 ## 実行方法
 
 ここでは,それぞれの言語を実行する方法を説明する。いずれも,ターミナルを開き,次に示すコードを入力するのである。  
-まずは,次のコマンドでディレクトリに移動する。
+まずは,次のコマンドで当リポジトリのディレクトリに移動する。
 ```Shell
 cd LangComparison
 ```
@@ -77,45 +79,53 @@ cd LangComparison
 - Swift  
 Swiftは本来コンパイルして利用するもので, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない。
 ```Shell
-swift Swift.swift
+# スクリプト言語として利用する場合
+swift Swift/Main.swift
+
+# コンパイル
+(cd Swift-compiling ; swiftc -o bin *.swift)
+
+# 実行
+Swift-compiling/bin
 ```
 - Perl
 ```Shell
-perl Perl.pl
+perl Perl/Main.pl
 ```
 - Ruby
 ```Shell
-ruby Ruby.rb
+ruby Ruby/Main.rb
 ```
 - PHP
 ```Shell
-php PHP.php
+php PHP/Main.php
 ```
 - Python
 ```Shell
-python3.7 Python.py # 最新のPython
-python Python.py    # システムに付属するPython (macOSなどでは古いバージョンが標準でインストールされている)
+python3.7 Python/Main.py # 最新のPython
+# システムに付属するPythonはPython2.x系列であることが多く,当リポジトリで取り扱うコードは実行できない
+```
+
+- Julia
+```Shell
+julia Julia/Main.jl
 ```
 - R
 ```Shell
-Rscript R.r
-```
-- Julia
-```Shell
-julia Julia.jl
+# Stdinout.r を実行する例
+Rscript R/Stdinout.r
 ```
 - Bash
 ```Shell
-bash Bash.sh
+bash Bash/Main.sh
 ```
 - PowerShell
 ```Shell
-pwsh PowerShell.ps1
+pwsh PowerShell/Main.ps1
 ```
 - Lua
 ```Shell
-lua Lua.lua # 実行
-luac Lua.lua -o Luac.lua # コンパイル (オマケ,“Luac.lua”という名前のファイルが生成する)
+lua Lua/Main.lua # 実行
 ```
 - JavaScript  
 JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
@@ -129,55 +139,55 @@ node JavaScript/Stdinout.js
 - Fortran  
 以下の例は,GFortranコンパイラを使う例
 ```Shell
-# コンパイル : フォルダ Fortran 内にBuildという実行ファイルが生成される
-find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/Build {} +
+# コンパイル : フォルダ Fortran 内にbinという実行ファイルが生成される
+find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/bin {} +
 	# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
 
 # 実行
-Fortran/Build
+Fortran/bin
 ```
 - C  
 以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
 ```Shell
-# コンパイル : フォルダ C 内にBuildという実行ファイルが生成される
-find C -name *.c -exec clang -std=c17 -o C/Build {} +
+# コンパイル : フォルダ C 内にbinという実行ファイルが生成される
+(cd C ; clang -std=c17 -o bin *.c)
 
 # 実行
-C/Build
+C/Binary
 ```
 - C++  
 以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
 ```Shell
-# コンパイル : フォルダ C++ 内にBuildという実行ファイルが生成される
-find C++ -name *.cpp -exec clang++ -std=c++17 -pthread -o C++/Build {} +
+# コンパイル : フォルダ C++ 内にbinという実行ファイルが生成される
+(cd C++ ; clang++ -std=c++17 -pthread -o bin *.cpp)
 	# スレッド処理に関して取り扱うため -pthread オプションが必要みたい
 
 # 実行
-C++/Build
+C++/bin
 ```
 - Go
 ```Shell
-# コンパイル : フォルダ Go 内にBuildという実行ファイルが生成される
-(cd Go ; go build ; mv Go Build)
+# コンパイル : フォルダ Go 内にbinという実行ファイルが生成される
+(cd Go ; go build ; mv Go bin)
 
 # 実行
 Go/Build
 ```
 - Rust
 ```Shell
-# コンパイル : フォルダ Rust 内にBuildという実行ファイルが生成される
-(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo Build ; rm -r debug .rustc_info.json)
+# コンパイル : フォルダ Rust 内にbinという実行ファイルが生成される
+(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo bin ; rm -r debug .rustc_info.json)
 
 # 実行
-Rust/Build
+Rust/bin
 ```
 - Java
 ```Shell
-# コンパイル : Java.jar が生成される
-(cd Java ; javac *.java ; zip -q ../Java.jar *.class META-INF/MANIFEST.MF ; rm *.class)
+# コンパイル : bin.jar が生成される
+(cd Java ; javac *.java ; zip -q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)
 
 # 実行
-java -jar Java.jar
+java -jar Java/bin.jar
 
 # 個別のファイルを実行 (例: Stdinout.java を実行)
 (cd Java ; javac Stdinout.java ; java Stdinout)
@@ -230,6 +240,10 @@ pwsh
 ```Shell
 lua
 ```
+- Kotlin
+```Shell
+kotlinc-jvm
+```
 - JavaScript (Node.js)  
 ```Shell
 node
@@ -238,11 +252,11 @@ Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io
 
 ## Shebang
 
-macOSの場合, Swift, Perl, Ruby, PHP, Python, R, Julia, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, R, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
 ```Shell
 #! /usr/local/bin/lua
 ```
-但し, Perl, Ruby, PHP, Python, R, Julia, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
+但し, Perl, Ruby, PHP, Python, Julia, R, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
 実行例 (Luaの場合•ディレクトリ移動を実行済)
 ```Shell
 ./Lua.lua # このように入力すればLua.luaを実行してくれる
@@ -256,11 +270,11 @@ macOSの場合, Swift, Perl, Ruby, PHP, Python, R, Julia, PowerShell, Bash, Lua 
 | Ruby | `/usr/bin/ruby` | **`/usr/local/bin/ruby`** |
 | PHP | `/usr/bin/php` | **`/usr/local/bin/php`** |
 | Python | `/usr/bin/python` | **`/usr/local/bin/python3.7`** |
-| R | - | **`/usr/local/bin/Rscript`** |
 | Julia | - | **`/usr/local/bin/julia`** |
+| R | - | **`/usr/local/bin/Rscript`** |
 | Bash | `/bin/bash` | **`/usr/local/bin/bash`** |
 | PowerShell | - | **`/usr/local/bin/pwsh`** |
 | Lua | - | **`/usr/local/bin/lua`** |
 
 太字で指定したShebangが指定されている  
-なお,Unix系OSの場合は,コマンドラインに `type swift` 又は `which swift` と入力すれば,コンピュータが標準で使用する実行パスが表示される。
+なお,Unix系OSの場合は,コマンドラインに `type R` 又は `which R` と入力すれば,コンピュータが標準で使用する実行パスが表示される。

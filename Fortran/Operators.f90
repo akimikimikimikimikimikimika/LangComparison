@@ -2,6 +2,7 @@ subroutine Operators
 
  print *
  print '("これから演算子を試します")'
+ print *
  print '("算術演算子")'
  print '("24   + 5 = ",i7)'  ,24   + 5
  print '("24   - 5 = ",i7)'  ,24   - 5
