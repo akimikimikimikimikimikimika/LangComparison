@@ -164,7 +164,7 @@ Fortran/bin
 (cd C ; clang -std=c17 -o bin *.c)
 
 # 実行
-C/Binary
+C/bin
 ```
 - C++  
 以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
@@ -182,7 +182,7 @@ C++/bin
 (cd Go ; go build ; mv Go bin)
 
 # 実行
-Go/Build
+Go/bin
 ```
 - Rust
 ```Shell
