@@ -163,12 +163,12 @@ kotlinc -script Kotlin/Stdinout.kts
 
 # コンパイル : フォルダ Kotlin-compiling 内に bin.jar というJavaアーカイブファイルが生成される
 (cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
-# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
-# 逆にこのオプションを付加しないとアーカイブは実行できない
+	# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
+	# 逆にこのオプションを付加しないとアーカイブは実行できない
 
 # 実行
 kotlin Kotlin-compiling/bin.jar
-# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
+	# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
 ```
 
 - Fortran  
@@ -269,6 +269,8 @@ lua
 ```Shell
 node
 ```
+Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在する。
+
 - Groovy
 ```Shell
 groovysh
@@ -282,7 +284,6 @@ scala
 kotlinc-jvm
 ```
 
-Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在する。
 
 ## Shebang
 
