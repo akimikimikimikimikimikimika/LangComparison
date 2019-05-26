@@ -9,7 +9,6 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 ### スクリプト言語+コンパイル言語
 - [Swift](https://www.swift.org "Swift")
-- [Kotlin](https://kotlinlang.org "Kotlin")
 
 ### スクリプト言語
 - [Perl](https://www.perl.org "Perl")
@@ -25,10 +24,11 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 ### ブラウザ上で実行する言語
 - JavaScript
 
-### Java関連の言語
+### Java+Java関連の言語
 - [Java](https://www.java.com "Java")
 - [Groovy](http://groovy-lang.org "Groovy")
 - [Scala](https://www.scala-lang.org "Scala")
+- [Kotlin](https://kotlinlang.org "Kotlin")
 
 ### コンパイル言語
 - Fortran
