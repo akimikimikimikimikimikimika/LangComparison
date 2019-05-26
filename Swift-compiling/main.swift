@@ -104,28 +104,26 @@ if args.count==1 {
 	}
 
 }
-else {
-	if args.count==2 {
-		switch args[0] {
-			case "Stdinout":Stdinout()
-			case "Values":Values()
-			case "Operators":Operators()
-			case "Condition":Condition()
-			case "Loop":Loop()
-			case "Math":Math()
-			case "String":StringType()
-			case "Sprintf":Sprintf()
-			case "RegExp":RegExp()
-			case "DateTime":DateTime()
-			case "Class":Class()
-			case "Error":ErrorHandle()
-			case "File":File()
-			case "Path":Path()
-			case "Process":ProcessHandle()
-			case "Thread":Threading()
-			case "Arguments":Arguments([])
-			default:Arguments(args)
-		}
+else if args.count==2 {
+	switch args[0] {
+		case "Stdinout":Stdinout()
+		case "Values":Values()
+		case "Operators":Operators()
+		case "Condition":Condition()
+		case "Loop":Loop()
+		case "Math":Math()
+		case "String":StringType()
+		case "Sprintf":Sprintf()
+		case "RegExp":RegExp()
+		case "DateTime":DateTime()
+		case "Class":Class()
+		case "Error":ErrorHandle()
+		case "File":File()
+		case "Path":Path()
+		case "Process":ProcessHandle()
+		case "Thread":Threading()
+		case "Arguments":Arguments([])
+		default:Arguments(args)
 	}
-	else {Arguments(args)}
 }
+else {Arguments(args)}

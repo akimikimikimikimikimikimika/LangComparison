@@ -5,4 +5,6 @@ fun Stdinout() {
 	val aboutYou = readLine()
 	println("あなたは ${aboutYou} ですね。わかりました。")
 
+	println("\r\n")
+
 }

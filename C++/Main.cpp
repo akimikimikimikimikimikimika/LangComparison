@@ -69,25 +69,24 @@ int main(int argc, char *argv[]){
 			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";
 		}
 	}
-	else {
-		if (argc>2) Arguments(argc,argv);
-		else {
-			string param(argv[1]);
-			if (param=="Stdinout") Stdinout();
-			else if (param=="Values") Values();
-			else if (param=="Operators") Operators();
-			else if (param=="Condition") Condition();
-			else if (param=="Loop") Loop();
-			else if (param=="Math") Math();
-			else if (param=="RegExp") RegExp();
-			else if (param=="DateTime") DateTime();
-			else if (param=="Class") Class();
-			else if (param=="FileHandle") FileHandle();
-			else if (param=="Path") Path();
-			// else if (param=="Thread") Thread();
-			else if (param=="Arguments") ArgumentsDemo();
-			else Arguments(argc,argv);
-		}
+	else if (argc==2) {
+		string param(argv[1]);
+		if (param=="Stdinout") Stdinout();
+		else if (param=="Values") Values();
+		else if (param=="Operators") Operators();
+		else if (param=="Condition") Condition();
+		else if (param=="Loop") Loop();
+		else if (param=="Math") Math();
+		else if (param=="RegExp") RegExp();
+		else if (param=="DateTime") DateTime();
+		else if (param=="Class") Class();
+		else if (param=="FileHandle") FileHandle();
+		else if (param=="Path") Path();
+		// else if (param=="Thread") Thread();
+		else if (param=="Arguments") ArgumentsDemo();
+		else Arguments(argc,argv);
 	}
+	else Arguments(argc,argv);
+
 	return 0;
 }

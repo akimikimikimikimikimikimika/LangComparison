@@ -79,50 +79,48 @@ program myfortran
     print *
    end if
   end do
- else
-  if (command_argument_count()==1) then
-   call get_command_argument(1,length=length,status=status)
+ else if (command_argument_count()==1) then
+  call get_command_argument(1,length=length,status=status)
+  if (status==0) then
+   allocate(character(length)::arg)
+   call get_command_argument(1,arg,status=status)
    if (status==0) then
-    allocate(character(length)::arg)
-    call get_command_argument(1,arg,status=status)
-    if (status==0) then
-     if (arg=="Stdinout") then
-      call Stdinout()
-     else if (arg=="Values") then
-      call Values()
-     else if (arg=="Operators") then
-      call Operators()
-     else if (arg=="Condition") then
-      call Condition()
-     else if (arg=="Loop") then
-      call Loop()
-     else if (arg=="Math") then
-      call Math()
-     else if (arg=="Class") then
-      call Class()
-     else if (arg=="File") then
-      call File()
-     else if (arg=="Path") then
-      call Path()
-     else if (arg=="Process") then
-      call Process()
-     else if (arg=="Thread") then
-      call Thread()
-     else if (action=="Arguments") then
-      call ArgumentsDemo()
-     else
-      call Arguments()
-     end if
+    if (arg=="Stdinout") then
+     call Stdinout()
+    else if (arg=="Values") then
+     call Values()
+    else if (arg=="Operators") then
+     call Operators()
+    else if (arg=="Condition") then
+     call Condition()
+    else if (arg=="Loop") then
+     call Loop()
+    else if (arg=="Math") then
+     call Math()
+    else if (arg=="Class") then
+     call Class()
+    else if (arg=="File") then
+     call File()
+    else if (arg=="Path") then
+     call Path()
+    else if (arg=="Process") then
+     call Process()
+    else if (arg=="Thread") then
+     call Thread()
+    else if (action=="Arguments") then
+     call ArgumentsDemo()
     else
      call Arguments()
     end if
-    deallocate(arg)
    else
     call Arguments()
    end if
+   deallocate(arg)
   else
    call Arguments()
   end if
+ else
+  call Arguments()
  end if
-
+ 
 end program myfortran

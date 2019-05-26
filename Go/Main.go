@@ -22,39 +22,11 @@ import "os"
 import "bufio"
 
 func main() {
+
 	stdin := bufio.NewScanner(os.Stdin)
 	args := os.Args[1:]
-	if (len(args)>0) {
-		if (len(args)>1) {
-			Arguments()
-		} else {
-			if args[0] == "Stdinout" {
-				Stdinout()
-			} else if args[0] == "Values" {
-				Values()
-			} else if args[0] == "Operators" {
-				Operators()
-			} else if args[0] == "Condition" {
-				Condition()
-			} else if args[0] == "Loop" {
-				Loop()
-			} else if args[0] == "Math" {
-				Math()
-			} else if args[0] == "RegExp" {
-				RegExp()
-			} else if args[0] == "File" {
-				File()
-			} else if args[0] == "Path" {
-				Path()
-			} else if args[0] == "Thread" {
-				Thread()
-			} else if args[0] == "Arguments" {
-				Arguments()
-			} else {
-				Arguments()
-			}
-		}
-	} else {
+
+	if (len(args)==0) {
 		fmt.Println("こんにちは。私の名前はGo。")
 		for {
 			fmt.Println(`
@@ -109,5 +81,33 @@ h. コマンドライン引数を試す
 				fmt.Println("指定したアクションは見つかりませんでした")
 			}
 		}
+	} else if (len(args)==1) {
+		if args[0] == "Stdinout" {
+			Stdinout()
+		} else if args[0] == "Values" {
+			Values()
+		} else if args[0] == "Operators" {
+			Operators()
+		} else if args[0] == "Condition" {
+			Condition()
+		} else if args[0] == "Loop" {
+			Loop()
+		} else if args[0] == "Math" {
+			Math()
+		} else if args[0] == "RegExp" {
+			RegExp()
+		} else if args[0] == "File" {
+			File()
+		} else if args[0] == "Path" {
+			Path()
+		} else if args[0] == "Thread" {
+			Thread()
+		} else if args[0] == "Arguments" {
+			Arguments()
+		} else {
+			Arguments()
+		}
+	} else {
+		Arguments()
 	}
 }

@@ -24,3 +24,5 @@ true || false = ${   true || false   }
        !false = ${          !false   }
 
 """)
+
+println("\r\n")

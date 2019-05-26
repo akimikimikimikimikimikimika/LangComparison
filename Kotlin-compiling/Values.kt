@@ -30,6 +30,14 @@ fun Values() {
 	// 真偽値
 	val bool:Boolean = true
 
+	// 範囲
+	val ranI = 5..8 // 5≦x≦8
+	val ranE = 5 until 8 // 5≦x<8
+	val ranD = 8 downTo 5 // 8≧x≧5
+	val ranS = 5..15 step 2 // 5≦x≦15 by 2
+		// step は .. until downTo のいずれにでも付けられる
+		// Kotlinの範囲指定は整数でなければならない
+
 	// 配列
 	val array:Array<Int> = arrayOf(3,1,4)
 		/*
@@ -38,11 +46,23 @@ fun Values() {
 			[a,b,c...] という配列宣言はできないみたい。
 		*/
 
+	// リスト
+	val list:List<Int> = listOf(3,1,4)
+
+	// マップ
+	val map:Map<String, Int> = mapOf("three" to 3,"one" to 1,"four" to 4)
+		// Map<KeyType, ValueType>
+		// mapOf(key to value)
+
+	// 集合
+	val set:Set<Int> = setOf(3,1,4)
+
 	println("""
 
 色々な値を試します
 
 文字列1: $string
+   長さ: ${string.length}
 文字列2:
 $lines
 文字: $char
@@ -50,8 +70,23 @@ $lines
    整数: $byte, $short, $int, $long
    浮動小数: $float, $double
 真偽値: $bool
+範囲:
+   $ranI
+   $ranE
+   $ranD
+   $ranS
 配列: $array
+   大きさ: ${array.size}
+リスト: $list
+マップ: $map
+集合: $set
 
 """)
+	/*
+		val 変数名 : 定数として宣言
+		var 変数名 : 変数として宣言
+	*/
+
+	println("\r\n")
 
 }

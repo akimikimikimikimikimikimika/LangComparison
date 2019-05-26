@@ -77,7 +77,6 @@ cd LangComparison
 ```
 そして,言語ごとに次のコードを実行する。
 - Swift  
-Swiftは本来コンパイルして利用するもので, `swiftc` コマンドでコンパイルできるが,ここでのコードはコンパイルして実行するのに対応していない。
 ```Shell
 # スクリプト言語として利用する場合
 swift Swift/Main.swift
@@ -87,6 +86,18 @@ swift Swift/Main.swift
 
 # 実行
 Swift-compiling/bin
+```
+- Kotlin
+```Shell
+# スクリプト言語として利用する場合 (Stdinout.kts を実行する例)
+kotlinc -script Kotlin/Stdinout.kts
+
+# コンパイル : bin.jar が生成される
+(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
+
+# 実行
+kotlin Kotlin-compiling/bin.jar
+# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
 ```
 - Perl
 ```Shell
@@ -203,6 +214,10 @@ java -jar Java/bin.jar
 ```Shell
 swift
 ```
+- Kotlin
+```Shell
+kotlinc-jvm
+```
 - Perl
 ```Shell
 perl
@@ -239,10 +254,6 @@ pwsh
 - Lua
 ```Shell
 lua
-```
-- Kotlin
-```Shell
-kotlinc-jvm
 ```
 - JavaScript (Node.js)  
 ```Shell
