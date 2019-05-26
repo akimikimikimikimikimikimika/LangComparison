@@ -86,7 +86,8 @@ int main(int argc, char *argv[]){
 		else if (param=="Arguments") ArgumentsDemo();
 		else Arguments(argc,argv);
 	}
-	else Arguments(argc,argv);
+	if (argc>2) Arguments(argc,argv);
 
+	}
 	return 0;
 }

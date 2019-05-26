@@ -20,6 +20,10 @@ Third line
 		// 他の言語におけるsprintfの実装
 	raw"The value is $val"
 		// sと似ているが,例えば"\n"に対して,sは改行文字に変換されるが,rawはそのまま"\n"として残る
+
+	⚠︎ s補間子付きの文字列中で引用符は利用できない
+		s"This is \"quoted\" text"
+	これはScalaにおいてエラーになる
 */
 
 // 文字
@@ -39,6 +43,15 @@ val bool:Boolean = true
 val unit:Unit = ()
 	// 関数は必ず戻り値がなければならないが,そんな時でも返値がないことを示す値型としてUnitを使う。
 
+// 配列
+val array:Array[Any] = Array(
+	1,
+	"second",
+	3,
+	3.14,
+	false
+)
+
 // リスト
 val list:List[Any] = List(
 	1,
@@ -50,6 +63,12 @@ val list:List[Any] = List(
 
 // タプル
 val tuple:(Int,String,Int,Double,Boolean) = (1,"second",3,3.14,false)
+
+// 範囲
+val ranI = 5 to 8 // 5≦x≦8
+val ranE = 5 until 8 // 5≦x<8
+val ranD = 8 to 5 by -1 // 8≧x≧5
+val ranS = 5 to 15 by 2 // 5≦x≦15 by 2
 
 // 関数 (Javaでのメソッドのこと)
 def cube(value:Int):Int = {
@@ -72,8 +91,14 @@ $lines
    浮動小数: $float,$double
 真偽値: $bool
 意味のない値: $unit
+配列: $array
 リスト: $list
 タプル: $tuple
+範囲:
+   $ranI
+   $ranE
+   $ranD
+   $ranS
 無名関数: $func
 """)
 /*
@@ -86,4 +111,4 @@ $lines
 		• AnyRef: reference type のスーパークラス。
 */
 
-println("\r\n\r\n")
+println("\r\n")

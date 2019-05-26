@@ -1,6 +1,6 @@
 subroutine Class
  use Classdef ! クラス定義読み込み
- ! クラス定義は Classdef.f90 で取り扱う。
+ ! クラス定義は Classdef.f で取り扱う。
 
  type(Vector) vec1
  type(ExtendedVector) vec2

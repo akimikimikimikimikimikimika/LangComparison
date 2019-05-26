@@ -49,7 +49,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 	但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。  
 	Julia, Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。  
 	C, C++ のコンパイラ Clang は標準でインストール済。コンパイラとしてGCCやIntel C++ Compilerなどが必要な場合は別途入手する。  
-	Fortran のコンパイラ GFortran や上述のGCCはHomebrewからインストールすることもできる。  
+	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") や上述のGCCはHomebrewからインストールすることもできる。  
 	Swift のコンパイルには [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。  
 	Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。  
 	PowerShellは[GitHub](https://github.com/PowerShell/PowerShell "PowerShell")から入手可能。  
@@ -81,23 +81,11 @@ cd LangComparison
 # スクリプト言語として利用する場合
 swift Swift/Main.swift
 
-# コンパイル
+# コンパイル : フォルダ Swift-compiling 内に bin という実行ファイルが生成される
 (cd Swift-compiling ; swiftc -o bin *.swift)
 
 # 実行
 Swift-compiling/bin
-```
-- Kotlin
-```Shell
-# スクリプト言語として利用する場合 (Stdinout.kts を実行する例)
-kotlinc -script Kotlin/Stdinout.kts
-
-# コンパイル : bin.jar が生成される
-(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
-
-# 実行
-kotlin Kotlin-compiling/bin.jar
-# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
 ```
 - Perl
 ```Shell
@@ -147,11 +135,47 @@ JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。
 node JavaScript/Stdinout.js
 ```
 
+- Java
+```Shell
+# コンパイル : フォルダ Java 内に bin.jar というJavaアーカイブファイルが生成される
+(cd Java ; javac *.java ; zip -q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)
+
+# 実行
+java -jar Java/bin.jar
+
+# 個別のファイルを実行 (例: Stdinout.java を実行)
+(cd Java ; javac Stdinout.java ; java Stdinout)
+```
+- Groovy
+```Shell
+# 例: Stdinout.groovy を実行
+groovy Groovy/Stdinout.groovy
+```
+- Scala
+```Shell
+# 例: Stdinout.scala を実行
+scala Scala/Stdinout.scala
+```
+- Kotlin
+```Shell
+# スクリプト言語として利用する場合 (例: Stdinout.kts を実行)
+kotlinc -script Kotlin/Stdinout.kts
+
+# コンパイル : フォルダ Kotlin-compiling 内に bin.jar というJavaアーカイブファイルが生成される
+(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
+# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
+# 逆にこのオプションを付加しないとアーカイブは実行できない
+
+# 実行
+kotlin Kotlin-compiling/bin.jar
+# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
+```
+
 - Fortran  
 以下の例は,GFortranコンパイラを使う例
 ```Shell
-# コンパイル : フォルダ Fortran 内にbinという実行ファイルが生成される
-find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/bin {} +
+# コンパイル : フォルダ Fortran 内に bin という実行ファイルが生成される
+(cd Fortran ; gfortran -fopenmp -o bin *.f95)
 	# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
 
 # 実行
@@ -160,7 +184,7 @@ Fortran/bin
 - C  
 以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
 ```Shell
-# コンパイル : フォルダ C 内にbinという実行ファイルが生成される
+# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
 (cd C ; clang -std=c17 -o bin *.c)
 
 # 実行
@@ -169,16 +193,17 @@ C/bin
 - C++  
 以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
 ```Shell
-# コンパイル : フォルダ C++ 内にbinという実行ファイルが生成される
+# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
 (cd C++ ; clang++ -std=c++17 -pthread -o bin *.cpp)
 	# スレッド処理に関して取り扱うため -pthread オプションが必要みたい
+	# といっても,現在のところスレッドは実行できません
 
 # 実行
 C++/bin
 ```
 - Go
 ```Shell
-# コンパイル : フォルダ Go 内にbinという実行ファイルが生成される
+# コンパイル : フォルダ Go 内に bin という実行ファイルが生成される
 (cd Go ; go build ; mv Go bin)
 
 # 実行
@@ -186,22 +211,11 @@ Go/bin
 ```
 - Rust
 ```Shell
-# コンパイル : フォルダ Rust 内にbinという実行ファイルが生成される
+# コンパイル : フォルダ Rust 内に bin という実行ファイルが生成される
 (cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo bin ; rm -r debug .rustc_info.json)
 
 # 実行
 Rust/bin
-```
-- Java
-```Shell
-# コンパイル : bin.jar が生成される
-(cd Java ; javac *.java ; zip -q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)
-
-# 実行
-java -jar Java/bin.jar
-
-# 個別のファイルを実行 (例: Stdinout.java を実行)
-(cd Java ; javac Stdinout.java ; java Stdinout)
 ```
 
 ## REPL
@@ -213,10 +227,6 @@ java -jar Java/bin.jar
 - Swift  
 ```Shell
 swift
-```
-- Kotlin
-```Shell
-kotlinc-jvm
 ```
 - Perl
 ```Shell
@@ -259,6 +269,19 @@ lua
 ```Shell
 node
 ```
+- Groovy
+```Shell
+groovysh
+```
+- Scala
+```Shell
+scala
+```
+- Kotlin
+```Shell
+kotlinc-jvm
+```
+
 Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在する。
 
 ## Shebang

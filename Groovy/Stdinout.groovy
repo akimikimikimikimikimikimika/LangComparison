@@ -1,22 +1,13 @@
-// Groovy
-
-/*
-	複数行のコメント
-*/
-
 println "こんにちは。私の名前はGroovy。"
+println "あなたのことを教えてください"
+String aboutYou = System.console().readLine "あなたは..."
+println "あなたは $aboutYou ですね。わかりました。"
 
 /*
-    GroovyはJavaと違って,コードをクラスによって記載する必要はないが,これは以下のようなコードを実行しているに等しい
-
-    import org.codehaus.groovy.runtime.InvokerHelper
-    class Main extends Script {
-        def run() {
-            // ここにGroovyのソースコードが現れる
-        }
-        static void main(String[] args) {
-            InvokerHelper.runScript(Main, args)
-        }
-    }
-
+    Groovyでは関数の実行の仕方に寛容
+    次のいずれでも出力できる
+        println "出力内容"
+        println("出力内容")
 */
+
+println "\r\n"

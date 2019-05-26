@@ -6,7 +6,8 @@
 
 /*
 	メイン関数
-	Kotlinではメイン関数を用意する
+	Kotlinは起動時にメイン関数が実行される
+	外部のKotlinコード内の関数は特に手続きすることなく普通に呼び出しできる
 */
 fun main(args: Array<String>) {
 

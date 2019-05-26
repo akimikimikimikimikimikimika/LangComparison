@@ -1,3 +1,10 @@
+/*
+	変数はJavaのように型で指定できる
+		String var1
+	そのほか,次のようなものもある
+		def var2
+	これは特に型を指定せず,暗黙のうちに型を決定する
+*/
 
 // 文字列
 String string = "グルービー"
@@ -38,12 +45,12 @@ BigDecimal bd = 0.0375e-6
 // 真偽値
 boolean bool = true
 
-// リスト
-List list = [1,"second",3,3.14,false]
-
 // 配列
 String[] array = ["first","second","third"]
 	// 配列を使用するには必ず String[] のように型の宣言をする必要がある
+
+// リスト
+List list = [1,"second",3,3.14,false]
 
 // 範囲
 ranI = 5..8 // 5≦x≦8
@@ -62,6 +69,7 @@ println """
 色々な値を試します
 
 文字列: $string
+   長さ: ${string.length()}
 文字列2:
 $lines
 文字列3: $slashy
@@ -71,8 +79,12 @@ $lines
    整数: $integer,$sh,$lg,$bi
    浮動小数: $fl,$db,$bd
 真偽値: $bool
-リスト: $list
 配列: $array
+   大きさ: ${array.size()}
+リスト: $list
+範囲:
+   $ranI
+   $ranE
 
 """
 
@@ -94,4 +106,4 @@ $lines
 
 */
 
-println "\r\n\r\n"
+println "\r\n"

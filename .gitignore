@@ -11,6 +11,8 @@ Rust/bin
 Rust/Cargo.lock
 Rust/.rustc_info.json
 Kotlin-compiling/META-INF/main.kotlin_module
+Scala-compiling
+Groovy-compiling
 Swift-compiling/bin
 Manage
 
