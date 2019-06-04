@@ -23,48 +23,48 @@ void Class() {
 
 	cout << "\r\nこれからクラスを試します\r\n\r\n";
 
-	cout << "vec1: " << &vec1 << "\r\n";
+	cout << "vec1: " << &vec1 << endl;
 	cout << "vec2: " << &vec2 << "\r\n\r\n";
 
 	vec1.desc(text);
-	cout << "vec1の説明: " << text << "\r\n";
+	cout << "vec1の説明: " << text << endl;
 	vec2.desc(text);
-	cout << "vec2の説明: " << text << "\r\n";
+	cout << "vec2の説明: " << text << endl;
 	vec3.desc(text);
-	cout << "vec3の説明: " << text << "\r\n";
+	cout << "vec3の説明: " << text << endl;
 	vec4.desc(text);
 	cout << "vec4の説明: " << text << "\r\n\r\n";
 
-	cout << "vec1のx座標: " << vec1.x << "\r\n";
-	cout << "vec2のy座標: " << vec2.y << "\r\n";
+	cout << "vec1のx座標: " << vec1.x << endl;
+	cout << "vec2のy座標: " << vec2.y << endl;
 	cout << "vec3のz座標: " << vec3.z << "\r\n\r\n";
 
 	Vector::added(&vector,vec1,vec2);
 	Vector::added(&vector,vector,vec3);
 	vector.desc(text);
-	cout << "vec1+vec2+vec3: " << text << "\r\n";
+	cout << "vec1+vec2+vec3: " << text << endl;
 	vec4.add(vec2);
 	vec4.desc(text);
-	cout << "vec4+vec2: " << text << "\r\n";
+	cout << "vec4+vec2: " << text << endl;
 	vec2.coefMultiplied(&vector,12);
 	vector.desc(text);
 	cout << "vec2×12: " << text << "\r\n\r\n";
 
 	vec2.dot(&scalar,vec3);
-	cout << "vec2∙vec3: " << scalar << "\r\n";
+	cout << "vec2∙vec3: " << scalar << endl;
 	vec3.cross(&vector,vec2);
 	vector.desc(text);
-	cout << "vec3×vec2: " << text << "\r\n";
+	cout << "vec3×vec2: " << text << endl;
 	vec3.norm(&scalar);
 	cout << "|vec3|:    " << scalar << "\r\n\r\n";
 
 	Vector::describe(text);
-	cout << "説明してもらう1: " << text << "\r\n";
+	cout << "説明してもらう1: " << text << endl;
 	ExtendedVector::describeFromSub(text);
-	cout << "説明してもらう2: " << text << "\r\n";
+	cout << "説明してもらう2: " << text << endl;
 	vec1.describe(text);
-	cout << "説明してもらう3: " << text << "\r\n";
+	cout << "説明してもらう3: " << text << endl;
 	vec2.describeFromSub(text);
-	cout << "説明してもらう4: " << text << "\r\n";
+	cout << "説明してもらう4: " << text << endl;
 
 }

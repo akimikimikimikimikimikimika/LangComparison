@@ -5,22 +5,22 @@
 using namespace std;
 
 void Loop(){
-	cout << "\r\n" << "これからループ処理を試します" << "\r\n\r\n";
+	cout << endl << "これからループ処理を試します" << "\r\n\r\n";
 
-	cout << "\r\n" << "for (n=0; n<3; n++) {…}" << "\r\n";
-	for (int n=0;n<3;n++) cout << "n="+to_string(n)+"のループ" << "\r\n";
+	cout << endl << "for (n=0; n<3; n++) {…}" << endl;
+	for (int n=0;n<3;n++) cout << "n="+to_string(n)+"のループ" << endl;
 
-	cout << "\r\n" << "while (~) {…}" << "\r\n";
+	cout << endl << "while (~) {…}" << endl;
 	string str="";
 	while (str.length()<6) {
 		str+="*";
-		cout << str << "\r\n";
+		cout << str << endl;
 	}
 
-	cout << "\r\n" << "do {…} while (~)" << "\r\n";
+	cout << endl << "do {…} while (~)" << endl;
 	str="";
 	do {
 		str+="+";
-		cout << str << "\r\n";
+		cout << str << endl;
 	} while (str.length()<6);
 }

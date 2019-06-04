@@ -11,31 +11,31 @@ void FileHandle() {
 	FILE *fh;
 	FILE *fh2;
 
-	cout << "\r\n" << "これからファイル操作を試します" << "\r\n\r\n";
+	cout << endl << "これからファイル操作を試します" << "\r\n\r\n";
 
-	cout << "> カレントディレクトリをホームに変更" << "\r\n";
+	cout << "> カレントディレクトリをホームに変更" << endl;
 	chdir(getenv("HOME"));
 		// chdir : <unistd.h>
 		// getenv : <stdlib.h>
 
 	// ファイル/フォルダ/シンボリックリンクの作成
 
-	cout << "\r\n" << "> Emptyという空フォルダを作成" << "\r\n";
+	cout << endl << "> Emptyという空フォルダを作成" << endl;
 	if (mkdir("Empty",0744)==-1) error(); // 成功すれば0,失敗すれば-1
 		// mkdir : <sys/stat.h>
 
-	cout << "> Blankという空ファイルを作成" << "\r\n";
+	cout << "> Blankという空ファイルを作成" << endl;
 	if ((fh = fopen("Blank","w")) != NULL) fclose(fh);
 	else error(); // 失敗すれば,NULLが返される
 		// fopen,fclose : <stdio.h>
 
-	cout << "> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成" << "\r\n";
+	cout << "> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成" << endl;
 	if (symlink("Blank","Empty/Symlink")==-1) error(); // 成功すれば0,失敗すれば-1
 		// symlink : <unistd.h>
 
 	// 書込み
 
-	cout << "\r\n" << "> Untitled.mdというMarkdownファイルを作成して書込み" << "\r\n";
+	cout << endl << "> Untitled.mdというMarkdownファイルを作成して書込み" << endl;
 	if ((fh = fopen("Untitled.md","w")) != NULL) {
 		fputs("# Header 1",fh);
 			// fputs : <stdio.h>
@@ -45,17 +45,17 @@ void FileHandle() {
 
 	// 移動/名称変更
 
-	cout << "\r\n" << "> フォルダEmptyをPackageに名称変更" << "\r\n";
+	cout << endl << "> フォルダEmptyをPackageに名称変更" << endl;
 	if (rename("Empty","Package")!=0) error();
-	cout << "> Packageフォルダ内のSymlinkファイルをAliasに名称変更" << "\r\n";
+	cout << "> Packageフォルダ内のSymlinkファイルをAliasに名称変更" << endl;
 	if (rename("Package/Symlink","Package/Alias")!=0) error();
-	cout << "> Untitled.mdを移動して,名称変更" << "\r\n";
+	cout << "> Untitled.mdを移動して,名称変更" << endl;
 	if (rename("Untitled.md","Package/Headers.md")!=0) error();
 		// rename : <stdio.h>
 
 	// 追記
 
-	cout << "\r\n" << "> Markdownファイルに追記" << "\r\n";
+	cout << endl << "> Markdownファイルに追記" << endl;
 	if ((fh = fopen("Package/Headers.md","a")) != NULL) {
 		fseek(fh,0,SEEK_END); // 書き込みカーソルをファイル末端に移動
 		fputs("\r\n## Header 2\r\n### Header 3",fh);
@@ -65,7 +65,7 @@ void FileHandle() {
 
 	// 読込み
 
-	cout << "\r\n" << "> Markdownファイルを読込み" << "\r\n";
+	cout << endl << "> Markdownファイルを読込み" << endl;
 	if ((fh = fopen("Package/Headers.md","r")) != NULL) {
 		char lines[300];
 		while (fgets(lines,300,fh)!=NULL) printf("%s",lines);
@@ -76,7 +76,7 @@ void FileHandle() {
 	// ファイルの複製
 	// ...と言っても,ファイルを読み込んで,そのまま別のファイルに書き込んでいるだけ。
 
-	cout << "\r\n" << "> Markdownファイルを複製" << "\r\n";
+	cout << endl << "> Markdownファイルを複製" << endl;
 	if ((fh = fopen("Package/Headers.md","r")) != NULL) {
 		if ((fh2 = fopen("Package/Duplicated.md","w")) != NULL) {
 			char lines[300];
@@ -90,11 +90,11 @@ void FileHandle() {
 
 	// ファイルの削除
 
-	cout << "\r\n" << "> ファイルBlankを削除" << "\r\n";
+	cout << endl << "> ファイルBlankを削除" << endl;
 	if (remove("Blank")!=0) error();
-	cout << "> シンボリックリンクAliasを削除" << "\r\n";
+	cout << "> シンボリックリンクAliasを削除" << endl;
 	if (remove("Package/Alias")!=0) error();
-	cout << "> フォルダModuleを作成した直後に削除" << "\r\n";
+	cout << "> フォルダModuleを作成した直後に削除" << endl;
 	if (mkdir("Package/Module",0744)==-1) error(); // 成功すれば0,失敗すれば-1
 	if (remove("Package/Module")==-1) error(); // 成功すれば0,失敗すれば-1
 		// remove : <stdio.h>

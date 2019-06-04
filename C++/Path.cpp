@@ -15,7 +15,7 @@ void Path() {
 	memset(cd, '\0', CD_SIZE);
 	getcwd(cd, CD_SIZE);
 
-	cout << "ホームディレクトリ:       " << home << "\r\n";
-	cout << "カレントディレクトリ:     " << cd << "\r\n";
+	cout << "ホームディレクトリ:       " << home << endl;
+	cout << "カレントディレクトリ:     " << cd << endl;
 
 }

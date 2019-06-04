@@ -20,7 +20,7 @@ threads = [] # スレッドオブジェクトを格納する配列
 
 # スレッドを構築
 for m in range(1,10):
-	threads.append(threading.Thread(target=mt_action,args=(m,)))
+	threads.append(threading.Thread(target=mtAction,args=(m,)))
 
 print("スレッドを起動します")
 for t in threads:

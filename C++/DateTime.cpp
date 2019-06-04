@@ -16,12 +16,12 @@ void DateTime(){
 	cout << "\r\nこれから日付と時刻を試します\r\n";
 
 	cout << "\r\n日付/時刻\r\n"; // <ctime>
-	cout << "localtime : " << std::put_time(std::localtime(&tm),"%c %Z") << "\r\n";
-	cout << "gmtime    : " << std::put_time(std::gmtime(&tm),"%c %Z") << "\r\n";
+	cout << "localtime : " << std::put_time(std::localtime(&tm),"%c %Z") << endl;
+	cout << "gmtime    : " << std::put_time(std::gmtime(&tm),"%c %Z") << endl;
 		// put_time を利用するには, <iomanip> が必要
 
 	cout << "\r\nフォーマット\r\n"; // <iomanip>
-	cout << "put_time() = \"\r\n" << std::put_time(time,"\n\
+	cout << "put_time() = " << endl << std::put_time(time,"\n\
 datetime\n\
   %%c : %c\n\
  %%Ec : %Ec\n\
@@ -90,6 +90,6 @@ second\n\
 timezone\n\
   %%z : %z\n\
   %%Z : %Z\n\
-") << "\r\n\"\r\n";
+") << endl << endl;
 
 }

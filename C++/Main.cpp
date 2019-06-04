@@ -30,25 +30,25 @@ int main(int argc, char *argv[]){
 	if (argc==1) {
 		string action;
 
-		cout << "こんにちは。私の名前はC++。" << "\r\n";
+		cout << "こんにちは。私の名前はC++。" << endl;
 		while (true) {
 			cout << "\r\n\r\n" << "何がしたい?" << "\r\n\r\n";
-			cout << "1. 標準入出力を試す" << "\r\n";
-			cout << "2. 色々な値を試す" << "\r\n";
-			cout << "3. 演算子を試す" << "\r\n";
-			cout << "4. 条件分岐を試す" << "\r\n";
-			cout << "5. 繰り返しを試す" << "\r\n";
-			cout << "6. 数学的演算を試す" << "\r\n";
-			cout << "9. 正規表現を試す" << "\r\n";
-			cout << "a. 日付と時刻を試す" << "\r\n";
-			cout << "b. クラスを試す" << "\r\n";
-			cout << "d. ファイル操作を試す" << "\r\n";
-			cout << "e. ファイルパスを試す" << "\r\n";
-			// cout << "g. スレッドを試す" << "\r\n";
-			cout << "h. コマンドライン引数を試す" << "\r\n";
-			cout << "\r\n";
-			cout << "0. 終了" << "\r\n";
-			cout << "\r\n";
+			cout << "1. 標準入出力を試す" << endl;
+			cout << "2. 色々な値を試す" << endl;
+			cout << "3. 演算子を試す" << endl;
+			cout << "4. 条件分岐を試す" << endl;
+			cout << "5. 繰り返しを試す" << endl;
+			cout << "6. 数学的演算を試す" << endl;
+			cout << "9. 正規表現を試す" << endl;
+			cout << "a. 日付と時刻を試す" << endl;
+			cout << "b. クラスを試す" << endl;
+			cout << "d. ファイル操作を試す" << endl;
+			cout << "e. ファイルパスを試す" << endl;
+			// cout << "g. スレッドを試す" << endl;
+			cout << "h. コマンドライン引数を試す" << endl;
+			cout << endl;
+			cout << "0. 終了" << endl;
+			cout << endl;
 			cin >> action;
 			while(getchar()!='\n');
 			cout << "\r\n\r\n\r\n";
@@ -86,8 +86,7 @@ int main(int argc, char *argv[]){
 		else if (param=="Arguments") ArgumentsDemo();
 		else Arguments(argc,argv);
 	}
-	if (argc>2) Arguments(argc,argv);
+	else Arguments(argc,argv);
 
-	}
 	return 0;
 }
