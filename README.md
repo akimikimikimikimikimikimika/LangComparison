@@ -196,10 +196,18 @@ C/bin
 # コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
 (cd C++ ; clang++ -std=c++17 -pthread -o bin *.cpp)
 	# スレッド処理に関して取り扱うため -pthread オプションが必要みたい
-	# といっても,現在のところスレッドは実行できません
 
 # 実行
 C++/bin
+```
+- C  
+以下の例は,Clangコンパイラを使う例
+```Shell
+# コンパイル : フォルダ Objective-C 内に bin という実行ファイルが生成される
+(cd Objective-C ; clang -ObjC -framework Foundation -o bin *.m)
+
+# 実行
+Objective-C/bin
 ```
 - Go
 ```Shell

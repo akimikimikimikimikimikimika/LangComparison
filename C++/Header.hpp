@@ -14,8 +14,7 @@
 		void FileHandle();
 			void error();
 		void Path();
-		// void Thread();
-			void mtAction();
+		void Thread();
 		void Arguments(int argc, char *argv[]);
 			void ArgumentsDemo();
 #endif

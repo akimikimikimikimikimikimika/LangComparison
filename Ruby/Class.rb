@@ -100,7 +100,7 @@ end
 # クラス定義2 (ExtendedVector inherits from Vector)
 class ExtendedVector < Vector # 継承宣言
 
-	@x=1;@y=1;@z=1; # クラスインスタンス変数
+	@x=0;@y=0;@z=0; # クラスインスタンス変数
 
 	def initialize(x,y,z)
 		@x=x;@y=y;@z=z;

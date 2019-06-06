@@ -9,7 +9,7 @@ using namespace std;
 
 // クラス定義1 (Vector)
 
-const char *Vector::description = "C++ sample vector class";
+const char *Vector::description = "C++ simple vector class";
 
 // イニシャライザ/コンストラクタ
 Vector::Vector() {

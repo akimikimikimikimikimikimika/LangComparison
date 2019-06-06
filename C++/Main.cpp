@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 			cout << "b. クラスを試す" << endl;
 			cout << "d. ファイル操作を試す" << endl;
 			cout << "e. ファイルパスを試す" << endl;
-			// cout << "g. スレッドを試す" << endl;
+			cout << "g. スレッドを試す" << endl;
 			cout << "h. コマンドライン引数を試す" << endl;
 			cout << endl;
 			cout << "0. 終了" << endl;
@@ -63,7 +63,7 @@ int main(int argc, char *argv[]){
 			else if (action=="b") Class();
 			else if (action=="d") FileHandle();
 			else if (action=="e") Path();
-			// else if (action=="g") Thread();
+			else if (action=="g") Thread();
 			else if (action=="h") ArgumentsDemo();
 			else if (action=="0") break;
 			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";

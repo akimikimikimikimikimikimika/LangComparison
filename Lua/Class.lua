@@ -11,7 +11,7 @@
 -- とは言うものの,単なるオブジェクト,すなわちテーブルである
 Vector = {
 	-- クラス定数
-	description = "JavaScript simple vector class",
+	description = "Lua simple vector class",
 	-- イニシャライザもどき
 	new = function(X,Y,Z)
 		local this={
