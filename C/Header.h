@@ -1,5 +1,5 @@
-#ifndef MAIN
-	#define MAIN
+#ifndef CDEF
+	#define CDEF
 		int main(int argc, char *argv[]);
 			int cmp(char *s1,char *s2);
 		void Stdinout();

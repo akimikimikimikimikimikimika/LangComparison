@@ -1,5 +1,4 @@
 #include <Foundation/Foundation.h>
-// #include 又は #import
 
 @interface Vector: NSObject
     // @end までクラス定義

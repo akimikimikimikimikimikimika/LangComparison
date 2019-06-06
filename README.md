@@ -200,11 +200,12 @@ C/bin
 # 実行
 C++/bin
 ```
-- C  
+- Objective-C  
 以下の例は,Clangコンパイラを使う例
 ```Shell
 # コンパイル : フォルダ Objective-C 内に bin という実行ファイルが生成される
 (cd Objective-C ; clang -ObjC -framework Foundation -o bin *.m)
+	# Foundation フレームワークをインクルードすることでObjCになる
 
 # 実行
 Objective-C/bin
