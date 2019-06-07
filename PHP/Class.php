@@ -28,7 +28,7 @@ class Vector {
 	}
 
 	# インスタンスの説明 (インスタンスメソッド)
-	public function desc(){
+	public function desc() {
 		return "($this->x,$this->y,$this->z)";
 	}
 

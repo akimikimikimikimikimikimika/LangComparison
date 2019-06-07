@@ -28,6 +28,7 @@ pushed.push("s");
 let unshifted=["l","i","s","t"];
 unshifted.unshift("p");
 /*
+
 	pop,shift,push,unshift
 
 	• pop()
@@ -40,6 +41,7 @@ unshifted.unshift("p");
 		配列先頭にi1,i2...を追加 + 新たな配列の長さを返す
 
 */
+
 let spliced1=[0,1,2,3,4,5];
 spliced1.splice(3,2); // [0,1,2,5] (3番目から2つ分の要素を削除)
 
@@ -197,10 +199,10 @@ console.log(`
 [1,2,3,4,5].copyWithin(0,2,4) → ${copied}
 
 ☆ 要素の追加•削除
-["p","l","i","s","t"].pop() → ${popped}
-["l","i","s","t","s"].shift() → ${shifted}
-["l","i","s","t"].push("p") → ${pushed}
-["l","i","s","t"].unshift("s") → ${unshifted}
+["l","i","s","t","s"].pop() → ${popped}
+["p","l","i","s","t"].shift() → ${shifted}
+["l","i","s","t"].push("s") → ${pushed}
+["l","i","s","t"].unshift("p") → ${unshifted}
 [0,1,2,3,4,5].splice(3,2) → ${spliced1}
 [0,1,2,3,4,5].splice(2,2,6,7,8) → ${spliced2}
 [0,1,2,3,4,5].splice(3,0,6,7,8) → ${spliced3}

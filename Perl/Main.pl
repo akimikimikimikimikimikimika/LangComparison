@@ -37,6 +37,7 @@ c. 例外処理を試す
 d. ファイル操作を試す
 e. ファイルパスを試す
 f. プロセス系を試す
+g. スレッドを試す
 h. コマンドライン引数を試す
 
 0. 終了
@@ -93,6 +94,9 @@ Menu
 	}
 	elsif ($action eq "f") {
 		system("./Process.pl");
+	}
+	elsif ($action eq "g") {
+		system("./Thread.pl");
 	}
 	elsif ($action eq "h") {
 		system("./Arguments.pl このプログラムを直接実行してみよう。 \"ここにあるよ: Perl/Arguments.pl\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Perl/Arguments.pl 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");

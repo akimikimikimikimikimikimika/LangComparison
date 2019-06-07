@@ -175,7 +175,7 @@ kotlin Kotlin-compiling/bin.jar
 以下の例は,GFortranコンパイラを使う例
 ```Shell
 # コンパイル : フォルダ Fortran 内に bin という実行ファイルが生成される
-(cd Fortran ; gfortran -fopenmp -o bin *.f95)
+(cd Fortran ; gfortran *.f95 -o bin -fopenmp -O3)
 	# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
 
 # 実行
@@ -185,7 +185,7 @@ Fortran/bin
 以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
 ```Shell
 # コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-(cd C ; clang -std=c17 -o bin *.c)
+(cd C ; clang *.h *.c -o bin -std=c17 -O3)
 
 # 実行
 C/bin
@@ -194,7 +194,7 @@ C/bin
 以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
 ```Shell
 # コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
-(cd C++ ; clang++ -std=c++17 -pthread -o bin *.cpp)
+(cd C++ ; clang++ *.cpp -o bin -std=c++17 -pthread -O3)
 	# スレッド処理に関して取り扱うため -pthread オプションが必要みたい
 
 # 実行
@@ -204,7 +204,7 @@ C++/bin
 以下の例は,Clangコンパイラを使う例
 ```Shell
 # コンパイル : フォルダ Objective-C 内に bin という実行ファイルが生成される
-(cd Objective-C ; clang -ObjC -framework Foundation -o bin *.m)
+(cd Objective-C ; clang *.h *.m -o bin -ObjC -framework Foundation -O3)
 	# Foundation フレームワークをインクルードすることでObjCになる
 
 # 実行

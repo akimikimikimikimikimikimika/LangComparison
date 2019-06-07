@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import threading
+import multiprocessing
 import math
 import time
 
 print("\r\nこれからスレッドを試します\r\n")
 
 print("\r\nマルチスレッド\r\n")
+
+print(f"同時実行可能な数: {multiprocessing.cpu_count()}")
 
 # 9個のスレッドそれぞれで6回のループ
 
