@@ -1,20 +1,27 @@
+// 基本操作用の配列
+let array=[2,5,4,6,1,3];
 
 // 配列の中身を書き換えるメソッド類
 /*
 	中身を書き換えるメソッドであるが,中身が変わるだけで配列そのものは変わらないので, let のままでも良い
 */
 
-let sorted=[2,5,4,1,3]
-sorted.sort(); // [1,2,3,4,5]
+let sorted=Array.from(array);
+sorted.sort(); // [1,2,3,4,5,6]
 
-let reversed=[1,2,3,4,5]
-reversed.reverse(); // [5,4,3,2,1]
+let reversed=Array.from(array);
+reversed.reverse(); // [3,1,6,4,5,2]
 
-let filled=[0,1,2,3,4,5]
-filled.fill(9,2,5); // [0,1,9,9,9,5] (2≤x<5 の範囲を9で埋める)
+let filled=Array.from(array);
+filled.fill(9,2,5); // [2,5,9,9,9,3] (2≤x<5 の範囲を9で埋める)
 
-let copied=[1,2,3,4,5];
-copied.copyWithin(0,2,4); // [3,4,2,3,4,5] (0番目を 2≤x<4 の範囲の内容で埋める)
+let copied=Array.from(array);
+copied.copyWithin(0,2,4); // [4,6,1,5,4,6,1,3] (0番目を 2≤x<4 の範囲の内容で埋める)
+
+/*
+	Array.from(x) は配列xの内容をコピーした別のオブジェクトを生成する
+	本来は,配列ではないけど,配列もどきなオブジェクトであれば何でも新しい配列に変換できる
+*/
 
 let popped=["l","i","s","t","s"];
 popped.pop();
@@ -90,11 +97,11 @@ let every=mixed.every((value,index)=>{
 	return value==index; // 値とインデックスが等しいかチェック
 }); // false (0と3しか条件を満たさない)
 
-let find=mixed.find((value)=>{
+let found=mixed.find((value)=>{
 	return !(value**0.5)%1; // 値の平方根が整数かチェック
 }); // 4 (最初に条件を満たすのは4である)
 
-let findIndex=mixed.find((value)=>{
+let foundIndex=mixed.findIndex((value)=>{
 	return !(value**0.5)%1; // 値の平方根が整数かチェック
 }); // 2 (最初に条件を満たすのは2番目の値である)
 
@@ -186,17 +193,22 @@ console.log(`
 これから配列を試します
 (☆は配列そのものを書き換える操作を示す)
 
-長さ
-["l","i","s","t"].length = ${   ["l","i","s","t"].length   }
+array=[2,5,4,6,1,3]
+
+大きさ
+array.length = ${array.length}
+
+要素取り出し
+array[2] = ${array[2]}
 
 ☆ ソート
-[2,5,4,1,3].sort() → ${sorted}
+array.sort() → ${sorted}
 ☆ 逆順
-[1,2,3,4,5].reverse() → ${reversed}
+array.reverse() → ${reversed}
 
 ☆ 埋める
-[0,1,2,3,4,5].fill(0,2,5) → ${filled}
-[1,2,3,4,5].copyWithin(0,2,4) → ${copied}
+array.fill(0,2,5) → ${filled}
+array.copyWithin(0,2,4) → ${copied}
 
 ☆ 要素の追加•削除
 ["l","i","s","t","s"].pop() → ${popped}
@@ -225,8 +237,8 @@ console.log(`
 
 マッチする値/インデックスを検索
 [0,2,4,3,8,10]
-.find(値の平方根が整数) = ${find}
-.findIndex(値の平方根が整数) = ${findIndex}
+.find(値の平方根が整数) = ${found}
+.findIndex(値の平方根が整数) = ${foundIndex}
 
 要素を絞る/要素を変換
 [0,2,4,3,8,10]

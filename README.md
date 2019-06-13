@@ -185,7 +185,7 @@ Fortran/bin
 以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
 ```Shell
 # コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-(cd C ; clang *.h *.c -o bin -std=c17 -O3)
+(cd C ; clang *.c -o bin -std=c17 -O3)
 
 # 実行
 C/bin
@@ -194,8 +194,7 @@ C/bin
 以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
 ```Shell
 # コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
-(cd C++ ; clang++ *.cpp -o bin -std=c++17 -pthread -O3)
-	# スレッド処理に関して取り扱うため -pthread オプションが必要みたい
+(cd C++ ; clang++ *.cpp -o bin -std=c++17 -O3)
 
 # 実行
 C++/bin
@@ -213,10 +212,14 @@ Objective-C/bin
 - Go
 ```Shell
 # コンパイル : フォルダ Go 内に bin という実行ファイルが生成される
-(cd Go ; go build ; mv Go bin)
+(cd Go ; go build -o bin *.go)
+	# -o bin と *.go の順序を逆にしてはならない
 
 # 実行
 Go/bin
+
+# このリポジトリ内のGoコードは,各々を直接実行することができない仕様になっているため,直接実行の方法はここではコメントアウトしておく
+# (cd Go ; go run Stdinout.go)
 ```
 - Rust
 ```Shell
