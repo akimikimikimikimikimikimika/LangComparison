@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 println("\r\nこれから正規表現を試します\r\n")
 

@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 print("\r\nこれからファイル操作を試します\r\n")
 

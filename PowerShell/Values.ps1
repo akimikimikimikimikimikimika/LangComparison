@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 # 文字列
 [string] $string="パワーシェル";

@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 -- 文字列
 str = "ルア"

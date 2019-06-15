@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 --[[
 	Luaのオブジェクトはクラス型ではなく,プロトタイプ型である。

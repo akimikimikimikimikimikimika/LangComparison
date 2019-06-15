@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 test1 = true;
 test2 = false;

@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 "`r`nでは,3.14秒ほど居眠りします`r`n";
 Start-Sleep -s 3.14;

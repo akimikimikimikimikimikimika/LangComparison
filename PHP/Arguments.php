@@ -1,4 +1,4 @@
-#! /usr/local/bin/php
+#! /usr/bin/env php
 <?php
 
 # 引数は1番目から (0番目はこのファイルを呼ぶパス)

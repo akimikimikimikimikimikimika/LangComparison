@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 # 基本操作用の配列
 array=[2,5,4,6,1,3]

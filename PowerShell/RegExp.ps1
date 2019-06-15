@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 "`r`nこれから正規表現を試します`r`n";
 

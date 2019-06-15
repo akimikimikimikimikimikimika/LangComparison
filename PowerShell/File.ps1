@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 "`r`nこれからファイル操作を試します`r`n";
 
@@ -91,7 +91,7 @@ check("Package/Headers.md");
 
 "> 実行ファイルを作成します`r`n";
 @'
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 "Hello world!";
 '@ >> Package/PowerShell.ps1
 

@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 print("\r\nこれから文字列を試します\r\n")
 

@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 "`r`nこのファイルを実行するにあたっての引数は以下の通りです:`r`n";
 

@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 println("\r\nこのファイルを実行するにあたっての引数は以下の通りです:\r\n")
 

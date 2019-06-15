@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 "`r`nこれからループ処理を試します`r`n";
 

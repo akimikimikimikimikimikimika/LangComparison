@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 print("\r\n\r\nこれから日付と時刻を試します\r\n\r\n")
 

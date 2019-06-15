@@ -1,9 +1,10 @@
-#! /usr/local/bin/php
+#! /usr/bin/env php
 <?php
 
 print <<<"Stdinout"
 こんにちは。私の名前はPHPです。
 あなたのことを教えてください
+
 Stdinout;
 
 print "あなたは...";
@@ -13,6 +14,7 @@ print <<<"Stdinout"
 あなたは $aboutYou ですね。わかりました。
 
 これから幾つかの出力の仕方を披露しますね。
+
 Stdinout;
 echo "後ろに改行を付けません。";
 print "後ろに改行を付けません。";

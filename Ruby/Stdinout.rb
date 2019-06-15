@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 print """
 こんにちは。私の名前はRuby,即ち紅玉です。

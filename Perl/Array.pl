@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 # 基本操作用の配列
 my @array=(2,5,4,6,1,3);

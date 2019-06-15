@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 require "FileUtils"; # FileUtils全般の使用に必要
 
@@ -110,7 +110,7 @@ end;
 print "> 実行ファイルを作成します\r\n";
 io=File.open("Package/Ruby.rb","a");
 io.write(<<"Ruby Script");
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 print "Hello world!";
 Ruby Script

@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 # 文字列
 string = "ジュリア"

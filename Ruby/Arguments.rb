@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 # 引数は0番目から
 

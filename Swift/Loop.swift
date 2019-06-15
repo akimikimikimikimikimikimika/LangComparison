@@ -1,4 +1,4 @@
-#! /usr/bin/swift
+#! /usr/bin/env swift
 
 print("\r\nこれからループ処理を試します\r\n")
 

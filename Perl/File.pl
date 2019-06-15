@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 use File::Copy; # copy,moveに必要
 use File::Path; # mkpath,rmtreeに必要
@@ -112,7 +112,7 @@ sub check{
 print "> 実行ファイルを作成します\r\n";
 open(io,">>","Package/Perl.pl");
 print io <<"Perl Script";
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 print "Hello world!";
 Perl Script

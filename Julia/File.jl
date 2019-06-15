@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 println("\r\nこれからファイル操作を試します\r\n")
 
@@ -108,7 +108,7 @@ end
 println("> 実行ファイルを作成します")
 io=open("Package/Julia.jl","w")
 write(io,"""
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 println("Hello world!")
 """)

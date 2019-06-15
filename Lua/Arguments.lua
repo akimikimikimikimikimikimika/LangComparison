@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 -- 引数は1番目から (0番目はこのファイルを呼ぶパス)
 

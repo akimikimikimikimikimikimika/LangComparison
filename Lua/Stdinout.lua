@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 print("こんにちは。私の名前はLua,即ち月です。")
 print("リオデジャネイロから来ました。")

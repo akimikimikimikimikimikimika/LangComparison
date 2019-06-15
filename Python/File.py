@@ -1,4 +1,4 @@
-#! /usr/local/bin/python3.7
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import shutil
@@ -115,7 +115,7 @@ def check(pt):
 
 print("> 実行ファイルを作成します")
 io=open("Package/Python.py","w")
-io.write("""#! /usr/local/bin/python3.7
+io.write("""#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 print("Hello world!")

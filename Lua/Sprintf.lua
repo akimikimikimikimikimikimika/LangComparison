@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 print("\r\nこれから文字列フォーマットを試します\r\n")
 

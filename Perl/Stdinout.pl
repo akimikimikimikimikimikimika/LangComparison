@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 print <<"Stdinout";
 こんにちは。私の名前はPerl,即ち真珠です。

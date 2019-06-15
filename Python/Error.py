@@ -1,4 +1,4 @@
-#! /usr/local/bin/python3.7
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 print("\r\nこれから例外処理を試します\r\n")

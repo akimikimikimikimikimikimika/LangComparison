@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 print "\r\nこれからループ処理を試します\r\n\r\n";
 

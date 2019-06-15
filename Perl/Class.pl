@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 # クラス定義1 (Vector)
 	# でも実態はパッケージそのもの

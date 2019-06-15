@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl
+#! /usr/bin/env perl
 
 use Math::Trig; # pi に必要
 use List::Util "max";

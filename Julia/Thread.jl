@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 #=
 	シェルで
 		export JULIA_NUM_THREADS=***

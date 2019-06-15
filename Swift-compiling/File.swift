@@ -140,7 +140,7 @@ func File() {
 
 		print("> 実行ファイルを作成します")
 		fm.createFile(atPath: "Package/Swift.swift", contents: """
-		#! /usr/bin/swift
+		#! /usr/bin/env swift
 
 		print("Hello world!")
 		""".data(using: .utf8), attributes: nil)

@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 println("\r\nこれから例外処理を試します\r\n")
 

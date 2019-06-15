@@ -1,4 +1,4 @@
-#! /usr/bin/swift
+#! /usr/bin/env swift
 
 import Foundation
 // CGFloat,NSString,NSMutableString,NSNumber,NSArray,NSMutableArray 用

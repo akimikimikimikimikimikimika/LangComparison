@@ -1,4 +1,4 @@
-#! /usr/local/bin/pwsh
+#! /usr/bin/env pwsh
 
 function b2d($bin) {
 	Write-Output ([Convert]::ToInt32($bin,2));

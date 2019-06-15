@@ -1,4 +1,4 @@
-#! /usr/local/bin/bash
+#! /usr/bin/env bash
 
 echo
 echo これからファイル操作を試します
@@ -124,7 +124,7 @@ check(){
 
 echo "> 実行ファイルを作成します"
 echo '''
-#! /usr/local/bin/bash
+#! /usr/bin/env bash
 echo "Hello world!"
 ''' >> Package/Bash.sh
 

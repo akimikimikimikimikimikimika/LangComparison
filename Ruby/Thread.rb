@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 print "\r\nこれからスレッドを試します\r\n\r\n";
 

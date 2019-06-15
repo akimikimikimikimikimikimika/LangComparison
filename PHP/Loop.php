@@ -1,4 +1,4 @@
-#! /usr/local/bin/php
+#! /usr/bin/env php
 <?php
 
 print "\r\nこれからループ処理を試します\r\n\r\n";

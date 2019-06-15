@@ -1,4 +1,4 @@
-#! /usr/local/bin/ruby
+#! /usr/bin/env ruby
 
 print "\r\nこれから正規表現を試します\r\n\r\n";
 

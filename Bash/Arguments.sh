@@ -1,4 +1,4 @@
-#! /usr/local/bin/bash
+#! /usr/bin/env bash
 
 echo
 echo "このファイルを実行するにあたっての引数は以下の通りです:"

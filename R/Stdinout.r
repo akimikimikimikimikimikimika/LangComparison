@@ -1,4 +1,4 @@
-#! /usr/local/bin/Rscript
+#! /usr/bin/env Rscript
 
 print("こんにちは。私の名前はR。")
 print("統計学処理に長けていると言われています。")

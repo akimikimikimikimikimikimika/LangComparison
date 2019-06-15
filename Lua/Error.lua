@@ -1,4 +1,4 @@
-#! /usr/local/bin/lua
+#! /usr/bin/env lua
 
 print("\r\nこれから例外処理を試します\r\n")
 -- とは言いつつも,pcall関数の使い方の説明である

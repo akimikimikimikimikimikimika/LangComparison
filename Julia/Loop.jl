@@ -1,4 +1,4 @@
-#! /usr/local/bin/julia
+#! /usr/bin/env julia
 
 println("\r\nこれからループ処理を試します\r\n")
 

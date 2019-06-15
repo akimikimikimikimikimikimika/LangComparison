@@ -1,4 +1,4 @@
-#! /usr/bin/swift
+#! /usr/bin/env swift
 
 let test1 = true
 let test2 = false

@@ -1,4 +1,4 @@
-#! /usr/bin/swift
+#! /usr/bin/env swift
 
 var ask=true
 if CommandLine.arguments.count>1 {if CommandLine.arguments[1]=="no-stdin" {

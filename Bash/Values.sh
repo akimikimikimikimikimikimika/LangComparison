@@ -1,4 +1,4 @@
-#! /usr/local/bin/bash
+#! /usr/bin/env bash
 
 # 文字列
 string="シ"ェ"ル" # 空白を含む文字列などは必ず"や'で囲む。

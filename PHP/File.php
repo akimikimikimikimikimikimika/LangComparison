@@ -1,4 +1,4 @@
-#! /usr/local/bin/php
+#! /usr/bin/env php
 <?php
 
 print "\r\nこれからファイル操作を試します\r\n\r\n";
@@ -125,7 +125,7 @@ function check($pt) {
 print "> 実行ファイルを作成します\r\n";
 $io=fopen("Package/PHP.php","a");
 fwrite($io,<<< PHPScript
-#! /usr/local/bin/php
+#! /usr/bin/env php
 <?php
 print "Hello world!";
 ?>
