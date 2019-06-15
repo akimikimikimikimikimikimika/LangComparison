@@ -9,6 +9,7 @@ Objective-C/bin
 Go/bin
 Rust/bin
 Rust/Cargo.lock
+Rust/debug
 Rust/.rustc_info.json
 Kotlin-compiling/META-INF/main.kotlin_module
 Scala-compiling
