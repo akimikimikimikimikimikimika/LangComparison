@@ -58,7 +58,8 @@ sliced.slice!(3,2) # [0,1,2,5] (3番目から2つ分の要素を削除)
 	# slice! と違い slice は配列の中身を書き換えず, array[3,2] = array.slice(3,2) である
 
 deleted=[0,1,2,3,4,5]
-deleted.delete!(3) # [0,1,2,4,5] (3番目の要素を削除)
+deleted.delete(3) # [0,1,2,4,5] (3番目の要素を削除)
+# delete_at(pos) はpos番目の要素を削除する
 
 inserted=[0,1,2,3,4,5]
 inserted.insert(3,6,7,8) # [0,1,2,6,7,8,3,4,5] (3番目の位置に6,7,8を追加する)

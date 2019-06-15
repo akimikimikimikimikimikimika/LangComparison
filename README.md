@@ -77,158 +77,158 @@ cd LangComparison
 ```
 そして,言語ごとに次のコードを実行する。
 - Swift  
-```Shell
-# スクリプト言語として利用する場合
-swift Swift/Main.swift
+	```sh
+	# スクリプト言語として利用する場合
+	swift Swift/Main.swift
 
-# コンパイル : フォルダ Swift-compiling 内に bin という実行ファイルが生成される
-(cd Swift-compiling ; swiftc -o bin *.swift)
+	# コンパイル : フォルダ Swift-compiling 内に bin という実行ファイルが生成される
+	(cd Swift-compiling ; swiftc -o bin *.swift)
 
-# 実行
-Swift-compiling/bin
-```
+	# 実行
+	Swift-compiling/bin
+	```
 - Perl
-```Shell
-perl Perl/Main.pl
-```
+	```sh
+	perl Perl/Main.pl
+	```
 - Ruby
-```Shell
-ruby Ruby/Main.rb
-```
+	```sh
+	ruby Ruby/Main.rb
+	```
 - PHP
-```Shell
-php PHP/Main.php
-```
+	```sh
+	php PHP/Main.php
+	```
 - Python
-```Shell
-python3.7 Python/Main.py # 最新のPython
-# システムに付属するPythonはPython2.x系列であることが多く,当リポジトリで取り扱うコードは実行できない
-```
+	```sh
+	python3.7 Python/Main.py # 最新のPython
+	# システムに付属するPythonはPython2.x系列であることが多く,当リポジトリで取り扱うコードは実行できない
+	```
 
 - Julia
-```Shell
-julia Julia/Main.jl
-```
+	```sh
+	julia Julia/Main.jl
+	```
 - R
-```Shell
-# Stdinout.r を実行する例
-Rscript R/Stdinout.r
-```
+	```sh
+	# Stdinout.r を実行する例
+	Rscript R/Stdinout.r
+	```
 - Bash
-```Shell
-bash Bash/Main.sh
-```
+	```sh
+	bash Bash/Main.sh
+	```
 - PowerShell
-```Shell
-pwsh PowerShell/Main.ps1
-```
+	```sh
+	pwsh PowerShell/Main.ps1
+	```
 - Lua
-```Shell
-lua Lua/Main.lua # 実行
-```
+	```sh
+	lua Lua/Main.lua # 実行
+	```
 - JavaScript  
-JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
-又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。  
-但し,Webブラウザ上でないと実行できないコードもあるので,注意する必要がある。
-```Shell
-# Stdinout.js を実行する例
-node JavaScript/Stdinout.js
-```
+	JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。  
+	又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。  
+	但し,Webブラウザ上でないと実行できないコードもあるので,注意する必要がある。
+	```sh
+	# Stdinout.js を実行する例
+	node JavaScript/Stdinout.js
+	```
 
 - Java
-```Shell
-# コンパイル : フォルダ Java 内に bin.jar というJavaアーカイブファイルが生成される
-(cd Java ; javac *.java ; zip -q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)
+	```sh
+	# コンパイル : フォルダ Java 内に bin.jar というJavaアーカイブファイルが生成される
+	(cd Java ; javac *.java ; zip -q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)
 
-# 実行
-java -jar Java/bin.jar
+	# 実行
+	java -jar Java/bin.jar
 
-# 個別のファイルを実行 (例: Stdinout.java を実行)
-(cd Java ; javac Stdinout.java ; java Stdinout)
-```
+	# 個別のファイルを実行 (例: Stdinout.java を実行)
+	(cd Java ; javac Stdinout.java ; java Stdinout)
+	```
 - Groovy
-```Shell
-# 例: Stdinout.groovy を実行
-groovy Groovy/Stdinout.groovy
-```
+	```sh
+	# 例: Stdinout.groovy を実行
+	groovy Groovy/Stdinout.groovy
+	```
 - Scala
-```Shell
-# 例: Stdinout.scala を実行
-scala Scala/Stdinout.scala
-```
+	```sh
+	# 例: Stdinout.scala を実行
+	scala Scala/Stdinout.scala
+	```
 - Kotlin
-```Shell
-# スクリプト言語として利用する場合 (例: Stdinout.kts を実行)
-kotlinc -script Kotlin/Stdinout.kts
+	```sh
+	# スクリプト言語として利用する場合 (例: Stdinout.kts を実行)
+	kotlinc -script Kotlin/Stdinout.kts
 
-# コンパイル : フォルダ Kotlin-compiling 内に bin.jar というJavaアーカイブファイルが生成される
-(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
-	# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
-	# 逆にこのオプションを付加しないとアーカイブは実行できない
+	# コンパイル : フォルダ Kotlin-compiling 内に bin.jar というJavaアーカイブファイルが生成される
+	(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
+		# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
+		# 逆にこのオプションを付加しないとアーカイブは実行できない
 
-# 実行
-kotlin Kotlin-compiling/bin.jar
-	# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
-```
+	# 実行
+	kotlin Kotlin-compiling/bin.jar
+		# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
+	```
 
-- Fortran  
-以下の例は,GFortranコンパイラを使う例
-```Shell
-# コンパイル : フォルダ Fortran 内に bin という実行ファイルが生成される
-(cd Fortran ; gfortran *.f95 -o bin -fopenmp -O3)
-	# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
+- Fortran
+	以下の例は,GFortranコンパイラを使う例
+	```sh
+	# コンパイル : フォルダ Fortran 内に bin という実行ファイルが生成される
+	(cd Fortran ; gfortran *.f95 -o bin -fopenmp -O3)
+		# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
 
-# 実行
-Fortran/bin
-```
-- C  
-以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
-```Shell
-# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-(cd C ; clang *.c -o bin -std=c17 -O3)
+	# 実行
+	Fortran/bin
+	```
+- C
+	以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
+	```sh
+	# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
+	(cd C ; clang *.c -o bin -std=c17 -O3)
 
-# 実行
-C/bin
-```
-- C++  
-以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
-```Shell
-# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
-(cd C++ ; clang++ *.cpp -o bin -std=c++17 -O3)
+	# 実行
+	C/bin
+	```
+- C++
+	以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
+	```sh
+	# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
+	(cd C++ ; clang++ *.cpp -o bin -std=c++17 -O3)
 
-# 実行
-C++/bin
-```
-- Objective-C  
-以下の例は,Clangコンパイラを使う例
-```Shell
-# コンパイル : フォルダ Objective-C 内に bin という実行ファイルが生成される
-(cd Objective-C ; clang *.h *.m -o bin -ObjC -framework Foundation -O3)
-	# Foundation フレームワークをインクルードすることでObjCになる
+	# 実行
+	C++/bin
+	```
+- Objective-C
+	以下の例は,Clangコンパイラを使う例
+	```sh
+	# コンパイル : フォルダ Objective-C 内に bin という実行ファイルが生成される
+	(cd Objective-C ; clang *.h *.m -o bin -ObjC -framework Foundation -O3)
+		# Foundation フレームワークをインクルードすることでObjCになる
 
-# 実行
-Objective-C/bin
-```
+	# 実行
+	Objective-C/bin
+	```
 - Go
-```Shell
-# コンパイル : フォルダ Go 内に bin という実行ファイルが生成される
-(cd Go ; go build -o bin *.go)
-	# -o bin と *.go の順序を逆にしてはならない
+	```sh
+	# コンパイル : フォルダ Go 内に bin という実行ファイルが生成される
+	(cd Go ; go build -o bin *.go)
+		# -o bin と *.go の順序を逆にしてはならない
 
-# 実行
-Go/bin
+	# 実行
+	Go/bin
 
-# このリポジトリ内のGoコードは,各々を直接実行することができない仕様になっているため,直接実行の方法はここではコメントアウトしておく
-# (cd Go ; go run Stdinout.go)
-```
+	# このリポジトリ内のGoコードは,各々を直接実行することができない仕様になっているため,直接実行の方法はここではコメントアウトしておく
+	# (cd Go ; go run Stdinout.go)
+	```
 - Rust
-```Shell
-# コンパイル : フォルダ Rust 内に bin という実行ファイルが生成される
-(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo bin ; rm -r debug .rustc_info.json)
+	```sh
+	# コンパイル : フォルダ Rust 内に bin という実行ファイルが生成される
+	(cd Rust ; cargo build --target-dir . --manifest-path Cargo.toml ; mv debug/rustdemo bin ; rm -r debug .rustc_info.json)
 
-# 実行
-Rust/bin
-```
+	# 実行
+	Rust/bin
+	```
 
 ## REPL
 
@@ -236,78 +236,78 @@ Rust/bin
 以下では,REPLの起動方法を説明する。  
 尚,何れの場合も Control+D でREPLを終了させることができる。
 
-- Swift  
-```Shell
-swift
-```
+- Swift
+	```sh
+	swift
+	```
 - Perl
-```Shell
-perl
-```
+	```sh
+	perl
+	```
 - Ruby
-```Shell
-ruby
-```
+	```sh
+	ruby
+	```
 - PHP
-```Shell
-php
-```
+	```sh
+	php
+	```
 - Python
-```Shell
-python3.7 # 最新のPython
-python    # システムに付属するPython
-```
+	```sh
+	python3.7 # 最新のPython
+	python    # システムに付属するPython
+	```
 - R
-```Shell
-R
-```
+	```sh
+	R
+	```
 - Julia
-```Shell
-julia
-```
+	```sh
+	julia
+	```
 - Bash
-```Shell
-bash
-```
+	```sh
+	bash
+	```
 - PowerShell
-```Shell
-pwsh
-```
+	```sh
+	pwsh
+	```
 - Lua
-```Shell
-lua
-```
-- JavaScript (Node.js)  
-```Shell
-node
-```
-Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在する。
+	```sh
+	lua
+	```
+- JavaScript (Node.js)
+	```sh
+	node
+	```
+	Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在するので,そちらを使っても構わない。
 
 - Groovy
-```Shell
-groovysh
-```
+	```sh
+	groovysh
+	```
 - Scala
-```Shell
-scala
-```
+	```sh
+	scala
+	```
 - Kotlin
-```Shell
-kotlinc-jvm
-```
+	```sh
+	kotlinc-jvm
+	```
 
 
 ## Shebang
 
-macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, R, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
-```Shell
-#! /usr/local/bin/lua
-```
-但し, Perl, Ruby, PHP, Python, Julia, R, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
-実行例 (Luaの場合•ディレクトリ移動を実行済)
-```Shell
-./Lua.lua # このように入力すればLua.luaを実行してくれる
-```
+	macOSの場合, Swift, Perl, Ruby, PHP, Python, Julia, R, PowerShell, Bash, Lua には下に示すような実行パス (各言語のインタプリタ) を宣言するShebang (シェバン)を入れているため,ターミナルでそのまま実行できる。
+	```sh
+	#! /usr/local/bin/lua
+	```
+	但し, Perl, Ruby, PHP, Python, Julia, R, Bash, PowerShell, Lua は Homebrew 等でインストールした場合のディレクトリでShebangを設定している。システムのインタプリタなど他の実行パスを使用する場合は,適宜置き換える必要がある。インストールされているシステムによっては必ずしも以下に示す場所ではないため,注意する。  
+	実行例 (Luaの場合•ディレクトリ移動を実行済)
+	```sh
+	./Lua.lua # このように入力すればLua.luaを実行してくれる
+	```
 ### Shebangの一覧
 
 |   | システム標準のインタプリタ | 外部のインタプリタ |

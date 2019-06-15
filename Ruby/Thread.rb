@@ -10,12 +10,11 @@ threads = []; # スレッドオブジェクトを格納する配列
 
 print "スレッドを起動します\r\n";
 for m in 1..9 do
-	threads.append(Thread.new(m) { |m|
+	threads.append(Thread.new(m) do |m|
 		for n in 1..6 do
 			print "|(#{m},#{n})| = #{Math.hypot(m,n)}\r\n";
 		end
-	}).join;
-	# スレッドの実行内容を Thread.new do…end で表記すると引数が受け取れない
+	end);
 end
 
 print "スレッドの終了を待ちます\r\n";
