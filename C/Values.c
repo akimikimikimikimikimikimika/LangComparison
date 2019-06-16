@@ -1,27 +1,29 @@
 #include <stdio.h>
-#include <string.h>
 #include "Header.h"
 
 void Values(){
-	char character=67; // C
-	char string[]="シー"; // C
-	short shortInt=127; // 16 bit
-	int integer=127; // 16/32 bit
-	long longInt=127; // 32 bit
-	long long longLongInt=127; // 64 bit
-	float fl=3.14;
-	double db=3.14;
+	const char character=67; // C
+	const char string[]="シー"; // C
+	const short shortInt=127; // 16 bit
+	const int integer=127; // 16/32 bit
+	const long longInt=127; // 32 bit
+	const long long longLongInt=127; // 64 bit
+	const float fl=3.14;
+	const double db=3.14;
 
-	printf("\r\n色々な値を試します\r\n");
-	printf("\r\nプリミティブ値\r\n");
-	printf("char: %c\r\n",character);
-	printf("char[]: %s\r\n",string);
-	printf("short int: %d\r\n",shortInt);
-	printf("int: %d\r\n",integer);
-	printf("long int: %ld\r\n",longInt);
-	printf("long long int: %lld\r\n",longLongInt);
-	printf("float: %f\r\n",fl);
-	printf("double: %lf\r\n",db);
+	n();printf("色々な値を試します");n();
+	n();printf("プリミティブ値");n();
+	printf("char: %c",character);n();
+	printf("char[]: %s",string);n();
+	printf("short int: %d",shortInt);n();
+	printf("int: %d",integer);n();
+	printf("long int: %ld",longInt);n();
+	printf("long long int: %lld",longLongInt);n();
+	printf("float: %f",fl);n();
+	printf("double: %lf",db);n();
+
+	nn();
+	
 }
 /*
 	変数: int x

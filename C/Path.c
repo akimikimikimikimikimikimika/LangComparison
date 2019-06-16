@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include "Header.h"
 
 #define CD_SIZE 512
 
@@ -13,7 +14,7 @@ void Path() {
 	memset(cd, '\0', CD_SIZE);
 	getcwd(cd, CD_SIZE);
 
-	printf("ホームディレクトリ:       %s\r\n",home);
-	printf("カレントディレクトリ:     %s\r\n",cd);
+	printf("ホームディレクトリ:       %s",home);n();
+	printf("カレントディレクトリ:     %s",cd);n();
 
 }

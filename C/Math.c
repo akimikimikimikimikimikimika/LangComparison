@@ -13,21 +13,21 @@
 
 void Math(){
 
-	printf("\r\nこれから数学演算を試します\r\n");
+	n();printf("これから数学演算を試します");n();
 
-	printf("\r\n符号\r\n"); // <stdlib.h>
-	printf("abs(+18) = %d\r\n",abs(+18));
-	printf("abs(-18) = %d\r\n",abs(-18));
+	n();printf("符号");n(); // <stdlib.h>
+	printf("abs(+18) = %d",abs(+18));n();
+	printf("abs(-18) = %d",abs(-18));n();
 	// double,float版のabsである fabs は, <math.h> で定義されている
 
-	printf("\r\n除算\r\n"); // <stdlib.h>
-	printf("div(24,5)\r\n");
-	printf("  .quot = %d\r\n",div(24,5).quot);
-	printf("  .rem  = %d\r\n",div(24,5).rem);
+	n();printf("除算");n(); // <stdlib.h>
+	printf("div(24,5)");n();
+	printf("  .quot = %d",div(24,5).quot);n();
+	printf("  .rem  = %d",div(24,5).rem);n();
 
-	printf("\r\n定数\r\n"); // <tgmath.h>
-	printf("π = %f\r\n",M_PI);
-	printf("e = %f\r\n",M_E);
+	n();printf("定数");n(); // <tgmath.h>
+	printf("π = %f",M_PI);n();
+	printf("e = %f",M_E);n();
 	/*
 		他の定数
 		M_LOG2E : log₂e
@@ -43,50 +43,52 @@ void Math(){
 		M_SQRT1_2 : 1/√2
 	*/
 
-	printf("\r\n数学関数\r\n"); // <tgmath.h>
-	printf("pow(2,10)      = %f\r\n",pow(2,10)     );
-	printf("sqrt(3)        = %f\r\n",sqrt(3)       );
-	printf("cbrt(27)       = %f\r\n",cbrt(27)      );
-	printf("exp(1.145)     = %f\r\n",exp(1.145)    ); // e^x
-	printf("exp2(1.651)    = %f\r\n",exp2(1.651)   ); // 2^x
-	printf("expm1(1.421)   = %f\r\n",expm1(1.421)  ); // exp(x)-1
-	printf("log(23.14)     = %f\r\n",log(23.14)    ); // log(x)
-	printf("log1p(22.14)   = %f\r\n",log1p(22.14)  ); // log(x+1)
-	printf("log10(1385)    = %f\r\n",log10(1385)   ); // log10(x)
-	printf("log2(8.825)    = %f\r\n",log2(8.825)   ); // log2(x)
-	printf("sin(π/3)       = %f\r\n",sin(M_PI/3)   );
-	printf("cos(π/3)       = %f\r\n",cos(M_PI/3)   );
-	printf("tan(π/3)       = %f\r\n",tan(M_PI/3)   );
-	printf("asin(1)        = %f\r\n",asin(1)       );
-	printf("acos(0.5)      = %f\r\n",acos(0.5)     );
-	printf("atan(-1)       = %f\r\n",atan(-1)      );
-	printf("atan2(12,5)    = %f\r\n",atan2(12,5)   );
-	printf("hypot(12,5)    = %f\r\n",hypot(12,5)   );
-	printf("sinh(1.862)    = %f\r\n",sinh(1.862)   );
-	printf("cosh(1.811)    = %f\r\n",cosh(1.811)   );
-	printf("tanh(0.325)    = %f\r\n",tanh(0.325)   );
-	printf("tgamma(0.2865) = %f\r\n",tgamma(0.2865)); // Γ(0.287)
-	printf("lgamma(0.0422) = %f\r\n",lgamma(0.0422)); // log(Γ(0.0422))
+	n();printf("数学関数");n(); // <tgmath.h>
+	printf("pow(2,10)      = %f",pow(2,10)     );n();
+	printf("sqrt(3)        = %f",sqrt(3)       );n();
+	printf("cbrt(27)       = %f",cbrt(27)      );n();
+	printf("exp(1.145)     = %f",exp(1.145)    );n(); // e^x
+	printf("exp2(1.651)    = %f",exp2(1.651)   );n(); // 2^x
+	printf("expm1(1.421)   = %f",expm1(1.421)  );n(); // exp(x)-1
+	printf("log(23.14)     = %f",log(23.14)    );n(); // log(x)
+	printf("log1p(22.14)   = %f",log1p(22.14)  );n(); // log(x+1)
+	printf("log10(1385)    = %f",log10(1385)   );n(); // log10(x)
+	printf("log2(8.825)    = %f",log2(8.825)   );n(); // log2(x)
+	printf("sin(π/3)       = %f",sin(M_PI/3)   );n();
+	printf("cos(π/3)       = %f",cos(M_PI/3)   );n();
+	printf("tan(π/3)       = %f",tan(M_PI/3)   );n();
+	printf("asin(1)        = %f",asin(1)       );n();
+	printf("acos(0.5)      = %f",acos(0.5)     );n();
+	printf("atan(-1)       = %f",atan(-1)      );n();
+	printf("atan2(12,5)    = %f",atan2(12,5)   );n();
+	printf("hypot(12,5)    = %f",hypot(12,5)   );n();
+	printf("sinh(1.862)    = %f",sinh(1.862)   );n();
+	printf("cosh(1.811)    = %f",cosh(1.811)   );n();
+	printf("tanh(0.325)    = %f",tanh(0.325)   );n();
+	printf("tgamma(0.2865) = %f",tgamma(0.2865));n(); // Γ(0.287)
+	printf("lgamma(0.0422) = %f",lgamma(0.0422));n(); // log(Γ(0.0422))
 
 	double complex c = 3+4i;
-	printf("\r\n複素数\r\n"); // <tgmath.h>
-	printf(" cabs(3+4i) = %f\r\n", cabs(c));
-	printf(" carg(3+4i) = %f\r\n", carg(c));
-	printf("creal(3+4i) = %f\r\n",creal(c));
-	printf("cimag(3+4i) = %f\r\n",cimag(c));
-	printf(" conj(3+4i) = %f%fi\r\n",creal(conj(c)),cimag(conj(c)));
+	n();printf("複素数");n(); // <tgmath.h>
+	printf(" cabs(3+4i) = %f", cabs(c));n();
+	printf(" carg(3+4i) = %f", carg(c));n();
+	printf("creal(3+4i) = %f",creal(c));n();
+	printf("cimag(3+4i) = %f",cimag(c));n();
+	printf(" conj(3+4i) = %f%fi",creal(conj(c)),cimag(conj(c)));n();
 	/*
 		他にも <math.h> に定義されている関数の複素数版があったりする
 		e.g. sin(x) → csin(x)
 	*/
 
-	printf("\r\n端数処理\r\n"); // <stdlib.h>
-	printf("rand() = %d\r\n", rand());
+	n();printf("端数処理");n(); // <stdlib.h>
+	printf("rand() = %d", rand());n();
 
-	printf("\r\n端数処理\r\n"); // <tgmath.h>
-	printf("floor(-3.14) = %f\r\n",floor(-3.14)); // 小さい方の整数へ
-	printf(" ceil(-3.14) = %f\r\n", ceil(-3.14)); // 大きい方の整数へ
-	printf("trunc(-3.14) = %f\r\n",trunc(-3.14)); // 0に近い方の整数へ
-	printf("round(-3.14) = %f\r\n",round(-3.14));
+	n();printf("端数処理");n(); // <tgmath.h>
+	printf("floor(-3.14) = %f",floor(-3.14));n(); // 小さい方の整数へ
+	printf(" ceil(-3.14) = %f", ceil(-3.14));n(); // 大きい方の整数へ
+	printf("trunc(-3.14) = %f",trunc(-3.14));n(); // 0に近い方の整数へ
+	printf("round(-3.14) = %f",round(-3.14));n();
+
+	nn();
 
 }

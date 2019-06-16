@@ -12,26 +12,28 @@ void DateTime(){
 	local = localtime(&tm);
 	utc = gmtime(&tm);
 
-	printf("\r\nこれから日付と時刻を試します\r\n");
+	n();printf("これから日付と時刻を試します");n();
 
-	printf("\r\nlocaltime (ローカル時刻)\r\n");
-	printf("->tm_year = %d (%d年)\r\n",local->tm_year,local->tm_year+1900);
-	printf("->tm_mon  = %d (%d月)\r\n",local->tm_mon,local->tm_mon+1);
-	printf("->tm_mday = %d\r\n",local->tm_mday); // day/month
-	printf("->tm_wday = %d\r\n",local->tm_wday); // day/week (0:日曜日 ~)
-	printf("->tm_yday = %d\r\n",local->tm_yday); // day/year (0:1月1日 ~)
-	printf("->tm_hour = %d\r\n",local->tm_hour);
-	printf("->tm_min  = %d\r\n",local->tm_min);
-	printf("->tm_sec  = %d\r\n",local->tm_sec);
+	n();printf("localtime (ローカル時刻)");n();
+	printf("->tm_year = %d (%d年)",local->tm_year,local->tm_year+1900);n();
+	printf("->tm_mon  = %d (%d月)",local->tm_mon,local->tm_mon+1);n();
+	printf("->tm_mday = %d",local->tm_mday);n(); // day/month
+	printf("->tm_wday = %d",local->tm_wday);n(); // day/week (0:日曜日 ~)
+	printf("->tm_yday = %d",local->tm_yday);n(); // day/year (0:1月1日 ~)
+	printf("->tm_hour = %d",local->tm_hour);n();
+	printf("->tm_min  = %d",local->tm_min);n();
+	printf("->tm_sec  = %d",local->tm_sec);n();
 
-	printf("\r\ngmtime (世界標準時)\r\n");
-	printf("->tm_year = %d (%d年)\r\n",utc->tm_year,utc->tm_year+1900);
-	printf("->tm_mon  = %d (%d月)\r\n",utc->tm_mon,utc->tm_mon+1);
-	printf("->tm_mday = %d\r\n",utc->tm_mday);
-	printf("->tm_wday = %d\r\n",utc->tm_wday);
-	printf("->tm_yday = %d\r\n",utc->tm_yday);
-	printf("->tm_hour = %d\r\n",utc->tm_hour);
-	printf("->tm_min  = %d\r\n",utc->tm_min);
-	printf("->tm_sec  = %d\r\n",utc->tm_sec);
+	n();printf("gmtime (世界標準時)");n();
+	printf("->tm_year = %d (%d年)",utc->tm_year,utc->tm_year+1900);n();
+	printf("->tm_mon  = %d (%d月)",utc->tm_mon,utc->tm_mon+1);n();
+	printf("->tm_mday = %d",utc->tm_mday);n();
+	printf("->tm_wday = %d",utc->tm_wday);n();
+	printf("->tm_yday = %d",utc->tm_yday);n();
+	printf("->tm_hour = %d",utc->tm_hour);n();
+	printf("->tm_min  = %d",utc->tm_min);n();
+	printf("->tm_sec  = %d",utc->tm_sec);n();
+
+	nn();
 
 }

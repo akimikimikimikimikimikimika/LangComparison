@@ -8,40 +8,42 @@ void Operators(){
 	char str1[100]="abc"; // strcatで結合しても十分に入る大きさ
 	char str2[]="def";
 
-	printf("\r\nこれから演算子を試します\r\n");
-	printf("\r\n算術演算子\r\n");
-	printf("24   + 5 = %d\r\n",24+5);
-	printf("24   - 5 = %d\r\n",24-5);
-	printf("24   * 5 = %d\r\n",24*5);
-	printf("24.0 / 5 = %f\r\n",24.0/5);
-	printf("24   %% 5 = %d\r\n",24%5); // float,doubleは使えない
+	n();printf("これから演算子を試します");n();
+	n();printf("算術演算子");n();
+	printf("24   + 5 = %d",24+5);n();
+	printf("24   - 5 = %d",24-5);n();
+	printf("24   * 5 = %d",24*5);n();
+	printf("24.0 / 5 = %f",24.0/5);n();
+	printf("24   %% 5 = %d",24%5);n(); // float,doubleは使えない
 	/*
 		float,doubleは使えない
 		※ float,doubleで剰余を求めるには,この関数を使う : fmod(24.8,5)  (#include <math.h>)
 		※ 冪乗を求めるには,以下の関数を使う : pow(24,5)  (#include <math.h>)
 	*/
 
-	printf("\r\n比較演算子\r\n");
-	printf("24 <  5 = %d\r\n",24< 5);
-	printf("24 <= 5 = %d\r\n",24<=5);
-	printf("24 >  5 = %d\r\n",24> 5);
-	printf("24 >= 5 = %d\r\n",24>=5);
-	printf("24 == 5 = %d\r\n",24==5);
-	printf("24 != 5 = %d\r\n",24!=5);
+	n();printf("比較演算子");n();
+	printf("24 <  5 = %d",24< 5);n();
+	printf("24 <= 5 = %d",24<=5);n();
+	printf("24 >  5 = %d",24> 5);n();
+	printf("24 >= 5 = %d",24>=5);n();
+	printf("24 == 5 = %d",24==5);n();
+	printf("24 != 5 = %d",24!=5);n();
 
-	printf("\r\n論理演算子\r\n");
-	printf("1 && 0 = %d\r\n",1&&0);
-	printf("1 || 0 = %d\r\n",1||0);
-	printf("   ! 0 = %d\r\n",  !0);
+	n();printf("論理演算子");n();
+	printf("1 && 0 = %d",1&&0);n();
+	printf("1 || 0 = %d",1||0);n();
+	printf("   ! 0 = %d",  !0);n();
 
-	printf("\r\n三項演算子\r\n");
-	printf("1 ? \"yes\" : \"no\" = \"%s\"\r\n",1?"yes":"no");
-	printf("0 ? \"yes\" : \"no\" = \"%s\"\r\n",0?"yes":"no");
+	n();printf("三項演算子");n();
+	printf("1 ? \"yes\" : \"no\" = \"%s\"",1?"yes":"no");n();
+	printf("0 ? \"yes\" : \"no\" = \"%s\"",0?"yes":"no");n();
 
-	printf("\r\n型演算子\r\n");
-	printf("(double)1 = %lf\r\n",(double)1);
+	n();printf("型演算子");n();
+	printf("(double)1 = %lf",(double)1);n();
 
-	printf("\r\nその他演算子\r\n");
-	printf("sizeof(\"string\") = %lu\r\n",sizeof("string"));
+	n();printf("その他演算子");n();
+	printf("sizeof(\"string\") = %lu",sizeof("string"));n();
+
+	nn();
 
 }

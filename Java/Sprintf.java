@@ -24,12 +24,12 @@ public class Sprintf {
 		println("String.format(\"%E\",0.018) = \""+(   String.format("%E",0.018)   )+"\"");
 
 		println("\r\n真偽値");
-		println("String.format(\"%b\",true)   = \""+(     String.format("%b",true)     )+"\"");
+		println("String.format(\"%b\",true) = \""+(   String.format("%b",true)   )+"\"");
 
 		println("\r\n文字");
 		println("String.format(\"%c\",115)   = \""+(     String.format("%c",115)     )+"\"");
 		println("String.format(\"%s\",\"abc\") = \""+(   String.format("%s","abc")   )+"\"");
-		// %s は任意のオブジェクトで .toString() の結果を代入する
+			// %s は任意のオブジェクトで .toString() の結果を代入する
 
 		println("\r\n基数の表記");
 		println("String.format(\"%#o\",255) = \""+(   String.format("%#o",255)   )+"\"");

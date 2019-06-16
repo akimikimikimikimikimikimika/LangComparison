@@ -28,27 +28,28 @@ int main(int argc, char *argv[]){
 		それ以外 → Argumentsで表示
 	*/
 	if (argc==1) {
-		printf("こんにちは。私の名前はC。\r\n");
+		printf("こんにちは。私の名前はC。");n();
 		while (1) {
-			printf("\r\n\r\n何がしたい?\r\n\r\n");
-			printf("1. 標準入出力を試す\r\n");
-			printf("2. 色々な値を試す\r\n");
-			printf("3. 演算子を試す\r\n");
-			printf("4. 条件分岐を試す\r\n");
-			printf("5. 繰り返しを試す\r\n");
-			printf("6. 数学的演算を試す\r\n");
-			printf("7. 文字列操作を試す\r\n");
-			printf("9. 正規表現を試す\r\n");
-			printf("a. 日付と時刻を試す\r\n");
-			printf("d. ファイル操作を試す\r\n");
-			printf("e. ファイルパスを試す\r\n");
-			printf("h. コマンドライン引数を試す\r\n");
-			printf("\r\n");
-			printf("0. 終了\r\n");
-			printf("\r\n");
+			nn();printf("何がしたい?");nn();
+			printf("1. 標準入出力を試す");n();
+			printf("2. 色々な値を試す");n();
+			printf("3. 演算子を試す");n();
+			printf("4. 条件分岐を試す");n();
+			printf("5. 繰り返しを試す");n();
+			printf("6. 数学的演算を試す");n();
+			printf("7. 文字列操作を試す");n();
+			printf("8. 文字列フォーマットを試す");n();
+			printf("9. 正規表現を試す");n();
+			printf("a. 日付と時刻を試す");n();
+			printf("d. ファイル操作を試す");n();
+			printf("e. ファイルパスを試す");n();
+			printf("h. コマンドライン引数を試す");n();
+			n();
+			printf("0. 終了");n();
+			n();
 			scanf("%s",action);
 			while(getchar()!='\n');
-			printf("\r\n\r\n\r\n");
+			nnn();
 			if (cmp(action,"0")) break;
 			else if (cmp(action,"1")) Stdinout();
 			else if (cmp(action,"2")) Values();
@@ -57,12 +58,13 @@ int main(int argc, char *argv[]){
 			else if (cmp(action,"5")) Loop();
 			else if (cmp(action,"6")) Math();
 			else if (cmp(action,"7")) String();
+			else if (cmp(action,"8")) Sprintf();
 			else if (cmp(action,"9")) RegExp();
 			else if (cmp(action,"a")) DateTime();
 			else if (cmp(action,"d")) FileHandle();
 			else if (cmp(action,"e")) Path();
 			else if (cmp(action,"h")) ArgumentsDemo();
-			else printf("指定したアクションは見つかりませんでした\r\n\r\n");
+			else printf("指定したアクションは見つかりませんでした");nn();
 		}
 	}
 	else if (argc==2) {
@@ -73,6 +75,7 @@ int main(int argc, char *argv[]){
 		else if (cmp(argv[1],"Loop")) Loop();
 		else if (cmp(argv[1],"Math")) Math();
 		else if (cmp(argv[1],"String")) String();
+		else if (cmp(argv[1],"Sprintf")) Sprintf();
 		else if (cmp(argv[1],"RegExp")) RegExp();
 		else if (cmp(argv[1],"DateTime")) DateTime();
 		else if (cmp(argv[1],"FileHandle")) FileHandle();
@@ -87,4 +90,16 @@ int main(int argc, char *argv[]){
 
 int cmp(char *s1,char *s2) {
 	return strcmp(s1,s2)==0;
+}
+
+void n() {
+	printf("\r\n");
+}
+
+void nn() {
+	n();n();
+}
+
+void nnn() {
+	n();n();n();
 }

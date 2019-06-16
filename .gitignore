@@ -6,6 +6,7 @@ classdef.mod
 C/bin
 C++/bin
 Objective-C/bin
+C#/bin.exe
 Go/bin
 Rust/bin
 Rust/Cargo.lock
