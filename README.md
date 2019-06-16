@@ -45,7 +45,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 それぞれのOSで標準付属していない言語は上記リンクよりインストールする必要がある。
 
-- macOS
+- macOS  
 	Perl, Ruby, PHP, Python, Bash は標準でインストール済。
 	但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。
 	Julia, Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。
@@ -55,14 +55,14 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 	Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。
 	PowerShellは[GitHub](https://github.com/PowerShell/PowerShell "PowerShell")から入手可能。
 
-- Windows
+- Windows  
 	PowerShell は標準でインストール済。
 	Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードする。
 	C++ のコンパイルには Visual C++ が必要らしい。Visual Studioから使うと思われる。
 	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
 	Intel C++ Compilerなどが必要な場合は別途入手する。
 
-- Unix系OS (macOS除く)
+- Unix系OS (macOS除く)  
 	大抵の場合, Bash は標準でインストール済。
 	C, C++ のコンパイラ GCC は標準でインストール済。コンパイラとしてClangやIntel C++ Compilerなどが必要な場合は別途入手する。
 	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
