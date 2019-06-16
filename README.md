@@ -45,29 +45,29 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 それぞれのOSで標準付属していない言語は上記リンクよりインストールする必要がある。
 
-- macOS  
-	Perl, Ruby, PHP, Python, Bash は標準でインストール済。
-	但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。
-	Julia, Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。
-	C, C++ のコンパイラ Clang は標準でインストール済。コンパイラとしてGCCやIntel C++ Compilerなどが必要な場合は別途入手する。
-	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") や上述のGCCはHomebrewからインストールすることもできる。
-	Swift のコンパイルには [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。
-	Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。
-	PowerShellは[GitHub](https://github.com/PowerShell/PowerShell "PowerShell")から入手可能。
+- macOS
+	* Perl, Ruby, PHP, Python, Bash は標準でインストール済。
+		但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。
+	* Julia, Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。
+	* C, C++ のコンパイラ Clang は標準でインストール済だが, [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。
+		コンパイラとしてGCCやIntel C++ Compilerなどが必要な場合は別途入手する。GCCはHomebrewからインストールすることもできる。
+	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") はインストールされていない。GFortranはHomebrewからインストールすることもできる。
+	* Swift のコンパイラもインストールされているが,これも [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。
+	* Javaをコンパイル/実行するには,Oracleから最新バージョンのJavaを入手してインストールする。Homebrewからインストールすることもできる。
+	* PowerShellは [GitHub上の同リポジトリ](https://github.com/PowerShell/PowerShell "PowerShell") から入手可能。
 
-- Windows  
-	PowerShell は標準でインストール済。
-	Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードする。
-	C++ のコンパイルには Visual C++ が必要らしい。Visual Studioから使うと思われる。
-	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
-	Intel C++ Compilerなどが必要な場合は別途入手する。
+- Windows
+	* PowerShell は標準でインストール済。
+	* Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードするか,Chocolateyなどのパッケージマネージャを利用する。
+	* C++ のコンパイルには Visual C++ が必要らしい。Visual Studioから使うと思われる。GCCやIntel C++ Compilerなどが必要な場合は別途入手する。
+	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
 
-- Unix系OS (macOS除く)  
-	大抵の場合, Bash は標準でインストール済。
-	C, C++ のコンパイラ GCC は標準でインストール済。コンパイラとしてClangやIntel C++ Compilerなどが必要な場合は別途入手する。
-	Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
-	基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。
-	Linuxの場合,Rubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)
+- Unix系OS (macOS除く)
+	* 大抵の場合, Bash は標準でインストール済。
+	* C, C++ のコンパイラとして GCC/Clang は標準でインストール済。(LinuxはGCC) コンパイラとしてIntel C++ Compilerなどが必要な場合は別途入手する。
+	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
+	* 基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。
+	* Linuxの場合,パッケージ等でRubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)
 
 ## 実行方法
 
@@ -102,7 +102,7 @@ cd LangComparison
 	```
 - Python
 	```sh
-	python3.7 Python/Main.py # 最新のPython
+	python3 Python/Main.py # 最新のPython
 	# システムに付属するPythonはPython2.x系列であることが多く,当リポジトリで取り扱うコードは実行できない
 	```
 
@@ -125,12 +125,12 @@ cd LangComparison
 	```
 - Lua
 	```sh
-	lua Lua/Main.lua # 実行
+	lua Lua/Main.lua
 	```
 - JavaScript  
 	JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。
 	又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。
-	但し,Webブラウザ上でないと実行できないコードもあるので,注意する必要がある。
+	但し,当リポジトリにはWebブラウザ上でないと実行できないコードもあるので,注意する必要がある。
 	```sh
 	# Stdinout.js を実行する例
 	node JavaScript/Stdinout.js
@@ -165,7 +165,7 @@ cd LangComparison
 	# コンパイル : フォルダ Kotlin-compiling 内に bin.jar というJavaアーカイブファイルが生成される
 	(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
 		# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
-		# 逆にこのオプションを付加しないとアーカイブは実行できない
+		# このオプションを付加しないとアーカイブは実行できない
 
 	# 実行
 	kotlin Kotlin-compiling/bin.jar
