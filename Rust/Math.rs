@@ -4,6 +4,11 @@ use std::f64::consts::E; // E
 pub fn main() {
 	println!("\r\nこれから数学演算を試します\r\n");
 
+	println!("\r\n進数変換");
+	println!("bin2dec 1101111101: {}",0b1101111101);
+	println!("oct2dec       1575: {}",0o1575);
+	println!("hex2dec        37d: {}",0x37d);
+
 	println!("\r\n定数");
 	println!("π = {}",PI);
 	println!("e = {}",E);
