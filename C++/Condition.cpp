@@ -31,7 +31,8 @@ void Condition(){
 	switch (val) {
 		case 0:
 		case 1:
-			cout << to_string(val)+"は特別な値である" << endl;break;
+			cout << to_string(val)+"は特別な値である" << endl;
+			break;
 		case 8:
 		case 9:
 		case 10:
@@ -39,11 +40,13 @@ void Condition(){
 			// breakを省くと,case 8,9,10を実行すれば,直下のcase 4,6も実行する
 		case 4:
 		case 6:
-			cout << to_string(val)+"は素数ではない" << endl;break;
+			cout << to_string(val)+"は素数ではない" << endl;
+			break;
 		case 2:
 		case 3:
 		case 5:
 		case 7:
-			cout << to_string(val)+"は素数である" << endl;break;
+			cout << to_string(val)+"は素数である" << endl;
+			break;
 	}
 }

@@ -11,7 +11,7 @@ void FileHandle() {
 	FILE *fh;
 	FILE *fh2;
 
-	cout << endl << "これからファイル操作を試します" << "\r\n\r\n";
+	cout << endl << "これからファイル操作を試します" << endl << endl;
 
 	cout << "> カレントディレクトリをホームに変更" << endl;
 	chdir(getenv("HOME"));
@@ -102,5 +102,5 @@ void FileHandle() {
 }
 
 void error() {
-	printf("   何らかの理由で操作に失敗しました\r\n");
+	cout << "   " << "何らかの理由で操作に失敗しました" << endl;
 }

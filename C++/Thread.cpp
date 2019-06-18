@@ -20,8 +20,8 @@ void Thread(){
 	std::vector<std::thread> threads;
 
 	for (int m=1;m<10;m++) threads.push_back(std::thread(mtAction,m));
-	cout << "スレッドの終了を待ちます\r\n";
+	cout << "スレッドの終了を待ちます" << endl;
 	for (std::thread &onethread : threads) onethread.join();
-	cout << "スレッドは終了しました\r\n";
+	cout << "スレッドは終了しました" << endl;
 
 }

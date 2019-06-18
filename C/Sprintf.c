@@ -15,6 +15,7 @@ void Sprintf(){
 	/*
 		long, unsigned long 型の整数で上のような演算を行いたい場合は,それぞれ指定子の前に l を付加する。
 		e.g. %d → %ld
+		long long の場合は %lld のようにする
 	*/
 
 	n();printf("実数");n();
@@ -26,6 +27,7 @@ void Sprintf(){
 		double 型の整数で上のような演算を行いたい場合は,それぞれ指定子の前に l を付加する。
 		...というか,今時は浮動小数の演算は基本的に double なので,それが普通である。
 		e.g. %f → %lf
+		long double の場合は %Lf とする
 	*/
 
 	n();printf("文字");n();

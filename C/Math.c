@@ -13,7 +13,43 @@
 
 void Math(){
 
+	unsigned int scanned;
+
 	n();printf("これから数学演算を試します");n();
+
+	n();printf("進数変換");n();
+	printf("433045 = %ld (6進数 → 10進数)",strtol("433045",NULL,6));nn(); // <stdlib.h>
+	/*
+		strtol
+		• 2~36進数に変換可能
+		• 2つ目の引数は,1つ目の引数内で数値に変換不可能な文字列があった場合に,その文字列を返すポインタを渡す。ヌルにすると,無視される。
+		• 3つ目の引数で0を指定すると,文字列先頭の"0"や"0x"の有無により形式を自動判別する。(8,10,16進数のみに対応)
+		• 返す値の型に合わせて,これも含め類似の関数が4種類ある
+			* strtol → long
+			* strtoul → unsigned long
+			* strtoq → long long
+			* strtouq → unsigned long long
+		• 逆演算 : 10進数 → 2~36進数(8,16覗く) の変換は手動で実装しなければならない
+	*/
+
+	printf("dec2oct 138: %o",138);n();
+	printf("dec2hex 138: %x",138);nn();
+	// printf : 8進数,16進数に変換できる
+
+	sscanf("1575","%o",&scanned);
+	printf("oct2dec       1575: %u",scanned);n();
+	sscanf("37d","%x",&scanned);
+	printf("hex2dec        37d: %u",scanned);nn();
+	printf("hex2dec        37d: %lf",atof("0x37d"));nn();
+	/*
+		sscanf
+		• 8進数,16進数を unsigned int に変換できる
+		• 但し,変換前の桁数によっては %lo %llo %lx %llx に変換しなければならなかったりする。
+		• 又,値は適切な型の変数のポインタで受け取る必要がある
+		atof
+		• 先頭に 0x を付加すれば,16進数が変換できる
+		• 但し,返す値は double である。
+	*/
 
 	n();printf("符号");n(); // <stdlib.h>
 	printf("abs(+18) = %d",abs(+18));n();

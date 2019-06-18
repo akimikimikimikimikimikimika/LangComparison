@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
 
 		cout << "こんにちは。私の名前はC++。" << endl;
 		while (true) {
-			cout << "\r\n\r\n" << "何がしたい?" << "\r\n\r\n";
+			cout << endl << endl << "何がしたい?" << endl << endl;
 			cout << "1. 標準入出力を試す" << endl;
 			cout << "2. 色々な値を試す" << endl;
 			cout << "3. 演算子を試す" << endl;
@@ -51,7 +51,7 @@ int main(int argc, char *argv[]){
 			cout << endl;
 			cin >> action;
 			while(getchar()!='\n');
-			cout << "\r\n\r\n\r\n";
+			cout << endl << endl << endl;
 			if (action=="1") Stdinout();
 			else if (action=="2") Values();
 			else if (action=="3") Operators();
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
 			else if (action=="g") Thread();
 			else if (action=="h") ArgumentsDemo();
 			else if (action=="0") break;
-			else cout << "指定したアクションは見つかりませんでした" << "\r\n\r\n";
+			else cout << "指定したアクションは見つかりませんでした" << endl << endl;
 		}
 	}
 	else if (argc==2) {
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]){
 		else if (param=="Class") Class();
 		else if (param=="FileHandle") FileHandle();
 		else if (param=="Path") Path();
-		// else if (param=="Thread") Thread();
+		else if (param=="Thread") Thread();
 		else if (param=="Arguments") ArgumentsDemo();
 		else Arguments(argc,argv);
 	}

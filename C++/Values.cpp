@@ -13,14 +13,19 @@ void Values(){
 	wstring_convert<codecvt_utf8<wchar_t>,wchar_t> cv;
 
 	// プリミティブな値
-	bool boolean=false;
-	char character=67; // C
-	short shortInt=127; // 16 bit
-	int integer=127; // 16/32 bit
-	long longInt=127; // 32 bit
-	long long longLongInt=127; // 64 bit
-	float fl=3.14;
-	double db=3.14;
+	const bool boolean=false;
+	const char character=67; // C
+	const short shortInt=127; // 16 bit
+	const int integer=127; // 16/32 bit
+	const long longInt=127; // 32 bit
+	const long long longLongInt=127; // 64 bit
+	const unsigned short uShortInt=127; // 16 bit
+	const unsigned int uInteger=127; // 16/32 bit
+	const unsigned long uLongInt=127; // 32 bit
+	const unsigned long long uLongLongInt=127; // 64 bit
+	const float fl=3.14;
+	const double db=3.14;
+	const long double ldb=3.14;
 	char charArray[] = "シープラ";
 	string str="シープラ";
 	wstring wstr=L"シープラ";
@@ -33,12 +38,17 @@ void Values(){
 プリミティブ値" << "\n\
 bool:" << boolean << "\n\
 char:" << character << "\n\
-short int:" << shortInt << "\n\
+short:" << shortInt << "\n\
 int:" << integer << "\n\
-long int:" << longInt << "\n\
-long long int:" << longLongInt << "\n\
+long:" << longInt << "\n\
+long long:" << longLongInt << "\n\
+unsigned short:" << uShortInt << "\n\
+unsigned int:" << uInteger << "\n\
+unsigned long:" << uLongInt << "\n\
+unsigned long long:" << uLongLongInt << "\n\
 float:" << fl << "\n\
 double:" << db << "\n\
+long double:" << ldb << "\n\
 char *:" << charArray << "\n\
 " << "\n\
 配列" << "\n\

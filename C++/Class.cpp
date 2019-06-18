@@ -21,10 +21,10 @@ void Class() {
 	// 値の設定
 	vec3.x = 16;
 
-	cout << "\r\nこれからクラスを試します\r\n\r\n";
+	cout << endl << "これからクラスを試します" << endl << endl;
 
 	cout << "vec1: " << &vec1 << endl;
-	cout << "vec2: " << &vec2 << "\r\n\r\n";
+	cout << "vec2: " << &vec2 << endl << endl;
 
 	vec1.desc(text);
 	cout << "vec1の説明: " << text << endl;
@@ -33,11 +33,11 @@ void Class() {
 	vec3.desc(text);
 	cout << "vec3の説明: " << text << endl;
 	vec4.desc(text);
-	cout << "vec4の説明: " << text << "\r\n\r\n";
+	cout << "vec4の説明: " << text << endl << endl;
 
 	cout << "vec1のx座標: " << vec1.x << endl;
 	cout << "vec2のy座標: " << vec2.y << endl;
-	cout << "vec3のz座標: " << vec3.z << "\r\n\r\n";
+	cout << "vec3のz座標: " << vec3.z << endl << endl;
 
 	Vector::added(&vector,vec1,vec2);
 	Vector::added(&vector,vector,vec3);
@@ -48,7 +48,7 @@ void Class() {
 	cout << "vec4+vec2: " << text << endl;
 	vec2.coefMultiplied(&vector,12);
 	vector.desc(text);
-	cout << "vec2×12: " << text << "\r\n\r\n";
+	cout << "vec2×12: " << text << endl << endl;
 
 	vec2.dot(&scalar,vec3);
 	cout << "vec2∙vec3: " << scalar << endl;
@@ -56,7 +56,7 @@ void Class() {
 	vector.desc(text);
 	cout << "vec3×vec2: " << text << endl;
 	vec3.norm(&scalar);
-	cout << "|vec3|:    " << scalar << "\r\n\r\n";
+	cout << "|vec3|:    " << scalar << endl << endl;
 
 	Vector::describe(text);
 	cout << "説明してもらう1: " << text << endl;

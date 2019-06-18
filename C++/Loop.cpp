@@ -5,7 +5,7 @@
 using namespace std;
 
 void Loop(){
-	cout << endl << "これからループ処理を試します" << "\r\n\r\n";
+	cout << endl << "これからループ処理を試します" << endl << endl;
 
 	cout << endl << "for (n=0; n<3; n++) {…}" << endl;
 	for (int n=0;n<3;n++) cout << "n="+to_string(n)+"のループ" << endl;

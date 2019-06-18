@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cstdlib>
 #include <ctgmath>
 #include <random>
@@ -8,7 +9,7 @@ using namespace std;
 
 void Math(){
 
-	cout << "\r\nこれから数学演算を試します\r\n";
+	cout << endl << "これから数学演算を試します" << endl;
 	/*
 		多くの関数は std:: を介してアクセスするようになっている。
 		だが,本来は using namespace std; を記している(インクルードの後)ため,わざわざ std:: を記す必要はない。
@@ -26,20 +27,39 @@ void Math(){
 		ctgmath をインクルードした時点で, cmath と complex も自動的にインクルードされる。
 	*/
 
-	cout << "\r\n符号\r\n"; // <cstdlib>
+	// 進数変換するにあたって,C由来の関数を使用したい場合は,Cの項を参照すること。
+	cout << endl << "進数変換" << endl;
+	cout << "433045 = " << std::stoi("433045",nullptr,6) << " (6進数 → 10進数)" << endl; // <string>
+	/*
+		std::stoi
+		• 2~36 進数に変換可能
+		• 2つ目の引数は,数値変換完了時に1つ目の引数の末尾の位置を返すポインタを渡す。ヌルにすると,無視される。
+		• 3つ目の引数で0を指定すると,文字列先頭の"0"や"0x"の有無により形式を自動判別する。(8,10,16進数のみに対応)
+		• 返す値の型に合わせて,これも含め類似の関数が8種類ある
+			* stoi → int
+			* stol → long
+			* stoul → unsigned long
+			* stoll → long long
+			* stoull → unsigned long long
+			* stof → float
+			* stod → double
+			* stold → long double
+	*/
+
+	cout << endl << "符号" << endl; // <cstdlib>
 	cout << "abs(+18) = " << std::abs(+18) << endl;
 	cout << "abs(-18) = " << std::abs(-18) << endl;
 
-	cout << "\r\n除算\r\n"; // <cstdlib>
+	cout << endl << "除算" << endl; // <cstdlib>
 	cout << "div(24,5)\r\n";
 	cout << "  .quot = " << std::div(24,5).quot << endl; // 24/5
 	cout << "  .rem  = " << std::div(24,5).rem  << endl; // 24%5
 
-	cout << "\r\n定数\r\n"; // <ctgmath>
+	cout << endl << "定数" << endl; // <ctgmath>
 	cout << "π = " << M_PI << endl;
 	cout << "e = " << M_E  << endl;
 
-	cout << "\r\n数学関数\r\n"; // <ctgmath>
+	cout << endl << "数学関数" << endl; // <ctgmath>
 	cout << "pow(2,10)      = " << std::pow(2,10)      << endl;
 	cout << "sqrt(3)        = " << std::sqrt(3)        << endl;
 	cout << "cbrt(27)       = " << std::cbrt(27)       << endl;
@@ -64,13 +84,13 @@ void Math(){
 	cout << "tgamma(0.2865) = " << std::tgamma(0.2865) << endl; // Γ(0.287)
 	cout << "lgamma(0.0422) = " << std::lgamma(0.0422) << endl; // log(Γ(0.0422))
 
-	cout << "\r\n端数処理\r\n"; // <ctgmath>
+	cout << endl << "端数処理" << endl; // <ctgmath>
 	cout << "floor(-3.14) = " << std::floor(-3.14) << endl; // 小さい方の整数へ
 	cout << " ceil(-3.14) = " << std::ceil(-3.14)  << endl; // 大きい方の整数へ
 	cout << "trunc(-3.14) = " << std::trunc(-3.14) << endl; // 0に近い方の整数へ
 	cout << "round(-3.14) = " << std::round(-3.14) << endl;
 
-	cout << "\r\n乱数\r\n"; // <random>
+	cout << endl << "乱数" << endl; // <random>
 	std::random_device rnd; // 予測不能な乱数生成器rndを作成
 	cout << "random_device: " << rnd() << endl;
 	std::minstd_rand minstd; // 最小標準による擬似乱数生成器minstdを作成
