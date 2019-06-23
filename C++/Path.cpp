@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string>
+#include <cstring> // GCCはこれがないとcstringの機能は使えないみたい
 
 #define CD_SIZE 512
 

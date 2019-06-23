@@ -10,7 +10,7 @@ void RegExp(){
 
 
 	n();printf("文字検索");n();
-	char text[]="IllUsTrAtE";
+	char text[60]="IllUsTrAtE";
 	char *results;
 	printf("%s →",text);n();
 	results = strstr(text,"s");

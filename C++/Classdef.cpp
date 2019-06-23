@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring> // GCCはこれがないとcstringの機能は使えないみたい
 #include <cmath>
 
 #include "Classdef.hpp"

@@ -16,9 +16,8 @@ program myfortran
 
  integer::length,status
  character(:),allocatable::arg
- intrinsic::command_argument_count,get_command_argument
 
- character*10 action
+ character(10) action
 
  if (command_argument_count()==0) then
   print *
@@ -122,5 +121,5 @@ program myfortran
  else
   call Arguments()
  end if
- 
+
 end program myfortran

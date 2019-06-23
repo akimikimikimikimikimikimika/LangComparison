@@ -1,6 +1,6 @@
 subroutine Stdinout
 
- character*100 aboutYou
+ character(100) aboutYou
  print *
  print '("こんにちは,私の名前はFortran。")'
  print '("古い言語ですが,計算が素早く,今もなお科学計算で重宝されます。")'

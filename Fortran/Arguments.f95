@@ -1,8 +1,7 @@
 subroutine Arguments
 
  integer::i,length,status
- character(:),allocatable::arg
- intrinsic::command_argument_count,get_command_argument
+ character(:), allocatable::arg
 
  print *
  print '("このファイルを実行するにあたっての引数は以下の通りです:")'

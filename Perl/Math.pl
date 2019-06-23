@@ -60,6 +60,7 @@ cplxe(2,π/3)     = @{[   cplxe(2,pi/3)      ]}
 (3+4*i)->arg()   = @{[   (3+4*i)->arg()     ]}
 (3+4*i)->rho()   = @{[   (3+4*i)->rho()     ]}
 (3+4*i)->theta() = @{[   (3+4*i)->theta()   ]}
+
 Math
 =comment
    複素数型は成分毎に書き換え可能(mutable)

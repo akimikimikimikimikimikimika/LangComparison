@@ -1,10 +1,10 @@
 subroutine Math
 
- real*16 pi
- real*16 e
+ double precision pi
+ double precision e
 
- pi = acos(-1q0)
- e = exp(1q0)
+ pi = acos(-1d0)
+ e = exp(1d0)
 
  ! Fortranの数学関数は,入力値の精度によって出力値の精度が決定する
  ! ここでは4倍精度にしているので,戻り値も4倍精度になる。
@@ -34,20 +34,20 @@ subroutine Math
  print '("abs(-18) = ",i2)',abs(-18)
  print *
  print '("数学関数")'
- print '("sqrt(3q0)       = ",f35.33)',sqrt(3q0)
- print '("exp(1.145q0)    = ",f35.33)',exp(1.145q0)
- print '("log(23.14q0)    = ",f35.33)',log(23.14q0)
- print '("log10(1385q0)   = ",f35.33)',log10(1385q0)
- print '("sin(π/3)        = ",f35.33)',sin(pi/3q0)
- print '("cos(π/3)        = ",f35.33)',cos(pi/3q0)
- print '("tan(π/3)        = ",f35.33)',tan(pi/3q0)
- print '("asin(1q0)       = ",f35.33)',asin(1q0)
- print '("acos(0.5q0)     = ",f35.33)',acos(0.5q0)
- print '("atan(-1q0)      = ",f35.33)',atan(-1q0)
- print '("atan2(12q0,5q0) = ",f35.33)',atan2(12q0,5q0)
- print '("sinh(1.862q0)   = ",f35.33)',sinh(1.862q0)
- print '("cosh(1.811q0)   = ",f35.33)',cosh(1.811q0)
- print '("tanh(0.325q0)   = ",f35.33)',tanh(0.325q0)
+ print '("sqrt(3d0)       = ",f35.33)',sqrt(3d0)
+ print '("exp(1.145d0)    = ",f35.33)',exp(1.145d0)
+ print '("log(23.14d0)    = ",f35.33)',log(23.14d0)
+ print '("log10(1385d0)   = ",f35.33)',log10(1385d0)
+ print '("sin(π/3)        = ",f35.33)',sin(pi/3d0)
+ print '("cos(π/3)        = ",f35.33)',cos(pi/3d0)
+ print '("tan(π/3)        = ",f35.33)',tan(pi/3d0)
+ print '("asin(1d0)       = ",f35.33)',asin(1d0)
+ print '("acos(0.5d0)     = ",f35.33)',acos(0.5d0)
+ print '("atan(-1d0)      = ",f35.33)',atan(-1d0)
+ print '("atan2(12d0,5d0) = ",f35.33)',atan2(12d0,5d0)
+ print '("sinh(1.862d0)   = ",f35.33)',sinh(1.862d0)
+ print '("cosh(1.811d0)   = ",f35.33)',cosh(1.811d0)
+ print '("tanh(0.325d0)   = ",f35.33)',tanh(0.325d0)
  print *
  print '("複素数")'
  print '("aimag((3d0,4d0)) = ",f3.1)',aimag((3d0,4d0))

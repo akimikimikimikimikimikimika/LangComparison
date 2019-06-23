@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// defineマクロにより定数を表現できる
 #define someConst 42
 #define maximum(a,b) (a<b?b:a)
 
