@@ -39,6 +39,7 @@ int main(int argc, char *argv[]){
 			cout << "4. 条件分岐を試す" << endl;
 			cout << "5. 繰り返しを試す" << endl;
 			cout << "6. 数学的演算を試す" << endl;
+			cout << "8. 文字列フォーマットを試す" << endl;
 			cout << "9. 正規表現を試す" << endl;
 			cout << "a. 日付と時刻を試す" << endl;
 			cout << "b. クラスを試す" << endl;
@@ -58,6 +59,7 @@ int main(int argc, char *argv[]){
 			else if (action=="4") Condition();
 			else if (action=="5") Loop();
 			else if (action=="6") Math();
+			else if (action=="8") Sprintf();
 			else if (action=="9") RegExp();
 			else if (action=="a") DateTime();
 			else if (action=="b") Class();
@@ -77,6 +79,7 @@ int main(int argc, char *argv[]){
 		else if (param=="Condition") Condition();
 		else if (param=="Loop") Loop();
 		else if (param=="Math") Math();
+		else if (param=="Sprintf") Sprintf();
 		else if (param=="RegExp") RegExp();
 		else if (param=="DateTime") DateTime();
 		else if (param=="Class") Class();

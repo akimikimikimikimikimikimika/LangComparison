@@ -5,6 +5,7 @@
 using namespace std;
 
 void Loop(){
+
 	cout << endl << "これからループ処理を試します" << endl << endl;
 
 	cout << endl << "for (n=0; n<3; n++) {…}" << endl;
@@ -23,4 +24,7 @@ void Loop(){
 		str+="+";
 		cout << str << endl;
 	} while (str.length()<6);
+
+	cout << endl << endl;
+
 }

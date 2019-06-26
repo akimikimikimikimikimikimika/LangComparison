@@ -67,6 +67,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 	* C, C++ のコンパイラとして GCC/Clang は標準でインストール済。(LinuxはGCC) コンパイラとしてIntel C++ Compilerなどが必要な場合は別途入手する。
 	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
 	* 基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。
+	* PowerShellは [GitHub上の同リポジトリ](https://github.com/PowerShell/PowerShell "PowerShell") から入手可能。
 	* Linuxの場合,パッケージ等でRubyをインストールすれば,Homebrewが使えたりする。(Linuxbrew)
 
 ## 実行方法

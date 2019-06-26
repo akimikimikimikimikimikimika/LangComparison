@@ -99,6 +99,8 @@ void FileHandle() {
 	if (remove("Package/Module")==-1) error(); // 成功すれば0,失敗すれば-1
 		// remove : <stdio.h>
 
+	cout << endl << endl;
+	
 }
 
 void error() {

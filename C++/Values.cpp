@@ -66,6 +66,8 @@ wstring:" << cv.to_bytes(wstr) << " #include <string>" << "\n\
 マクロ関数:" << maximum(6,3) << "\n\
 ";
 
+	cout << endl << endl;
+
 }
 /*
 	変数: int x

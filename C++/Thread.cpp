@@ -24,4 +24,6 @@ void Thread(){
 	for (std::thread &onethread : threads) onethread.join();
 	cout << "スレッドは終了しました" << endl;
 
+	cout << endl << endl;
+
 }

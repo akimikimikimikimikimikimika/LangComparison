@@ -8,6 +8,7 @@
 		void Condition();
 		void Loop();
 		void Math();
+		void Sprintf();
 		void RegExp();
 		void DateTime();
 		void Class();

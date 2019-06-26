@@ -19,4 +19,6 @@ void Path() {
 	cout << "ホームディレクトリ:       " << home << endl;
 	cout << "カレントディレクトリ:     " << cd << endl;
 
+	cout << endl << endl;
+	
 }

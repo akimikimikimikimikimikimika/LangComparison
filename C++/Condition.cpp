@@ -49,4 +49,7 @@ void Condition(){
 			cout << to_string(val)+"は素数である" << endl;
 			break;
 	}
+
+	cout << endl << endl;
+	
 }

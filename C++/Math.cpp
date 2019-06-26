@@ -100,4 +100,6 @@ void Math(){
 	mt.seed(rnd());
 	cout << "mt19937_64: " << mt() << endl;
 
+	cout << endl << endl;
+
 }
