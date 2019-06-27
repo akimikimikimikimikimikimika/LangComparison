@@ -59,7 +59,7 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - Windows
 	* PowerShell は標準でインストール済。
 	* Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードするか,Chocolateyなどのパッケージマネージャを利用する。
-	* C++ のコンパイルには Visual C++ が必要らしい。Visual Studioから使うと思われる。GCCやIntel C++ Compilerなどが必要な場合は別途入手する。
+	* C++ のコンパイルには Visual C++ が必要らしい。Visual Studioをインストールすることで利用可能になるという。GCCやIntel C++ Compilerなどが必要な場合は別途入手する。
 	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
 
 - Unix系OS (macOS除く)
@@ -183,24 +183,47 @@ cd LangComparison
 	# 実行
 	Fortran/bin
 	```
-- C  
-	以下の例は,Clangコンパイラを使う例 (GCCなら clang を gcc に置き換える)
-	```sh
-	# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-	(cd C ; clang *.c -o bin -std=c17 -O3)
+- C
+	* Unix系OS
+		以下の例は, Clang を使う例 (GCCなら clang を gcc に置き換える)
+		```sh
+		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
+		(cd C ; clang *.c -o bin -std=c17 -O3)
 
-	# 実行
-	C/bin
-	```
-- C++  
-	以下の例は,Clangコンパイラを使う例 (GCCなら clang++ を g++ に置き換える)
-	```sh
-	# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
-	(cd C++ ; clang++ *.cpp -o bin -std=c++17 -O3)
+		# 実行
+		C/bin
+		```
+	* Windows
+		以下の例は, Visual C++ を使う例
+		```PowerShell
+		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
+		Set-Location -Path C
+		cl /nologo /TC /O2 /Fe:bin.exe *.c
 
-	# 実行
-	C++/bin
-	```
+		# 実行
+		C\bin
+		```
+
+- C++
+	* Unix系OS
+		以下の例は, Clang を使う例 (GCCなら clang++ を g++ に置き換える)
+		```sh
+		# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
+		(cd C++ ; clang++ *.cpp -o bin -std=c++17 -O3)
+
+		# 実行
+		C++/bin
+		```
+	* Windows
+		以下の例は, Visual C++ を使う例
+		```PowerShell
+		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
+		Set-Location -Path C++
+		cl /nologo /TP /O2 /Fe:bin.exe *.cpp
+
+		# 実行
+		C++\bin
+		```
 - Objective-C  
 	以下の例は,Clangコンパイラを使う例
 	```sh
