@@ -64,6 +64,10 @@ log(23.14) = `echo "l(23.14)" | bc -l`
 sin(π/3)   = `echo "s($pi/3)" | bc -l`
 cos(π/3)   = `echo "c($pi/3)" | bc -l`
 atan(1)    = `echo "a(1)" | bc -l`
+
+乱数
+\$RANDOM = $RANDOM
 """
+# $RANDOM は実行する度に違う値が返される変数である。bashなどで対応している
 
 printf "\r\n\r\n"

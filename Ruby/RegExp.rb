@@ -8,6 +8,15 @@ print "#{text} →\r\n";
 print "\r\n検索\r\n";
 found=text.scan(/the ([a-z]+) ([a-z]+) fox/i);
 print "str.scan:\r\n#{found}\r\n";
+=begin
+	str.scan は複数のマッチした部分を配列形式で返す。
+	e.g. "<b></b><i></i><u></u><s></s>".scan(/<[a-z]>/) → ["<b>","<i>","<u>","<s>"]
+	正規表現内に括弧が含まれている場合と含まれていない場合で挙動が異なる
+	• 括弧なし → 正規表現にマッチしたテキスト全体の配列
+	• 括弧あり → 正規表現にマッチした部分の各々で,括弧の部分のみを抜き出して並べてできた配列による配列 (二次元配列)
+		e.g. '<b title="bold"><i title="italic"><u title="underline"><s title="strike">'.scan(/<([a-z]) title="([a-z]+)">/)
+			→ [["b","bold"],["i","italic"],["u","underline"],["s","strike"]]
+=end
 
 print "\r\nマッチの確認\r\n";
 if test1 =~ /fox jumps/i then
