@@ -11,7 +11,7 @@ for (n in cs) log+=`c="${cs[n]}" のループ (${n}番目の要素)\r\n`;
 log+="\r\narray.forEach((c,n)=>{…});\r\n";
 cs.forEach((c,n)=>{
 	log+=`c="${c}" のループ (${n}番目の要素)\r\n`
-});
+}); // 詳しくは, Array.js でも取り扱う
 
 log+="\r\nwhile (~) {…}\r\n";
 var str="";

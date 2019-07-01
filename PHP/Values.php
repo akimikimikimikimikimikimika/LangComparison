@@ -25,8 +25,10 @@ $boolean = TRUE;
 $null = NULL;
 # 配列
 $array1 = array(1,"second",3,3.14,false);
+$array2 = [1,"second",3,3.14,false]; # 新しいPHPでは,このような短縮記法が利用可能である (≥5.4)
 # 連想配列
-$array2 = array("a"=>1,"b"=>"second","c"=>3,"d"=>3.14,"e"=>false);
+$array3 = array("a"=>1,"b"=>"second","c"=>3,"d"=>3.14,"e"=>false);
+$array4 = ["a"=>1,"b"=>"second","c"=>3,"d"=>3.14,"e"=>false];
 # 範囲
 $ranI = range(5,8); # 5≦x≦8
 # 関数
@@ -56,7 +58,7 @@ $lines
    2番目:$array1[2]
    大きさ:{$i(count($array1))}
 連想配列:
-   b= {$array2["b"]}
+   b= {$array3["b"]}
    大きさ: {$i(count($array2))}
 Values;
 

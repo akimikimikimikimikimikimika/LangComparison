@@ -9,7 +9,7 @@ for ($n=0;$n<3;$n++) {
 }
 
 print "\r\nforeach (array as \$c) {…}\r\n";
-$cs=array("壱","弐","参");
+$cs=["壱","弐","参"];
 foreach ($cs as $c) {
 	print "c=\"${c}\" のループ\r\n";
 }

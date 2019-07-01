@@ -23,7 +23,7 @@ class mtThread extends Thread {
 
 }
 
-$threads=array();
+$threads=[];
 
 for ($m=1;$m<10;$m++) {
 	array_push($threads,new mtThread($m));

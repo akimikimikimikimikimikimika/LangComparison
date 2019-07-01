@@ -28,12 +28,12 @@ print <<<"Operators"
 24<=> 5 = {$i(    5<=>24   )}
 
 論理演算子
-1 and 0 = {$i(   1 and 0   )}
-1  && 0 = {$i(   1  && 0   )}
-1  or 0 = {$i(   1  or 0   )}
-1  || 0 = {$i(   1  || 0   )}
-1 xor 0 = {$i(   1 xor 0   )}
-    ! 0 = {$i(       ! 0   )}
+true and false = {$i(   true and false   )}
+true  && false = {$i(   true  && false   )}
+true  or false = {$i(   true  or false   )}
+true  || false = {$i(   true  || false   )}
+true xor false = {$i(   true xor false   )}
+       ! false = {$i(          ! false   )}
 
 ビット演算子 (2進数での各桁毎の論理演算)
 0b1010 & 0b1001 = 0b{$i(sprintf("%04b",   bindec("1010") & bindec("1001")   ))} (AND)
@@ -45,8 +45,8 @@ print <<<"Operators"
 0b00111111 >> 2 = 0b{$i(sprintf("%08b",   bindec("00111111") >> 2   ))} (2桁右シフト)
 
 三項演算子
-1 ? "yes" : "no" = "{$i(   1 ? "yes" : "no"   )}"
-0 ? "yes" : "no" = "{$i(   0 ? "yes" : "no"   )}"
+ true ? "yes" : "no" = "{$i(    true ? "yes" : "no"   )}"
+false ? "yes" : "no" = "{$i(   false ? "yes" : "no"   )}"
 
 文字列演算子
 "abc" . "def" = "{$i(   "abc" . "def"   )}"
@@ -61,8 +61,8 @@ print <<<"Operators"
 "abc" <=> "def" = {$i(   "abc" <=> "def"   )} (辞書順で "abc"<=>"def" を演算)
 
 配列演算子
-(1,2,3) == (1,2,3)  = {$i(   array(1,2,3) == array(1,2,3)   )}
-(1,2) <=> (1,2,3)   = {$i(   array(1,2) <=> array(1,2,3)    )}
+[1,2,3] == [1,2,3]  = {$i(   [1,2,3] == [1,2,3]   )}
+[1,2] <=> [1,2,3]   = {$i(   [1,2] <=> [1,2,3]    )}
 
 厳密な等号 (型の違いも判定)
 3  == "3" = {$i(   3  == "3"   )} (寛容な等号)

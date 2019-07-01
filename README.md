@@ -131,7 +131,7 @@ cd LangComparison
 - JavaScript  
 	JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。
 	又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。
-	但し,当リポジトリにはWebブラウザ上でないと実行できないコードもあるので,注意する必要がある。
+	但し,当リポジトリにはWebブラウザ上でないと実行できないコードや,Node.js上でないと実行できないコードもあるので,注意する必要がある。
 	```sh
 	# Stdinout.js を実行する例
 	node JavaScript/Stdinout.js
