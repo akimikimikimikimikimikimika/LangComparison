@@ -184,7 +184,7 @@ cd LangComparison
 	Fortran/bin
 	```
 - C
-	* Unix系OS
+	* Unix系OS  
 		以下の例は, Clang を使う例 (GCCなら clang を gcc に置き換える)
 		```sh
 		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
@@ -193,7 +193,7 @@ cd LangComparison
 		# 実行
 		C/bin
 		```
-	* Windows
+	* Windows  
 		以下の例は, Visual C++ を使う例
 		```PowerShell
 		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
@@ -205,7 +205,7 @@ cd LangComparison
 		```
 
 - C++
-	* Unix系OS
+	* Unix系OS  
 		以下の例は, Clang を使う例 (GCCなら clang++ を g++ に置き換える)
 		```sh
 		# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
@@ -214,7 +214,7 @@ cd LangComparison
 		# 実行
 		C++/bin
 		```
-	* Windows
+	* Windows  
 		以下の例は, Visual C++ を使う例
 		```PowerShell
 		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
