@@ -15,10 +15,24 @@ var results=regexp.matches(in: text, range: NSMakeRange(0, text.count))
 		マッチする箇所を全て発見 → [NSTextCheckingResult]
 		※ 最初の1箇所だけでよいなら regexp.firstMatch(in:,range:) -> NSTextCheckingResult
 	*/
-var found=results.map({ (v:NSTextCheckingResult) -> String in
-	(text as NSString).substring(with: v.range)
+var found=results.map({ (v:NSTextCheckingResult) -> [String] in
+	var res:[String]=[]
+	let txt=text as NSString
+	for n in 0..<v.numberOfRanges {
+		res.append(txt.substring(with: v.range(at: n)))
+	}
+	return res
 })
-	// map により [NSTextCheckingResult] を対応する箇所を切り抜いた [String] に変換
+	/*
+		map により [NSTextCheckingResult] を対応する箇所を切り抜いた [[String]] に変換
+		NSTextChekingResult
+		.numberOfRanges : マッチした範囲の数
+		.range(at: n) : n番目のマッチした範囲
+			n=0 : 正規表現全体にマッチしたテキストの範囲
+			n=1,2... : 正規表現中の括弧にマッチしたテキストの範囲
+		.range = .range(at: 0) // .rangeは0番目の結果に等しい
+		n番目の範囲を得て,その範囲の文字列を取り出す
+	*/
 print(found)
 
 print("\r\nマッチの確認")
@@ -39,7 +53,11 @@ else {
 }
 
 print("\r\n置換")
-let replaced=text.replacingOccurrences(of: "(?i)([a-z]+)o([a-z]+)", with: "« $1ö$2 »", options: .regularExpression, range: text.range(of: text))
+// 正規表現を使わない置換
+var replaced=text.replacingOccurrences(of: "Jump", with:"Skip")
+print(replaced)
+// 正規表現を使う置換
+replaced=text.replacingOccurrences(of: "(?i)([a-z]+)o([a-z]+)", with: "« $1ö$2 »", options: .regularExpression, range: text.range(of: text))
 print(replaced)
 /*
 	或いは,RegExpを使った次の方法もある

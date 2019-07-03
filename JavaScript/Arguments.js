@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
 /*
-	このファイルに書かれている内容は Node.js のファイルシステムの内容であり, Filesystem API とは異なる。
-	Web上ではテストできない内容である。
+	このファイルに書かれている内容は Node.js のプロセスの内容である。
+	Web上ではテストできない。
 */
 
 const process = require("process");
