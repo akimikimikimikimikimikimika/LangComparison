@@ -14,6 +14,7 @@ print "str.scan:\r\n#{found}\r\n";
 	正規表現内に括弧が含まれている場合と含まれていない場合で挙動が異なる
 	• 括弧なし → 正規表現にマッチしたテキスト全体の配列
 	• 括弧あり → 正規表現にマッチした部分の各々で,括弧の部分のみを抜き出して並べてできた配列による配列 (二次元配列)
+		※ 括弧がある場合,マッチしたテキスト全体は得られない
 		e.g. '<b title="bold"><i title="italic"><u title="underline"><s title="strike">'.scan(/<([a-z]) title="([a-z]+)">/)
 			→ [["b","bold"],["i","italic"],["u","underline"],["s","strike"]]
 =end

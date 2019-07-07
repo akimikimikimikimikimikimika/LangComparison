@@ -1,0 +1,152 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Swift",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/Swift-compiling\" ; swiftc -o bin *.swift)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "C++",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/C++\" ; clang++ *.cpp -o bin -std=c++17 -O3)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/C++\" ; g++ *.cpp -o bin -std=c++17 -O3)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "C",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/C\" ; clang *.c -o bin -std=c17 -O3)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/C\" ; gcc *.c -o bin -std=c17 -O3)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "Fortran",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/Fortran\" ; gfortran *.f95 -o bin -fopenmp -O3)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/Fortran\" ; gfortran *.f95 -o bin -fopenmp -O3)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "Go",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/Go\" ; go build -o bin *.go)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/Go\" ; go build -o bin *.go)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "Java",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/Java\" ; javac *.java ; zip -9q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/Java\" ; javac *.java ; zip -9q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "Kotlin",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/Kotlin-compiling\" ; kotlinc -include-runtime -d bin.jar *.kt)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/Kotlin-compiling\" ; kotlinc -include-runtime -d bin.jar *.kt)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "Objective-C",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/Objective-C\" ; clang *.h *.m -o bin -ObjC -framework Foundation -O3)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		},
+		{
+			"label": "C#",
+			"type": "shell",
+			"osx": {
+				"command": "(cd \"${workspaceRoot}/C#\" ; mcs *.cs -out:bin.exe)"
+			},
+			"linux": {
+				"command": "(cd \"${workspaceRoot}/C#\" ; mcs *.cs -out:bin.exe)"
+			},
+			"problemMatcher": [],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent",
+				"showReuseMessage": false,
+				"clear": false
+			}
+		}
+	]
+}

@@ -16,7 +16,7 @@ print "> Blankという空ファイルを作成\r\n";
 io=File.open("Blank","w");
 	# 既にBlankが存在していたら内容が削除される
 	# 削除したくない場合は,"w"を"r"や"a"にする
-io.close();
+io.close;
 
 print "> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成\r\n\r\n";
 File.symlink("Blank","Empty/Symlink"); # 或いは FileUtils.ln_s
@@ -46,14 +46,14 @@ FileUtils.mv("Untitled.md","Package/Headers.md"); # 或いはFile.rename
 print "> Markdownファイルに追記\r\n\r\n";
 io=File.open("Package/Headers.md","a");
 io.write("\r\n## Header 2\r\n### Header 3");
-io.close();
+io.close;
 
 # 読込み
 
 print "> Markdownファイルを読込み\r\n\r\n";
 io=File.open("Package/Headers.md","r");
 print io.read;
-io.close();
+io.close;
 print "\r\n\r\n";
 
 # 再帰的にフォルダ作成
