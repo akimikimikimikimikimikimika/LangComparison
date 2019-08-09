@@ -17,8 +17,10 @@ Scala-compiling
 Groovy-compiling
 Swift-compiling/bin
 Haskell
+Haskell-compiling
 Build
 Manage
+.vscode/settings.json
 
 Perl/Module.pl
 Modules

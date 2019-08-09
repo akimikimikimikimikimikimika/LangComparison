@@ -11,7 +11,6 @@ using namespace std;
 #define maximum(a,b) (a<b?b:a)
 
 void Values(){
-	wstring_convert<codecvt_utf8<wchar_t>,wchar_t> cv;
 
 	// プリミティブな値
 	const bool boolean=false;
@@ -58,8 +57,6 @@ double [] = " << dblArr << "\n\
 オブジェクト" << "\n\
 string:" << str << " #include <string>" << "\n\
    大きさ:" << str.length() << "\n\
-wstring:" << cv.to_bytes(wstr) << " #include <string>" << "\n\
-   大きさ:" << wstr.length() << "\n\
 " << "\n\
 #defineから" << "\n\
 定数:" << someConst << "\n\

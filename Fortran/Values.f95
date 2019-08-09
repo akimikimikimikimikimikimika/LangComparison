@@ -34,13 +34,13 @@ subroutine Values
  int = 6
  float = 0.0375e-6
  double = 0.0375d-6
- real4 = 1.25e-8 ! 単精度の指数表記
- real8 = 1.25d-8 ! 倍精度の指数表記
+ ! real4 = 1.25e-8 ! 単精度の指数表記
+ ! real8 = 1.25d-8 ! 倍精度の指数表記
  ! real16 = 1.25q-8 : 4倍精度の指数表記
  comfl = (3.0,1.0) ! (実部,虚部)
  comdb = (3.0,1.0)
- comp8 = (3e0,1e0)
- comp16 = (3d0,3d0)
+ ! comp8 = (3e0,1e0)
+ ! comp16 = (3d0,3d0)
  ! comp32 = (3q0,3q0)
  bool = .true.
  ! Fortranは大文字/小文字を区別しないので, .true. = .TRUE. で .false. = .FALSE. である。
@@ -55,12 +55,10 @@ subroutine Values
  print '("  実長さ: ",i2)',len(str)
  print '("整数: ",i1,",",i2,",",i3)',int,func(int),int2
  print '("実数: ")'
- print '(" ",e10.3)',float
- print '(" ",e10.3)',double
- print '(" ",e12.6)',real4
- print '(" ",e21.15)',real8
+ print '(" ",f10.3)',float
+ print '(" ",e10.3)',double ! fは浮動小数表記,eは指数表記
  print '("複素数: ")' ! 複素数のフォーマットは2つの実数を並べたのに等しい
- print '(" (",f3.1,",",f3.1,")")',comfl
+ print '(" (",e7.1,",",e7.1,")")',comfl
  print '(" (",f3.1,",",f3.1,")")',comdb
  print *,"真偽値: ",bool
  print *,"アドレス: ",loc(bool)

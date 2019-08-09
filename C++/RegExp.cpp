@@ -19,18 +19,24 @@ void RegExp(){
 	*/
 	if (regex_search(text,found,regex("the ([a-z]+) ([a-z]+) fox",regex_constants::icase))) {
 		cout << "マッチ:" << found.str() << " (" << found.position() << "から" << found.length() << "文字)" << endl;
+		cout << "サブマッチ:" << endl;
+		for (int n=0;n<3;n++) {
+			cout << found[n].str() << " (" << found[n].length() << "文字)" << endl;
+		}
 	}
 	else {cout << "マッチしていません";}
 
 	cout << endl << "マッチの確認" << endl;
 	regex re=regex("fox jumps",regex::icase);
-	if (regex_search(text,re)) { // 部分一致を含む
+	// 部分一致を含む
+	if (regex_search(text,re)) {
 		cout << "狐が飛んでいます" << endl;
 	}
 	else {
 		cout << "狐は飛んでいません" << endl;
 	}
-	if (regex_match(text,re)) { // 完全一致のみ検索
+	// 完全一致のみ検索
+	if (regex_match(text,re)) {
 		cout << "ただそれだけです" << endl;
 	}
 	else {

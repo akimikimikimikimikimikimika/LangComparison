@@ -4,7 +4,6 @@ echo
 echo "このファイルを実行するにあたっての引数は以下の通りです:"
 echo
 echo
-args="$@"
 n=1
 for s in "$@" ; do
 	echo " $n: ""$s"

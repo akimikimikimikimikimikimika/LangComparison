@@ -35,7 +35,7 @@ subroutine argumentsDemo
  print '(" 2: ")'
  print '(" 3: コマンドラインに以下のように入力して実行します")'
  print '(" 4: ")'
- print '(" 5: Fortran/Build 引数1 引数2…")'
+ print '(" 5: Fortran/bin 引数1 引数2…")'
  print '(" 6: ")'
  print '(" 7: すると,引数1,引数2…が順に出力されます")'
  print '(" 8: ")'

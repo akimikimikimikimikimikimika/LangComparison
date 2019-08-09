@@ -57,7 +57,7 @@ void Sprintf(){
 
 	cout << endl << "精度" << endl;
 	cout << "     fixed<<setprecision(5)<<0.018 : " <<      fixed << setprecision(5) << 0.018 << endl; // %.5f
-	cout << "scientific<<setprecision(5)<<0.018 : " << scientific << setprecision(5) << 0.018 << endl; // %.5f
+	cout << "scientific<<setprecision(5)<<0.018 : " << scientific << setprecision(5) << 0.018 << endl; // %.5e
 	cout.flags(savedFlags);
 
 	cout << endl << "0埋め" << endl;

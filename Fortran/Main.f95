@@ -34,6 +34,7 @@ program myfortran
    print '("4. 条件分岐を試す")'
    print '("5. 繰り返しを試す")'
    print '("6. 数学演算を試す")'
+   print '("a. 日付と時刻を試す")'
    print '("b. クラスを試す")'
    print '("d. ファイル操作を試す")'
    print '("e. ファイルパスを試す")'
@@ -61,6 +62,8 @@ program myfortran
     call Loop()
    else if (action=="6") then
     call Math()
+   else if (action=="a") then
+    call DateTime()
    else if (action=="b") then
     call Class()
    else if (action=="d") then
@@ -96,6 +99,8 @@ program myfortran
      call Loop()
     else if (arg=="Math") then
      call Math()
+    else if (arg=="DateTime") then
+     call DateTime()
     else if (arg=="Class") then
      call Class()
     else if (arg=="File") then

@@ -6,7 +6,7 @@
 
 /*
 	C++のコンパイル
-		(cd C++ ; clang++ -std=c++17 -pthread -o bin *.cpp)
+		(cd C++ ; clang++ -std=c++2a -o bin *.cpp)
 
 	※ これはClangでコンパイルする例。GCCを用いる場合は,適宜 clang++ を g++ に置き換えて使用する。
 	これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。
@@ -83,7 +83,7 @@ int main(int argc, char *argv[]){
 		else if (param=="RegExp") RegExp();
 		else if (param=="DateTime") DateTime();
 		else if (param=="Class") Class();
-		else if (param=="FileHandle") FileHandle();
+		else if (param=="File") FileHandle();
 		else if (param=="Path") Path();
 		else if (param=="Thread") Thread();
 		else if (param=="Arguments") ArgumentsDemo();

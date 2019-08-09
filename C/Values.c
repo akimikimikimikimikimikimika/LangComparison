@@ -3,7 +3,29 @@
 
 void Values(){
 	const char character=67; // C
-	const char string[]="シー"; // C
+	const char string1[]="シー";
+	const char string2[10]="シー";
+	const char *string3="シー";
+		/*
+			char str[]
+				• 文字配列
+				• 変数宣言時の文字列のサイズでメモリを確保
+				• 代入が可能
+					str = "newstring" や str[1] = 'e'
+				• 関数の戻り値としては使用不可 (変数宣言した関数内で変数の寿命が切れる)
+			char str[10]
+				• 文字配列
+				• 指定した数値のサイズでメモリを確保
+				• 代入が可能
+					str = "newstring" や str[1] = 'e'
+				• 関数の戻り値としては使用不可 (変数宣言した関数内で変数の寿命が切れる)
+			char* str
+				• ポインタ
+				• 変数宣言時の文字列のサイズでメモリを確保
+				• 代入はできない
+					だから,極力 const char* とすべきである
+				• 関数の戻り値としては使用不可 (変数宣言した関数内で変数の寿命が切れる)
+		*/
 	const short shortInt=127; // 16 bit
 	const int integer=127; // 16/32 bit
 	const long longInt=127; // 32 bit
@@ -19,7 +41,9 @@ void Values(){
 	n();printf("色々な値を試します");n();
 	n();printf("プリミティブ値");n();
 	printf("char: %c",character);n();
-	printf("char[]: %s",string);n();
+	printf("char[]: %s",string1);n();
+	printf("char[10]: %s",string2);n();
+	printf("char*: %s",string3);n();
 	printf("short: %d",shortInt);n();
 	printf("int: %d",integer);n();
 	printf("long: %ld",longInt);n();
