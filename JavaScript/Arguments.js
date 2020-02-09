@@ -1,10 +1,5 @@
 #! /usr/bin/env node
 
-/*
-	このファイルに書かれている内容は Node.js のプロセスの内容である。
-	Web上ではテストできない。
-*/
-
 const process = require("process");
 
 // 引数は1番目から (0番目はNode.jsのパス,1番目はこのファイルを呼ぶパス)

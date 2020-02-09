@@ -1,1 +1,1 @@
-/Users/Akimi/Git/LangComparison/Rust/Math.rs
+../Math.rs

@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 // 基本操作用の配列
 let array=[2,5,4,6,1,3];
 

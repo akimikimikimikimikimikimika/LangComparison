@@ -14,7 +14,7 @@ void Path() {
 	memset(cd, '\0', CD_SIZE);
 	getcwd(cd, CD_SIZE);
 
-	printf("ホームディレクトリ:       %s",home);n();
-	printf("カレントディレクトリ:     %s",cd);n();
+	printf("ホームディレクトリ:       %s",home);nr(1);
+	printf("カレントディレクトリ:     %s",cd);nr(1);
 
 }

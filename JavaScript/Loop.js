@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 var log = "\r\nこれからループ処理を試します\r\n\r\n";
 

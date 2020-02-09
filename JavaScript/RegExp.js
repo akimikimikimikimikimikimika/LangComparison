@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 var log="\r\nこれから正規表現を試します\r\n\r\n";
 

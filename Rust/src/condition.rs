@@ -1,1 +1,1 @@
-/Users/Akimi/Git/LangComparison/Rust/Condition.rs
+../Condition.rs

@@ -116,7 +116,7 @@ print io <<"Perl Script";
 
 print "Hello world!";
 Perl Script
-close(io5);
+close(io);
 
 print "> このファイルに対する現在の状態を確認\r\n";
 &check("Package/Perl.pl");

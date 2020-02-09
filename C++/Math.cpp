@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
 #include <ctgmath>
 #include <random>
 #include "Header.hpp"
@@ -46,7 +45,7 @@ void Math(){
 			* stold → long double
 	*/
 
-	cout << endl << "符号" << endl; // <cstdlib>
+	cout << endl << "符号" << endl; // <cmath>
 	cout << "abs(+18) = " << std::abs(+18) << endl;
 	cout << "abs(-18) = " << std::abs(-18) << endl;
 
@@ -83,6 +82,14 @@ void Math(){
 	cout << "tanh(0.325)    = " << std::tanh(0.325)    << endl;
 	cout << "tgamma(0.2865) = " << std::tgamma(0.2865) << endl; // Γ(0.287)
 	cout << "lgamma(0.0422) = " << std::lgamma(0.0422) << endl; // log(Γ(0.0422))
+
+	cout << endl << "複素数" << endl; // <complex>
+	cout << "     3.0+4.0i  = " << 3.0+4.0i << endl;
+	cout << " abs(3.0+4.0i) = " <<  abs(3.0+4.0i) << endl;
+	cout << " arg(3.0+4.0i) = " <<  arg(3.0+4.0i) << endl;
+	cout << "real(3.0+4.0i) = " << real(3.0+4.0i) << endl;
+	cout << "imag(3.0+4.0i) = " << imag(3.0+4.0i) << endl;
+	cout << "conj(3.0+4.0i) = " << conj(3.0+4.0i) << endl;
 
 	cout << endl << "端数処理" << endl; // <ctgmath>
 	cout << "floor(-3.14) = " << std::floor(-3.14) << endl; // 小さい方の整数へ

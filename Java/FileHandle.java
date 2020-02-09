@@ -100,6 +100,8 @@ public class FileHandle {
 
 		println("> Markdownファイルに追記\r\n");
 		Files.write(path("Package/Headers.md"), Arrays.asList("## Header 2\r\n### Header 3"), StandardOpenOption.APPEND);
+			// APPEND の代わりに WRITE を使用すれば,先頭から上書きされる
+			// 但し, WRITE を使用する際には TRUNCATE_EXISTING も指定しないと単に上書きするだけで,前の内容が残る可能性がある。
 
 		// 読込み
 

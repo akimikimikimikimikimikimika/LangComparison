@@ -6,8 +6,12 @@
 
 using namespace std;
 
-// defineマクロにより定数を表現できる
+// defineマクロはコンパイル時にソースコード内に埋め込まれる
+
+// ソースコード中の someConst が42に置き換えられた上でコンパイルされる
 #define someConst 42
+
+// ソースコード中の maximum(6,3) が a=6 b=3 として代入されてコンパイルされる
 #define maximum(a,b) (a<b?b:a)
 
 void Values(){

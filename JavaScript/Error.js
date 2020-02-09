@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 var log = "\r\nこれから例外処理を試します\r\n\r\n";
 

@@ -2,10 +2,9 @@
 // Swift
 
 /*
+	Swiftのコンパイル: make swiftc-build
 	こちらは,コンパイルして利用するSwiftコードです。同じ内容でスクリプト言語のように利用できるSwiftコードも用意しています。
-
-	Swiftのコンパイル
-		(cd Swift-compiling ; swiftc -o bin *.swift)
+	全て小文字の main.swift というファイルをエントリポイントにする必要があるみたいです
 */
 
 import Foundation
@@ -44,63 +43,25 @@ if args.count==1 {
 		""")
 		let action:String = readLine()!
 		print("\r\n\r\n\r\n")
-		if action=="0" {
-			break
-		}
-		else if action=="1" {
-			Stdinout()
-		}
-		else if action=="2" {
-			Values()
-		}
-		else if action=="3" {
-			Operators()
-		}
-		else if action=="4" {
-			Condition()
-		}
-		else if action=="5" {
-			Loop()
-		}
-		else if action=="6" {
-			Math()
-		}
-		else if action=="7" {
-			StringType()
-		}
-		else if action=="8" {
-			Sprintf()
-		}
-		else if action=="9" {
-			RegExp()
-		}
-		else if action=="a" {
-			DateTime()
-		}
-		else if action=="b" {
-			Class()
-		}
-		else if action=="c" {
-			ErrorHandle()
-		}
-		else if action=="d" {
-			File()
-		}
-		else if action=="e" {
-			Path()
-		}
-		else if action=="f" {
-			ProcessHandle()
-		}
-		else if action=="g" {
-			Threading()
-		}
-		else if action=="h" {
-			Arguments([])
-		}
-		else {
-			print("指定したアクションは見つかりませんでした")
-		}
+		if action=="0" {break}
+		else if action=="1" {Stdinout()}
+		else if action=="2" {Values()}
+		else if action=="3" {Operators()}
+		else if action=="4" {Condition()}
+		else if action=="5" {Loop()}
+		else if action=="6" {Math()}
+		else if action=="7" {StringType()}
+		else if action=="8" {Sprintf()}
+		else if action=="9" {RegExp()}
+		else if action=="a" {DateTime()}
+		else if action=="b" {Class()}
+		else if action=="c" {ErrorHandle()}
+		else if action=="d" {File()}
+		else if action=="e" {Path()}
+		else if action=="f" {ProcessHandle()}
+		else if action=="g" {Threading()}
+		else if action=="h" {Arguments([])}
+		else {print("指定したアクションは見つかりませんでした")}
 	}
 
 }

@@ -1,5 +1,4 @@
-
-"use strict";
+#! /usr/bin/env node
 
 // 文字列
 let text = "ジャバスクリプト";

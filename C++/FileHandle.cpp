@@ -194,7 +194,7 @@ void FileHandle() {
 	fh.close();
 
 	cout << "> 実行ファイルを作成します" << endl;
-	system("clang++ Package/C++.cpp -o Package/C++"); // system : <cstdlib>
+	system("c++ Package/C++.cpp -o Package/C++"); // system : <cstdlib>
 
 	cout << "> このファイルに対する現在の状態を確認" << endl;
 	check("Package/C++");

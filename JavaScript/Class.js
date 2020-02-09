@@ -1,5 +1,4 @@
-
-"use strict";
+#! /usr/bin/env node
 
 // クラス定義1 (Vector)
 class Vector {

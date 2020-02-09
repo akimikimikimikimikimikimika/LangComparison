@@ -1,12 +1,14 @@
 
 ! Fortran
 
-! Fortranのコンパイル
-! find Fortran -name *.f90 -exec gfortran -fopenmp -o Fortran/bin {} +
-!
-! ※ これはGFortranでコンパイルする例。
-! これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。
-! -fopenmp を付加してOpenMPを利用できるようにする
+! コンパイル       make f-build
+! 実行            make f-run
+! 実行ファイルの削除 make f-clean
+! clean+build    make f-retry
+! コンパイラの表示  make f-cmd
+
+! Makefileを利用してコンパイルを実行する。コンパイラにはGFortranが使用される。
+! -e FORTRAN=[コンパイラ名] で別のコンパイルコマンドを指定できる。
 
 ! コメントは半角感嘆符の後に記載する
 ! Fortranではソースコードの大文字と小文字を区別しない。つまり,programもProgramもPROGRAMも同じ。

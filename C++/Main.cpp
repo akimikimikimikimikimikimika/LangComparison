@@ -5,11 +5,15 @@
 // C++
 
 /*
-	C++のコンパイル
-		(cd C++ ; clang++ -std=c++2a -o bin *.cpp)
+	コンパイル       make cpp-build
+	実行            make cpp-run
+	実行ファイルの削除 make cpp-clean
+	clean+build    make cpp-retry
+	コンパイラの表示  make cpp-cmd
 
-	※ これはClangでコンパイルする例。GCCを用いる場合は,適宜 clang++ を g++ に置き換えて使用する。
-	これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。
+	Makefileを利用してコンパイルを実行する。
+	コンパイラにはClangが使用される。
+	-e CPP=[コンパイラ] で別のコンパイルコマンドを指定できる。
 */
 
 using namespace std;

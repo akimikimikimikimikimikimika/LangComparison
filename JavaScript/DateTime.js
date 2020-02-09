@@ -1,5 +1,4 @@
-
-"use strict";
+#! /usr/bin/env node
 
 let st = new Date();
 

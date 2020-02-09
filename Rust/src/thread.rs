@@ -1,1 +1,1 @@
-/Users/Akimi/Git/LangComparison/Rust/Thread.rs
+../Thread.rs

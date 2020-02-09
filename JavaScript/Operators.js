@@ -1,5 +1,4 @@
-
-"use strict";
+#! /usr/bin/env node
 
 let d2b = (len,dec)=>{
 	var bin = dec.toString(2);

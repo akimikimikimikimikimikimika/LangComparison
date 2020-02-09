@@ -50,3 +50,13 @@ func Condition() {
 	fmt.Println("\r\n\r\n")
 
 }
+
+/*
+	Go では次のように if 節の終了直後に else を置かなければならないみたい
+	elseの直前に改行があってはいけない
+	if {
+		// something
+	} else {
+		// something
+	}
+*/

@@ -4,23 +4,23 @@
 
 void Loop(){
 
-	n();printf("これからループ処理を試します");nn();
+	printLn2(1,"これからループ処理を試します",2);
 
-	n();printf("for (m=0; m<3; m++) {…}");n();
-	for (int m=0;m<3;m++) {printf("m=%dのループ",m);n();}
+	printLn2(1,"for (m=0; m<3; m++) {…}",1);
+	for (int m=0;m<3;m++) {printf("m=%dのループ",m);nr(1);}
 
-	n();printf("while (~) {…}");n();
+	printLn2(1,"while (~) {…}",1);
 	char str1[30]={};
 	while (strlen(str1)<6) {
 		strcat(str1,"*");
-		printf("%s",str1);n();
+		printf("%s",str1);nr(1);
 	}
 
-	n();printf("do {…} while (~)");n();
+	printLn2(1,"do {…} while (~)",1);
 	char str2[30]={};
 	do {
 		strcat(str2,"+");
-		printf("%s",str2);n();
+		printf("%s",str2);nr(1);
 	} while (strlen(str2)<6);
 
 }

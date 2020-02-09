@@ -2,19 +2,15 @@
 // Go
 
 /*
-	複数行のコメント
+	コンパイル       make go-build
+	実行            make go-run
+	実行ファイルの削除 make go-clean
+	clean+build    make go-retry
+	コンパイラの表示  make go-cmd
+
+	Makefileを利用してコンパイルを実行する。
 */
 
-/*
-	Unix系でのGoの使い方
-	コンパイル
-		(cd Go ; go build ; mv Go bin)
-			1. カレントディレクトリをGoに変更
-			2. コンパイル
-			3. 実行ファイル名を変更
-	実行
-		Go/Build
-*/
 package main
 
 import "fmt"
@@ -53,61 +49,32 @@ h. コマンドライン引数を試す
 
 			`)
 			var action = stdin.Text()
-			if action == "0" {
-				break
-			} else if action == "1" {
-				Stdinout()
-			} else if action == "2" {
-				Values()
-			} else if action == "3" {
-				Operators()
-			} else if action == "4" {
-				Condition()
-			} else if action == "5" {
-				Loop()
-			} else if action == "6" {
-				Math()
-			} else if action == "9" {
-				RegExp()
-			} else if action == "d" {
-				File()
-			} else if action == "e" {
-				Path()
-			} else if action == "g" {
-				Thread()
-			} else if action == "h" {
-				Arguments()
-			} else {
-				fmt.Println("指定したアクションは見つかりませんでした")
-			}
+			if action == "0" {break
+			} else if action == "1" {Stdinout()
+			} else if action == "2" {Values()
+			} else if action == "3" {Operators()
+			} else if action == "4" {Condition()
+			} else if action == "5" {Loop()
+			} else if action == "6" {Math()
+			} else if action == "9" {RegExp()
+			} else if action == "d" {File()
+			} else if action == "e" {Path()
+			} else if action == "g" {Thread()
+			} else if action == "h" {Arguments()
+			} else {fmt.Println("指定したアクションは見つかりませんでした")}
 		}
 	} else if (len(args)==1) {
-		if args[0] == "Stdinout" {
-			Stdinout()
-		} else if args[0] == "Values" {
-			Values()
-		} else if args[0] == "Operators" {
-			Operators()
-		} else if args[0] == "Condition" {
-			Condition()
-		} else if args[0] == "Loop" {
-			Loop()
-		} else if args[0] == "Math" {
-			Math()
-		} else if args[0] == "RegExp" {
-			RegExp()
-		} else if args[0] == "File" {
-			File()
-		} else if args[0] == "Path" {
-			Path()
-		} else if args[0] == "Thread" {
-			Thread()
-		} else if args[0] == "Arguments" {
-			Arguments()
-		} else {
-			Arguments()
-		}
-	} else {
-		Arguments()
-	}
+		if args[0] == "Stdinout" {Stdinout()
+		} else if args[0] == "Values" {Values()
+		} else if args[0] == "Operators" {Operators()
+		} else if args[0] == "Condition" {Condition()
+		} else if args[0] == "Loop" {Loop()
+		} else if args[0] == "Math" {Math()
+		} else if args[0] == "RegExp" {RegExp()
+		} else if args[0] == "File" {File()
+		} else if args[0] == "Path" {Path()
+		} else if args[0] == "Thread" {Thread()
+		} else if args[0] == "Arguments" {Arguments()
+		} else {Arguments()}
+	} else {Arguments()}
 }

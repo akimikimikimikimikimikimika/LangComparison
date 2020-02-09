@@ -5,11 +5,15 @@
 // C
 
 /*
-	Cのコンパイル
-		(cd C ; clang -std=c17 -o bin *.c)
+	コンパイル       make c-build
+	実行            make c-run
+	実行ファイルの削除 make c-clean
+	clean+build    make c-retry
+	コンパイラの表示  make c-cmd
 
-	※ これはClangでコンパイルする例。GCCを用いる場合は,適宜 clang を gcc に置き換えて使用する。
-	これにより,Unix系OSでは実行ファイルが生成され,Windowsでは.exeファイルが生成される。
+	Makefileを利用してコンパイルを実行する。
+	コンパイラにはClangが使用される。
+	-e C=[コンパイラ] で別のコンパイルコマンドを指定できる。
 */
 
 int main(int argc, char *argv[]){
@@ -28,28 +32,28 @@ int main(int argc, char *argv[]){
 		それ以外 → Argumentsで表示
 	*/
 	if (argc==1) {
-		printf("こんにちは。私の名前はC。");n();
+		printLn("こんにちは。私の名前はC。",1);
 		while (1) {
-			nn();printf("何がしたい?");nn();
-			printf("1. 標準入出力を試す");n();
-			printf("2. 色々な値を試す");n();
-			printf("3. 演算子を試す");n();
-			printf("4. 条件分岐を試す");n();
-			printf("5. 繰り返しを試す");n();
-			printf("6. 数学的演算を試す");n();
-			printf("7. 文字列操作を試す");n();
-			printf("8. 文字列フォーマットを試す");n();
-			printf("9. 正規表現を試す");n();
-			printf("a. 日付と時刻を試す");n();
-			printf("d. ファイル操作を試す");n();
-			printf("e. ファイルパスを試す");n();
-			printf("h. コマンドライン引数を試す");n();
-			n();
-			printf("0. 終了");n();
-			n();
+			printLn2(2,"何がしたい?",2);
+			printLn("1. 標準入出力を試す",1);
+			printLn("2. 色々な値を試す",1);
+			printLn("3. 演算子を試す",1);
+			printLn("4. 条件分岐を試す",1);
+			printLn("5. 繰り返しを試す",1);
+			printLn("6. 数学的演算を試す",1);
+			printLn("7. 文字列操作を試す",1);
+			printLn("8. 文字列フォーマットを試す",1);
+			printLn("9. 正規表現を試す",1);
+			printLn("a. 日付と時刻を試す",1);
+			printLn("d. ファイル操作を試す",1);
+			printLn("e. ファイルパスを試す",1);
+			printLn("h. コマンドライン引数を試す",1);
+			nr(1);
+			printLn("0. 終了",1);
+			nr(1);
 			scanf("%s",action);
 			while(getchar()!='\n');
-			nnn();
+			nr(3);
 			if (cmp(action,"0")) break;
 			else if (cmp(action,"1")) Stdinout();
 			else if (cmp(action,"2")) Values();
@@ -64,7 +68,7 @@ int main(int argc, char *argv[]){
 			else if (cmp(action,"d")) FileHandle();
 			else if (cmp(action,"e")) Path();
 			else if (cmp(action,"h")) ArgumentsDemo();
-			else printf("指定したアクションは見つかりませんでした");nn();
+			else printLn("指定したアクションは見つかりませんでした",2);
 		}
 	}
 	else if (argc==2) {
@@ -92,14 +96,16 @@ int cmp(char *s1,char *s2) {
 	return strcmp(s1,s2)==0;
 }
 
-void n() {
-	printf("\r\n");
+void nr(unsigned int n) {
+	for (int i=0;i<n;i++) printf("\r\n");
 }
 
-void nn() {
-	n();n();
+void printLn(const char* text,unsigned int n) {
+	printLn2(0,text,n);
 }
 
-void nnn() {
-	n();n();n();
+void printLn2(unsigned int begin,const char* text,unsigned int end) {
+	nr(begin);
+	printf("%s",text);
+	nr(end);
 }

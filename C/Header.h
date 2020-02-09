@@ -2,9 +2,9 @@
 	#define CDEF
 		int main(int argc, char *argv[]);
 			int cmp(char *s1,char *s2); // 文字列を比較する
-			void n(); // 改行文字を入れる
-			void nn();
-			void nnn();
+			void nr(unsigned int n); // n個だけ改行文字を入れる
+			void printLn(const char *text,unsigned int n); // textを出力し,n個だけ改行文字を入れる
+			void printLn2(unsigned int begin,const char *text,unsigned int end);
 		void Stdinout();
 		void Values();
 		void Operators();

@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 let test1 = true;
 let test2 = false;
