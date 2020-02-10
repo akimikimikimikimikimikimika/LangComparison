@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cstring> // GCCはこれがないとcstringの機能は使えないみたい
 #include <cmath>
 
 #include "Classdef.hpp"
@@ -25,32 +24,41 @@ Vector::Vector(double X, double Y, double Z) {
 };
 
 string Vector::desc() {
-	char *s;
+	char s[1000];
 	sprintf(s,"(%d,%d,%d)",(int)x,(int)y,(int)z);
 	return string(s);
 };
+
 void Vector::add(Vector v) {
 	x += v.x;
 	y += v.y;
 	z += v.z;
 };
-void Vector::added(Vector *to, Vector v1, Vector v2) {
-	Vector v(
+/*
+	可変引数の add
+	任意の個数のVectorを受け付ける。
+	n個のVectorは Vector::add(Vector v1,Vn ...vn) に当てはめられ,テンプレート型 Vn はn-1個のVectorを表す。
+	v1は add(v1) で Vector::add(Vector v) を適用し,vnはまた Vector::add(Vector v1,Vn ...vn) に当てはめられる。
+	これを繰り返して,1つずづVectorを処理する。
+*/
+
+Vector Vector::added(Vector v1, Vector v2) {
+	return Vector(
 		v1.x+v2.x,
 		v1.y+v2.y,
 		v1.z+v2.z
 	);
-	*to = v;
 };
+
 void Vector::coefMultiply(double k) {
 	x *= k;
 	y *= k;
 	z *= k;
 };
-void Vector::coefMultiplied(Vector *to, double k) {
-	Vector v(x*k,y*k,z*k);
-	*to = v;
+Vector Vector::coefMultiplied(double k) {
+	return Vector(x*k,y*k,z*k);
 };
+
 string Vector::describe() {
 	return description;
 };
@@ -61,27 +69,22 @@ ExtendedVector::ExtendedVector() : Vector() {};
 ExtendedVector::ExtendedVector(double X, double Y, double Z) : Vector(X,Y,Z) {};
 	// 親クラスのイニシャライザに初期化を代行させる
 
-void ExtendedVector::dot(double *to, Vector v) {
+double ExtendedVector::dot(Vector v) {
 	double p=0;
 	p+=x*v.x;
 	p+=y*v.y;
 	p+=z*v.z;
-	*to = p;
+	return p;
 };
-void ExtendedVector::cross(Vector *to, Vector v) {
-	Vector p(
+Vector ExtendedVector::cross(Vector v) {
+	return Vector(
 		y*v.z-z*v.y,
 		z*v.x-x*v.z,
 		x*v.y-y*v.x
 	);
-	*to = p;
 };
-void ExtendedVector::norm(double *to) {
-	double in;
-	Vector *self = this;
-	dot(&in,*self);
-	double sq = std::sqrt(in);
-	*to = sq;
+double ExtendedVector::norm() {
+	return sqrt(dot(*this));
 };
 string ExtendedVector::describeFromSub() {
 	return description;

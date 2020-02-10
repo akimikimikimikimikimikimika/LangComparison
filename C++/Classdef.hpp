@@ -35,10 +35,31 @@ class Vector {
 		Vector(double X, double Y, double Z);
 	public:
 		string desc(); // インスタンスの説明
+
 		void add(Vector v);
-		static void added(Vector *to, Vector v1, Vector v2);
+		template<typename... Vn>
+		void add(Vector v1,Vn ...vn) {
+			add(v1);
+			add(vn...);
+		};
+
+		static Vector added(Vector v1, Vector v2);
+		template<typename... Vn>
+		static Vector added(Vector v1, Vector v2, Vn ...vn) {
+			return added(v1,added(v2,vn...));
+		};
+		/*
+			addやaddedにおいて,
+				void add(Vector v1,Vn ...vn);
+				static Vector added(Vector v1, Vn ...vn);
+			といった宣言だけで終わらせるのはよくない。なぜなら,これはテンプレートを含んでおり具体的な関数形がなく抽象的なので,.hppの宣言と.cppの実装を分けると.cppをコンパイルした時点ではオブジェクトファイルには実体がなく,リンクできないからである。
+			リンカでは,要求に応じてオブジェクトファイルの中から具体的な Vector added(Vector,Vector...) を探すのだが,見つからないのでリンクに失敗する。
+			具体的に Vector added(Vector,Vector,Vector) などと実装すると使えるのだが,それだと可変個引数に対応できない。よって,ヘッダファイルで宣言するしかない。
+		*/
+
 		void coefMultiply(double k);
-		void coefMultiplied(Vector *to, double k);
+		Vector coefMultiplied(double k);
+
 		static string describe();
 };
 /*
@@ -56,9 +77,9 @@ class ExtendedVector: public Vector {
 		ExtendedVector();
 		ExtendedVector(double X, double Y, double Z);
 	public:
-		void dot(double *to, Vector v); // 内積を定義
-		void cross(Vector *to, Vector v); // 外積を定義
-		void norm(double *to); // ノルムを定義
+		double dot(Vector v); // 内積を定義
+		Vector cross(Vector v); // 外積を定義
+		double norm(); // ノルムを定義
 		static string describeFromSub(); // 説明できるはず
 };
 #endif
