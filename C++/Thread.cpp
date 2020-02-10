@@ -1,7 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#include <ctgmath>
+#include <cmath>
 #include "Header.hpp"
 
 using namespace std;

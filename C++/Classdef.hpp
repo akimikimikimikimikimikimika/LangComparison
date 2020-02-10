@@ -1,4 +1,3 @@
-
 using namespace std;
 
 #ifndef CLASSDEF
@@ -9,7 +8,7 @@ using namespace std;
 // クラス定義1 (Vector)
 class Vector {
 	protected:
-		const static char *description;
+		const static string description;
 			/*
 				クラス変数
 				クラス内で共有される値 (static)
@@ -35,12 +34,12 @@ class Vector {
 		Vector();
 		Vector(double X, double Y, double Z);
 	public:
-		void desc(char *ch); // インスタンスの説明
+		string desc(); // インスタンスの説明
 		void add(Vector v);
 		static void added(Vector *to, Vector v1, Vector v2);
 		void coefMultiply(double k);
 		void coefMultiplied(Vector *to, double k);
-		static void describe(char *to);
+		static string describe();
 };
 /*
 	public:
@@ -60,6 +59,6 @@ class ExtendedVector: public Vector {
 		void dot(double *to, Vector v); // 内積を定義
 		void cross(Vector *to, Vector v); // 外積を定義
 		void norm(double *to); // ノルムを定義
-		static void describeFromSub(char *to); // 説明できるはず
+		static string describeFromSub(); // 説明できるはず
 };
 #endif

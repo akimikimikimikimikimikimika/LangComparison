@@ -1,7 +1,6 @@
 #ifndef CPPDEF
 	#define CPPDEF
 		int main(int argc, char *argv[]);
-			int cmp(char *s1,char *s2);
 		void Stdinout();
 		void Values();
 		void Operators();

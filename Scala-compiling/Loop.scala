@@ -1,5 +1,7 @@
 object Loop {
+
 	def main(args: Array[String]):Unit = {
+
 		println("\r\nこれからループ処理を試します\r\n")
 
 		println("\r\nfor (n <- 0 to 2) {…}\r\n")
@@ -53,5 +55,7 @@ object Loop {
 		} while (str.length<6)
 
 		println("\r\n")
+
 	}
+	
 }

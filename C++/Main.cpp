@@ -36,27 +36,34 @@ int main(int argc, char *argv[]){
 
 		cout << "こんにちは。私の名前はC++。" << endl;
 		while (true) {
-			cout << endl << endl << "何がしたい?" << endl << endl;
-			cout << "1. 標準入出力を試す" << endl;
-			cout << "2. 色々な値を試す" << endl;
-			cout << "3. 演算子を試す" << endl;
-			cout << "4. 条件分岐を試す" << endl;
-			cout << "5. 繰り返しを試す" << endl;
-			cout << "6. 数学的演算を試す" << endl;
-			cout << "8. 文字列フォーマットを試す" << endl;
-			cout << "9. 正規表現を試す" << endl;
-			cout << "a. 日付と時刻を試す" << endl;
-			cout << "b. クラスを試す" << endl;
-			cout << "d. ファイル操作を試す" << endl;
-			cout << "e. ファイルパスを試す" << endl;
-			cout << "g. スレッドを試す" << endl;
-			cout << "h. コマンドライン引数を試す" << endl;
-			cout << endl;
-			cout << "0. 終了" << endl;
-			cout << endl;
+			cout <<
+				endl <<
+				endl <<
+				"何がしたい?" << endl <<
+				endl <<
+				"1. 標準入出力を試す" << endl <<
+				"2. 色々な値を試す" << endl <<
+				"3. 演算子を試す" << endl <<
+				"4. 条件分岐を試す" << endl <<
+				"5. 繰り返しを試す" << endl <<
+				"6. 数学的演算を試す" << endl <<
+				"8. 文字列フォーマットを試す" << endl <<
+				"9. 正規表現を試す" << endl <<
+				"a. 日付と時刻を試す" << endl <<
+				"b. クラスを試す" << endl <<
+				"d. ファイル操作を試す" << endl <<
+				"e. ファイルパスを試す" << endl <<
+				"g. スレッドを試す" << endl <<
+				"h. コマンドライン引数を試す" << endl <<
+				endl <<
+				"0. 終了" << endl <<
+				endl;
 			cin >> action;
 			while(getchar()!='\n');
-			cout << endl << endl << endl;
+			cout <<
+				endl <<
+				endl <<
+				endl;
 			if (action=="1") Stdinout();
 			else if (action=="2") Values();
 			else if (action=="3") Operators();
@@ -72,7 +79,10 @@ int main(int argc, char *argv[]){
 			else if (action=="g") Thread();
 			else if (action=="h") ArgumentsDemo();
 			else if (action=="0") break;
-			else cout << "指定したアクションは見つかりませんでした" << endl << endl;
+			else cout <<
+				"指定したアクションは見つかりませんでした" <<
+				endl <<
+				endl;
 		}
 	}
 	else if (argc==2) {

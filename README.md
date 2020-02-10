@@ -19,13 +19,11 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 - [R](https://www.r-project.org "R")
 - [Julia](https://www.julialang.org "Julia")
 - [Lua](https://www.lua.org "Lua")
+- [JavaScript](https://nodejs.org)
 - [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell")
 - [PowerShell](https://github.com/PowerShell/PowerShell "PowerShell")
 
-### ブラウザ上で実行する言語
-- JavaScript
-
-### Java+Java関連の言語
+### JVM言語
 - [Java](https://www.java.com "Java")
 - [Groovy](http://groovy-lang.org "Groovy")
 - [Scala](https://www.scala-lang.org "Scala")
@@ -47,8 +45,8 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 - macOS
 	* Perl, Ruby, PHP, Python, Bash は標準でインストール済。
-		但し,多くの言語のインタプリタは,最新版ではない。特に, Python は互換性の問題からバージョン 2.x 系統である。そのため,最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。
-	* Julia, Lua, Rust, Go はインストールされていない。Homebrewからインストールすることもできる。
+		但し,多くの言語のインタプリタは,最新版ではない。最新版が必要であれば,[Homebrew](https://brew.sh "Homebrew")など外部から入手する。
+	* Julia, Lua, Rust, Go, Kotlin, Scala, Groovy はインストールされていない。Homebrewからインストールすることもできる。
 	* C, C++ のコンパイラ Clang は標準でインストール済だが, [Xcode](https://developer.apple.com/xcode/ "Xcode") が必要。App Storeから入手することもできる。
 		コンパイラとしてGCCやIntel C++ Compilerなどが必要な場合は別途入手する。GCCはHomebrewからインストールすることもできる。
 	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") はインストールされていない。GFortranはHomebrewからインストールすることもできる。
@@ -58,13 +56,13 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 - Windows
 	* PowerShell は標準でインストール済。
-	* Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go はインストールされていない。各言語の公式サイトからダウンロードするか,Chocolateyなどのパッケージマネージャを利用する。
-	* C++ のコンパイルには Visual C++ が必要らしい。Visual Studioをインストールすることで利用可能になるという。GCCやIntel C++ Compilerなどが必要な場合は別途入手する。
+	* Perl, Ruby, PHP, Python, Julia, Lua, Rust, Go, Kotlin, Scala, Groovy はインストールされていない。各言語の公式サイトからダウンロードするか,Chocolateyなどのパッケージマネージャを利用する。
+	* C++ のコンパイルには Visual C++ が必要らしい。Visual Studioをインストールすることで利用可能になるという。Clang,GCC,Intel C++ Compilerなどが必要な場合は別途入手する。
 	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
 
 - Unix系OS (macOS除く)
 	* 大抵の場合, Bash は標準でインストール済。
-	* C, C++ のコンパイラとして GCC/Clang は標準でインストール済。(LinuxはGCC) コンパイラとしてIntel C++ Compilerなどが必要な場合は別途入手する。
+	* C, C++ のコンパイラとして GCC/Clang は標準でインストール済。他のコンパイラが必要な場合は別途入手する。
 	* Fortran のコンパイラ [GFortran](https://gcc.gnu.org/wiki/GFortranBinaries "GFortran") は公式サイトからインストールすることもできる。
 	* 基本的にどの言語もインストールされていないので,それぞれのパッケージマネージャや上記リンクよりインストールする。
 	* PowerShellは [GitHub上の同リポジトリ](https://github.com/PowerShell/PowerShell "PowerShell") から入手可能。
@@ -72,180 +70,65 @@ GitHubの当リポジトリページの上部に言語の割合を示す帯グ�
 
 ## 実行方法
 
-ここでは,それぞれの言語を実行する方法を説明する。いずれも,ターミナルを開き,次に示すコードを入力するのである。
-まずは,次のコマンドで当リポジトリのディレクトリに移動する。
-```Shell
-cd LangComparison
+ここでは,それぞれの言語を実行する方法を説明する。Makefileによりコンパイル/実行コマンドを指定したので,簡単に実行することができる
+```sh
+
+cd LangComparison # 当リポジトリのディレクトリに移動
+# make [lang]-[command] の形でアクションを指定する
+
+# Cの例
+make c-build # コンパイル
+make c-run   # 実行
+make c-clean # コンパイルしたファイルを削除
+make c-retry # build+run
+make c       # c-retry と同等
+
+make c-run -e ARGS="A B C" # 引数に A B C を渡して実行
+
+# Bashの例
+make bash # Mainを実行
+make bash -e PAGE=Values # Valuesを実行
+make bash -e PAGE=Arguments ARGS="A B C" # 引数に A B C を渡して実行
 ```
-そして,言語ごとに次のコードを実行する。
-- Swift
-	```sh
-	# スクリプト言語として利用する場合
-	swift Swift/Main.swift
 
-	# コンパイル : フォルダ Swift-compiling 内に bin という実行ファイルが生成される
-	(cd Swift-compiling ; swiftc -o bin *.swift)
+それぞれの言語で以下のコマンドが指定可能である
 
-	# 実行
-	Swift-compiling/bin
-	```
-- Perl
-	```sh
-	perl Perl/Main.pl
-	```
-- Ruby
-	```sh
-	ruby Ruby/Main.rb
-	```
-- PHP
-	```sh
-	php PHP/Main.php
-	```
-- Python
-	```sh
-	python3 Python/Main.py # 最新のPython
-	# システムに付属するPythonはPython2.x系列であることが多く,当リポジトリで取り扱うコードは実行できない
-	```
+- コンパイル言語
+| 言語 | | | | |
+|:-:|:-|:-|:-|:-|
+| Fortran | `f-build` | `f-run` | `f-clean` | `f-retry` |
+| C | `c-build` | `c-run` | `c-clean` | `c-retry` |
+| C++ | `cpp-build` | `cpp-run` | `cpp-clean` | `cpp-retry` |
+| Objective-C | `objcc-build` | `objc-run` | `objc-clean` | `objc-retry` |
+| Swift | `swiftc-build` | `swiftc-run` | `swiftc-clean` | `swiftc-retry` |
+| Go | `go-build` | `go-run` | `go-clean` | `go-retry` |
+| Java | `java-build` | `java-run` | `java-clean` | `java-retry` |
+| Kotlin | `kotinc-build` | `kotinc-run` | `kotinc-clean` | `kotinc-retry` |
+| Scala | `scalac-build` | `scalac-run` | `scalac-clean` | `scalac-retry` |
+| Groovy | `groovyc-build` | `groovyc-run` | `groovyc-clean` | `groovyc-retry` |
 
-- Julia
-	```sh
-	julia Julia/Main.jl
-	```
-- R
-	```sh
-	# Stdinout.r を実行する例
-	Rscript R/Stdinout.r
-	```
-- Bash
-	```sh
-	bash Bash/Main.sh
-	```
-- PowerShell
-	```sh
-	pwsh PowerShell/Main.ps1
-	```
-- Lua
-	```sh
-	lua Lua/Main.lua
-	```
-- JavaScript  
-	JavaScriptはWeb技術の一環なので,Webブラウザでテストできる。例えば,ソースコードを [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") にコピー&ペーストすると実行できる。
-	又は,コンピュータに [Node.js](https://nodejs.org/ja/ "Node.js") をインストールすれば,以下のようなシェルコマンドでJavaScriptを直接実行することもできる。
-	但し,当リポジトリにはWebブラウザ上でないと実行できないコードや,Node.js上でないと実行できないコードもあるので,注意する必要がある。
-	```sh
-	# Stdinout.js を実行する例
-	node JavaScript/Stdinout.js
-	```
+	runやretryの時に `-e ARGS="引数1 引数2…"` とオプションを追加すれば実行時に引数を渡すことができる
 
-- Java
-	```sh
-	# コンパイル : フォルダ Java 内に bin.jar というJavaアーカイブファイルが生成される
-	(cd Java ; javac *.java ; zip -q bin.jar *.class META-INF/MANIFEST.MF ; rm *.class)
+- スクリプト言語
+| 言語 | |
+|:-:|:-|
+| Swift | `swift` |
+| Perl | `perl`,`pl` |
+| Ruby | `ruby`,`rb` |
+| PHP | `php` |
+| Python | `python`,`py` |
+| Julia | `julia`,`jl` |
+| Lua | `lua` |
+| JavaScript | `javascript`,`js` |
+| Bash | `bash`,`sh` |
+| PowerShell | `ps`,`pwsh`,`powershell` |
+| Kotlin | `kotlin`,`kt` |
+| Scala | `scala` |
+| Groovy | `groovy` |
 
-	# 実行
-	java -jar Java/bin.jar
+	`-e PAGE=項目` とオプションを追加すれば実行する項目を指定することができる (指定しなければMain)
+	`-e ARGS="引数1 引数2…"` とオプションを追加すれば実行時に引数を渡すことができる
 
-	# 個別のファイルを実行 (例: Stdinout.java を実行)
-	(cd Java ; javac Stdinout.java ; java Stdinout)
-	```
-- Groovy
-	```sh
-	# 例: Stdinout.groovy を実行
-	groovy Groovy/Stdinout.groovy
-	```
-- Scala
-	```sh
-	# 例: Stdinout.scala を実行
-	scala Scala/Stdinout.scala
-	```
-- Kotlin
-	```sh
-	# スクリプト言語として利用する場合 (例: Stdinout.kts を実行)
-	kotlinc -script Kotlin/Stdinout.kts
-
-	# コンパイル : フォルダ Kotlin-compiling 内に bin.jar というJavaアーカイブファイルが生成される
-	(cd Kotlin-compiling ; kotlinc -include-runtime -d bin.jar *.kt)
-		# -include-runtime オプションを付けることで,アーカイブ内にKotlinのフレームワークが埋め込まれる
-		# このオプションを付加しないとアーカイブは実行できない
-
-	# 実行
-	kotlin Kotlin-compiling/bin.jar
-		# JARファイルなので, java -jar Kotlin-compiling/bin.jar でも実行できる
-	```
-
-- Fortran  
-	以下の例は,GFortranコンパイラを使う例
-	```sh
-	# コンパイル : フォルダ Fortran 内に bin という実行ファイルが生成される
-	(cd Fortran ; gfortran *.f95 -o bin -fopenmp -O3)
-		# スレッド処理のためにOpenMPを利用するため -fopenmp オプションが必要みたい
-
-	# 実行
-	Fortran/bin
-	```
-- C
-	* Unix系OS  
-		以下の例は, Clang を使う例 (GCCなら clang を gcc に置き換える)
-		```sh
-		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-		(cd C ; clang *.c -o bin -std=c17 -O3)
-
-		# 実行
-		C/bin
-		```
-	* Windows  
-		以下の例は, Visual C++ を使う例
-		```PowerShell
-		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-		Set-Location -Path C
-		cl /nologo /TC /O2 /Fe:bin.exe *.c
-
-		# 実行
-		C\bin
-		```
-
-- C++
-	* Unix系OS  
-		以下の例は, Clang を使う例 (GCCなら clang++ を g++ に置き換える)
-		```sh
-		# コンパイル : フォルダ C++ 内に bin という実行ファイルが生成される
-		(cd C++ ; clang++ *.cpp -o bin -std=c++17 -O3)
-
-		# 実行
-		C++/bin
-		```
-	* Windows  
-		以下の例は, Visual C++ を使う例
-		```PowerShell
-		# コンパイル : フォルダ C 内に bin という実行ファイルが生成される
-		Set-Location -Path C++
-		cl /nologo /TP /O2 /Fe:bin.exe *.cpp
-
-		# 実行
-		C++\bin
-		```
-- Objective-C  
-	以下の例は,Clangコンパイラを使う例
-	```sh
-	# コンパイル : フォルダ Objective-C 内に bin という実行ファイルが生成される
-	(cd Objective-C ; clang *.h *.m -o bin -ObjC -framework Foundation -O3)
-		# Foundation フレームワークをインクルードすることでObjCになる
-
-	# 実行
-	Objective-C/bin
-	```
-- Go
-	```sh
-	# コンパイル : フォルダ Go 内に bin という実行ファイルが生成される
-	(cd Go ; go build -o bin *.go)
-		# -o bin と *.go の順序を逆にしてはならない
-
-	# 実行
-	Go/bin
-
-	# このリポジトリ内のGoコードは,各々を直接実行することができない仕様になっているため,直接実行の方法はここではコメントアウトしておく
-	# (cd Go ; go run Stdinout.go)
-	```
 - Rust
 	```sh
 	# コンパイル : フォルダ Rust 内に bin という実行ファイルが生成される
@@ -261,67 +144,26 @@ cd LangComparison
 以下では,REPLの起動方法を説明する。
 尚,何れの場合も Control+D でREPLを終了させることができる。
 
-- Swift
-	```sh
-	swift
-	```
-- Perl
-	```sh
-	perl
-	```
-- Ruby
-	```sh
-	ruby
-	```
-- PHP
-	```sh
-	php
-	```
-- Python
-	```sh
-	python3.7 # 最新のPython
-	python    # システムに付属するPython
-	```
-- R
-	```sh
-	R
-	```
-- Julia
-	```sh
-	julia
-	```
-- Bash
-	```sh
-	bash
-	```
-- PowerShell
-	```sh
-	pwsh
-	```
-- Lua
-	```sh
-	lua
-	```
-- JavaScript (Node.js)
-	```sh
-	node
-	```
-	Web上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。  
-	勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在するので,そちらを使っても構わない。
+```sh
+swift       # Swift
+perl        # Perl
+ruby        # Ruby
+php         # PHP
+python3     # Python
+julia       # Julia
+R           # R
+bash        # Bash
+pwsh        # PowerShell
+lua         # Lua
+node        # JavaScript
+groovysh    # Groovy
+scala       # Scala
+Kotlinc-jvm # Kotlin
+```
 
-- Groovy
-	```sh
-	groovysh
-	```
-- Scala
-	```sh
-	scala
-	```
-- Kotlin
-	```sh
-	kotlinc-jvm
-	```
-
+	JavaScriptをWeb上で試す場合は, [Tester](https://akimikimikimikimikimikimika.github.io/Tester/ "Tester") を使うことをお勧めする。  
+	勿論,他のサイト上にもJavaScriptやHTMLのテスターは数多く存在するので,そちらを使っても構わない。  
+	数多くの言語のREPL環境を整える [REPL.it](https://repl.it) もおすすめである
 
 ## Shebang
 
@@ -342,21 +184,3 @@ cd LangComparison
 # これにより,コンピュータにインストールされているLuaのインタプリタで実行してくれる
 ```
 Unix系OSの場合は,コマンドラインに `type R` 又は `which R` と入力すれば,コンピュータが標準で使用する実行パスが表示される。
-
-### Shebangの一覧
-
-参考として,一般的なmacOSで使用されるインタプリタのパスを示す  
-つまり,他のOSや,特殊な環境のmacOSの場合はこの通りにはならないことがある
-
-|   | システム標準のインタプリタ | 外部のインタプリタ |
-|:---|:--:|:--:|
-| Swift | `/usr/bin/swift` | - |
-| Perl | `/usr/bin/perl` | `/usr/local/bin/perl` |
-| Ruby | `/usr/bin/ruby` | `/usr/local/bin/ruby` |
-| PHP | `/usr/bin/php` | `/usr/local/bin/php` |
-| Python | `/usr/bin/python` | `/usr/local/bin/python3` |
-| Julia | - | `/usr/local/bin/julia` |
-| R | - | `/usr/local/bin/Rscript` |
-| Bash | `/bin/bash` | `/usr/local/bin/bash` |
-| PowerShell | - | `/usr/local/bin/pwsh` |
-| Lua | - | `/usr/local/bin/lua` |

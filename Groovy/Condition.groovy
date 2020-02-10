@@ -16,22 +16,22 @@ def value = 8
 
 switch(value) {
 	case 0:
-    case 1:
-        println "${value}は特別な値である"
-        break
+	case 1:
+		println "${value}は特別な値である"
+		break
 	case 8..10:
-        println "これに隣接する数にも言えたりするが,"
-        // breakを省くと,case 8,9,10を実行すれば,直下のcase 4,6も実行する
+		println "これに隣接する数にも言えたりするが,"
+		// breakを省くと,case 8,9,10を実行すれば,直下のcase 4,6も実行する
 	case [4,6]:
-        // caseを配列にすることで,複数のcaseを一纏めにできる
+		// caseを配列にすることで,複数のcaseを一纏めにできる
 		println "${value}は素数ではない"
-        break
+		break
 	case [2,3,5,7]:
-        println "${value}は素数である"
-        break
+		println "${value}は素数である"
+		break
 	default:
-        println "${value}なぞ私には興味がない"
-        break
+		println "${value}なぞ私には興味がない"
+		break
 }
 
 println "\r\n"

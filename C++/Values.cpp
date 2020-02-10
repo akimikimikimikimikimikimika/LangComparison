@@ -37,35 +37,34 @@ void Values(){
 	// 配列
 	double dblArr[] = {2.4,3.6,4.8};
 
-	cout << "\
-色々な値を試します" << "\n\
-プリミティブ値" << "\n\
-bool:" << boolean << "\n\
-char:" << character << "\n\
-short:" << shortInt << "\n\
-int:" << integer << "\n\
-long:" << longInt << "\n\
-long long:" << longLongInt << "\n\
-unsigned short:" << uShortInt << "\n\
-unsigned int:" << uInteger << "\n\
-unsigned long:" << uLongInt << "\n\
-unsigned long long:" << uLongLongInt << "\n\
-float:" << fl << "\n\
-double:" << db << "\n\
-long double:" << ldb << "\n\
-char *:" << charArray << "\n\
-" << "\n\
-配列" << "\n\
-double [] = " << dblArr << "\n\
-" << "\n\
-オブジェクト" << "\n\
-string:" << str << " #include <string>" << "\n\
-   大きさ:" << str.length() << "\n\
-" << "\n\
-#defineから" << "\n\
-定数:" << someConst << "\n\
-マクロ関数:" << maximum(6,3) << "\n\
-";
+	cout <<
+		"色々な値を試します" << endl <<
+		"プリミティブ値" << endl <<
+			"bool:" << boolean << endl <<
+			"char:" << character << endl <<
+			"short:" << shortInt << endl <<
+			"int:" << integer << endl <<
+			"long:" << longInt << endl <<
+			"long long:" << longLongInt << endl <<
+			"unsigned short:" << uShortInt << endl <<
+			"unsigned int:" << uInteger << endl <<
+			"unsigned long:" << uLongInt << endl <<
+			"unsigned long long:" << uLongLongInt << endl <<
+			"float:" << fl << endl <<
+			"double:" << db << endl <<
+			"long double:" << ldb << endl <<
+			"char *:" << charArray << endl <<
+		endl <<
+		"配列" << endl <<
+			"double [] = " << dblArr << endl <<
+		endl <<
+		"オブジェクト" << endl <<
+			"string:" << str << " #include <string>" << endl <<
+			"   大きさ:" << str.length() << endl <<
+		endl <<
+		"#defineから" << endl <<
+			"通常の置換:" << someConst << endl <<
+			"マクロ関数:" << maximum(6,3) << endl;
 
 	cout << endl << endl;
 

@@ -1,4 +1,5 @@
 object Values {
+
 	def main(args: Array[String]):Unit = {
 
 		/*
@@ -9,11 +10,12 @@ object Values {
 
 		// 文字列
 		val string:String = "スカラ"
-		val lines:String = """
-First line
-Second line
-Third line
-"""
+		val lines:String = Main.trim("""
+			First line
+			Second line
+			Third line
+		""")
+		// ヒアドキュメント中で行頭に空白文字やタブ文字を挿入していると,そのまま出力されてしまうので, Main.scala で実装した trim 関数で行頭のタブ文字を削除している
 		/*
 			変数展開/式展開の仕方
 			s"The value is $val"
@@ -76,29 +78,29 @@ Third line
 		// 無名関数
 		val func = (value:Int) => value*value
 
-		println(s"""
+		println(Main.trim(s"""
 
-色々な値を試します
+			色々な値を試します
 
-文字列: $string
-文字列2:
-$lines
-文字: $char
-数値:
-   整数: $int,$short,$long
-   浮動小数: $float,$double
-真偽値: $bool
-意味のない値: $unit
-配列: $array
-リスト: $list
-タプル: $tuple
-範囲:
-   $ranI
-   $ranE
-   $ranD
-   $ranS
-無名関数: $func
-""")
+			文字列: $string
+			文字列2:
+			$lines
+			文字: $char
+			数値:
+			   整数: $int,$short,$long
+			   浮動小数: $float,$double
+			真偽値: $bool
+			意味のない値: $unit
+			配列: $array
+			リスト: $list
+			タプル: $tuple
+			範囲:
+			   $ranI
+			   $ranE
+			   $ranD
+			   $ranS
+			無名関数: $func
+		"""))
 		/*
 			Scalaの値は2種類に大別できる
 				• value type: 多くのプリミティブ型
@@ -112,4 +114,5 @@ $lines
 		println("\r\n")
 
 	}
+	
 }

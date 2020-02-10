@@ -16,3 +16,4 @@ retry: clean run
 clean clear:
 	@rm -f bin.jar
 	@rm -f *.class
+	@rm -fr /tmp/.scala

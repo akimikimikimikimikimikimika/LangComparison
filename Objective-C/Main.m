@@ -1,5 +1,4 @@
 #include <Foundation/Foundation.h>
-#include <stdio.h>
 #include "Header.h"
 // #include 又は #import
 

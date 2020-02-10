@@ -10,7 +10,7 @@ using namespace std;
 
 // クラス定義1 (Vector)
 
-const char *Vector::description = "C++ simple vector class";
+const string Vector::description = "C++ simple vector class";
 
 // イニシャライザ/コンストラクタ
 Vector::Vector() {
@@ -24,8 +24,10 @@ Vector::Vector(double X, double Y, double Z) {
 	z = Z;
 };
 
-void Vector::desc(char *ch) {
-	sprintf(ch,"(%d,%d,%d)",(int)x,(int)y,(int)z);
+string Vector::desc() {
+	char *s;
+	sprintf(s,"(%d,%d,%d)",(int)x,(int)y,(int)z);
+	return string(s);
 };
 void Vector::add(Vector v) {
 	x += v.x;
@@ -49,8 +51,8 @@ void Vector::coefMultiplied(Vector *to, double k) {
 	Vector v(x*k,y*k,z*k);
 	*to = v;
 };
-void Vector::describe(char *to) {
-	strcpy(to,description);
+string Vector::describe() {
+	return description;
 };
 
 // クラス定義2 (ExtendedVector inherits from Vector)
@@ -81,6 +83,6 @@ void ExtendedVector::norm(double *to) {
 	double sq = std::sqrt(in);
 	*to = sq;
 };
-void ExtendedVector::describeFromSub(char *to) {
-	strcpy(to,description);
+string ExtendedVector::describeFromSub() {
+	return description;
 };

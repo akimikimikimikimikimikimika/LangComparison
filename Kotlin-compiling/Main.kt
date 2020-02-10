@@ -12,26 +12,23 @@
 fun main(args: Array<String>) {
 
 	if (args.size==0) {
-		println("""
-
-こんにちは。私の名前はKotlin。
-""")
+		println("こんにちは。私の名前はKotlin。")
 		while (true) {
-			println("""
+			println(trim("""
 
-何がしたい?
+				何がしたい?
 
-1. 標準入出力を試す
-2. 色々な値を試す
-3. 演算子を試す
-4. 条件分岐を試す
-5. 繰り返しを試す
-h. コマンドライン引数を試す
+				1. 標準入出力を試す
+				2. 色々な値を試す
+				3. 演算子を試す
+				4. 条件分岐を試す
+				5. 繰り返しを試す
+				h. コマンドライン引数を試す
 
-0. 終了
+				0. 終了
 
 
-""")
+			"""))
 			val action = readLine()
 			println("\r\n\r\n")
 			if (action=="0") break
@@ -41,10 +38,10 @@ h. コマンドライン引数を試す
 			else if (action=="4") Condition()
 			else if (action=="5") Loop()
 			else if (action=="h") Arguments(arrayOf())
-			else println("""
-指定したアクションは見つかりませんでした
+			else println(trim("""
+				指定したアクションは見つかりませんでした
 
-""")
+			"""))
 		}
 	}
 	else if (args.size==1) {
@@ -58,4 +55,8 @@ h. コマンドライン引数を試す
 	}
 	else Arguments(args)
 
+}
+
+fun trim(input:String):String {
+	return input.replace("(\\r?\\n)[\\t]+".toRegex(),"\$1")
 }

@@ -103,38 +103,43 @@ scalac-clean:
 scalac-retry scalac:
 	@cd Scala-compiling && make retry -e ARGS="${ARGS}"
 
-# Swift
+# Groovy-compiling
+groovyc-build:
+	@cd Groovy-compiling && make build
+groovyc-run:
+	@cd Groovy-compiling && make run -e ARGS="${ARGS}"
+groovyc-clean:
+	@cd Groovy-compiling && make clean
+groovyc-retry groovyc:
+	@cd Groovy-compiling && make retry -e ARGS="${ARGS}"
+
+# スクリプト言語
 swift:
 	@swift Swift/${PAGE}.swift ${ARGS}
-
-# JavaScript
 js javascript:
 	@node JavaScript/${PAGE}.js ${ARGS}
-
-# Perl
 pl perl:
 	@perl Perl/${PAGE}.pl ${ARGS}
-
-# Ruby
 rb ruby:
 	@ruby Ruby/${PAGE}.rb ${ARGS}
-
-# PHP
 php:
 	@php PHP/${PAGE}.php ${ARGS}
-
-# Python
 py python:
 	@python3 Python/${PAGE}.py ${ARGS}
-
-# Julia
 jl julia:
 	@julia Julia/${PAGE}.jl ${ARGS}
-
-# Bash
+lua:
+	@lua Lua/${PAGE}.lua ${ARGS}
 sh bash:
 	@sh Bash/${PAGE}.sh ${ARGS}
-
-# PowerShell
 ps pwsh powershell:
 	@pwsh PowerShell/${PAGE}.ps1 ${ARGS}
+kotlin kt:
+	@kotlinc -script Kotlin/${PAGE}.kt ${ARGS}
+scala:
+	@scala Scala/${PAGE}.scala ${ARGS}
+groovy:
+	@groovy Groovy/${PAGE}.groovy ${ARGS}
+
+# 擬似ファイル名であることを宣言
+.PHONY: f c cpp objc go swiftc java kotlinc scalac groovyc swift js javascript pl perl rb ruby php py python jl julia lua sh bash ps pwsh powershell kotlin kt scala groovy

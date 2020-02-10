@@ -1,5 +1,7 @@
 object Condition {
+
 	def main(args: Array[String]):Unit = {
+
 		val test1 = true
 		val test2 = false
 
@@ -27,5 +29,7 @@ object Condition {
 		}
 
 		println("\r\n")
+
 	}
+	
 }

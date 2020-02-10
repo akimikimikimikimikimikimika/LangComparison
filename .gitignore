@@ -9,7 +9,6 @@ bin.jar
 Rust/Cargo.lock
 Rust/debug
 Rust/.rustc_info.json
-Groovy-compiling
 Haskell
 Haskell-compiling
 Build

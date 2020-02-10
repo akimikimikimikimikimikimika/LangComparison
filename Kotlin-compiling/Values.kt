@@ -1,13 +1,12 @@
-
 fun Values() {
 
 	// 文字列
 	val string:String = "コトリン"
-	val lines="""
-	First line
-	Second line
-	Third line
-	"""
+	val lines=trim("""
+		First line
+		Second line
+		Third line
+	""")
 	/*
 		変数展開•式展開の仕方
 		"The value is $val"
@@ -57,31 +56,31 @@ fun Values() {
 	// 集合
 	val set:Set<Int> = setOf(3,1,4)
 
-	println("""
+	println(trim("""
 
-色々な値を試します
+		色々な値を試します
 
-文字列1: $string
-   長さ: ${string.length}
-文字列2:
-$lines
-文字: $char
-数値:
-   整数: $byte, $short, $int, $long
-   浮動小数: $float, $double
-真偽値: $bool
-範囲:
-   $ranI
-   $ranE
-   $ranD
-   $ranS
-配列: $array
-   大きさ: ${array.size}
-リスト: $list
-マップ: $map
-集合: $set
+		文字列1: $string
+		   長さ: ${string.length}
+		文字列2:
+		$lines
+		文字: $char
+		数値:
+		   整数: $byte, $short, $int, $long
+		   浮動小数: $float, $double
+		真偽値: $bool
+		範囲:
+		   $ranI
+		   $ranE
+		   $ranD
+		   $ranS
+		配列: $array
+		   大きさ: ${array.size}
+		リスト: $list
+		マップ: $map
+		集合: $set
 
-""")
+	"""))
 	/*
 		val 変数名 : 定数として宣言
 		var 変数名 : 変数として宣言

@@ -7,7 +7,10 @@ void Condition(){
 	bool test1 = true;
 	bool test2 = false;
 
-	cout << endl << "これから条件分岐を試します" << endl << endl;
+	cout <<
+	endl <<
+	"これから条件分岐を試します" << endl <<
+	endl;
 
 	if (test1) {
 		cout << "どうやらtest1は真のようです" << endl;
@@ -51,5 +54,5 @@ void Condition(){
 	}
 
 	cout << endl << endl;
-	
+
 }

@@ -17,7 +17,10 @@ void FileHandle() {
 
 	bool result;
 
-	cout << endl << "これからファイル操作を試します" << endl << endl;
+	cout <<
+	endl <<
+	"これからファイル操作を試します" << endl <<
+	endl;
 
 	cout << "> カレントディレクトリをホームに変更" << endl;
 	fs::current_path(getenv("HOME")); // getenv : <cstdlib>
@@ -165,8 +168,9 @@ void FileHandle() {
 			*/
 		if (fs::is_symlink(p)) {
 			// s.type()==fs::file_type::symlink と等価
-			cout << "   シンボリックリンクです" << endl;
-			cout << "   リンク先: " << fs::read_symlink(p).native() << endl;
+			cout <<
+			"   シンボリックリンクです" << endl <<
+			"   リンク先: " << fs::read_symlink(p).native() << endl;
 		}
 		else if (fs::is_regular_file(p)) cout << "   ファイルです" << endl;
 			// s.type()==fs::file_type::regular と等価
@@ -185,12 +189,17 @@ void FileHandle() {
 
 	cout << "> ソースファイルを作成します" << endl;
 	ofstream fh("Package/C++.cpp",ios_base::out|ios_base::trunc);
-	fh << "#include <iostream>" << endl << endl;
-	fh << "using namespace std;" << endl << endl;
-	fh << "int main() {" << endl << endl;
-	fh << "\tcout << \"Hello world!\" << endl;" << endl;
-	fh << "\treturn 0;" << endl << endl;
-	fh << "}";
+	fh <<
+	"#include <iostream>" << endl <<
+	endl <<
+	"using namespace std;" << endl <<
+	endl <<
+	"int main() {" << endl <<
+	endl <<
+	"\t" << "cout << \"Hello world!\" << endl;" << endl <<
+	"\t" << "return 0;" << endl <<
+	endl <<
+	"}";
 	fh.close();
 
 	cout << "> 実行ファイルを作成します" << endl;
