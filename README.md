@@ -94,6 +94,7 @@ make bash -e PAGE=Arguments ARGS="A B C" # 引数に A B C を渡して実行
 それぞれの言語で以下のコマンドが指定可能である
 
 - コンパイル言語
+
 | 言語 | | | | |
 |:-:|:-|:-|:-|:-|
 | Fortran | `f-build` | `f-run` | `f-clean` | `f-retry` |
@@ -107,27 +108,28 @@ make bash -e PAGE=Arguments ARGS="A B C" # 引数に A B C を渡して実行
 | Scala | `scalac-build` | `scalac-run` | `scalac-clean` | `scalac-retry` |
 | Groovy | `groovyc-build` | `groovyc-run` | `groovyc-clean` | `groovyc-retry` |
 
-	runやretryの時に `-e ARGS="引数1 引数2…"` とオプションを追加すれば実行時に引数を渡すことができる
+runやretryの時に `-e ARGS="引数1 引数2…"` とオプションを追加すれば実行時に引数を渡すことができる
 
 - スクリプト言語
+
 | 言語 | |
 |:-:|:-|
 | Swift | `swift` |
-| Perl | `perl`,`pl` |
-| Ruby | `ruby`,`rb` |
+| Perl | `perl`, `pl` |
+| Ruby | `ruby`, `rb` |
 | PHP | `php` |
-| Python | `python`,`py` |
-| Julia | `julia`,`jl` |
+| Python | `python`, `py` |
+| Julia | `julia`, `jl` |
 | Lua | `lua` |
-| JavaScript | `javascript`,`js` |
-| Bash | `bash`,`sh` |
-| PowerShell | `ps`,`pwsh`,`powershell` |
-| Kotlin | `kotlin`,`kt` |
+| JavaScript | `javascript`, `js` |
+| Bash | `bash`, `sh` |
+| PowerShell | `ps`, `pwsh`, `powershell` |
+| Kotlin | `kotlin`, `kt` |
 | Scala | `scala` |
 | Groovy | `groovy` |
 
-	`-e PAGE=項目` とオプションを追加すれば実行する項目を指定することができる (指定しなければMain)
-	`-e ARGS="引数1 引数2…"` とオプションを追加すれば実行時に引数を渡すことができる
+`-e PAGE=項目` とオプションを追加すれば実行する項目を指定することができる (指定しなければMain)  
+`-e ARGS="引数1 引数2…"` とオプションを追加すれば実行時に引数を渡すことができる
 
 - Rust
 	```sh
@@ -183,4 +185,4 @@ Kotlinc-jvm # Kotlin
 
 # これにより,コンピュータにインストールされているLuaのインタプリタで実行してくれる
 ```
-Unix系OSの場合は,コマンドラインに `type R` 又は `which R` と入力すれば,コンピュータが標準で使用する実行パスが表示される。
+Unix系OSの場合は,コマンドラインに `type lua` 又は `which lua` と入力すれば,コンピュータが標準で使用する実行パスが表示される。
