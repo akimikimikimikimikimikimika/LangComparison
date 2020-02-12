@@ -104,7 +104,8 @@ void Math(){
 	printf("tgamma(0.2865) = %f",tgamma(0.2865));nr(1); // Γ(0.287)
 	printf("lgamma(0.0422) = %f",lgamma(0.0422));nr(1); // log(Γ(0.0422))
 
-	double complex c = 3+4i;
+	double complex c = 3+4*I;
+		// コンパイラによってはC++と同じような 3+4i の記法でもコンパイル可能であるが,Cはこちらの表記が正しいとされる。Iはマクロである。
 	printLn2(1,"複素数",1); // <tgmath.h>
 	printf(" cabs(3+4i) = %f", cabs(c));nr(1);
 	printf(" carg(3+4i) = %f", carg(c));nr(1);

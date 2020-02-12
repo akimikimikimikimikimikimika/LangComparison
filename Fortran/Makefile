@@ -1,16 +1,17 @@
 CMD=gfortran
 ARGS=""
+BIN=bin
 
-run exec execute: bin
-	@./bin ${ARGS}
+run exec execute: ${BIN}
+	@./${BIN} ${ARGS}
 
-build compile bin:
-	@${CMD} -openmp -o bin *.f95
+build compile ${BIN}:
+	@${CMD} -o ${BIN} *.f95
 
 retry: clean run
 
 clean clear:
-	@rm -f bin
+	@rm -f ${BIN}
 
 cmd:
 	@echo ${CMD}

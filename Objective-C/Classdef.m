@@ -1,5 +1,4 @@
-#include <Foundation/Foundation.h>
-#include "Classdef.h"
+#import "Classdef.h"
 
 @implementation Vector: NSObject
     // 必ず何かを継承する

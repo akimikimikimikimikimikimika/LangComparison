@@ -1,19 +1,20 @@
 ARGS=""
+BIN=bin
 
-run exec execute: bin.jar
-	@java -jar bin.jar ${ARGS}
+run exec execute: ${BIN}.jar
+	@java -jar ${BIN}.jar ${ARGS}
 
-build compile bin.jar:
+build compile ${BIN}.jar:
 	@mkdir /tmp/.scala
 	@ln *.scala /tmp/.scala/
-	@cp "$$SCALA_LIBRARY" /tmp/.scala/bin.jar
-	@(cd /tmp/.scala ; scalac *.scala ; jar ufe bin.jar Main *.class)
-	@mv /tmp/.scala/bin.jar bin.jar
+	@cp "$$SCALA_LIBRARY" /tmp/.scala/${BIN}.jar
+	@(cd /tmp/.scala ; scalac *.scala ; jar ufe ${BIN}.jar Main *.class)
+	@mv /tmp/.scala/${BIN}.jar ${BIN}.jar
 	@rm -fr /tmp/.scala
 
 retry: clean run
 
 clean clear:
-	@rm -f bin.jar
+	@rm -f ${BIN}.jar
 	@rm -f *.class
 	@rm -fr /tmp/.scala

@@ -19,7 +19,9 @@ fm.createFile(atPath: "Blank", contents: nil, attributes: nil)
 
 print("> フォルダEmptyの中にファイルBlankのシンボリックリンクSymlinkを作成\r\n")
 try fm.createSymbolicLink(atPath: "Empty/Symlink", withDestinationPath: "Blank")
-	// fm.linkItem(atPath: "Empty/Symlink", toPath: "Blank") とすると,ハードリンクが作成される
+	// fm.linkItem(atPath: "Empty/Hardlink", toPath: "Blank") とすると,ハードリンクが作成される
+
+	// atPath でパスを指定するメソッドは atURL に書き換えることでURLオブジェクトを指定することもできる
 
 // 書込み
 
@@ -29,7 +31,6 @@ fm.createFile(atPath: "Untitled.md", contents:"# Header 1".data(using: .utf8), a
 		或いは
 		try "# Header 1".write(toFile: "Untitled.md", atomically: false, encoding: .utf8)
 			※ atomicallyをtrueにすると,一度別の位置にファイルを書き込んでから,所定の位置にそのファイルを移動させる。こうすることで,システムがクラッシュしても,書き込んだデータは保証される
-			※ NSString.write
 	*/
 
 // 移動/名称変更
@@ -166,7 +167,7 @@ check("Package/Swift.swift")
 		1: 実行可能 (eXecutable)
 	これらの和を3つ並べて指定する。1つ目はユーザの権限,2つ目はゲストの権限,3つ目はその他の者の権限である。
 	Swiftでは8進数で表記するために,前に0oを付加する
-	e.g. chmod 0754
+	e.g. [FileAttributeKey.posixPermissions: 0o754]
 		ユーザは 7 = 4+2+1 だから,読込可能,書込可能,実行可能
 		ゲストは 5 = 4 + 1 だから,読込可能,実行可能
 		その他は 4 だから,読込のみ可能

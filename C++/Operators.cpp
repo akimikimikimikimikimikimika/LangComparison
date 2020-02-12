@@ -8,7 +8,7 @@ void Operators(){
 
 	double r = .0375e-6;
     double *p = nullptr;
-	*p = r;
+	p = &r;
 
 
 	cout <<
@@ -21,7 +21,7 @@ void Operators(){
 			"24   - 5 = " << 24  -5 << endl <<
 			"24   * 5 = " << 24  *5 << endl <<
 			"24.0 / 5 = " << 24.0/5 << endl <<
-			"24   \% 5 = " << 24 %5 << endl <<
+			"24   % 5 = " << 24  %5 << endl <<
 
 		endl <<
 
@@ -64,7 +64,7 @@ void Operators(){
 		"ポインタ" << endl <<
 			"double r = .0375e-6; ← 実体の浮動小数を定義" << endl <<
 			"double *p; ← ポインタの浮動小数を定義" << endl <<
-			"*p = r;" << endl <<
+			"p = &r;" << endl <<
 			endl <<
 			" r = " <<  r << " (実体)" << endl <<
 			"&r = " << &r << " (実体 → ポインタ)" << endl <<

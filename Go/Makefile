@@ -1,16 +1,17 @@
 CMD=go build
 ARGS=""
+BIN=bin
 
-run exec execute: bin
-	@./bin ${ARGS}
+run exec execute: ${BIN}
+	@./${BIN} ${ARGS}
 
-build compile bin:
-	@${CMD} -o bin *.go
+build compile ${BIN}:
+	@${CMD} -o ${BIN} *.go
 
 retry: clean run
 
 clean clear:
-	@rm -f bin
+	@rm -f ${BIN}
 
 cmd:
 	@echo ${CMD}

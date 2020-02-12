@@ -1,6 +1,21 @@
-C="clang -O3 -std=c17"
-CPP="clang++ -O3 -std=c++2a -stdlib=libc++"
-FORTRAN="gfortran -O3"
+# Cコンパイラ
+CLANG="clang -O3 -std=c17" # Clang
+GCC="gcc-9 -O3 -std=c17" # GCC
+ICC="icc -O3 -std=c11 -march=corei7 -mtune=corei7" # Intel C Compiler
+
+# C++コンパイラ
+CLANGPP="clang++ -O3 -std=c++2a -stdlib=libc++" # Clang
+GPP="g++-9 -O3 -std=c++2a -pthread" # GCC
+ICPC="icpc -O3 -std=c++2a -stdlib=libc++ -march=corei7 -mtune=corei7" # Intel C++ Compiler
+
+# Fortranコンパイラ
+GFORTRAN="gfortran -O3 -openmp"
+IFORT="ifort -O3 -qopenmp"
+
+# コンパイラの標準構成
+C="clang -O0 -std=c17"
+CPP="c++ -O0 -std=c++2a -stdlib=libc++"
+FORTRAN="gfortran -O0 -openmp"
 PAGE="Main"
 ARGS=
 
@@ -12,6 +27,10 @@ help:
 # Fortran
 f-build:
 	@cd Fortran && make build -e CMD=${FORTRAN}
+f-build-gfortran:
+	@cd Fortran && make build -e CMD=${GFORTRAN}
+f-build-ifort:
+	@cd Fortran && make build -e CMD=${IFORT}
 f-run:
 	@cd Fortran && make run -e CMD=${FORTRAN} ARGS="${ARGS}"
 f-clean:
@@ -24,6 +43,14 @@ f-cmd:
 # C
 c-build:
 	@cd C && make build -e CMD=${C}
+c-build-clang:
+	@cd C && make build -e CMD=${CLANG} BIN=bin-clang
+c-build-gcc:
+	@cd C && make build -e CMD=${GCC} BIN=bin-gcc
+c-build-icc:
+	@cd C && make build -e CMD=${ICC} BIN=bin-icc
+c-build-docker:
+	@cd C && make build-docker -e CMD=${GCC} BIN=bin-docker
 c-run:
 	@cd C && make run -e CMD=${C} ARGS="${ARGS}"
 c-clean:
@@ -35,7 +62,15 @@ c-cmd:
 
 # C++
 cpp-build:
-	@cd C++ && make build -e CMD=${CPP}
+	@cd C++ && make build -e CMD=${CPP} BIN=bin
+cpp-build-clang:
+	@cd C++ && make build -e CMD=${CLANGPP} BIN=bin-clang
+cpp-build-gcc:
+	@cd C++ && make build -e CMD=${GPP} BIN=bin-gcc
+cpp-build-icc:
+	@cd C++ && make build -e CMD=${ICPC} BIN=bin-icc
+cpp-build-docker:
+	@cd C++ && make build-docker -e CMD=${GPP} BIN=bin-docker
 cpp-run:
 	@cd C++ && make run -e CMD=${CPP} ARGS="${ARGS}"
 cpp-clean:
@@ -117,21 +152,31 @@ groovyc-retry groovyc:
 swift:
 	@swift Swift/${PAGE}.swift ${ARGS}
 js javascript:
-	@node JavaScript/${PAGE}.js ${ARGS}
+	@cd JavaScript && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+js-docker javascript-docker:
+	@cd JavaScript && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 pl perl:
-	@perl Perl/${PAGE}.pl ${ARGS}
+	@cd Perl && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+pl-docker perl-docker:
+	@cd Perl && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 rb ruby:
-	@ruby Ruby/${PAGE}.rb ${ARGS}
-php:
-	@php PHP/${PAGE}.php ${ARGS}
+	@cd Ruby && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+rb-docker ruby-docker:
+	@cd Ruby && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 py python:
-	@python3 Python/${PAGE}.py ${ARGS}
+	@cd Python && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+py-docker python-docker:
+	@cd Python && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 jl julia:
-	@julia Julia/${PAGE}.jl ${ARGS}
+	@cd Julia && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+jl-docker julia-docker:
+	@cd Julia && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 lua:
 	@lua Lua/${PAGE}.lua ${ARGS}
 sh bash:
-	@sh Bash/${PAGE}.sh ${ARGS}
+	@cd Bash && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+sh-docker bash-docker:
+	@cd Bash && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 ps pwsh powershell:
 	@pwsh PowerShell/${PAGE}.ps1 ${ARGS}
 kotlin kt:

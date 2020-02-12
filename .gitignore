@@ -1,9 +1,9 @@
-
 .DS_Store
 __pycache__
 Fortran/bin
 classdef.mod
 bin
+bin-*
 bin.exe
 bin.jar
 Rust/Cargo.lock

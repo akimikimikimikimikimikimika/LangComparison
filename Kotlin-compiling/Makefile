@@ -1,13 +1,14 @@
 ARGS=""
+BiN=bin
 
-run exec execute: bin.jar
-	@java -jar bin.jar ${ARGS}
+run exec execute: ${BIN}.jar
+	@java -jar ${BIN}.jar ${ARGS}
 
-build compile bin.jar:
-	@kotlinc -include-runtime -d bin.jar *.kt
+build compile ${BIN}.jar:
+	@kotlinc -include-runtime -d ${BIN}.jar *.kt
 
 retry: clean run
 
 clean clear:
-	@rm -f bin.jar
+	@rm -f ${BIN}.jar
 	@rm -f *.class

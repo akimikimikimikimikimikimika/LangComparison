@@ -1,6 +1,8 @@
-#include <Foundation/Foundation.h>
-#include "Header.h"
+#import "Header.h"
 // #include 又は #import
+/*
+	Foundation にアクセスするには本来 #import <Foundation/Foundation.h> が必要だが,Header.hで既にインポート済なので別に記載する必要はない。
+*/
 
 // Objective-C
 
@@ -15,6 +17,14 @@
 */
 
 int main(int argc, char *argv[]) {
-	printf("こんにちは。私の名前はObjective-C。\r\n");
-	ClassTest();
+	if (argc==1) {
+		printLn(@"こんにちは。私の名前はObjective-C。",1);
+	}
+	else if (argc==2) {
+		NSString* param=[NSString stringWithUTF8String:argv[1]];
+		if ([param isEqual:@"Operators"]) Operators();
+		else if ([param isEqual:@"Sprintf"]) Sprintf();
+		else if ([param isEqual:@"File"]) File();
+		else if ([param isEqual:@"Class"]) ClassTest();
+	}
 }
