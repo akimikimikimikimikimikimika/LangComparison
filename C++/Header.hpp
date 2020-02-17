@@ -1,3 +1,5 @@
+using namespace std;
+
 #ifndef CPPDEF
 	#define CPPDEF
 		int main(int argc, char *argv[]);

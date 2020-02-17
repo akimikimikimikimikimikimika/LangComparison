@@ -7,7 +7,7 @@ const process = require("process");
 var log="\r\nこのファイルを実行するにあたっての引数は以下の通りです:\r\n\r\n";
 
 process.argv.forEach((s,n)=>{
-    if (n>1) log+=` ${n-1}: ${s}\r\n`;
+	if (n>1) log+=` ${n-1}: ${s}\r\n`;
 });
 
 console.log(log);

@@ -1,13 +1,12 @@
 #include <iostream>
 #include <string>
-#include "Header.hpp"
 
 using namespace std;
 
 void Operators(){
 
 	double r = .0375e-6;
-    double *p = nullptr;
+	double *p = nullptr;
 	p = &r;
 
 

@@ -1,14 +1,12 @@
-
 import java.io.*;
 
 public class Error {
 
-	private static void println(String data) throws IOException{
-		System.out.println(data);
-	}
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args){
 
-		println("\r\nこれから例外処理を試します\r\n");
+		Utility.nr(1);
+
+		Utility.println("これから例外処理を試します","");
 
 		// try節内で起こりうる例外は捕捉される
 		try {
@@ -17,35 +15,46 @@ public class Error {
 		}
 		// 例外をキャッチすればcatch節が実行される
 		catch (IOException e) {
-			println("エラーが発生しました");
-			println("エラー内容:\r\n"+e);
+			Utility.println(
+				"エラーが発生しました",
+				"エラー内容:",
+				e.toString()
+			);
 		}
 		// 複数のタイプのエラー型は,それぞれに対応するcatch節で捕捉できる
 		// 或いは, ExecutionException | IOException のようにして,複数のタイプを指定することもできる
 		catch (Exception e) {
-			println("エラーが発生しました");
-			println("エラー内容:\r\n"+e);
+			Utility.println(
+				"エラーが発生しました",
+				"エラー内容:",
+				e.toString()
+			);
 		}
 		// 最後にfinally節が実行される。なくても良い
 		finally {
-			println("以上でエラーチェックを終了します");
+			Utility.println("以上でエラーチェックを終了します");
 		}
 		/*
 			finallyは抜かしても良いが,起こり得るエラーの型に対応するcatch節を全て用意する。
 			或いは,catchで捕捉しないエラー型を関数の throws で放り投げることもできる。
 		*/
 
-		println("\r\n関数を実行してみます");
+		Utility.nr(1);
+
+		Utility.println("関数を実行してみます");
 		try {
 			// 以下で定義した関数をするとエラーを発生させ得るので, try-catch で捕捉する。
 			ExceptionEmitter();
 		}
 		catch (Exception e) {
-			println("エラーが発生しました");
-			println("エラー内容:\r\n"+e);
+			Utility.println(
+				"エラーが発生しました",
+				"エラー内容:",
+				e.toString()
+			);
 		}
 
-		println("\r\n");
+		Utility.nr(2);
 
 	}
 

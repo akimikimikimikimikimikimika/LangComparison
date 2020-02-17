@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Header.hpp"
 
 using namespace std;
 
@@ -21,6 +20,7 @@ void Class() {
 	"これからクラスを試します" << endl <<
 	endl <<
 
+	// オブジェクトそのものの説明といえば,ポインタしかない
 	"vec1: " << &vec1 << endl <<
 	"vec2: " << &vec2 << endl <<
 
@@ -53,10 +53,19 @@ void Class() {
 
 	endl <<
 
-	"説明してもらう1: " << Vector::describe() << endl <<
-	"説明してもらう2: " << ExtendedVector::describeFromSub() << endl <<
-	"説明してもらう3: " << vec1.describe() << endl <<
-	"説明してもらう4: " << vec2.describeFromSub() << endl;
+	"説明してもらう: " << endl <<
+	Vector::describe() << endl <<
+	ExtendedVector::describeFromSub() << endl <<
+	vec1.describe() << endl <<
+	vec2.describeFromSub() << endl <<
+
+	endl <<
+
+	"バージョン表示: " << endl <<
+	Vector::VERSION << endl <<
+	ExtendedVector::VERSION << endl <<
+	vec1.VERSION << endl <<
+	vec2.VERSION << endl;
 
 	cout << endl << endl;
 

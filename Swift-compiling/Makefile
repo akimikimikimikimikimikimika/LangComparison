@@ -1,4 +1,4 @@
-CMD=swiftc
+CMD=swiftc -O
 ARGS=""
 
 run exec execute: bin

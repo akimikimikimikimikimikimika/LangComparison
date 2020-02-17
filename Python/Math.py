@@ -90,11 +90,11 @@ cmath.polar(3+4j)  = {   cmath.polar(3+4j)         } (cmath module)
 cmath.rect(2,π/3)  = {   cmath.rect(2,math.pi/3)   } (cmath module)
 """)
 '''
-    複素数型は書き換えられない
+	複素数型は書き換えられない
 
-    cmathはmathに含まれる関数と同等の関数を実装し,複素数でも利用できるようにしている
-    上で挙げた複素数特有の関数の他,cmathにもmathにあるような関数が多く含まれるが,同等の関数でも,cmathの関数と,mathの関数とでは挙動が異なる
-    例えば,math.sqrt(-1)がエラーになるのに対し,cmath.sqrt(-1)は1jを返す
+	cmathはmathに含まれる関数と同等の関数を実装し,複素数でも利用できるようにしている
+	上で挙げた複素数特有の関数の他,cmathにもmathにあるような関数が多く含まれるが,同等の関数でも,cmathの関数と,mathの関数とでは挙動が異なる
+	例えば,math.sqrt(-1)がエラーになるのに対し,cmath.sqrt(-1)は1jを返す
 '''
 print(f"""
 有理数

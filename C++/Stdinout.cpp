@@ -1,8 +1,6 @@
 #include <iostream>
 # include "Header.hpp"
 
-using namespace std;
-
 void Stdinout(){
 
 	string aboutYou;

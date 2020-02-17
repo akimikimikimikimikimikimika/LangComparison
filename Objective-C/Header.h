@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "Classdef.h"
 
 #ifndef OBJCDEF
 	#define OBJCDEF
@@ -14,7 +13,6 @@
 			void check(NSString* pt);
 		// Class.m
 		void ClassTest(void);
-			char *vtoc(Vector *v);
 		// Utilities.m
 		void print(NSString*);
 		void nr(NSUInteger);

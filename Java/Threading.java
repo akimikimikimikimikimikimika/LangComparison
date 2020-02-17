@@ -1,9 +1,59 @@
-
-import java.io.*;
 public class Threading {
 
-	private static void println(String data) throws IOException{
-		System.out.println(data);
+	public static void main(String[] args) {
+
+		Utility.println(
+
+			"",
+			"これからスレッドを試します"
+
+		);
+
+		Utility.println("Thread","");
+
+		CustomThread[] ct = new CustomThread[9]; // スレッドオブジェクトを格納する配列
+		for (int m=1;m<10;m++) ct[m-1] = new CustomThread(m); // スレッドを構築
+
+		Utility.println("開始します");
+		for (CustomThread t:ct) t.start();
+
+		// 全ての処理が完了するまで待機
+		// 但し, Thread.join() は InterruptedException を発し得るので,エラーの取り扱い(try-catch)をしなければならない
+		try{
+			Utility.println("終了を待ちます");
+			for (CustomThread t:ct) t.join();
+			Utility.println("終了しました");
+		}
+		catch(InterruptedException e){
+			Utility.println("処理は中断されました");
+			e.printStackTrace();
+		}
+
+		Utility.nr(1);
+
+		Utility.println("Runnable","");
+
+		Thread[] crt = new Thread[9]; // スレッドオブジェクトを格納する配列
+		for (int m=1;m<10;m++) { // スレッドを構築
+			CustomRunnable cr = new CustomRunnable(m);
+			crt[m-1] = new Thread(cr);
+		}
+
+		Utility.println("開始します");
+		for (Thread t:crt) t.start();
+
+		try{
+			Utility.println("終了を待ちます");
+			for (Thread t:crt) t.join();
+			Utility.println("終了しました");
+		}
+		catch(InterruptedException e){
+			Utility.println("処理は中断されました");
+			e.printStackTrace();
+		}
+
+		Utility.nr(2);
+
 	}
 
 	/*
@@ -19,10 +69,8 @@ public class Threading {
 
 		// 処理内容
 		public void run() {
-			try{
-				int m = this.order;
-				for (int n=1;n<7;n++) println("|("+m+","+n+")| = "+Math.hypot((double)m,(double)n));
-			}catch(IOException e){}
+			int m = this.order;
+			for (int n=1;n<7;n++) Utility.println("|("+m+","+n+")| = "+Math.hypot((double)m,(double)n));
 		}
 
 		public int order = 0;
@@ -38,10 +86,8 @@ public class Threading {
 
 		// 処理内容
 		public void run() {
-			try{
-				int m = this.order;
-				for (int n=1;n<7;n++) println("|("+m+","+n+")| = "+Math.hypot((double)m,(double)n));
-			}catch(IOException e){}
+			int m = this.order;
+			for (int n=1;n<7;n++) Utility.println("|("+m+","+n+")| = "+Math.hypot((double)m,(double)n));
 		}
 
 		public int order = 0;
@@ -49,57 +95,6 @@ public class Threading {
 		CustomRunnable(int order) {
 			this.order = order;
 		}
-
-	}
-
-	public static void main(String[] args) throws IOException{
-
-		println("\r\nこれからスレッドを試します\r\n");
-
-		println("\r\nThread\r\n");
-
-		CustomThread[] ct = new CustomThread[9]; // スレッドオブジェクトを格納する配列
-		for (int m=1;m<10;m++) ct[m-1] = new CustomThread(m); // スレッドを構築
-
-		println("開始します");
-		for (CustomThread t:ct) t.start();
-
-		// 全ての処理が完了するまで待機
-		// 但し, Thread.join() は InterruptedException を発し得るので,エラーの取り扱い(try-catch)をしなければならない
-		try{
-			println("終了を待ちます");
-			for (CustomThread t:ct) t.join();
-			println("終了しました");
-		}
-		catch(InterruptedException e){
-			println("処理は中断されました");
-			e.printStackTrace();
-		}
-
-
-
-		println("\r\nRunnable\r\n");
-
-		Thread[] crt = new Thread[9]; // スレッドオブジェクトを格納する配列
-		for (int m=1;m<10;m++) { // スレッドを構築
-			CustomRunnable cr = new CustomRunnable(m);
-			crt[m-1] = new Thread(cr);
-		}
-
-		println("開始します");
-		for (Thread t:crt) t.start();
-
-		try{
-			println("終了を待ちます");
-			for (Thread t:crt) t.join();
-			println("終了しました");
-		}
-		catch(InterruptedException e){
-			println("処理は中断されました");
-			e.printStackTrace();
-		}
-
-		println("\r\n");
 
 	}
 

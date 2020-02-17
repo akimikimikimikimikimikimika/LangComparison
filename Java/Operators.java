@@ -1,11 +1,76 @@
-
-import java.io.*;
-
 public class Operators {
 
-	private static void println(String data) throws IOException{
-		System.out.println(data);
+	public static void main(String[] args) {
+
+		Utility.println(
+
+			"",
+			"これから演算子を試します",
+
+			"",
+
+			"算術演算子",
+			"24   + 5 = "+(   24   + 5   ),
+			"24   - 5 = "+(   24   - 5   ),
+			"24   * 5 = "+(   24   * 5   ),
+			"24.0 / 5 = "+(   24.0 / 5   ),
+			"24   % 5 = "+(   24   % 5   ),
+
+			"",
+
+			"比較演算子",
+			"24 >  5 = "+(   24 >  5   ),
+			"24 >= 5 = "+(   24 >= 5   ),
+			"24 <  5 = "+(   24 <  5   ),
+			"24 <= 5 = "+(   24 <= 5   ),
+			"24 == 5 = "+(   24 == 5   ),
+			"24 != 5 = "+(   24 != 5   ),
+
+			"",
+
+			"論理演算子",
+			"true && false = "+(   true && false   ),
+			"true || false = "+(   true || false   ),
+			"      ! false = "+(         ! false   ),
+
+			"",
+
+			"ビット演算子",
+			"0b1010 & 0b1001  = "+d2b(4,   b2d("1010") & b2d("1001")   )+" (AND)",
+			"0b1010 | 0b1001  = "+d2b(4,   b2d("1010") | b2d("1001")   )+" (OR)",
+			"0b1010 ^ 0b1001  = "+d2b(4,   b2d("1010") ^ b2d("1001")   )+" (XOR)",
+			"       ~ 0b1001  = "+d2b(4,               ~ b2d("1001")   +16)+" (NOT)",
+
+			"",
+
+			"0b00111111  << 2 = "+d2b(8,   b2d("00111111")  << 2   )+" (2桁左シフト)",
+			"0b00111111  >> 2 = "+d2b(8,   b2d("00111111")  >> 2   )+" (2桁右シフト)",
+			"0b00111111 >>> 2 = "+d2b(8,   b2d("00111111") >>> 2   )+" (2桁右シフト)",
+
+			"",
+
+			"同一物か確認する演算子",
+			"obj == obj = "+(   obj == obj   ),
+			"obj != obj = "+(   obj != obj   ),
+
+			"",
+
+			"文字列比較",
+			"\"abc\".equals(\"abc\") = "+(   "abc".equals("abc")   ),
+
+			"",
+
+			"三項演算子",
+			" true ? \"yes\" : \"no\" = \""+(    true ? "yes" : "no"   )+"\"",
+			"false ? \"yes\" : \"no\" = \""+(   false ? "yes" : "no"   )+"\""
+
+		);
+
+		Utility.nr(2);
+
 	}
+
+	private static Object obj = new Object();
 
 	private static int b2d(String bin) {
 		return Integer.parseInt(bin,2);
@@ -19,56 +84,6 @@ public class Operators {
 		return bin;
 	}
 
-	private static Object obj = new Object();
-
-	public static void main(String[] args) throws IOException{
-
-		println("これから演算子を試します");
-
-		println("\r\n算術演算子");
-		println("24   + 5 = "+(   24   + 5   ));
-		println("24   - 5 = "+(   24   - 5   ));
-		println("24   * 5 = "+(   24   * 5   ));
-		println("24.0 / 5 = "+(   24.0 / 5   ));
-		println("24   % 5 = "+(   24   % 5   ));
-
-		println("\r\n比較演算子");
-		println("24 >  5 = "+(   24 >  5   ));
-		println("24 >= 5 = "+(   24 >= 5   ));
-		println("24 <  5 = "+(   24 <  5   ));
-		println("24 <= 5 = "+(   24 <= 5   ));
-		println("24 == 5 = "+(   24 == 5   ));
-		println("24 != 5 = "+(   24 != 5   ));
-
-		println("\r\n論理演算子");
-		println("true && false = "+(   true && false   ));
-		println("true || false = "+(   true || false   ));
-		println("      ! false = "+(         ! false   ));
-
-		println("\r\nビット演算子");
-		println("0b1010 & 0b1001  = "+d2b(4,   b2d("1010") & b2d("1001")   )+" (AND)");
-		println("0b1010 | 0b1001  = "+d2b(4,   b2d("1010") | b2d("1001")   )+" (OR)");
-		println("0b1010 ^ 0b1001  = "+d2b(4,   b2d("1010") ^ b2d("1001")   )+" (XOR)");
-		println("       ~ 0b1001  = "+d2b(4,               ~ b2d("1001")   +16)+" (NOT)\r\n");
-
-		println("0b00111111  << 2 = "+d2b(8,   b2d("00111111")  << 2   )+" (2桁左シフト)");
-		println("0b00111111  >> 2 = "+d2b(8,   b2d("00111111")  >> 2   )+" (2桁右シフト)");
-		println("0b00111111 >>> 2 = "+d2b(8,   b2d("00111111") >>> 2   )+" (2桁右シフト)");
-
-		println("\r\n同一物か確認する演算子");
-		println("obj == obj = "+(   obj == obj   ));
-		println("obj != obj = "+(   obj != obj   ));
-
-		println("\r\n文字列比較");
-		println("\"abc\".equals(\"abc\") = "+(   "abc".equals("abc")   ));
-
-		println("\r\n三項演算子");
-		println(" true ? \"yes\" : \"no\" = \""+(    true ? "yes" : "no"   )+"\"");
-		println("false ? \"yes\" : \"no\" = \""+(   false ? "yes" : "no"   )+"\"");
-
-		println("\r\n");
-
-	}
 }
 /*
 	16進数の1桁 = 2進数の4桁

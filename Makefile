@@ -88,6 +88,16 @@ objc-clean:
 objc-retry objc:
 	@cd Objective-C && make retry -e CMD=${C} ARGS="${ARGS}"
 
+# C#
+csharp-build:
+	@cd C# && make build -e
+csharp-run:
+	@cd C# && make run -e ARGS="${ARGS}"
+csharp-clean:
+	@cd C# && make clean -e
+csharp-retry csharp:
+	@cd C# && make retry -e ARGS="${ARGS}"
+
 # Go
 go-build:
 	@cd Go && make build

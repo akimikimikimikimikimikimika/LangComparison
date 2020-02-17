@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 
-const {Vector,ExtendedVector} = require("./Classdef.js"); // クラス定義読み込み
+const {Vector2,ExtendedVector2} = require("./Prototypedef.js"); // プロトタイプ読み込み
 // これはあくまでも Node.js で使える方法であることに注意する。
 // JavaScript には2つのオブジェクト指向の方法がある。
 
-let vec1 = new Vector(3,2,1);
-let vec2 = new ExtendedVector(6,4,2);
-let vec3 = new ExtendedVector(54,63,72);
-let vec4 = new Vector(0,0,0);
+let vec1 = new Vector2(3,2,1);
+let vec2 = new ExtendedVector2(6,4,2);
+let vec3 = new ExtendedVector2(54,63,72);
+let vec4 = new Vector2(0,0,0);
 
 // 値の設定
 vec3.x = 16;
@@ -28,7 +28,7 @@ vec1のx座標: ${   vec1.x   }
 vec2のy座標: ${   vec2.y   }
 vec3のz座標: ${   vec3.z   }
 
-vec1+vec2+vec3: ${   Vector.added(vec1,vec2,vec3).desc()   }
+vec1+vec2+vec3: ${   Vector2.added(vec1,vec2,vec3).desc()   }
 vec4+vec2: ${   vec4.add(vec2).desc()   }
 vec2×12: ${   vec2.coefMultiplied(12).desc()   }
 
@@ -38,12 +38,12 @@ vec3×vec2: ${   vec3.cross(vec2).desc()   }
 |vec2|:    ${   vec2.abs      }
 
 説明してもらう:
-${   Vector.describe()   }
-${   ExtendedVector.describeFromSub()   }
+${   Vector2.describe()   }
+${   ExtendedVector2.describeFromSub()   }
 
 バージョン表示:
-${   Vector.VERSION   }
-${   ExtendedVector.VERSION   }
+${   Vector2.VERSION   }
+${   ExtendedVector2.VERSION   }
 
 `);
 

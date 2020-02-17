@@ -1,20 +1,17 @@
-
-import java.io.*;
-
 public class PathData {
 
-	private static void println(String data) throws IOException{
-		System.out.println(data);
-	}
-
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) {
 
 		String thisClass = new Object(){}.getClass().getEnclosingClass().getName();
 
-		println("ホームディレクトリ:   "+System.getProperty("user.home"));
-		println("カレントディレクトリ: "+System.getProperty("user.dir")+"\r\n");
+		Utility.println(
+			"ホームディレクトリ:   "+System.getProperty("user.home"),
+			"カレントディレクトリ: "+System.getProperty("user.dir"),
 
-		println("クラス名: "+thisClass);
+			"",
+
+			"クラス名: "+thisClass
+		);
 
 	}
 

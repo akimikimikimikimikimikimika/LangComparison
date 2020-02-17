@@ -2,6 +2,8 @@
 #include <string>
 #include "Header.hpp"
 
+using namespace std;
+
 // C++
 
 /*
@@ -15,8 +17,6 @@
 	コンパイラにはClangが使用される。
 	-e CPP=[コンパイラ] で別のコンパイルコマンドを指定できる。
 */
-
-using namespace std;
 
 int main(int argc, char *argv[]){
 	/*

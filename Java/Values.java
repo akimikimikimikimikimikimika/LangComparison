@@ -1,13 +1,7 @@
-
-import java.io.*;
 import java.util.*;
 
 public class Values {
-
-	private static void println(String data) throws IOException{
-		System.out.println(data);
-	}
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) {
 
 		// 文字列
 		String str=new String("ジャバ");
@@ -54,40 +48,54 @@ public class Values {
 		TreeMap<String,String> map2 = new TreeMap<String,String>();
 		map2.put("first","3");map2.put("second","1");map2.put("third","4");
 
-		println("\r\n色々な値を試します");
-		println("\r\n文字列");
-		println(" String: "+str+" (Primitive)");
-		println("\r\n文字");
-		println(" char: "+cha1+" (Primitive)");
-		println(" Character: "+cha2);
-		println("\r\n整数");
-		println(" byte: "+intB1+" (Primitive)");
-		println(" Byte: "+intB2);
-		println(" short: "+intS1+" (Primitive)");
-		println(" Short: "+intS2);
-		println(" int: "+intI1+" (Primitive)");
-		println(" Integer: "+intI2);
-		println(" long: "+intL1+" (Primitive)");
-		println(" Long: "+intL2);
-		println("\r\n浮動小数点数");
-		println(" float: "+flt1+" (Primitive)");
-		println(" Float: "+flt2);
-		println(" double: "+dbl1+" (Primitive)");
-		println(" Double: "+dbl2);
-		println("\r\n真偽値");
-		println(" boolean: "+bool+" (Primitive)");
-		println("\r\n配列");
-		println(" int[]: "+arr1);
-		println(" ArrayList<Integer>: "+arr2);
-		println(" LinkedList<Integer>: "+arr3);
-		println("\r\n集合");
-		println(" HashSet<String>: "+set1);
-		println(" TreeSet<String>: "+set2);
-		println("\r\nマップ");
-		println(" HashMap<String,String>: "+map1);
-		println(" TreeMap<String,String>: "+map2);
+		Utility.println(
 
-		println("\r\n");
+			"",
+			"色々な値を試します",
+			"",
+
+			"文字列",
+			" String: "+str+" (Primitive)",
+			"",
+			"文字",
+			" char: "+cha1+" (Primitive)",
+			" Character: "+cha2,
+			"",
+			"整数",
+			" byte: "+intB1+" (Primitive)",
+			" Byte: "+intB2,
+			" short: "+intS1+" (Primitive)",
+			" Short: "+intS2,
+			" int: "+intI1+" (Primitive)",
+			" Integer: "+intI2,
+			" long: "+intL1+" (Primitive)",
+			" Long: "+intL2,
+			"",
+			"浮動小数点数",
+			" float: "+flt1+" (Primitive)",
+			" Float: "+flt2,
+			" double: "+dbl1+" (Primitive)",
+			" Double: "+dbl2,
+			"",
+			"真偽値",
+			" boolean: "+bool+" (Primitive)",
+			"",
+			"配列",
+			" int[]: "+arr1,
+			" ArrayList<Integer>: "+arr2,
+			" LinkedList<Integer>: "+arr3,
+			"",
+			"集合",
+			" HashSet<String>: "+set1,
+			" TreeSet<String>: "+set2,
+			"",
+			"マップ",
+			" HashMap<String,String>: "+map1,
+			" TreeMap<String,String>: "+map2
+
+		);
+
+		Utility.nr(2);
 
 	}
 

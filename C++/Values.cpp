@@ -2,7 +2,6 @@
 #include <string>
 #include <stdarg.h>
 #include <codecvt>
-#include "Header.hpp"
 
 using namespace std;
 

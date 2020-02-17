@@ -66,7 +66,7 @@ if args.count==1 {
 
 }
 else if args.count==2 {
-	switch args[0] {
+	switch args[1] {
 		case "Stdinout":Stdinout()
 		case "Values":Values()
 		case "Operators":Operators()

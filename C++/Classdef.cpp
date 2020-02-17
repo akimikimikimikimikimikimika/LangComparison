@@ -5,13 +5,14 @@
 #include "Classdef.hpp"
 // ここでは,一般的な方法であるヘッダファイルを用いたクラス定義をしている。ヘッダファイル (Classdef.hpp) でクラスの内容を定義し,その関数やデータの実装をこのソースファイルで行う。
 
-using namespace std;
+// 本来わざわざ定義と実装を分離する必要はない。しかし,特に大規模開発などでは共同作業を進めやすくするために分離することが多いのだとか。或いは,ライブラリなどでは実装内容はバイナリにして,ヘッダは公開することで提供される関数やオブジェクトを明示することができるか。
 
 // クラス定義1 (Vector)
 
-const string Vector::description = "C++ simple vector class";
+const string Vector::VERSION = "1.0";
 
-// イニシャライザ/コンストラクタ
+string Vector::description = "C++ simple vector class";
+
 Vector::Vector() {
 	x = 0;
 	y = 0;
@@ -34,13 +35,6 @@ void Vector::add(Vector v) {
 	y += v.y;
 	z += v.z;
 };
-/*
-	可変引数の add
-	任意の個数のVectorを受け付ける。
-	n個のVectorは Vector::add(Vector v1,Vn ...vn) に当てはめられ,テンプレート型 Vn はn-1個のVectorを表す。
-	v1は add(v1) で Vector::add(Vector v) を適用し,vnはまた Vector::add(Vector v1,Vn ...vn) に当てはめられる。
-	これを繰り返して,1つずづVectorを処理する。
-*/
 
 Vector Vector::added(Vector v1, Vector v2) {
 	return Vector(
@@ -67,7 +61,7 @@ string Vector::describe() {
 
 ExtendedVector::ExtendedVector() : Vector() {};
 ExtendedVector::ExtendedVector(double X, double Y, double Z) : Vector(X,Y,Z) {};
-	// 親クラスのイニシャライザに初期化を代行させる
+	// 親クラス(Vector)のイニシャライザに初期化を代行させる
 
 double ExtendedVector::dot(Vector v) {
 	double p=0;
@@ -76,6 +70,7 @@ double ExtendedVector::dot(Vector v) {
 	p+=z*v.z;
 	return p;
 };
+
 Vector ExtendedVector::cross(Vector v) {
 	return Vector(
 		y*v.z-z*v.y,
@@ -83,9 +78,15 @@ Vector ExtendedVector::cross(Vector v) {
 		x*v.y-y*v.x
 	);
 };
+
 double ExtendedVector::norm() {
 	return sqrt(dot(*this));
 };
+
 string ExtendedVector::describeFromSub() {
 	return description;
 };
+
+void ExtendedVector::normalize() {
+	this->coefMultiply(1/this->norm());
+}

@@ -81,7 +81,7 @@ func ArrayType() {
 	let contain=mixed.contains(where:{ (value:Int) -> Bool in
 		return (value%2)>0 // 2で割り切れないかチェック
 	}) // true (3が条件を満たす)
-	let contain2=mixed.contains(3) // 単に値の存在を確認するだけのものもある
+	let _=mixed.contains(3) // 単に値の存在を確認するだけのものもある
 
 	let satisfy=mixed.allSatisfy({ (value:Int) -> Bool in
 		return (value%2)>0 // 2で割り切れないかチェック
