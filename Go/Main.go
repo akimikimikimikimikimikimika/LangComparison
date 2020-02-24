@@ -13,41 +13,50 @@
 
 package main
 
-import "fmt"
 import "os"
 import "bufio"
+
 
 func main() {
 
 	stdin := bufio.NewScanner(os.Stdin)
+	template := []string{
+		"このデモは,引数を付してコマンドを実行することで体験できます",
+		"",
+		"コマンドラインに以下のように入力して実行します:",
+		"",
+		"Go/bin 引数1 引数2…",
+		"",
+		"すると,引数1,引数2…が順に出力されます",
+		"",
+	}
 	args := os.Args[1:]
 
 	if (len(args)==0) {
-		fmt.Println("こんにちは。私の名前はGo。")
+		print("こんにちは。私の名前はGo。",ln{1})
 		for {
-			fmt.Println(`
+			print(clean{},`
 
-何がしたい?
+				何がしたい?
 
-1. 標準入出力を試す
-2. 色々な値を試す
-3. 演算子を試す
-4. 条件分岐を試す
-5. 繰り返しを試す
-6. 数学的演算を試す
-9. 正規表現を試す
-d. ファイル操作を試す
-e. ファイルパスを試す
-g. スレッドを試す
-h. コマンドライン引数を試す
+				1. 標準入出力を試す
+				2. 色々な値を試す
+				3. 演算子を試す
+				4. 条件分岐を試す
+				5. 繰り返しを試す
+				6. 数学的演算を試す
+				9. 正規表現を試す
+				d. ファイル操作を試す
+				e. ファイルパスを試す
+				g. スレッドを試す
+				h. コマンドライン引数を試す
 
-0. 終了
+				0. 終了
+
 			`)
+
 			stdin.Scan()
-			fmt.Println(`
-
-
-			`)
+			print(ln{3})
 			var action = stdin.Text()
 			if action == "0" {break
 			} else if action == "1" {Stdinout()
@@ -60,8 +69,8 @@ h. コマンドライン引数を試す
 			} else if action == "d" {File()
 			} else if action == "e" {Path()
 			} else if action == "g" {Thread()
-			} else if action == "h" {Arguments()
-			} else {fmt.Println("指定したアクションは見つかりませんでした")}
+			} else if action == "h" {Arguments(template)
+			} else {print("指定したアクションは見つかりませんでした",ln{1})}
 		}
 	} else if (len(args)==1) {
 		if args[0] == "Stdinout" {Stdinout()
@@ -74,7 +83,7 @@ h. コマンドライン引数を試す
 		} else if args[0] == "File" {File()
 		} else if args[0] == "Path" {Path()
 		} else if args[0] == "Thread" {Thread()
-		} else if args[0] == "Arguments" {Arguments()
-		} else {Arguments()}
-	} else {Arguments()}
+		} else if args[0] == "Arguments" {Arguments(template)
+		} else {Arguments(args)}
+	} else {Arguments(args)}
 }

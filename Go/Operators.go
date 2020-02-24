@@ -1,45 +1,44 @@
 package main
 
-import "fmt"
-
 func Operators() {
-	fmt.Println(`
 
-これから演算子を試します
+	print(clean{},`
 
-算術演算子
-24  +5 = `,24  +5,`
-24  -5 = `,24  -5,`
-24  *5 = `,24  *5,`
-24.0/5 = `,24.0/5,`
-24  %5 = `,24  %5,`
+		これから演算子を試します
 
-比較演算子
-24 <  5 = `,24 <  5,`
-24 <= 5 = `,24 <= 5,`
-24 >  5 = `,24 >  5,`
-24 >= 5 = `,24 >= 5,`
-24 == 5 = `,24 == 5,`
-24 != 5 = `,24 != 5,`
+		算術演算子
+		24  +5 = `,24  +5,`
+		24  -5 = `,24  -5,`
+		24  *5 = `,24  *5,`
+		24.0/5 = `,24.0/5,`
+		24  %5 = `,24  %5,`
 
-論理演算子
-true && false = `,true && false,`
-true || false = `,true || false,`
-      ! false = `,      ! false,`
+		比較演算子
+		24 <  5 = `,24 <  5,`
+		24 <= 5 = `,24 <= 5,`
+		24 >  5 = `,24 >  5,`
+		24 >= 5 = `,24 >= 5,`
+		24 == 5 = `,24 == 5,`
+		24 != 5 = `,24 != 5,`
 
-文字列連結
-"abc" + "def" = `,"abc" + "def",`
+		論理演算子
+		true && false = `,true && false,`
+		true || false = `,true || false,`
+			! false = `,      ! false,`
 
-文字列比較演算子
-"abc" <  "def" = `,"abc" <  "def",`
-"abc" <= "def" = `,"abc" <= "def",`
-"abc" >  "def" = `,"abc" >  "def",`
-"abc" >= "def" = `,"abc" >= "def",`
-"abc" == "def" = `,"abc" == "def",`
-"abc" != "def" = `,"abc" != "def",`
+		文字列連結
+		"abc" + "def" = `,"abc" + "def",`
 
-`);
+		文字列比較演算子
+		"abc" <  "def" = `,"abc" <  "def",`
+		"abc" <= "def" = `,"abc" <= "def",`
+		"abc" >  "def" = `,"abc" >  "def",`
+		"abc" >= "def" = `,"abc" >= "def",`
+		"abc" == "def" = `,"abc" == "def",`
+		"abc" != "def" = `,"abc" != "def",`
 
-fmt.Println("\r\n\r\n")
+	`);
+
+	print(ln{3})
 
 }

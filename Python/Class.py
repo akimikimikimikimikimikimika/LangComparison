@@ -4,6 +4,9 @@
 from Classdef import Vector,ExtendedVector # クラス定義読み込み
 # import Classdef や import Classdef.Vector などでも読み込むことができるが,この場合,Vectorを利用する都度 Classdef.Vector と記載しなければならない
 
+import sys
+sys.dont_write_bytecode = True
+
 vec1 = Vector(3,2,1)
 vec2 = ExtendedVector(6,4,2)
 vec3 = ExtendedVector(54,63,72)

@@ -1,20 +1,19 @@
 package main
 
-import "fmt"
 import "regexp"
 import "strings"
 
 func RegExp() {
 
-	fmt.Println("\r\nこれから正規表現を試します\r\n")
+	print(ln{1},"これから正規表現を試します",ln{2})
 
-	var text="The Quick Brown Fox Jumps Over The Lazy Dog"
-	fmt.Println(text," →")
+	text:="The Quick Brown Fox Jumps Over The Lazy Dog"
+	print(text," →",ln{2})
 
-	fmt.Println("\r\n検索")
+	print("検索",ln{1})
 	re1,_ := regexp.Compile(`(?i)the ([a-z]+) ([a-z]+) fox`)
 		// 第2引数でなぜか nil を返すので受取拒否
-	fmt.Println(re1.FindStringSubmatch(text))
+	print(re1.FindStringSubmatch(text),ln{2})
 		/*
 			検索するメソッド
 
@@ -31,35 +30,38 @@ func RegExp() {
 			これら4つのメソッドは, 例えば FindString → Find のように, String を抜いた名前のメソッドもそれぞれ存在して,入出力の文字列が string型 の代わりに byte型 になっている。
 		*/
 
-	fmt.Println("\r\nマッチの確認")
+	print("マッチの確認",ln{1})
 	re2,_ := regexp.Compile(`(?i)fox jumps`)
 	if (re2.MatchString(text)) {
-		fmt.Println("狐が飛んでいます")
+		print("狐が飛んでいます",ln{1})
 	} else {
-		fmt.Println("狐は飛んでいません")
+		print("狐は飛んでいません",ln{1})
 	}
 	re3,_ := regexp.Compile("(?i)dog jumps")
 	if (re3.MatchString(text)) {
-		fmt.Println("犬が飛んでいます")
+		print("犬が飛んでいます",ln{2})
 	} else {
-		fmt.Println("犬は飛んでいません")
+		print("犬は飛んでいません",ln{2})
 	}
 	// MatchString の第1引数はコンパイルした正規表現オブジェクトでも正規表現の文字列でも構わない。
 
-	fmt.Println("\r\n置換")
+	print("置換",ln{1})
 	re4,_ := regexp.Compile(`(?i)o`)
 	replaced := re4.ReplaceAllString(text,"« ö »")
-	fmt.Println(replaced)
+	print(replaced,ln{2})
 	// Go言語では, $1 や \1 を使った置換はできない
 
-	fmt.Println("\r\n分割と結合")
+	print("分割と結合",ln{1})
 	re5,_ := regexp.Compile(`(?i)(the|s)? `)
 	array := re5.Split(text,-1)
 	arranged := strings.Join(array,"_")
-	fmt.Println(arranged)
+	print(arranged,ln{1})
 
 	/*
 		Compile() : 文字列から正規表現オブジェクトにコンパイルする
 		MustCompile() : 同様にコンパイルするが,失敗するとそこで実行が停止される
 	*/
+
+	print(ln{3})
+
 }

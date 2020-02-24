@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func Values() {
 
 	// 文字列
@@ -40,35 +38,42 @@ func Values() {
 		return val*val
 	}
 
-	fmt.Println("\r\n色々な値を試します")
-	fmt.Println("文字列: ",str)
-	fmt.Println("   大きさ: ",len(str))
-	fmt.Println("整数:")
-	fmt.Println("   int:   ",integer,square(float64(integer))) // = int32/int64
-	fmt.Println("   int8:  ",i8)
-	fmt.Println("   int16: ",i16)
-	fmt.Println("   int32: ",i32)
-	fmt.Println("   int64: ",i64)
-	fmt.Println("符号なし整数:")
-	fmt.Println("   uint:   ",unsigned) // = uint32/uint64
-	fmt.Println("   uint8:  ",u8)
-	fmt.Println("   uint16: ",u16)
-	fmt.Println("   uint32: ",u32)
-	fmt.Println("   uint64: ",u64)
-	fmt.Println("浮動小数: ")
-	fmt.Println("   float32: ",flt32)
-	fmt.Println("   float64: ",flt64)
-	fmt.Println("複素数: ")
-	fmt.Println("   complex64: ",com64)
-	fmt.Println("   complex128: ",com128)
-	fmt.Println("真偽値: ",boolean)
-	fmt.Println("配列: ",arr)
-	fmt.Println("   大きさ: ",len(arr))
-	fmt.Println("マップ: ",dict)
-	fmt.Println("   大きさ: ",len(dict))
-	fmt.Println("クロージャ:\r\n",square)
+	print(
+		clean{},ln{1},
+		`
+			色々な値を試します
 
-	fmt.Println("\r\n\r\n")
+			文字列: `,str,`
+			   大きさ: `,len(str),`
+			整数:
+			   int:   `,integer,square(float64(integer)) /* = int32/int64 */,`
+			   int8:  `,i8,`
+			   int16: `,i16,`
+			   int32: `,i32,`
+			   int64: `,i64,`
+			符号なし整数:
+			   uint:   `,unsigned /* = uint32/uint64 */,`
+			   uint8:  `,u8,`
+			   uint16: `,u16,`
+			   uint32: `,u32,`
+			   uint64: `,u64,`
+			浮動小数:
+			   float32: `,flt32,`
+			   float64: `,flt64,`
+			複素数:
+			   complex64: `,com64,`
+			   complex128: `,com128,`
+			真偽値: `,boolean,`
+			配列: `,arr,`
+			   大きさ: `,len(arr),`
+			マップ: `,dict,`
+			   大きさ: `,len(dict),`
+			クロージャ:
+			   `,square,`
+		`,
+	)
+
+	print(ln{3})
 
 }
 

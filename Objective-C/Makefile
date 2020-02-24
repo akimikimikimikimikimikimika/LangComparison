@@ -1,4 +1,4 @@
-CMD=clang
+CMD=c99
 ARGS=""
 BIN=bin
 

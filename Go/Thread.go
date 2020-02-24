@@ -1,6 +1,5 @@
 package main
 
-import "fmt"
 import "sync"
 import "math"
 
@@ -12,7 +11,7 @@ import "math"
 
 func Thread() {
 
-	fmt.Println("\r\nこれからスレッドを試します\r\n")
+	print(ln{1},"これからスレッドを試します",ln{2})
 
 	// 処理完了を待機するシステム
 	wg := &sync.WaitGroup{}
@@ -22,16 +21,16 @@ func Thread() {
 		wg.Add(1)
 		go func(m int) {
 			for n:=1;n<=6;n++ {
-				fmt.Println("|(",m,",",n,")| = ",math.Hypot(float64(m),float64(n)))
+				print("|(",m,",",n,")| = ",math.Hypot(float64(m),float64(n)),ln{1})
 			}
 			wg.Done()
 		} (m)
 	}
 
-	fmt.Println("goroutineの終了を待ちます")
+	print("goroutineの終了を待ちます",ln{1})
 	wg.Wait()
-	fmt.Println("goroutineは終了しました")
+	print("goroutineは終了しました",ln{1})
 
-	fmt.Println("\r\n\r\n")
+	print(ln{3})
 
 }

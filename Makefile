@@ -81,6 +81,12 @@ cpp-retry cpp:
 # Objective-C
 objc-build:
 	@cd Objective-C && make build -e CMD=${C}
+objc-build-clang:
+	@cd Objective-C && make build -e CMD=${CLANG} BIN=bin-clang
+objc-build-gcc:
+	@cd Objective-C && make build -e CMD=${GCC} BIN=bin-gcc
+objc-build-icc:
+	@cd Objective-C && make build -e CMD=${ICC} BIN=bin-icc
 objc-run:
 	@cd Objective-C && make run -e CMD=${C} ARGS="${ARGS}"
 objc-clean:

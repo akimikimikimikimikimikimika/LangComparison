@@ -1,53 +1,51 @@
 package main
 
-import "fmt"
-
 func Condition() {
 
 	test1, test2 := true, false
 
-	fmt.Println("\r\nこれから条件分岐を試します\r\n")
+	print(ln{1},"これから条件分岐を試します",ln{2})
 
 	if (test1) {
-		fmt.Println("どうやらtest1は真のようです")
+		print("どうやらtest1は真のようです",ln{1})
 	}
 
 	if (!test1) {
-		fmt.Println("どうやらtest1は偽のようです")
+		print("どうやらtest1は偽のようです",ln{1})
 	} else if (test2) {
-		fmt.Println("どうやらtest2は真のようです")
+		print("どうやらtest2は真のようです",ln{1})
 	} else if (!test2 && test1) {
-		fmt.Println("真偽が混在しているようです")
+		print("真偽が混在しているようです",ln{1})
 	} else {
-		fmt.Println("どれでもないようです")
+		print("どれでもないようです",ln{1})
 	}
 
 	var val int = 8
 
 	switch val {
 		case 0,1:
-			fmt.Println(val,"は特別な値である")
+			print(val,"は特別な値である",ln{1})
 		case 8,9,10:
-			fmt.Print("これに隣接する数にも言えたりするが,")
+			print("これに隣接する数にも言えたりするが,")
 			fallthrough
 			// fallthrough により,case 8,9,10を実行すれば,直下のcase 4,6も実行する
 		case 4,6:
-			fmt.Println(val,"は素数ではない")
+			print(val,"は素数ではない",ln{1})
 		case 2,3,5,7:
-			fmt.Println(val,"は素数である")
+			print(val,"は素数である",ln{1})
 		default:
-			fmt.Println(val,"なぞ私には興味がない")
+			print(val,"なぞ私には興味がない",ln{1})
 			switch {
 				case val < 0 :
-					fmt.Println("なにせ,",val,"は小さすぎるのだ")
+					print("なにせ,",val,"は小さすぎるのだ",ln{1})
 				case val > 10 :
-					fmt.Println("なにせ,",val,"は大きすぎるのだ")
+					print("なにせ,",val,"は大きすぎるのだ",ln{1})
 				case (val > 0)||(val < 10) :
-					fmt.Println("なにせ,",val,"は中途半端なのだ")
+					print("なにせ,",val,"は中途半端なのだ",ln{1})
 			}
 	}
 
-	fmt.Println("\r\n\r\n")
+	print(ln{3})
 
 }
 
