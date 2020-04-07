@@ -20,16 +20,6 @@ import "bufio"
 func main() {
 
 	stdin := bufio.NewScanner(os.Stdin)
-	template := []string{
-		"このデモは,引数を付してコマンドを実行することで体験できます",
-		"",
-		"コマンドラインに以下のように入力して実行します:",
-		"",
-		"Go/bin 引数1 引数2…",
-		"",
-		"すると,引数1,引数2…が順に出力されます",
-		"",
-	}
 	args := os.Args[1:]
 
 	if (len(args)==0) {
@@ -59,31 +49,31 @@ func main() {
 			print(ln{3})
 			var action = stdin.Text()
 			if action == "0" {break
-			} else if action == "1" {Stdinout()
+			} else if action == "1" {Stdio()
 			} else if action == "2" {Values()
 			} else if action == "3" {Operators()
 			} else if action == "4" {Condition()
-			} else if action == "5" {Loop()
-			} else if action == "6" {Math()
-			} else if action == "9" {RegExp()
-			} else if action == "d" {File()
+			} else if action == "5" {Repeat()
+			} else if action == "6" {Calc()
+			} else if action == "9" {RegEx()
+			} else if action == "d" {Files()
 			} else if action == "e" {Path()
-			} else if action == "g" {Thread()
-			} else if action == "h" {Arguments(template)
+			} else if action == "g" {Threads()
+			} else if action == "h" {Arguments([]string{})
 			} else {print("指定したアクションは見つかりませんでした",ln{1})}
 		}
 	} else if (len(args)==1) {
-		if args[0] == "Stdinout" {Stdinout()
+		if args[0] == "Stdio" {Stdio()
 		} else if args[0] == "Values" {Values()
 		} else if args[0] == "Operators" {Operators()
 		} else if args[0] == "Condition" {Condition()
-		} else if args[0] == "Loop" {Loop()
-		} else if args[0] == "Math" {Math()
-		} else if args[0] == "RegExp" {RegExp()
-		} else if args[0] == "File" {File()
+		} else if args[0] == "Repeat" {Repeat()
+		} else if args[0] == "Calc" {Calc()
+		} else if args[0] == "RegExp" {RegEx()
+		} else if args[0] == "Files" {Files()
 		} else if args[0] == "Path" {Path()
-		} else if args[0] == "Thread" {Thread()
-		} else if args[0] == "Arguments" {Arguments(template)
+		} else if args[0] == "Threads" {Threads()
+		} else if args[0] == "Arguments" {Arguments([]string{})
 		} else {Arguments(args)}
 	} else {Arguments(args)}
 }

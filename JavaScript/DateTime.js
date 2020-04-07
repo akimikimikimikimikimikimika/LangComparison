@@ -1,38 +1,51 @@
 #! /usr/bin/env node
 
-let st = new Date();
+let u=require("./Utility.js");
+let e=exports;
 
-let date = new Date();
-console.log(`
+e.DateTime=()=>{
 
-これから日付と時刻を試します
+	let st = new Date();
 
-現在ローカル時刻: ${date.toString()}
-現在UTC時刻:      ${date.toUTCString()}
+	let date = new Date();
+	u.println(`
 
-ISO形式: ${date.toISOString()}
+		これから日付と時刻を試します
 
-日付: ${date.toDateString()}
-時刻: ${date.toTimeString()}
+		現在ローカル時刻: ${date.toString()}
+		現在UTC時刻:      ${date.toUTCString()}
 
-date
+		ISO形式: ${date.toISOString()}
 
-.getFullYear()     = ${date.getFullYear()}
-.getMonth()        = ${date.getMonth()} (0:1月 ~ )
-.getDate()         = ${date.getDate()}
-.getDay()          = ${date.getDay()} (0:日曜日 ~ )
-.getHours()        = ${date.getHours()}
-.getMinutes()      = ${date.getMinutes()}
-.getSeconds()      = ${date.getSeconds()}
-.getMilliseconds() = ${date.getMilliseconds()}
+		日付: ${date.toDateString()}
+		時刻: ${date.toTimeString()}
 
-.getUTCFullYear()     = ${date.getUTCFullYear()}
-.getUTCMonth()        = ${date.getUTCMonth()} (0:1月 ~ )
-.getUTCDate()         = ${date.getUTCDate()}
-.getUTCDay()          = ${date.getUTCDay()} (0:日曜日 ~ )
-.getUTCHours()        = ${date.getUTCHours()}
-.getUTCMinutes()      = ${date.getUTCMinutes()}
-.getUTCSeconds()      = ${date.getUTCSeconds()}
-.getUTCMilliseconds() = ${date.getUTCMilliseconds()}
+		date
 
-`);
+		.getFullYear()     = ${date.getFullYear()}
+		.getMonth()        = ${date.getMonth()} (0:1月 ~ )
+		.getDate()         = ${date.getDate()}
+		.getDay()          = ${date.getDay()} (0:日曜日 ~ )
+		.getHours()        = ${date.getHours()}
+		.getMinutes()      = ${date.getMinutes()}
+		.getSeconds()      = ${date.getSeconds()}
+		.getMilliseconds() = ${date.getMilliseconds()}
+
+		.getUTCFullYear()     = ${date.getUTCFullYear()}
+		.getUTCMonth()        = ${date.getUTCMonth()} (0:1月 ~ )
+		.getUTCDate()         = ${date.getUTCDate()}
+		.getUTCDay()          = ${date.getUTCDay()} (0:日曜日 ~ )
+		.getUTCHours()        = ${date.getUTCHours()}
+		.getUTCMinutes()      = ${date.getUTCMinutes()}
+		.getUTCSeconds()      = ${date.getUTCSeconds()}
+		.getUTCMilliseconds() = ${date.getUTCMilliseconds()}
+
+	`);
+
+	let en=new Date();
+
+	u.println(`この処理に要した時間: ${en-st} ミリ秒`);
+
+};
+
+if (!module.parent) e.DateTime();

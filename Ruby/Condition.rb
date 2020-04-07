@@ -1,45 +1,55 @@
 #! /usr/bin/env ruby
 
-test1 = true;
-test2 = false;
+require_relative "Utility.rb"
 
-print "\r\nこれから条件分岐を試します\r\n\r\n";
+def Condition
 
-if test1
-	print "どうやらtest1は真のようです\r\n";
-end
+	test1 = true
+	test2 = false
 
-if not test1
-	print "どうやらtest1は偽のようです\r\n";
-elsif test2
-	print "どうやらtest2は真のようです\r\n";
-elsif not test2 and test1
-	print "真偽が混在しているようです\r\n";
-else
-	print "どれでもないようです\r\n";
-end
+	pnl 1
 
-unless test2
-	print "どうやらtest2は偽のようです\r\n";
-else
-	print "どうやらtest2は真のようです\r\n";
-end
+	println "これから条件分岐を試します",2
 
-print "test1が真だからこんなことをしているんです\r\n" if test1;
-print "test2が偽でなければこんなことしないのに\r\n" unless test2;
+	if test1
+		println "どうやらtest1は真のようです"
+	end
 
-val = 8;
-case val
-	when 0,1 then
-		print "#{val}は特別な値である\r\n";
-	when 8..10 then
-		print "#{val}は連続して素数ではない\r\n";
-	when 4,6 then
-		print "#{val}は素数ではない\r\n";
-	when 2,3,5,7 then
-		print "#{val}は素数である\r\n";
+	if not test1
+		println "どうやらtest1は偽のようです"
+	elsif test2
+		println "どうやらtest2は真のようです"
+	elsif not test2 and test1
+		println "真偽が混在しているようです"
 	else
-		print "#{val}なぞ私には興味がない\r\n";
+		println "どれでもないようです"
+	end
+
+	upnless test2
+		println "どうやらtest2は偽のようです"
+	else
+		println "どうやらtest2は真のようです"
+	end
+
+	println "test1が真だからこんなことをしているんです" if test1
+	println "test2が偽でなければこんなことしないのに" upnless test2
+
+	val = 8
+	case val
+		when 0,1 then
+			println "#{val}は特別な値である"
+		when 8..10 then
+			println "#{val}は連続して素数ではない"
+		when 4,6 then
+			println "#{val}は素数ではない"
+		when 2,3,5,7 then
+			println "#{val}は素数である"
+		else
+			println "#{val}なぞ私には興味がない"
+	end
+
+	pnl 2
+
 end
 
-print "\r\n\r\n";
+Condition() if runningDirectly(__FILE__)

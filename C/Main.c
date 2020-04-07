@@ -48,14 +48,14 @@ int main(int argc, char *argv[]){
 			printLn("d. ファイル操作を試す",1);
 			printLn("e. ファイルパスを試す",1);
 			printLn("h. コマンドライン引数を試す",1);
-			nr(1);
+			nl(1);
 			printLn("0. 終了",1);
-			nr(1);
+			nl(1);
 			scanf("%s",action);
 			while(getchar()!='\n');
-			nr(3);
+			nl(3);
 			if (cmp(action,"0")) break;
-			else if (cmp(action,"1")) Stdinout();
+			else if (cmp(action,"1")) Stdio();
 			else if (cmp(action,"2")) Values();
 			else if (cmp(action,"3")) Operators();
 			else if (cmp(action,"4")) Condition();
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]){
 		}
 	}
 	else if (argc==2) {
-		if (cmp(argv[1],"Stdinout")) Stdinout();
+		if (cmp(argv[1],"Stdinout")) Stdio();
 		else if (cmp(argv[1],"Values")) Values();
 		else if (cmp(argv[1],"Operators")) Operators();
 		else if (cmp(argv[1],"Condition")) Condition();
@@ -96,7 +96,7 @@ int cmp(char *s1,char *s2) {
 	return strcmp(s1,s2)==0;
 }
 
-void nr(unsigned int n) {
+void nl(unsigned int n) {
 	for (int i=0;i<n;i++) printf("\r\n");
 }
 
@@ -105,7 +105,7 @@ void printLn(const char* text,unsigned int n) {
 }
 
 void printLn2(unsigned int begin,const char* text,unsigned int end) {
-	nr(begin);
+	nl(begin);
 	printf("%s",text);
-	nr(end);
+	nl(end);
 }

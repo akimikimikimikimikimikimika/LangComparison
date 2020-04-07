@@ -13,7 +13,7 @@ public class Utility {
 		for (String s:args) System.out.println(s);
 	}
 
-	public static void nr(int n) {
+	public static void pnl(int n) {
 		for (int m=0;m<n;m++) System.out.println();
 	}
 

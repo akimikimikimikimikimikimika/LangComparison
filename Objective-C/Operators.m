@@ -27,6 +27,6 @@ void Operators(){
 	printLn([fmt:@"YES ? \"yes\" : \"no\" = \"%@\"",YES?@"yes":@"no"],1);
 	printLn([fmt:@" NO ? \"yes\" : \"no\" = \"%@\"", NO?@"yes":@"no"],1);
 
-	nr(2);
+	nl(2);
 
 }

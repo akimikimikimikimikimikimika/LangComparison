@@ -29,7 +29,7 @@ void Condition(){
 	switch (val) {
 		case 0:
 		case 1:
-			printf("%dは特別な値である",val);nr(1);
+			printf("%dは特別な値である",val);nl(1);
 			break;
 		case 8:
 		case 9:
@@ -38,16 +38,16 @@ void Condition(){
 			// breakを省くと,case 8,9,10を実行すれば,直下のcase 4,6も実行する
 		case 4:
 		case 6:
-			printf("%dは素数ではない",val);nr(1);
+			printf("%dは素数ではない",val);nl(1);
 			break;
 		case 2:
 		case 3:
 		case 5:
 		case 7:
-			printf("%dは素数である",val);nr(1);
+			printf("%dは素数である",val);nl(1);
 			break;
 	}
 
-	nr(2);
+	nl(2);
 
 }

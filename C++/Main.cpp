@@ -58,25 +58,24 @@ int main(int argc, char *argv[]){
 				endl <<
 				"0. 終了" << endl <<
 				endl;
+
 			cin >> action;
 			while(getchar()!='\n');
-			cout <<
-				endl <<
-				endl <<
-				endl;
-			if (action=="1") Stdinout();
+			cout << endl << endl << endl;
+
+			if (action=="1") Stdio();
 			else if (action=="2") Values();
 			else if (action=="3") Operators();
 			else if (action=="4") Condition();
-			else if (action=="5") Loop();
-			else if (action=="6") Math();
-			else if (action=="8") Sprintf();
-			else if (action=="9") RegExp();
+			else if (action=="5") Repeat();
+			else if (action=="6") Calc();
+			else if (action=="8") Format();
+			else if (action=="9") RegEx();
 			else if (action=="a") DateTime();
-			else if (action=="b") Class();
-			else if (action=="d") FileHandle();
+			else if (action=="b") Classes();
+			else if (action=="d") Files();
 			else if (action=="e") Path();
-			else if (action=="g") Thread();
+			else if (action=="g") Threads();
 			else if (action=="h") ArgumentsDemo();
 			else if (action=="0") break;
 			else cout <<
@@ -87,19 +86,19 @@ int main(int argc, char *argv[]){
 	}
 	else if (argc==2) {
 		string param(argv[1]);
-		if (param=="Stdinout") Stdinout();
+		if (param=="Stdio") Stdio();
 		else if (param=="Values") Values();
 		else if (param=="Operators") Operators();
 		else if (param=="Condition") Condition();
-		else if (param=="Loop") Loop();
-		else if (param=="Math") Math();
-		else if (param=="Sprintf") Sprintf();
-		else if (param=="RegExp") RegExp();
+		else if (param=="Repeat") Repeat();
+		else if (param=="Calc") Calc();
+		else if (param=="Format") Format();
+		else if (param=="RegEx") RegEx();
 		else if (param=="DateTime") DateTime();
-		else if (param=="Class") Class();
-		else if (param=="File") FileHandle();
+		else if (param=="Classes") Classes();
+		else if (param=="Files") Files();
 		else if (param=="Path") Path();
-		else if (param=="Thread") Thread();
+		else if (param=="Threads") Threads();
 		else if (param=="Arguments") ArgumentsDemo();
 		else Arguments(argc,argv);
 	}

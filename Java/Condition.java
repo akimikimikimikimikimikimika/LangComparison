@@ -7,7 +7,7 @@ public class Condition {
 
 	public static void main(String[] args){
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Utility.println("これから条件分岐を試します");
 
@@ -34,7 +34,7 @@ public class Condition {
 				Utility.println(val+"なぞ私には興味がない");break;
 		}
 
-		Utility.nr(2);
+		Utility.pnl(2);
 
 	}
 

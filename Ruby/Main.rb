@@ -8,87 +8,107 @@
 	(ドキュメント)
 =end
 
-Dir.chdir(__dir__);
+Dir.chdir(__dir__)
 
-print """
+require_relative "Utility.rb"
+require_relative "Stdio.rb"
+require_relative "Values.rb"
+require_relative "Operators.rb"
+require_relative "Condition.rb"
+require_relative "Repeat.rb"
+require_relative "Calc.rb"
+require_relative "Strings.rb"
+require_relative "Format.rb"
+require_relative "RegEx.rb"
+require_relative "DateTime.rb"
+require_relative "Classes.rb"
+require_relative "Errors.rb"
+require_relative "Files.rb"
+require_relative "Path.rb"
+require_relative "Process.rb"
+require_relative "Threads.rb"
+require_relative "Arguments.rb"
 
-こんにちは。私の名前はRuby。
-""";
+println """
+
+	こんにちは。私の名前はRuby。
+"""
 while true
-	print """
 
-何がしたい?
+	println """
 
-1. 標準入出力を試す
-2. 色々な値を試す
-3. 演算子を試す
-4. 条件分岐を試す
-5. 繰り返しを試す
-6. 数学的演算を試す
-7. 文字列を試す
-8. 文字列フォーマットを試す
-9. 正規表現を試す
-a. 日付と時刻を試す
-b. クラスを試す
-c. 例外処理を試す
-d. ファイル操作を試す
-e. ファイルパスを試す
-f. プロセス系を試す
-g. スレッドを試す
-h. コマンドライン引数を試す
+		何がしたい?
 
-0. 終了
+		1. 標準入出力を試す
+		2. 色々な値を試す
+		3. 演算子を試す
+		4. 条件分岐を試す
+		5. 繰り返しを試す
+		6. 数学的演算を試す
+		7. 文字列を試す
+		8. 文字列フォーマットを試す
+		9. 正規表現を試す
+		a. 日付と時刻を試す
+		b. クラスを試す
+		c. 例外処理を試す
+		d. ファイル操作を試す
+		e. ファイルパスを試す
+		f. プロセス系を試す
+		g. スレッドを試す
+		h. コマンドライン引数を試す
 
+		0. 終了
 
-""";
-	action = gets.chomp;
-	print "\r\n\r\n\r\n";
+	"""
+	action = gets.chomp
+	pnl 3
+
 	if action=="0"
 		break
 	elsif action=="1"
-		system("./Stdinout.rb");
+		Stdio()
 	elsif action=="2"
-		system("./Values.rb");
+		Values()
 	elsif action=="3"
-		system("./Operators.rb");
+		Operators()
 	elsif action=="4"
-		system("./Condition.rb");
+		Condition()
 	elsif action=="5"
-		system("./Loop.rb");
+		Repeat()
 	elsif action=="6"
-		system("./Math.rb");
+		Calc()
 	elsif action=="7"
-		system("./String.rb");
+		Strings()
 	elsif action=="8"
-		system("./Sprintf.rb");
+		Format()
 	elsif action=="9"
-		system("./RegExp.rb");
+		RegEx()
 	elsif action=="a"
-		system("./DateTime.rb");
+		DateTime()
 	elsif action=="b"
-		system("./Class.rb");
+		Classes()
 	elsif action=="c"
-		system("./Error.rb");
+		Errors()
 	elsif action=="d"
-		system("./File.rb");
+		Files()
 	elsif action=="e"
-		system("./Path.rb");
+		Path()
 	elsif action=="f"
-		system("./Process.rb");
+		Process()
 	elsif action=="g"
-		system("./Thread.rb");
+		Threads()
 	elsif action=="h"
-		system("./Arguments.rb このプログラムを直接実行してみよう。 \"ここにあるよ: Ruby/Arguments.rb\" \"\" コマンドラインに以下のように入力して実行します \"\"  \"Ruby/Arguments.rb 引数1 引数2…\" \"\"  すると,引数1,引数2…が順に出力されます");
+		Arguments()
 	else
-		print """
-指定したアクションは見つかりませんでした
+		println """
+			指定したアクションは見つかりませんでした
 
-""";
+		"""
 	end
 end
 
-!exit(0);
+!exit(0)
 
 
 __END__
-以下は全てコメントとなる
+以下は全てコメントとなる (ENDが末端を示す)

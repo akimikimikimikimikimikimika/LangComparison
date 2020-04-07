@@ -1,56 +1,62 @@
 #! /usr/bin/env node
 
-const {Vector2,ExtendedVector2} = require("./Prototypedef.js"); // プロトタイプ読み込み
-// これはあくまでも Node.js で使える方法であることに注意する。
-// JavaScript には2つのオブジェクト指向の方法がある。
+let {Vector2,ExtendedVector2} = require("./Prototypedef.js"); // プロトタイプ読み込み
+let u=require("./Utility.js");
+let e=exports;
 
-let vec1 = new Vector2(3,2,1);
-let vec2 = new ExtendedVector2(6,4,2);
-let vec3 = new ExtendedVector2(54,63,72);
-let vec4 = new Vector2(0,0,0);
+e.Prototype=()=>{
 
-// 値の設定
-vec3.x = 16;
+	let vec1 = new Vector2(3,2,1);
+	let vec2 = new ExtendedVector2(6,4,2);
+	let vec3 = new ExtendedVector2(54,63,72);
+	let vec4 = new Vector2(0,0,0);
 
-console.log(`
+	// 値の設定
+	vec3.x = 16;
 
-これからクラスを試します
+	u.println(`
 
-vec1: ${   vec1   }
-vec2: ${   vec2   }
+		これからクラスを試します
 
-vec1の説明: ${   vec1.desc()   }
-vec2の説明: ${   vec2.desc()   }
-vec3の説明: ${   vec3.desc()   }
-vec4の説明: ${   vec4.desc()   }
+		vec1: ${   vec1   }
+		vec2: ${   vec2   }
 
-vec1のx座標: ${   vec1.x   }
-vec2のy座標: ${   vec2.y   }
-vec3のz座標: ${   vec3.z   }
+		vec1の説明: ${   vec1.desc()   }
+		vec2の説明: ${   vec2.desc()   }
+		vec3の説明: ${   vec3.desc()   }
+		vec4の説明: ${   vec4.desc()   }
 
-vec1+vec2+vec3: ${   Vector2.added(vec1,vec2,vec3).desc()   }
-vec4+vec2: ${   vec4.add(vec2).desc()   }
-vec2×12: ${   vec2.coefMultiplied(12).desc()   }
+		vec1のx座標: ${   vec1.x   }
+		vec2のy座標: ${   vec2.y   }
+		vec3のz座標: ${   vec3.z   }
 
-vec2∙vec3: ${   vec2.dot(vec3)   }
-vec3×vec2: ${   vec3.cross(vec2).desc()   }
-|vec3|:    ${   vec3.norm()   }
-|vec2|:    ${   vec2.abs      }
+		vec1+vec2+vec3: ${   Vector2.added(vec1,vec2,vec3).desc()   }
+		vec4+vec2: ${   vec4.add(vec2).desc()   }
+		vec2×12: ${   vec2.coefMultiplied(12).desc()   }
 
-説明してもらう:
-${   Vector2.describe()   }
-${   ExtendedVector2.describeFromSub()   }
+		vec2∙vec3: ${   vec2.dot(vec3)   }
+		vec3×vec2: ${   vec3.cross(vec2).desc()   }
+		|vec3|:    ${   vec3.norm()   }
+		|vec2|:    ${   vec2.abs      }
 
-バージョン表示:
-${   Vector2.VERSION   }
-${   ExtendedVector2.VERSION   }
+		説明してもらう:
+		${   Vector2.describe()   }
+		${   ExtendedVector2.describeFromSub()   }
 
-`);
+		バージョン表示:
+		${   Vector2.VERSION   }
+		${   ExtendedVector2.VERSION   }
 
-// アクセスできません (クラスメソッドにインスタンスからはアクセスできない)
-// vec1.describe()
-// vec2.describeFromSub()
+	`);
 
-// アクセスできません (クラス変数にインスタンスからはアクセスできない)
-// vec1.VERSION
-// vec2.VERSION
+	// アクセスできません (クラスメソッドにインスタンスからはアクセスできない)
+	// vec1.describe()
+	// vec2.describeFromSub()
+
+	// アクセスできません (クラス変数にインスタンスからはアクセスできない)
+	// vec1.VERSION
+	// vec2.VERSION
+
+};
+
+if (!module.parent) e.Prototype();

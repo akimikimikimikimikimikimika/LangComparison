@@ -4,17 +4,17 @@ void print(NSString* str) {
 	printf("%s",[str UTF8String]);
 }
 
-void nr(NSUInteger n) {
+void nl(NSUInteger n) {
 	for (NSUInteger i=0;i<n;i++) printf("\n");
 }
 
 void printLn(NSString* text,NSUInteger n) {
 	print(text);
-	nr(n);
+	nl(n);
 }
 
 void printLn2(NSUInteger begin,NSString* text,NSUInteger end) {
-	nr(begin);
+	nl(begin);
 	print(text);
-	nr(end);
+	nl(end);
 }

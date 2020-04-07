@@ -9,7 +9,7 @@ public class FileHandle {
 
 		try{
 
-			Utility.nr(1);
+			Utility.pnl(1);
 
 			Utility.println("これからファイル操作を試します","");
 
@@ -121,7 +121,7 @@ public class FileHandle {
 			Utility.println("> コンパイルして実行");
 			// Java単独では外部Javaを実行するのがキツイので,シェルの力を借りる
 			Files.write(path("Launcher"), Arrays.asList(
-				"cd \"`dirname \"$0\"`\" ; javac Java.java ; java Java ; code=$? ; rm Launcher ; exit $code"
+				"cd \"`dirname \"$0\"`\" ; java Java.java ; code=$? ; rm Launcher ; exit $code"
 			), StandardOpenOption.CREATE);
 			exec("sh",home+"/Package/Launcher");
 

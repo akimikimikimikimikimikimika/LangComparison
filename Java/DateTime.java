@@ -5,7 +5,7 @@ public class DateTime {
 	public static void main(String[] args){
 		long st = System.currentTimeMillis();
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Utility.println("これから日付と時刻を試します");
 
@@ -15,7 +15,7 @@ public class DateTime {
 			c.set(1996,1,23,9,41,12);
 		*/
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Calendar c = Calendar.getInstance();
 		Utility.println(
@@ -60,7 +60,7 @@ public class DateTime {
 			" ZONE_OFFSET : "+c.get(Calendar.ZONE_OFFSET)
 		);
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		TimeZone t = TimeZone.getDefault();
 		Utility.println(
@@ -72,7 +72,7 @@ public class DateTime {
 			"    .useDaylightTime() = "+t.useDaylightTime()
 		);
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Date d = new Date();
 		Utility.println(
@@ -111,12 +111,12 @@ public class DateTime {
 			),
 		"\"");
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		long en=System.currentTimeMillis();
 		Utility.println("この処理に要した時間: "+(en-st)+" ミリ秒");
 
-		Utility.nr(2);
+		Utility.pnl(2);
 
 	}
 

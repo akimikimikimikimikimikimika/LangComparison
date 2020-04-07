@@ -1,11 +1,21 @@
 #! /usr/bin/env node
 
-const process = require("process");
-const os = require("os");
+let process = require("process");
+let os = require("os");
+let u=require("./Utility.js");
+let e=exports;
 
-console.log(`
-ホームディレクトリ:       ${os.homedir()}
-カレントディレクトリ:     ${process.cwd()}
+e.Path=()=>{
 
-このファイルのある場所:   ${__dirname}
-`)
+	u.println(`
+		ホームディレクトリ:       ${os.homedir()}
+		カレントディレクトリ:     ${process.cwd()}
+
+		このファイルのある場所:   ${__dirname}
+	`);
+
+	u.pnl(2);
+
+};
+
+if (!module.parent) e.Path();

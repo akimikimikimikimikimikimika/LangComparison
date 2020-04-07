@@ -57,7 +57,7 @@ public class Class {
 		// vec1.VERSION
 		// vec2.VERSION
 
-		Utility.nr(2);
+		Utility.pnl(2);
 
 	}
 

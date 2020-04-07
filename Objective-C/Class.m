@@ -54,6 +54,6 @@ void ClassTest() {
 	// printLn([vec1 VERSION],1); : アクセスできません
 	// printLn([vec2 VERSION],2); : アクセスできません
 
-	nr(2);
+	nl(2);
 
 }

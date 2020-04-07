@@ -34,7 +34,7 @@ public class ProcessHandle {
 
 		);
 
-		Utility.nr(3);
+		Utility.pnl(3);
 
 		Utility.println("では,3.14秒ほど居眠りします");
 		try {

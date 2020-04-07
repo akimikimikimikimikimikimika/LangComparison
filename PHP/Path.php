@@ -1,18 +1,24 @@
 #! /usr/bin/env php
 <?php
 
-$i = function($v){return $v;};
+require_once("Utility.php");
 
-print <<<"Path"
-ホームディレクトリ:       {$i(posix_getpwuid(posix_geteuid())["dir"])}
-カレントディレクトリ:     {$i(getcwd())}
+function Path() {
 
-このファイルのフルパス:   {$i(__FILE__)}
-このファイルの実行パス:   {$argv[0]}
-このファイルの名前:       {$i(basename(__FILE__))}
-このファイルのある場所:   {$i(__DIR__)}
-Path;
+	println(<<<"Path"
+		ホームディレクトリ:       {$i(posix_getpwuid(posix_geteuid())["dir"])}
+		カレントディレクトリ:     {$i(getcwd())}
 
-print "\r\n\r\n";
+		このファイルのフルパス:   {$i(__FILE__)}
+		このファイルの実行パス:   {$argv[0]}
+		このファイルの名前:       {$i(basename(__FILE__))}
+		このファイルのある場所:   {$i(__DIR__)}
+	Path);
+
+	pnl(2);
+
+}
+
+if (running_directly(__FILE__)) Path();
 
 ?>

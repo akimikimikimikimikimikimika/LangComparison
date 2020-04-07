@@ -71,6 +71,9 @@ public class Classdef {
 			}
 			return a;
 		}
+		/*
+			Javaでは, added(Vector ...args) のように可変個引数のメソッドがあった場合,可変個引数として added(arg1,arg2,arg3) などと渡すことも可能だし, added(array) のように Vector[] 型の配列を渡すこともできる。
+		*/
 
 		// スカラ倍を定義 (共にインスタンスメソッド)
 

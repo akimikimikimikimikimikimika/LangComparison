@@ -15,7 +15,7 @@
 		void ClassTest(void);
 		// Utilities.m
 		void print(NSString*);
-		void nr(NSUInteger);
+		void nl(NSUInteger);
 		void printLn(NSString*,NSUInteger);
 		void printLn2(NSUInteger,NSString*,NSUInteger);
 	#define fmt NSString stringWithFormat

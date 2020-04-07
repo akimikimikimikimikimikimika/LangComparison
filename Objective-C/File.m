@@ -196,7 +196,7 @@ void File() {
 		terminationHandler:nil
 	] waitUntilExit];
 
-	nr(1);
+	nl(1);
 
 }
 

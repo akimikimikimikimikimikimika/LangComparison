@@ -43,7 +43,7 @@ public class Main {
 		if (args.length==0) {
 			Utility.println("こんにちは。私の名前はJava。");
 			while (true) {
-				Utility.nr(2);
+				Utility.pnl(2);
 				Utility.println(
 					"何がしたい?",
 					"",
@@ -71,47 +71,47 @@ public class Main {
 
 				action=Utility.input();
 
-				Utility.nr(2);
+				Utility.pnl(2);
 
 				if (aeq("0")) break;
-				else if (aeq("1")) Stdinout.main(arg);
+				else if (aeq("1")) Stdio.main(arg);
 				else if (aeq("2")) Values.main(arg);
 				else if (aeq("3")) Operators.main(arg);
 				else if (aeq("4")) Condition.main(arg);
-				else if (aeq("5")) Loop.main(arg);
-				else if (aeq("6")) Mathematics.main(arg);
-				else if (aeq("7")) StringType.main(arg);
-				else if (aeq("8")) Sprintf.main(arg);
-				else if (aeq("9")) RegExp.main(arg);
+				else if (aeq("5")) Repeat.main(arg);
+				else if (aeq("6")) Calc.main(arg);
+				else if (aeq("7")) Strings.main(arg);
+				else if (aeq("8")) Format.main(arg);
+				else if (aeq("9")) RegEx.main(arg);
 				else if (aeq("a")) DateTime.main(arg);
 				else if (aeq("b")) Class.main(arg);
 				else if (aeq("c")) Error.main(arg);
 				else if (aeq("d")) FileHandle.main(arg);
 				else if (aeq("e")) PathData.main(arg);
 				else if (aeq("f")) ProcessHandle.main(arg);
-				else if (aeq("g")) Threading.main(arg);
+				else if (aeq("g")) Threads.main(arg);
 				else if (aeq("h")) Arguments.main(arg);
 				else Utility.println("指定したアクションは見つかりませんでした","");
 			}
 		}
 		else if (args.length==1) {
 			String key = args[0];
-			if (eq(key,"Stdinout")) Stdinout.main(arg);
+			if (eq(key,"Stdio")) Stdio.main(arg);
 			else if (eq(key,"Values")) Values.main(arg);
 			else if (eq(key,"Operators")) Operators.main(arg);
 			else if (eq(key,"Condition")) Condition.main(arg);
-			else if (eq(key,"Loop")) Loop.main(arg);
-			else if (eq(key,"Math")) Mathematics.main(arg);
-			else if (eq(key,"String")) StringType.main(arg);
-			else if (eq(key,"Sprintf")) Sprintf.main(arg);
-			else if (eq(key,"RegExp")) RegExp.main(arg);
+			else if (eq(key,"Repeat")) Repeat.main(arg);
+			else if (eq(key,"Calc")) Calc.main(arg);
+			else if (eq(key,"Strings")) Strings.main(arg);
+			else if (eq(key,"Format")) Format.main(arg);
+			else if (eq(key,"RegEx")) RegEx.main(arg);
 			else if (eq(key,"DateTime")) DateTime.main(arg);
 			else if (eq(key,"Class")) Class.main(arg);
 			else if (eq(key,"Error")) Error.main(arg);
-			else if (eq(key,"File")) FileHandle.main(arg);
+			else if (eq(key,"Files")) FileHandle.main(arg);
 			else if (eq(key,"Path")) PathData.main(arg);
 			else if (eq(key,"Process")) ProcessHandle.main(arg);
-			else if (eq(key,"Thread")) Threading.main(arg);
+			else if (eq(key,"Threads")) Threads.main(arg);
 			else if (eq(key,"Arguments")) Arguments.main(arg);
 			else Arguments.main(args);
 		}

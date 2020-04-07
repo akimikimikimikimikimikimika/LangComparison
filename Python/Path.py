@@ -2,17 +2,22 @@
 # -*- coding: utf-8 -*-
 
 import os
+from Utility import *
 
-pt=os.path.normpath(os.path.join(os.getcwd(),__file__))
+def Path():
 
-print(f"""
-ホームディレクトリ:       {os.path.expanduser("~")}
-カレントディレクトリ:     {os.getcwd()}
+	pt=os.path.normpath(os.path.join(os.getcwd(),__file__))
 
-このファイルのフルパス:   {os.path.abspath(pt)}
-このファイルの実行パス:   {__file__}
-このファイルの名前:       {os.path.basename(pt)}
-このファイルのある場所:   {os.path.dirname(pt)}
-""")
+	prints(f"""
+		ホームディレクトリ:       {os.path.expanduser("~")}
+		カレントディレクトリ:     {os.getcwd()}
 
-print("\r\n")
+		このファイルのフルパス:   {os.path.abspath(pt)}
+		このファイルの実行パス:   {__file__}
+		このファイルの名前:       {os.path.basename(pt)}
+		このファイルのある場所:   {os.path.dirname(pt)}
+	""")
+
+	pnl(2)
+
+runningDirectly(__name__,Path)

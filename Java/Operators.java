@@ -66,7 +66,7 @@ public class Operators {
 
 		);
 
-		Utility.nr(2);
+		Utility.pnl(2);
 
 	}
 

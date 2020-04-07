@@ -4,7 +4,7 @@ public class Error {
 
 	public static void main(String[] args){
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Utility.println("これから例外処理を試します","");
 
@@ -39,7 +39,7 @@ public class Error {
 			或いは,catchで捕捉しないエラー型を関数の throws で放り投げることもできる。
 		*/
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Utility.println("関数を実行してみます");
 		try {
@@ -54,7 +54,7 @@ public class Error {
 			);
 		}
 
-		Utility.nr(2);
+		Utility.pnl(2);
 
 	}
 

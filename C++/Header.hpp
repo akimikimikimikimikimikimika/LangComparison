@@ -3,20 +3,20 @@ using namespace std;
 #ifndef CPPDEF
 	#define CPPDEF
 		int main(int argc, char *argv[]);
-		void Stdinout();
+		void Stdio();
 		void Values();
 		void Operators();
 		void Condition();
-		void Loop();
-		void Math();
-		void Sprintf();
-		void RegExp();
+		void Repeat();
+		void Calc();
+		void Format();
+		void RegEx();
 		void DateTime();
-		void Class();
-		void FileHandle();
+		void Classes();
+		void Files();
 			void error();
 		void Path();
-		void Thread();
+		void Threads();
 		void Arguments(int argc, char *argv[]);
 			void ArgumentsDemo();
 #endif

@@ -16,7 +16,7 @@ public class Arguments {
 
 		if (args.length==0) args = defaultArg;
 
-		Utility.nr(1);
+		Utility.pnl(1);
 
 		Utility.println(
 			"このファイルを実行するにあたっての引数は以下の通りです:",
@@ -27,7 +27,7 @@ public class Arguments {
 			Utility.println(" "+n+": "+s);
 			n++;
 		}
-		Utility.nr(2);
+		Utility.pnl(2);
 
 	}
 
