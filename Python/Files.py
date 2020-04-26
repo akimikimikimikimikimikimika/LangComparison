@@ -131,7 +131,6 @@ def Files():
 	pnl(2)
 
 # 状態を確認する関数
-
 def check(pt):
 	if os.path.exists(pt): # 或いは　os.access(pt,os.F_OK)
 		print("   存在しています")
@@ -159,5 +158,88 @@ def check(pt):
 
 	if os.path.getsize(pt)==0:
 		print("   空です")
+
+"""
+
+	subprocess.run(cmd,options) -> CompletedProcess
+		• stdin,stdout,stderr はインターセプトされない (optionsで変更可能)
+		• 実行完了まで run より先には進まない
+		• cmd : 実行内容
+			通常は配列型
+			shell=True の場合は文字列型
+		• options : オプション
+			• cwd=<str>
+				カレントディレクトリを変更する
+			• env=<dict>
+				環境変数を変更する
+			• shell=<bool>
+				shell=True でシェルを介して実行する (あまりお勧めされていない)
+			• check=<bool>
+				check=True で終了コードが0でない場合にエラーを送出する
+			• timeout=<int>
+				制限時間を設けることができる
+			• stdin,stdout,stderr=<int>
+				IOの制御を指定でき,これらの値が有効である
+				• None
+					親プロセスの入出力に接続
+				• subprocess.PIPE
+					パイプを開くことで,直接文字列を読み出し/書き込みしたり,別のプロセスに渡してプロセス間にパイプを設けることができる
+					stdout,stderr は返値の CompletedProcess から受け取れる
+				• subprocess.DEVNULL
+					stdinに対しては空の入力
+					stdout,stderrに対しては出力の破棄を意味する
+				• subprocess.STDOUT
+					stderrにのみ有効な値で,stderrの内容がstdoutに統合される
+				• ファイルハンドラ
+					指定したファイルに書き出します
+			• input=<bytearray>
+				stdin に subprocess.PIPE を指定した場合に渡す入力を指定する
+				文字列ではなくバイトオブジェクトであることに注意
+		• 戻り値 : CompletedProcess オブジェクト
+			• args … 実行内容の配列か文字列
+			• returncode … 終了コード
+				異常終了の場合は負の値になる
+			• stdout,stderr
+				subprocess.PIPE を指定した場合にそれらの内容が取得できるbytearrayオブジェクト
+
+	subprocess.Popen(cmd,options) -> Popen
+		• stdin,stdout,stderr はインターセプトされない (optionsで変更可能)
+		• Popenオブジェクトのコンストラクタ
+		• Popen の時点ではプロセスは終了していないので, wait() や communicate() を用いて終了を待つ必要がある
+		• subprocess.run も Popenが裏で利用されている
+		• cmd : 実行内容
+			通常は配列型
+			shell=True の場合は文字列型
+		• cwd=<str>
+		• env=<dict>
+		• shell=<bool>
+		• stdin,stdout,stderr=<int>
+		• 戻り値 : Popen オブジェクト
+			• args … 実行内容の配列か文字列
+			• pid … プロセスID
+			• returncode … 終了コード
+				異常終了の場合は負の値になる
+			• wait() … 終了まで待機する
+			• communicate(input=None,timeout=None)
+				stdinとして渡すbytearrayをinputに指定する
+				戻り値として (stdout,stderr) の形のタプルでstdout,stderrをbytearray型で返す
+				timeoutを指定して,時間制限を設けることができる
+				subprocess.PIPE を指定したIOのみ受け渡しができる
+
+	exec(pythonSource,globals,locals) -> None
+		• pythonSource に記載したPythonソースを実行する
+		• ソース中の値は直接戻り値として受け取ることはできない
+		• 外の変数をexec内で参照したり,exec内の変数を外から参照することもできる
+		• globalsやlocalsにソース中で使える変数を与えることができる
+			e.g. locals={"a":6} … 内部で変数 a が参照でき, 6 が得られる
+
+	eval(pythonSource,globals,locals) -> value?
+		• pythonSource に記載したPythonソースを実行する
+			但し,等号を含む式や,構文を含むものなどは使えない
+		• ソース中の値は直接戻り値として受け取ることはできない
+		• 外の変数をeval内で参照したり,eval内の変数を外から参照することもできる
+		• globalsやlocalsにソース中で使える変数を与えることができる
+
+"""
 
 runningDirectly(__name__,Classes)

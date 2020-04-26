@@ -6,19 +6,19 @@ require_once("Utility.php");
 function Stdio() {
 	global $i;
 
-	println(<<<"Stdinout"
+	println(<<<"Stdio"
 		こんにちは。私の名前はPHPです。
 		あなたのことを教えてください
-	Stdinout);
+	Stdio);
 
 	print("あなたは...");
 	$aboutYou = trim(fgets(STDIN));
 
-	println(<<<"Stdinout"
+	println(<<<"Stdio"
 		あなたは $aboutYou ですね。わかりました。
 
 		これから幾つかの出力の仕方を披露しますね。
-	Stdinout);
+	Stdio);
 
 	echo "後ろに改行を付けません。";
 	print "後ろに改行を付けません。";

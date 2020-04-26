@@ -2,11 +2,11 @@ fun Values() {
 
 	// 文字列
 	val string:String = "コトリン"
-	val lines=trim("""
+	val lines="""
 		First line
 		Second line
 		Third line
-	""")
+	"""
 	/*
 		変数展開•式展開の仕方
 		"The value is $val"
@@ -49,14 +49,18 @@ fun Values() {
 	val list:List<Int> = listOf(3,1,4)
 
 	// マップ
-	val map:Map<String, Int> = mapOf("three" to 3,"one" to 1,"four" to 4)
+	val map:Map<String,Int> = mapOf(
+		"three" to 3,
+		"one" to 1,
+		"four" to 4
+	)
 		// Map<KeyType, ValueType>
 		// mapOf(key to value)
 
 	// 集合
 	val set:Set<Int> = setOf(3,1,4)
 
-	println(trim("""
+	printLn("""
 
 		色々な値を試します
 
@@ -80,12 +84,12 @@ fun Values() {
 		マップ: $map
 		集合: $set
 
-	"""))
+	""")
 	/*
 		val 変数名 : 定数として宣言
 		var 変数名 : 変数として宣言
 	*/
 
-	println("\r\n")
+	pnl(2)
 
 }

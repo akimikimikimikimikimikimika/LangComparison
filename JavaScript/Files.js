@@ -163,4 +163,101 @@ let check=pt=>{
 	}
 };
 
+/*
+
+	外部コマンドの実行
+
+	• ?を後置するパラメータは,省略可能であることを示す
+	• 文字列型: "tar -tf archive\ file.tar" のようなもの
+	• 配列型: ["tar","-tf","archive file.tar"] のようなもの
+
+	child_process.exec(cmdStr,options?,callback?) -> ChildProcess
+		• stdin,stdout,stderr の全てがインターセプトされる
+		• exec の時点ではプロセスは終了していないので,コールバック関数で通知を受け取る
+		• cmdStr <String> 実行内容 (文字列型)
+		• options <Object> オブションを指定するObject (後述)
+		• callback <Function> コールバック関数
+			実行終了後/中断後に呼び出され,引数は (error,stdout,stderr)
+		• 戻り値 <ChildProcess>
+
+	child_process.execFile(file,args?,options?,callback?) -> ChildProcess
+		• stdin,stdout,stderr の全てがインターセプトされる
+		• execFile の時点ではプロセスは終了していないので,コールバック関数で通知を受け取る
+		• file <String> 実行内容 (配列型) の最初の項
+		• args <String[]> 実行内容 (配列型) の残りの項の配列
+		• options <Object> オブションを指定するObject (後述)
+		• callback : コールバック関数 (execと同じ)
+		• 戻り値 <ChildProcess>
+
+	child_process.spawn(file,args?,options?) -> ChildProcess
+		• stdin,stdout,stderr の全てがインターセプトされる (options.stdioで変更可能)
+		• spawn の時点ではプロセスは終了していないので,コールバック関数で通知を受け取る
+		• file <String> 実行内容 (配列型) の最初の項
+		• args <String[]> 実行内容 (配列型) の残りの項の配列
+		• options <Object> オブションを指定するObject (後述)
+		• 戻り値 <ChildProcess>
+
+	child_process.execSync(cmdStr,options?) -> String
+		• stdin,stdout,stderr の全てがインターセプトされる (options.stdioで変更可能)
+		• 実行完了まで execSync より先には進まない
+		• cmdStr <String> 実行内容 (文字列型)
+		• options <Object> オブションを指定するObject (後述)
+		• 戻り値 <String> stdout 全体
+
+	child_process.execFileSync(file,args?,options?) -> String
+		• stdin,stdout,stderr の全てがインターセプトされる (options.stdioで変更可能)
+		• 実行完了まで execFileSync より先には進まない
+		• file <String> 実行内容 (配列型) の最初の項
+		• args <String[]> 実行内容 (配列型) の残りの項の配列
+		• options <Object> オブションを指定するObject (後述)
+		• 戻り値 <String> stdout 全体
+
+	child_process.spawnSync(file,args?,options?) -> Object
+		• stdin,stdout,stderr の全てがインターセプトされる (options.stdioで変更可能)
+		• 実行完了まで spawnSync より先には進まない
+		• file <String> 実行内容 (配列型) の最初の項
+		• args <String[]> 実行内容 (配列型) の残りの項の配列
+		• options <Object> オブションを指定するObject (後述)
+		• 戻り値 <Object> プロセスの情報に関するオブジェクト
+			• pid <Number> プロセスID
+			• status <Number> 終了コード (強制終了した場合はnull)
+			• stdout <String> stdoutの文字列
+			• stderr <String> stderrの文字列
+			• output <Object> {1:stdoutの文字列,2:stderrの文字列} の形式のオブジェクト
+
+	• options のオブジェクト
+		• cwd <String> カレントディレクトリを指定
+			指定しなければ現在のカレントディレクトリを使用
+		• env <Object> 環境変数の連想配列
+			指定しなければ現在の環境変数を使用
+		• shell <Boolean>
+			shell:true でシェルを介して実行する
+		• stdio <Array> IOの挙動を指定
+			[stdinの指定,stdoutの指定,stderrの指定]
+			• "pipe" … 各々の方法でパイプを指定できる
+			• "inherit" … 親プロセスに接続
+			• "ignore" … 空の入力/出力を破棄
+			• Streamオブジェクト … ファイルなどの読み書きができる
+
+	• ChildProcess オブジェクト
+		• pid <Number> プロセスID
+		• exitCode <Number> 終了コード (実行中の場合はnull)
+		• kill() 強制終了する
+		• stdout,stderr <Reader>
+			stdout.on("data",chunk=>{
+				stdOutData=chunk
+			});
+			とか
+			someReader.pipe(stdout);
+			のように使う
+		• stdin <Writer>
+			stdin.write(stdInData); のように使う
+
+	eval(jsSource) -> value?
+		• jsSource に記載したJavaScriptソースを実行する
+		• ソース中の最終行の値がevalから返される。
+		• 外の変数をeval内で参照したり,eval内の変数を外から参照することもできる。
+
+*/
+
 if (!module.parent) e.Files();

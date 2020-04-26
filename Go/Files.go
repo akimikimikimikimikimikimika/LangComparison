@@ -52,7 +52,7 @@ func Files() {
 
 	// 追記
 
-	print("> Markdownファイルに追記\r\n",ln{2})
+	print("> Markdownファイルに追記",ln{2})
 	io3,e := os.OpenFile("Package/Headers.md",os.O_WRONLY|os.O_APPEND,0644)
 	errorHandle(e)
 	io3.WriteString("\r\n## Header 2\r\n### Header 3")

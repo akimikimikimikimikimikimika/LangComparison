@@ -9,7 +9,13 @@ fm.changeCurrentDirectoryPath(URL(fileURLWithPath: CommandLine.arguments[0]).del
 
 func exec(_ s:String,_ args:String...) {
 	do{
-		let p=try Process.run(URL(fileURLWithPath: s), arguments: args, terminationHandler: nil)
+		let p=try Process.run(URL(fileURLWithPath: s), arguments: args)
+		// let p=Process()
+		// p.executableURL = URL(fileURLWithPath: s)
+		// p.arguments = args
+		// p.standardInput = FileHandle.standardInput
+		// p.standardOutput = FileHandle.standardOutput
+		// try p.run()
 		p.waitUntilExit()
 	}catch{
 		print("エラーが発生したため,実行できませんでした")
@@ -50,7 +56,7 @@ while true {
 		break
 	}
 	else if action=="1" {
-		exec("Stdinout.swift","no-stdin")
+		exec("Stdio.swift")
 	}
 	else if action=="2" {
 		exec("Values.swift")

@@ -1,6 +1,6 @@
 fun Operators() {
 
-	println(trim("""
+	printLn("""
 
 		これから演算子を試します
 
@@ -24,13 +24,13 @@ fun Operators() {
 		true || false = ${   true || false   }
 		       !false = ${          !false   }
 
-	"""))
+	""")
 	/*
 		その他に...
 		複合代入演算子 : += -= *= /= %=
 			a += b は a= a + b と同義。その他も同様
 	*/
 
-	println("\r\n")
+	pnl(2)
 
 }

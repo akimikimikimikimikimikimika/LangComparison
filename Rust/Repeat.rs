@@ -1,13 +1,21 @@
+crate::use_util!();
+
 pub fn main() {
 
-	println!("\r\nこれからループ処理を試します\r\n");
+	pnl(1);
 
-	println!("\r\nfor n in 0..3 {{…}}");
+	p!("これからループ処理を試します",1);
+
+	pnl(1);
+
+	p!("for n in 0..3 {{…}}",1);
 	for n in 0..3 {
 		println!("n={} のループ",n);
 	}
 
-	println!("\r\nfor c in array.iter() {{…}}");
+	pnl(1);
+
+	p!("for c in array.iter() {{…}}",1);
 	let cs = ["壱","弐","参"];
 	for c in cs.iter() {
 		println!("c=\"{}\" のループ",c);
@@ -23,14 +31,18 @@ pub fn main() {
 			ベクター•要素の所有権を取ることができる
 	*/
 
-	println!("\r\nwhile ~ {{…}}");
+	pnl(1);
+
+	p!("while ~ {{…}}",1);
 	let mut string:String="".to_string();
 	while string.len()<6 {
 		string = string+"*";
 		println!("{}",string);
 	}
 
-	println!("\r\nloop {{…break;}}");
+	pnl(1);
+
+	p!("loop {{…break;}}",1);
 	string="".to_string();
 	loop {
 		string = string+"*";

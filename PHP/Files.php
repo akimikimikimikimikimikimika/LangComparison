@@ -131,7 +131,6 @@ function Files() {
 }
 
 # 状態を確認する関数
-
 function check($pt) {
 	global $i;
 
@@ -155,6 +154,125 @@ function check($pt) {
 	if (filesize($pt)==0) println("   空です");
 
 }
+
+/*
+
+	外部コマンドの実行
+
+	• &を前置するパラメータは,その変数に値が書き込まれる
+	• ?を後置するパラメータは,省略可能であることを示す
+	• 文字列型: "tar -tf archive\ file.tar" のようなもの
+	• 配列型: ["tar","-tf","archive file.tar"] のようなもの
+
+	passthru($cmdStr,&$code?) -> void
+		• stdin,stdout,stderr はインターセプトされない
+		• 実行完了まで passthru より先には進まない
+		• $cmdStr : 実行内容 (文字列型)
+		• $code : 終了コード
+
+	exec($cmdStr,&$stdOut?,&$code?) -> string
+		• stdout がインターセプトされる
+		• stdin,stderr はインターセプトされない
+		• 実行完了まで exec より先には進まない
+		• $cmdStr : 実行内容 (文字列型)
+		• $stdOut : stdout の1行ごとの配列 (改行は含まない)
+		• $code : 終了コード
+		• 戻り値 : stdout の最後の行
+
+	system($cmdStr,&$code?) -> string
+		• stdin,stdout,stderr はインターセプトされない
+		• 実行完了まで system より先には進まない
+		• $cmdStr : 実行内容 (文字列型)
+		• $code : 終了コード
+		• 戻り値 : stdout の最後の行
+
+	shell_exec($cmdStr) -> string
+		• stdout がインターセプトされる
+		• stdin,stderr はインターセプトされない
+		• 実行完了まで shell_exec より先には進まない
+		• $cmdStr : 実行内容 (文字列型)
+		• 戻り値 : stdout 全体
+		• シェルを介して実行される ($cmdStr の前に sh -c などが付加されて実行する)
+
+	popen($cmdStr,"r") -> handler
+		• stdout がインターセプトされる
+		• stdin,stderr はインターセプトされない
+		• popenの時点ではプロセスは終了していないので, fclose や pclose を用いて終了を待つ必要がある
+		• $cmdStr : 実行内容 (文字列型)
+		• 戻り値 : 読み込みハンドラ
+		• 使い方 (出力を1024バイト分読み取る)
+			$io=popen("コマンド","r");
+			$stdOut=fread($io,1024);
+			fclose($io);
+		• 時間をおいて複数回出力されるおそれがある場合,その回数だけ fclose の前に fread を用意しておかないと全て受け取れない。逆に, fread が多すぎると,永遠に受け取りを試み続ける。
+
+	popen($cmdStr,"w") -> handler
+		• stdin がインターセプトされる
+		• stdout,stderr はインターセプトされない
+		• popen の時点ではプロセスは終了していないので, pclose を用いて終了を待つ必要がある
+		• $cmdStr : 実行内容 (文字列型)
+		• 戻り値 : 書き込みハンドラ
+		• 使い方
+			$io=popen("コマンド","w");
+			fwrite($io,$stdIn);
+			fclose($io);
+
+	proc_open($cmd,$desc,&$pipes,$cwd?,$env?) -> resource
+		• stdin,stdout,stderr はインターセプトされない ($descで変更可能)
+		• proc_open の時点ではプロセスは終了していないので, proc_close を用いて終了を待つ必要がある
+		• $cmd : 実行内容 (文字列型/配列型)
+		• $desc : IOの制御を指定する配列
+			[stdinの指定,stdoutの指定,stderrの指定]
+			• $desc[0]
+				• ["pipe","r"] … $pipesからハンドラで文字列を書き込む
+				• ["file","php://stdin","r"] … 親プロセスのstdinに接続
+				• ["file","パス","r"] … ファイルから読み込む
+				• ["file","/dev/null","r"] … 空の入力
+				• ハンドラ … 別のプロセスやfopenで開いたファイルハンドラから読み込む (パイプ)
+			• $desc[1],$desc[2]
+				• ["pipe","w"] … $pipesからハンドラで文字列を受け取れる
+				• ["file","php://stdout","w"] … 親プロセスのstdoutに接続
+				• ["file","php://stderr","w"] … 親プロセスのstderrに接続
+				• ["file","パス","w"] … ファイルに書き込む
+				• ["file","/dev/null","w"] … 出力を破棄
+				• ハンドラ … 別のプロセスやfopenで開いたファイルハンドラに書き込む (パイプ)
+		• $pipes : pipeにしたIOのハンドラの配列
+			• $pipes[0] がstdinの書き込みハンドラ, $pipes[1],$pipes[2] がstdout,stderr の読み込みハンドラ
+			• popenの時と同じように読み込みや書き込むができる
+			• $pipes のハンドラを別の proc_open の $desc に渡せば2つのプロセスの間でパイプが作れる
+		• $cwd : カレントディレクトリを指定
+			指定しなければ現在のカレントディレクトリを使用
+		• $env : 環境変数の連想配列
+			指定しなければ現在の環境変数を使用
+		• 戻り値 : リソース
+			実行に失敗すれば false が返される
+			終了後に必ず proc_close をする。proc_closeから終了コードが得られる。
+			proc_get_status よりプロセスの情報が得られる
+		• 使い方
+			$res=proc_open(
+				["コマンド","arg1","arg2"],
+				[0=>["pipe","w"],1=>STDOUT,2=>["file","/dev/null","w"]],
+				$pipes
+			);
+			if (is_resource($res)) {
+				fwrite($pipes[0],$stdIn);
+				fclose($pipes[0]);
+				$code=proc_close($res);
+			}
+		• proc_get_status(リソース) ->
+			[
+				command=>string // 実行コマンド
+				pid=>int // プロセスID
+				exitcode=>int // 終了コード
+				running=>bool // まだ実行中かどうか
+			]
+
+	eval($phpSource) -> value?
+		• $phpSource に記載したPHPソースを実行する
+		• ソース中で return 文があればその値がevalから返される。
+		• 外の変数をeval内で参照したり,eval内の変数を外から参照することもできる。
+
+*/
 
 if (running_directly(__FILE__)) Files();
 

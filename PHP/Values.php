@@ -63,6 +63,20 @@ function Values() {
 		• function cube($val) use($integer) のように, use節で変数を指定すると,外部にある変数 $integer の読み書きができるようになる。
 	*/
 
+	/*
+		PHPの型判定
+		• gettype($val) -> string : 型を示す
+			• "string","integer","double","array","object","resource","resource (closed)","NULL","unknown type" のいづれか
+			• 逆に set_type($val,$type) -> bool で型を変更できるみたい
+		• is_string,is_int,is_float,is_bool,is_array,is_object,is_resource,is_null
+			各々の型の判定
+		• is_numeric($val) -> bool : 数値/数値形式の文字列は真
+		• is_scalar($val) -> bool : string,integer,float,booleanは真
+		• is_callable($val) -> bool : 関数なら真
+		• get_class($val) -> string : objectのクラスを示す (object以外では使えない)
+		• function_exists($name) -> bool : 名前が$nameの関数が存在するかどうか
+	*/
+
 	println(<<<"Values"
 
 		色々な値を試します

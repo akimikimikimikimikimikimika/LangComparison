@@ -6,10 +6,11 @@ def DateTime
 
 	# 計測開始
 	st=Time.now
+	# Time.now は高精度な時刻を秒単位で表す
 
 	println """
 
-    	これから日付と時刻を試します
+		これから日付と時刻を試します
 
 		現在ローカル時刻: #{Time.now.getlocal}
 		現在UTC時刻:      #{Time.now.getutc}
@@ -17,7 +18,7 @@ def DateTime
     """
 
 	now=Time.now
-	print """
+	println """
 		Time.now
 		.asctime = #{now.asctime}
 		.to_s    = #{now.to_s}

@@ -22,6 +22,6 @@ else {
 	あなたのことについては今回は聞かないでおきます。
 	直接実行した時にあなたのことを聞きます。
 
-		Swift/Stdinout.swift
+		Swift/Stdio.swift
 	""")
 }

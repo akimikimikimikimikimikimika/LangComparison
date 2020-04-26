@@ -72,7 +72,12 @@ def Values
 		val ** 2;
 	}
 	# Rubyの関数は最後の文の内容が自動的にreturnされる。
-	# returnして欲しくない場合は,例えば, nil; という行を後ろに追加する。
+	# returnして欲しくない場合は,例えば, nil という行を後ろに追加する。
+
+	# Rubyの値の型判定
+	# • val.class -> string : クラスを示す
+	# • val.kind_of?(Type) -> bool : クラスTypeの値かどうかを判定 (サブクラスも該当)
+	# • val.instance_of?(Type) -> bool : クラスTypeの値かどうかを判定 (サブクラスは含まない)
 
 	println """
 		色々な値を試します

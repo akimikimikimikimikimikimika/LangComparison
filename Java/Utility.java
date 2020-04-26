@@ -13,7 +13,13 @@ public class Utility {
 		for (String s:args) System.out.println(s);
 	}
 
-	public static void pnl(int n) {
+	public static String nl(int lines) {
+		String t="";
+		for (int n=0;n<lines;n++) t+=System.lineSeparator();
+		return t;
+	}
+
+	public static void pnl(int lines) {
 		for (int m=0;m<n;m++) System.out.println();
 	}
 

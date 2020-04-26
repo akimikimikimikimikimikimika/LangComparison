@@ -7,7 +7,15 @@ function DateTime() {
     global $i;
 
 	// 計測開始
-	$st=microtime(true);
+	$st=microtime(true); // microtime は秒単位
+	/*
+		microtime(true)
+			通常の精度
+			現在時刻を表す秒単位の数値 (マイクロ秒までの精度がある)
+		hrtime(true)
+			高精度
+			現在時刻を表すナノ秒単位の数値
+	*/
 
 	println(<<< "DateTime"
 
@@ -115,7 +123,7 @@ function DateTime() {
 	// 計測終了
 	$en=microtime(true);
 
-	println("この処理に要した時間: {$i(($en-$st)*100000)} マイクロ秒");
+	println("この処理に要した時間: {$i(($en-$st)*1000000)} マイクロ秒");
 
 	pnl(2);
 

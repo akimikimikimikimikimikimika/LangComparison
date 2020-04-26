@@ -19,9 +19,9 @@ void Format(){
 	*/
 
 	printLn2(1,"実数",1);
-	printf("sprintf(\"%%f\",0.018) = \"%f\"",0.018);nl(1);
 	printf("sprintf(\"%%g\",0.018) = \"%g\"",0.018);nl(1);
 	printf("sprintf(\"%%e\",0.018) = \"%e\"",0.018);nl(1);
+	printf("sprintf(\"%%f\",0.018) = \"%f\"",0.018);nl(1);
 	printf("sprintf(\"%%E\",0.018) = \"%E\"",0.018);nl(1);
 	/*
 		double 型の整数で上のような演算を行いたい場合は,それぞれ指定子の前に l を付加する。

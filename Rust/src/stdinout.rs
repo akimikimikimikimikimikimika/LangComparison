@@ -1,1 +1,0 @@
-../Stdinout.rs

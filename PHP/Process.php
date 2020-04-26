@@ -6,8 +6,10 @@ require_once("Utility.php");
 function Process() {
 	global $i;
 
+	// 最終更新時刻取得用
 	$dt=new DateTime();
 	date_timestamp_set($dt,getlastmod());
+
 	println(<<<"Process"
 
 		プロセスID: {$i(getmypid())}

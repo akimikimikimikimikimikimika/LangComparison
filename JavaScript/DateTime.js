@@ -6,6 +6,20 @@ let e=exports;
 e.DateTime=()=>{
 
 	let st = new Date();
+	/*
+		new Date()
+			通常の精度
+			現在時刻を表すミリ秒単位の数値 (と可換なオブジェクト)
+			Number(new Date()) などで数値に変換
+		performance.now()
+			高精度
+			現在時刻を表すミリ秒単位の数値
+			Number(new Date()) などで数値に変換
+			実装によって精度がまちまちだが,最小で数マイクロ秒程度の精度
+			Node.js で使うには
+			 let performance=require("perf_hook");
+			を挿入する
+	*/
 
 	let date = new Date();
 	u.println(`

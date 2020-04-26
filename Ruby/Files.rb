@@ -154,4 +154,103 @@ def check(pt)
 
 end
 
+=begin
+
+	外部コマンドの実行
+
+	• ?を後置するパラメータは,省略可能であることを示す
+	• 文字列型: "tar -tf archive\ file.tar" のようなもの
+	• 配列型: ["tar","-tf","archive file.tar"] のようなもの
+
+
+	exec(env?,cmd,options?) -> void
+		• stdin,stdout,stderr はインターセプトされない (optionsで変更可能)
+		• cmd : 実行内容 (文字列型/配列型)
+			但し,配列は *array の形で引数展開すること
+			文字列の場合に,文字列中に ;[]() などのメタ文字が含まれる場合はシェル経由で実行される
+		• env : 環境変数の連想配列
+			指定しなければ現在の環境変数を使用
+		• options : 実行オプション (後述)
+		• 実行した後は,Rubyの実行に戻らずにそのまま終了する (以後のコードは実行されない)
+		• execの終了コードはそのままRubyの終了コードになる
+
+	`cmdStr` -> string
+		• stdout がインターセプトされる
+		• stdin,stderr はインターセプトされない
+		• 実行完了まで `cmdStr` より先には進まない
+		• cmdStr : 実行内容 (文字列型)
+		• 戻り値 : stdout 全体
+		• 実行後 $? から結果を得られる
+			• $?.exitstatus : 終了コード
+			• $?.pid : プロセスID
+
+	system(env?,cmd,options?) -> bool | nil
+		• stdin,stdout,stderr はインターセプトされない (optionsで変更可能)
+		• 実行完了まで system より先には進まない
+		• cmd : 実行内容 (文字列型/配列型)
+		• env : 環境変数の連想配列
+		• options : 実行オプション (後述)
+		• 戻り値 : 成功したか否かを示す真偽値
+			• true : 終了コードが0の場合
+			• false : 終了コードが0以外の場合
+			• nil : 実行に失敗した場合
+		• 実行後 $? から結果を得られる
+
+	spawn(env?,cmd,options?) -> int
+		• stdin,stdout,stderr はインターセプトされない (optionsで変更可能)
+		• spawn の時点ではプロセスは終了していないので, waitpid(プロセスID) を用いて終了を待つ必要がある
+		• cmd : 実行内容 (文字列型/配列型)
+		• env : 環境変数の連想配列
+		• options : 実行オプション (後述)
+		• 戻り値 : プロセスID
+		• waitpid で待った後に $? から結果を得られる
+
+	IO.popen(env?,cmd,options?,mode="r") -> IO
+		• stdin,stdout,stderr の全てがインターセプトされる (optionsで変更可能)
+		• cmd : 実行内容 (文字列型/配列型)
+			IO.popen では配列であっても指定できる (*arrayの展開は必要ない)
+		• env : 環境変数の連想配列
+		• options : 実行オプション (後述)
+		• 戻り値 : ファイルハンドラ (IOオブジェクト)
+		• IO.popenはプロセスの終了を待ってくれない。待つ必要がある場合は spawn などを使用する
+
+	• options : 実行オプションの連想配列
+		• :in=> / STDIN=> / 0=>
+			• :in,STDIN,0 … 親プロセスのstdinに接続
+			• "パス" … ファイルから読み込む
+			• "/dev/null" … 空の入力
+			• ハンドラ … IO.pipe などで開いたファイルハンドラから読み込む (パイプ)
+		• :out=> / STDOUT=> / 1=> , :err=> / STDERR=> / 2=>
+			• :out,STDOUT,1,:err,STDERR,2 … 親プロセスのstdout,stderrに接続
+			• [:child,:out],[:child,:err] … 子プロセスのstdout,stderrに接続
+				e.g.
+					:err=>[:child,:out],:out=>"output" … stderrとstdoutをまとめてファイル output に書き込む
+			• "パス" … ファイルに書き込む
+			• "/dev/null" … 出力を破棄
+			• ハンドラ … IO.pipe などで開いたファイルハンドラに書き込む (パイプ)
+		• :cwd=> … カレントディレクトリを指定
+		• :exception=> … system(env?,cmd,options?) でのみ使用可能
+			trueに指定すると, false や nil を返す代わりにエラーを発生させる
+	• 複数のプロセスの間をパイプするには IO.pipe を使用する
+		r,w = IO.pipe
+		spawn("コマンド1",:out=>w)
+		spawn("コマンド2",:in=>r) … コマンド1の出力がそのままコマンド2の入力になる
+	• stdinを文字列で与える場合も IO.pipe を使用する
+		r,w = IO.pipe
+		w.write(stdIn)
+		w.close
+		spawn("コマンド",:in=>r)
+	• stdout,stderrの文字列を受け取る場合も IO.pipe を使用する
+		r,w = IO.pipe
+		spawn("コマンド",:out=>w)
+		stdOut=r.read
+		r.close
+
+	eval(rubySource) -> value?
+		• rubySource に記載したRubyソースを実行する
+		• ソース中の最終行の値がevalから返される。
+		• 外の変数をeval内で参照したり,eval内の変数を外から参照することもできる。
+
+=end
+
 Files() if runningDirectly(__FILE__)

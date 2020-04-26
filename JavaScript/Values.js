@@ -78,6 +78,26 @@ e.Values=()=>{
 					// ブロックの内容
 				})();
 		*/
+	/*
+		JavaScript の型判定
+		• typeof val -> string : プリミティブ型を判定
+			• "string","number","boolean","function","symbol","object","undefined" のうちいづれか
+			• プリミティブでない大概の型はobjectになる (array,map,set,nullなども)
+			• new String(val),new Number(val) などとすれば string や number であっても object になってしまう
+		• val.constructor -> Function (Type) : クラスを返す
+			• valの型に相当する生成関数 (string型であれば関数String) を返す
+		• {}.toString.call(val) -> string : クラスを表示
+			• カスタムクラスには通用しない
+			• 例えば,string型であれば "[Object String]" というような形式で返ってくる
+		• val instanceof Type -> bool : 指定した型かどうか判定
+			• サブクラスも真になる
+		• isNaN(val) -> bool : valを数値に変換した場合に NaN になってしまう値
+			つまり, val が現に NaN でなくても真になる
+		• Number.isNaN(val) -> bool : val が NaN の場合に真
+			これは本当に NaN でなければならない
+			因みに val==NaN や val===NaN は常に false になる
+		• isFinite(val) -> bool : 有限の値 (±Infinity 以外の数値) なら真
+	*/
 
 	u.println(`
 

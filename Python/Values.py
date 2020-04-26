@@ -64,6 +64,14 @@ def Values():
 	# ラムダ (無名関数)
 	func = lambda val: val ** 2
 
+	'''
+		Pythonで型判定
+		• type(val) -> Type : 値の型のオブジェクトが返される
+			例えば, type(val) is str などとすれば,valがstr型かどうか判定できる
+		• isinstance(val,type) -> bool : 値が指定したクラス型かどうか判定
+			サブクラスであっても真になる
+	'''
+
 	prints(f"""
 
 		色々な値を試します
