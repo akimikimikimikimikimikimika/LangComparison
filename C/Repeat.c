@@ -4,7 +4,7 @@
 
 void Repeat(){
 
-	printLn2(1,"これからループ処理を試します",2);
+	printLn2(1,"これから繰り返し処理を試します",2);
 
 	printLn2(1,"for (m=0; m<3; m++) {…}",1);
 	for (int m=0;m<3;m++) {printf("m=%dのループ",m);nl(1);}
