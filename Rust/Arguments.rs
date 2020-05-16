@@ -17,7 +17,7 @@ pub fn main() {
 		println!("");
 		println!("コマンドラインに以下のように入力して実行します:");
 		println!("");
-		println!("Rust/Build 引数1 引数2…");
+		println!("Rust/bin 引数1 引数2…");
 		println!("");
 		println!("すると,引数1,引数2…が順に出力されます");
 	}

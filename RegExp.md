@@ -37,6 +37,7 @@
 	- 例
 		- **`this|that`** に `this` と `that` の両方がマッチする
 		- **`dec2(bin|oct|hex)`** には `dec2bin` と `dec2oct` と `dec2hex` がマッチする
+			Pythonの場合は `dec2(?:bin|oct|hex)` などとする
 
 * __`^abc`__, __`abc$`__
 	- __`^abc`__ : 先頭にある `abc` にマッチする
@@ -56,7 +57,7 @@
 		- **`^ab+[r-t]`** には `absolute` や `abbreviate` がマッチする
 		- **`^ab*[r-t]`** には `absolute` や `abbreviate`, `atomic` がマッチする
 		- **`^ab?[r-t]`** には `absolute` や `atomic` がマッチする
-		- **`[il]{2,}`** には `briliant` のような `i` と `l` が連続する部分にマッチする
+		- **`[il]{2,}`** には `brilliant` のような `i` と `l` が連続する部分にマッチする
 		- **`go{2,5}gle`** には `gooogle` はマッチするが, `goooooogle` はマッチしない
 
 * __`a+?`__, __`a*?`__, __`a??`__, __`a{n}?`__

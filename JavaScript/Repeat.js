@@ -18,7 +18,7 @@ e.Repeat=()=>{
 
 	u.println("for (n of array) {…}");
 	let cs=["壱","弐","参"];
-	for (n of cs) u.println(`c="${cs[n]}" のループ (${n}番目の要素)`);
+	for (c of cs) u.println(`c="${c}" のループ`);
 
 	u.pnl(1);
 

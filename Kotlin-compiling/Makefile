@@ -5,7 +5,7 @@ run exec execute: ${BIN}.jar
 	@java -jar ${BIN}.jar ${ARGS}
 
 build compile ${BIN}.jar:
-	@kotlinc -include-runtime -d ${BIN}.jar *.kt
+	@kotlinc-jvm -include-runtime -d ${BIN}.jar *.kt
 
 retry: clean run
 
