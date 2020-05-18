@@ -66,7 +66,7 @@
 	| `x.round(digit)` | **away** |
 	| `sprintf("%fmt",x)` | **even** |
 
-	`x.round(digit=0,method)` は引数 `method` で手法を指定することができる
+	`x.round(digit=0,half: method)` は引数 `method` で手法を指定することができる
 
 	| `method` | 手法 |
 	|:-|:-:|
