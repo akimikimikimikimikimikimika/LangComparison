@@ -176,13 +176,17 @@ pl perl:
 pl-docker perl-docker:
 	@cd Perl && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 rb ruby:
-	@cd Ruby && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Ruby/Legacy && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 rb-docker ruby-docker:
-	@cd Ruby && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Ruby/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
+php:
+	@cd PHP/Legacy && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+php-docker:
+	@cd PHP/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 py python:
-	@cd Python && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Python/Legacy && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 py-docker python-docker:
-	@cd Python && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Python/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 jl julia:
 	@cd Julia && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 jl-docker julia-docker:

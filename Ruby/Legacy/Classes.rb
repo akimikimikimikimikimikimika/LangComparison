@@ -3,7 +3,7 @@
 require_relative "Utility.rb"
 require_relative "Classdef" # クラス定義読み込み
 
-# Rubyには require "..." という表記法があるが,これは標準ライブラリヲ読み込む場合に使用を限定したい。なぜなら,例えばClassdef.rbに対して require "./Classdef" と相対パスであることを明記する ./ が必要だし,相対パスの基準がカレントディレクトリであって,このソースファイルが存在するディレクトリではないからだ。
+# Rubyには require "..." という表記法があるが,これは標準ライブラリを読み込む場合に使用を限定したい。なぜなら,例えばClassdef.rbに対して require "./Classdef" と相対パスであることを明記する ./ が必要だし,相対パスの基準がカレントディレクトリであって,このソースファイルが存在するディレクトリではないからだ。
 # 指定する場合は Classdef でも Classdef.rb でもどちらでも良い
 
 def Classes
