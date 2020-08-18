@@ -16,7 +16,7 @@
 | [Julia](https://www.julialang.org "Julia") | ノートブック ([IJulia](https://github.com/JuliaLang/IJulia.jl)) |
 | [Lua](https://www.lua.org "Lua") | ノートブック ([ILua](https://github.com/guysv/ilua)) |
 | [JavaScript](https://nodejs.org) | ノートブック ([IJavascript](https://github.com/n-riesco/ijavascript)) |
-| [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell") | ノートブック ([Bash](https://github.com/takluyver/bash_kernel)) |
+| [Bash](https://www.gnu.org/software/bash "Bourne-Again SHell") | ノートブック ([Bash](https://github.com/takluyver/bash_kerwhinel)) |
 | [PowerShell](https://github.com/PowerShell/PowerShell "PowerShell") | ノートブック ([PowerShell](https://github.com/vors/jupyter-powershell)) |
 | [Java](https://www.java.com "Java") | ノートブック ([IJava](https://github.com/SpencerPark/IJava)) |
 | [C](http://www.open-std.org/jtc1/sc22/wg14 "C") | ノートブック ([cling](https://github.com/root-project/cling/tree/master/tools/Jupyter))
