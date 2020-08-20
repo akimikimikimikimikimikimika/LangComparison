@@ -62,21 +62,21 @@ c-cmd:
 
 # C++
 cpp-build:
-	@cd C++ && make build -e CMD=${CPP} BIN=bin
+	@cd C++/Legacy && make build -e CMD=${CPP} BIN=bin
 cpp-build-clang:
-	@cd C++ && make build -e CMD=${CLANGPP} BIN=bin-clang
+	@cd C++/Legacy && make build -e CMD=${CLANGPP} BIN=bin-clang
 cpp-build-gcc:
-	@cd C++ && make build -e CMD=${GPP} BIN=bin-gcc
+	@cd C++/Legacy && make build -e CMD=${GPP} BIN=bin-gcc
 cpp-build-icc:
-	@cd C++ && make build -e CMD=${ICPC} BIN=bin-icc
+	@cd C++/Legacy && make build -e CMD=${ICPC} BIN=bin-icc
 cpp-build-docker:
-	@cd C++ && make build-docker -e CMD=${GPP} BIN=bin-docker
+	@cd C++/Legacy && make build-docker -e CMD=${GPP} BIN=bin-docker
 cpp-run:
-	@cd C++ && make run -e CMD=${CPP} ARGS="${ARGS}"
+	@cd C++/Legacy && make run -e CMD=${CPP} ARGS="${ARGS}"
 cpp-clean:
-	@cd C++ && make clean -e CMD=${CPP}
+	@cd C++/Legacy && make clean -e CMD=${CPP}
 cpp-retry cpp:
-	@cd C++ && make retry -e CMD=${CPP} ARGS="${ARGS}"
+	@cd C++/Legacy && make retry -e CMD=${CPP} ARGS="${ARGS}"
 
 # Objective-C
 objc-build:
@@ -106,13 +106,13 @@ csharp-retry csharp:
 
 # Go
 go-build:
-	@cd Go && make build
+	@cd Go/Legacy && make build
 go-run:
-	@cd Go && make run -e ARGS="${ARGS}"
+	@cd Go/Legacy && make run -e ARGS="${ARGS}"
 go-clean:
-	@cd Go && make clean
+	@cd Go/Legacy && make clean
 go-retry go:
-	@cd Go && make retry -e ARGS="${ARGS}"
+	@cd Go/Legacy && make retry -e ARGS="${ARGS}"
 
 # Swift-compiling
 swiftc-build:
@@ -126,13 +126,13 @@ swiftc-retry swiftc:
 
 # Java
 java-build:
-	@cd Java && make build
+	@cd Java/Legacy && make build
 java-run:
-	@cd Java && make run -e ARGS="${ARGS}"
+	@cd Java/Legacy && make run -e ARGS="${ARGS}"
 java-clean:
-	@cd Java && make clean
+	@cd Java/Legacy && make clean
 java-retry java:
-	@cd Java && make retry -e ARGS="${ARGS}"
+	@cd Java/Legacy && make retry -e ARGS="${ARGS}"
 
 # Kotlin-compiling
 kotlinc-build:
@@ -168,9 +168,9 @@ groovyc-retry groovyc:
 swift:
 	@swift Swift/${PAGE}.swift ${ARGS}
 js javascript:
-	@cd JavaScript && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd JavaScript/Legacy && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 js-docker javascript-docker:
-	@cd JavaScript && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd JavaScript/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 pl perl:
 	@cd Perl && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 pl-docker perl-docker:
@@ -188,15 +188,15 @@ py python:
 py-docker python-docker:
 	@cd Python/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 jl julia:
-	@cd Julia && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Julia/Legacy && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 jl-docker julia-docker:
-	@cd Julia && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Julia/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 lua:
 	@lua Lua/${PAGE}.lua ${ARGS}
 sh bash:
-	@cd Bash && make run -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Bash/Legacy && make run -e PAGE=${PAGE} ARGS="${ARGS}"
 sh-docker bash-docker:
-	@cd Bash && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
+	@cd Bash/Legacy && make docker -e PAGE=${PAGE} ARGS="${ARGS}"
 ps pwsh powershell:
 	@pwsh PowerShell/${PAGE}.ps1 ${ARGS}
 kotlin kt:
